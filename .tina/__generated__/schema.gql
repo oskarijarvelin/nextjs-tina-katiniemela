@@ -50,13 +50,13 @@ type Query {
   document(collection: String, relativePath: String): DocumentNode!
   page(relativePath: String): Page!
   pageConnection(before: String, after: String, first: Float, last: Float, sort: String, filter: PageFilter): PageConnection!
-  post(relativePath: String): Post!
-  postConnection(before: String, after: String, first: Float, last: Float, sort: String, filter: PostFilter): PostConnection!
+  global(relativePath: String): Global!
+  globalConnection(before: String, after: String, first: Float, last: Float, sort: String, filter: GlobalFilter): GlobalConnection!
 }
 
 input DocumentFilter {
   page: PageFilter
-  post: PostFilter
+  global: GlobalFilter
 }
 
 type DocumentConnectionEdges {
@@ -82,13 +82,56 @@ type Collection {
   documents(before: String, after: String, first: Float, last: Float, sort: String, filter: DocumentFilter): DocumentConnection!
 }
 
-union DocumentNode = Page | Post
+union DocumentNode = Page | Global
+
+type PageBlocksHero {
+  otsikko: String!
+  sisalto: String
+  bgImg: String
+}
+
+type PageBlocksKuva {
+  img: String
+}
+
+type PageBlocksPalsta {
+  palsta_otsikko: String
+  palsta_sisalto: JSON
+}
+
+union PageBlocks = PageBlocksHero | PageBlocksKuva | PageBlocksPalsta
 
 type Page implements Node & Document {
-  body: JSON
+  title: String!
+  description: String
+  blocks: [PageBlocks]
   id: ID!
   _sys: SystemInfo!
   _values: JSON!
+}
+
+input StringFilter {
+  startsWith: String
+  eq: String
+  exists: Boolean
+  in: [String]
+}
+
+input ImageFilter {
+  startsWith: String
+  eq: String
+  exists: Boolean
+  in: [String]
+}
+
+input PageBlocksHeroFilter {
+  otsikko: StringFilter
+  sisalto: StringFilter
+  bgImg: ImageFilter
+}
+
+input PageBlocksKuvaFilter {
+  img: ImageFilter
 }
 
 input RichTextFilter {
@@ -97,8 +140,21 @@ input RichTextFilter {
   exists: Boolean
 }
 
+input PageBlocksPalstaFilter {
+  palsta_otsikko: StringFilter
+  palsta_sisalto: RichTextFilter
+}
+
+input PageBlocksFilter {
+  hero: PageBlocksHeroFilter
+  kuva: PageBlocksKuvaFilter
+  palsta: PageBlocksPalstaFilter
+}
+
 input PageFilter {
-  body: RichTextFilter
+  title: StringFilter
+  description: StringFilter
+  blocks: PageBlocksFilter
 }
 
 type PageConnectionEdges {
@@ -112,35 +168,44 @@ type PageConnection implements Connection {
   edges: [PageConnectionEdges]
 }
 
-type Post implements Node & Document {
-  title: String
-  body: String
+type GlobalMainnavNav {
+  href: String
+  label: String
+}
+
+type GlobalMainnav {
+  nav: [GlobalMainnavNav]
+}
+
+type Global implements Node & Document {
+  mainnav: GlobalMainnav
   id: ID!
   _sys: SystemInfo!
   _values: JSON!
 }
 
-input StringFilter {
-  startsWith: String
-  eq: String
-  exists: Boolean
-  in: [String]
+input GlobalMainnavNavFilter {
+  href: StringFilter
+  label: StringFilter
 }
 
-input PostFilter {
-  title: StringFilter
-  body: StringFilter
+input GlobalMainnavFilter {
+  nav: GlobalMainnavNavFilter
 }
 
-type PostConnectionEdges {
+input GlobalFilter {
+  mainnav: GlobalMainnavFilter
+}
+
+type GlobalConnectionEdges {
   cursor: String!
-  node: Post
+  node: Global
 }
 
-type PostConnection implements Connection {
+type GlobalConnection implements Connection {
   pageInfo: PageInfo!
   totalCount: Float!
-  edges: [PostConnectionEdges]
+  edges: [GlobalConnectionEdges]
 }
 
 type Mutation {
@@ -150,22 +215,53 @@ type Mutation {
   createDocument(collection: String, relativePath: String!, params: DocumentMutation!): DocumentNode!
   updatePage(relativePath: String!, params: PageMutation!): Page!
   createPage(relativePath: String!, params: PageMutation!): Page!
-  updatePost(relativePath: String!, params: PostMutation!): Post!
-  createPost(relativePath: String!, params: PostMutation!): Post!
+  updateGlobal(relativePath: String!, params: GlobalMutation!): Global!
+  createGlobal(relativePath: String!, params: GlobalMutation!): Global!
 }
 
 input DocumentMutation {
   page: PageMutation
-  post: PostMutation
+  global: GlobalMutation
+}
+
+input PageBlocksHeroMutation {
+  otsikko: String
+  sisalto: String
+  bgImg: String
+}
+
+input PageBlocksKuvaMutation {
+  img: String
+}
+
+input PageBlocksPalstaMutation {
+  palsta_otsikko: String
+  palsta_sisalto: JSON
+}
+
+input PageBlocksMutation {
+  hero: PageBlocksHeroMutation
+  kuva: PageBlocksKuvaMutation
+  palsta: PageBlocksPalstaMutation
 }
 
 input PageMutation {
-  body: JSON
+  title: String
+  description: String
+  blocks: [PageBlocksMutation]
 }
 
-input PostMutation {
-  title: String
-  body: String
+input GlobalMainnavNavMutation {
+  href: String
+  label: String
+}
+
+input GlobalMainnavMutation {
+  nav: [GlobalMainnavNavMutation]
+}
+
+input GlobalMutation {
+  mainnav: GlobalMainnavMutation
 }
 
 schema {

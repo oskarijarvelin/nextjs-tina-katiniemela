@@ -1,0 +1,10 @@
+{
+  "mainnav": {
+    "nav": [
+      {
+        "href": "home",
+        "label": "Home"
+      }
+    ]
+  }
+}

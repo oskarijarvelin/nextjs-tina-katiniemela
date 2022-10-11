@@ -20,35 +20,144 @@ const schema = defineSchema({
     {
       label: "Page Content",
       name: "page",
-      path: "content/page",
-      format: "mdx",
+      path: "pages/content",
+      format: "md",
       fields: [
         {
-          name: "body",
-          label: "Main Content",
-          type: "rich-text",
+          name: "title",
+          label: "Otsikko",
+          type: "string",
+          isTitle: true,
+          required: true,
+        },
+        {
+          name: "description",
+          label: "Kuvaus",
+          type: "string",
           isBody: true,
+          ui: {
+            component: 'textarea',
+          },
+        },
+        {
+          type: 'object',
+          list: true,
+          name: 'blocks',
+          label: 'Sisältöeditori',
+          ui: {
+            visualSelector: true,
+          },
+          templates: [
+            {
+              name: 'hero',
+              label: 'Hero',
+              ui: {
+                defaultItem: {
+                  otsikko: 'Tähän tulee heron otsikko',
+                  sisalto: 'Phasellus scelerisque, libero eu finibus rutrum, risus risus accumsan libero, nec molestie urna dui a leo.',
+                },
+              },
+              fields: [
+                {
+                  type: 'string',
+                  label: 'Otsikko',
+                  name: 'otsikko',
+                  required: true,
+                },
+                {
+                  type: 'string',
+                  label: 'Sisältö',
+                  name: 'sisalto',
+                  ui: {
+                    component: 'textarea',
+                  },
+                },
+                {
+                  type: 'image',
+                  label: 'Taustakuva',
+                  name: 'bgImg',
+                },
+              ],
+            },  
+            {
+              name: 'kuva',
+              label: 'Kuva',
+              fields: [
+                {
+                  type: 'image',
+                  label: 'Kuva',
+                  name: 'img',
+                }
+              ],
+            },    
+            {
+              name: 'palsta',
+              label: 'Sisältöpalsta',
+              ui: {
+                defaultItem: {
+                  palsta_otsikko: 'Tähän tulee heron otsikko',
+                  palsta_sisalto: 'Phasellus scelerisque, libero eu finibus rutrum, risus risus accumsan libero, nec molestie urna dui a leo.',
+                },
+              },
+              fields: [
+                {
+                  type: 'string',
+                  label: 'Otsikko',
+                  name: 'palsta_otsikko',
+                },
+                {
+                  type: 'rich-text',
+                  label: 'Sisältö',
+                  name: 'palsta_sisalto',
+                },
+              ],
+            },  
+          ],
         },
       ],
     },
     {
-      label: "Blog Posts",
-      name: "post",
-      path: "content/post",
+      label: "Global",
+      name: "global",
+      path: "content/global",
+      format: "json",
+      ui: {
+        global: true,
+      },
       fields: [
         {
-          type: "string",
-          label: "Title",
-          name: "title",
-        },
-        {
-          type: "string",
-          label: "Blog Post Body",
-          name: "body",
-          isBody: true,
-          ui: {
-            component: "textarea",
-          },
+          type: "object",
+          label: "Päävalikko",
+          name: "mainnav",
+          fields: [
+            {
+              type: "object",
+              label: "Linkit",
+              name: "nav",
+              list: true,
+              ui: {
+                itemProps: (item) => {
+                  return { label: item?.label };
+                },
+                defaultItem: {
+                  href: "home",
+                  label: "Home",
+                },
+              },
+              fields: [
+                {
+                  type: "string",
+                  label: "Link",
+                  name: "href",
+                },
+                {
+                  type: "string",
+                  label: "Label",
+                  name: "label",
+                },
+              ],
+            },
+          ],
         },
       ],
     },
@@ -67,11 +176,6 @@ export const tinaConfig = defineConfig({
           return "/";
         }
       }
-
-      if (["post"].includes(collection.name)) {
-        return `/posts/${document._sys.filename}`;
-      }
-
       return undefined;
     });
 

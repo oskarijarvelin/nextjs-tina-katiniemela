@@ -1,8 +1,30 @@
 fragment PageParts on Page {
-  body
+  title
+  description
+  blocks {
+    __typename
+    ... on PageBlocksHero {
+      otsikko
+      sisalto
+      bgImg
+    }
+    ... on PageBlocksKuva {
+      img
+    }
+    ... on PageBlocksPalsta {
+      palsta_otsikko
+      palsta_sisalto
+    }
+  }
 }
 
-fragment PostParts on Post {
-  title
-  body
+fragment GlobalParts on Global {
+  mainnav {
+    __typename
+    nav {
+      __typename
+      href
+      label
+    }
+  }
 }
