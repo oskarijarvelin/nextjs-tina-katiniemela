@@ -40,7 +40,7 @@ export default function PalstaBlock({block}) {
               <Box sx={{ pl: {xs: 2, lg: 12 }, display: 'flex', flexWrap: 'wrap' }}>
                 {block?.linkit?.map((linkki, i) => (
                   <Box>
-                    ↪ <Link key={i} className="linkki" href={linkki.url} sx={{ mr: 4, fontSize: { xs: 24, lg: 36 }, fontFamily: 'MonteCarlo' }}>{linkki.title}</Link>
+                    ↪ <Link key={i} className="linkki" href={linkki.url} sx={{ mr: 4, fontSize: { xs: 28, lg: 36 }, fontFamily: 'MonteCarlo' }}>{linkki.title}</Link>
                   </Box>
                 ))}
               </Box>
