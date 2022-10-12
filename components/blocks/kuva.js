@@ -20,7 +20,7 @@ const KuvaBox = styled(Box)(({ theme }) => ({
         height: '120px',
       },
       [theme.breakpoints.down('lg')]: {
-        height: '0px',
+        height: '20px',
       },
       content: '""',
       backgroundImage: 'linear-gradient(to top, rgba(0,0,0,0), rgba(0,0,0,1))',
@@ -34,7 +34,7 @@ const KuvaBox = styled(Box)(({ theme }) => ({
         height: '120px',
       },
       [theme.breakpoints.down('lg')]: {
-        height: '0px',
+        height: '20px',
       },
       content: '""',
       backgroundImage: 'linear-gradient(to bottom, rgba(0,0,0,0), rgba(0,0,0,1))',
