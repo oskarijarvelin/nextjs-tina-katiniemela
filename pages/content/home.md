@@ -3,30 +3,37 @@ title: Kati Niemelä
 blocks:
   - otsikko: Kati Niemelä
     sisalto: >-
-      Phasellus scelerisque, libero eu finibus rutrum, risus risus accumsan
-      libero, nec molestie urna dui a leo.
+      Olen oululaislähtöinen laulaja-lauluntekijä ja laulunopettaja. Jo nuoresta
+      iästä asti olen aina tiennyt musiikin olevan elämänpolkuni ja olen
+      pyrkinyt aina kehittämään itseäni. Opiskelen parhaillaan laulunopettajaksi
+      Jyväskylän ammattikorkeakoulussa ja laulunopetustöitä olen tehnyt
+      kevytyrittäjänä jo vuodesta 2017. 
     bgImg: /uploads/DSC04335.jpg
     _template: hero
-  - palsta_otsikko: Kati Niemelä
-    palsta_sisalto: >
-      Phasellus scelerisque, libero eu finibus rutrum, risus risus accumsan
-      libero, nec molestie urna dui a leo.
+  - palsta_otsikko: Kuka minä olen?
+    palsta_sisalto: "Sydämeni sykkii keikkailulle ja esiintymiselle! Olen aina rakastanut laulamista ja esiintymistä ja olen iloksi ja onnekseni päässyt erilaisiin projekteihin mukaan. Lukioaikoina bändimme, jossa olin vokalistina, soitti raskaampaa musiikkia ja samaan aikaan olin työstämässä koulumme Löpöti -musikaalia.&#x20;\n\nLukion jälkeen lähdin Helsinkiin opintojen perässä ja päädyin soittamaan ja laulamaan omaa musiikkia tekevään suomirockyhtye Ronimukseen sekä cover-yhtye SweetHardiin. Vuonna 2021 lähdin Helsingistä Jyväskylään opiskelemaan laulunopettajaksi ja tällä hetkellä päiväni ovat täynnä opintoja, omia lauluoppilaita sekä ihan tavallista arkea.\_\n"
+    linkit:
+      - url: /muusikko
+        title: Muusikko
+      - url: /laulunopettaja
+        title: Laulunopettaja
     _template: palsta
-  - img: /uploads/DSC04458.jpg
+  - img: /uploads/DSC04273.jpg
     _template: kuva
-  - palsta_otsikko: Kati Niemelä
+  - palsta_otsikko: Ota yhteyttä
     palsta_sisalto: >
-      Phasellus scelerisque, libero eu finibus rutrum, risus risus accumsan
-      libero, nec molestie urna dui a leo.
+      **Sähköposti:** [moi@katiniemela.fi](mailto:moi@katiniemela.fi "")
+
+
+      **Instagram:** [@kaniffi](https://www.instagram.com/kaniffi/ "")
+
+
+      **LinkedIn:** [Kati
+      Niemelä](https://www.linkedin.com/in/kati-niemel%C3%A4-a81b08250/ "")
     _template: palsta
 ---
 
 
-Phasellus scelerisque, libero eu finibus rutrum, risus risus accumsan libero, nec molestie urna dui a leo.
 
 
-
-
-Welcome to the barebones starter for TinaCMS!
-
-sdfsdf
+Test

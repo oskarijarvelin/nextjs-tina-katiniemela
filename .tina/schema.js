@@ -110,6 +110,33 @@ const schema = defineSchema({
                   label: 'Sisältö',
                   name: 'palsta_sisalto',
                 },
+                {
+                  type: "object",
+                  label: "Linkit",
+                  name: "linkit",
+                  list: true,
+                  ui: {
+                    itemProps: (item) => {
+                      return { label: item?.title };
+                    },
+                    defaultItem: {
+                      url: "/",
+                      title: "Etusivu",
+                    },
+                  },
+                  fields: [
+                    {
+                      type: "string",
+                      label: "URL",
+                      name: "url",
+                    },
+                    {
+                      type: "string",
+                      label: "Teksti",
+                      name: "title",
+                    },
+                  ],
+                },
               ],
             },  
           ],

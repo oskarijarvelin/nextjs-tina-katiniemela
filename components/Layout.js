@@ -1,4 +1,5 @@
 import Head from 'next/head'
+import { useRouter } from 'next/router';
 
 import Link from './Link'
 
@@ -8,8 +9,11 @@ import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
+import InstagramIcon from '@mui/icons-material/Instagram';
+import LinkedInIcon from '@mui/icons-material/LinkedIn';
 
 export default function Layout({ title, description, children }) {
+  const router = useRouter();
   return (
     <div>
       <Head>
@@ -24,15 +28,26 @@ export default function Layout({ title, description, children }) {
                 {title}
               </Link>
             </Typography>
-            <Box sx={{ display: { sm: 'none', lg: 'flex' } }}>
+            <Box sx={{ display: { xs: 'none', lg: 'flex' } }}>
               <Typography color="inherit" sx={{ fontSize: 20, pl: 4 }}>
-                <Link href="/" sx={{ color: '#fff', textDecoration: 'none' }}>Etusivu</Link>
+                <Link href="/" sx={{ color: '#fff', textDecoration: (router.pathname == "/") ? "underline" : "none" }}>Etusivu</Link>
               </Typography>
               <Typography color="inherit" sx={{ fontSize: 20, pl: 4 }}>
-                <Link href="/cv" sx={{ color: '#fff', textDecoration: 'none' }}>CV</Link>
+                <Link href="/cv" sx={{ color: '#fff', textDecoration: (router.pathname == "/cv") ? "underline" : "none" }}>CV</Link>
               </Typography>
               <Typography color="inherit" sx={{ fontSize: 20, pl: 4 }}>
-                <Link href="/lauluopetus" sx={{ color: '#fff', textDecoration: 'none' }}>Lauluopetus</Link>
+                <Link href="/muusikko" sx={{ color: '#fff', textDecoration: (router.pathname == "/muusikko") ? "underline" : "none" }}>Muusikko</Link>
+              </Typography>
+              <Typography color="inherit" sx={{ fontSize: 20, pl: 4 }}>
+                <Link href="/lauluopetus" sx={{ color: '#fff', textDecoration: (router.pathname == "/lauluopetus") ? "underline" : "none" }}>Laulunopettaja</Link>
+              </Typography>
+            </Box>
+            <Box sx={{ display: 'flex' }}>
+              <Typography color="inherit" sx={{ fontSize: 20, pl: {xs: 2, lg: 4 } }}>
+                <Link href="https://www.instagram.com/kaniffi/" sx={{ color: '#fff', textDecoration: "none", display: 'flex' }}><InstagramIcon /></Link>
+              </Typography>
+              <Typography color="inherit" sx={{ fontSize: 20, pl: {xs: 2, lg: 4 } }}>
+                <Link href="https://www.linkedin.com/in/kati-niemel%C3%A4-a81b08250/" sx={{ color: '#fff', textDecoration: "none", display: 'flex' }}><LinkedInIcon /></Link>
               </Typography>
             </Box>
             <IconButton
@@ -40,7 +55,7 @@ export default function Layout({ title, description, children }) {
               edge="start"
               color="inherit"
               aria-label="menu"
-              sx={{ ml: 4, display: { sm: 'block', lg: 'none' } }}
+              sx={{ ml: 4, display: { xs: 'flex', lg: 'none' } }}
             >
               <MenuIcon />
             </IconButton>
@@ -48,6 +63,11 @@ export default function Layout({ title, description, children }) {
         </AppBar>
       </Box>
       <Box component="main">{children}</Box>
+      <Box component="footer">
+        <Typography sx={{ py: 4, fontSize: 14, textAlign: 'center', color: '#AAA' }} >
+          &copy; 2022 Kati Niemelä
+        </Typography>
+      </Box>
     </div>
   )
 }
