@@ -11,6 +11,7 @@ blocks:
     bgImg: /uploads/DSC04273.jpg
     _template: hero
   - palsta_kuva: /uploads/DSC04431.jpg
+    palsta_reverse: false
     palsta_otsikko: Kuka minä olen?
     palsta_sisalto: "Sydämeni sykkii keikkailulle ja esiintymiselle! Olen aina rakastanut laulamista ja esiintymistä ja olen iloksi ja onnekseni päässyt erilaisiin projekteihin mukaan. Lukioaikoina bändimme, jossa olin vokalistina, soitti raskaampaa musiikkia ja samaan aikaan olin työstämässä koulumme Löpöti -musikaalia.&#x20;\n\nLukion jälkeen lähdin Helsinkiin opintojen perässä ja päädyin soittamaan ja laulamaan omaa musiikkia tekevään suomirockyhtye Ronimukseen sekä cover-yhtye SweetHardiin. Vuonna 2021 lähdin Helsingistä Jyväskylään opiskelemaan laulunopettajaksi ja tällä hetkellä päiväni ovat täynnä opintoja, omia lauluoppilaita sekä ihan tavallista arkea.\_\n"
     palsta_linkit:
@@ -34,9 +35,4 @@ blocks:
     _template: palsta
 ---
 
-
-
-
-
-
-Test
+Olen oululaislähtöinen laulaja-lauluntekijä ja laulunopettaja. Opiskelen laulunopettajaksi Jyväskylän ammattikorkeakoulussa.

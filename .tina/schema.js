@@ -18,10 +18,18 @@ const schema = defineSchema({
   },
   collections: [
     {
-      label: "Page Content",
+      label: "Sivut",
       name: "page",
       path: "pages/content",
       format: "md",
+      ui: {
+        filename: {
+          readonly: true,
+          slugify: values => {
+            return `${values?.title?.toLowerCase().replace(/ /g, '_')}`
+          },
+        },
+      },
       fields: [
         {
           name: "title",
@@ -104,6 +112,11 @@ const schema = defineSchema({
                   type: 'image',
                   label: 'Kuva',
                   name: 'palsta_kuva',
+                },
+                {
+                  type: 'boolean',
+                  label: 'Kuva vasemmalle',
+                  name: 'palsta_reverse',
                 },
                 {
                   type: 'string',
@@ -206,6 +219,8 @@ export const tinaConfig = defineConfig({
       if (["page"].includes(collection.name)) {
         if (document._sys.filename === "home") {
           return "/";
+        } else {
+          return `/${document._sys.filename}`;
         }
       }
       return undefined;

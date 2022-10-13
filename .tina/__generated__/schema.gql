@@ -101,6 +101,7 @@ type PageBlocksPalstaPalsta_linkit {
 
 type PageBlocksPalsta {
   palsta_kuva: String
+  palsta_reverse: Boolean
   palsta_otsikko: String
   palsta_sisalto: JSON
   palsta_linkit: [PageBlocksPalstaPalsta_linkit]
@@ -141,6 +142,11 @@ input PageBlocksKuvaFilter {
   img: ImageFilter
 }
 
+input BooleanFilter {
+  eq: Boolean
+  exists: Boolean
+}
+
 input RichTextFilter {
   startsWith: String
   eq: String
@@ -154,6 +160,7 @@ input PageBlocksPalstaPalsta_linkitFilter {
 
 input PageBlocksPalstaFilter {
   palsta_kuva: ImageFilter
+  palsta_reverse: BooleanFilter
   palsta_otsikko: StringFilter
   palsta_sisalto: RichTextFilter
   palsta_linkit: PageBlocksPalstaPalsta_linkitFilter
@@ -255,6 +262,7 @@ input PageBlocksPalstaPalsta_linkitMutation {
 
 input PageBlocksPalstaMutation {
   palsta_kuva: String
+  palsta_reverse: Boolean
   palsta_otsikko: String
   palsta_sisalto: JSON
   palsta_linkit: [PageBlocksPalstaPalsta_linkitMutation]

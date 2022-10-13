@@ -30,16 +30,16 @@ export default function Layout({ title, description, children }) {
             </Typography>
             <Box sx={{ display: { xs: 'none', lg: 'flex' } }}>
               <Typography color="inherit" sx={{ fontSize: 20, pl: 4 }}>
-                <Link href="/" sx={{ color: '#fff', textDecoration: (router.pathname == "/") ? "underline" : "none" }}>Etusivu</Link>
+                <Link href="/" sx={{ color: '#fff', textDecoration: (router.asPath == "/") ? "underline" : "none" }}>Etusivu</Link>
               </Typography>
               <Typography color="inherit" sx={{ fontSize: 20, pl: 4 }}>
-                <Link href="/cv" sx={{ color: '#fff', textDecoration: (router.pathname == "/cv") ? "underline" : "none" }}>CV</Link>
+                <Link href="/cv" sx={{ color: '#fff', textDecoration: (router.asPath == "/cv") ? "underline" : "none" }}>CV</Link>
               </Typography>
               <Typography color="inherit" sx={{ fontSize: 20, pl: 4 }}>
-                <Link href="/muusikko" sx={{ color: '#fff', textDecoration: (router.pathname == "/muusikko") ? "underline" : "none" }}>Muusikko</Link>
+                <Link href="/muusikko" sx={{ color: '#fff', textDecoration: (router.asPath == "/muusikko") ? "underline" : "none" }}>Muusikko</Link>
               </Typography>
               <Typography color="inherit" sx={{ fontSize: 20, pl: 4 }}>
-                <Link href="/lauluopetus" sx={{ color: '#fff', textDecoration: (router.pathname == "/lauluopetus") ? "underline" : "none" }}>Laulunopettaja</Link>
+                <Link href="/laulunopettaja" sx={{ color: '#fff', textDecoration: (router.asPath == "/laulunopettaja") ? "underline" : "none" }}>Laulunopettaja</Link>
               </Typography>
             </Box>
             <Box sx={{ display: 'flex' }}>

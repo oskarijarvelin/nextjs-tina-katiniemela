@@ -13,6 +13,7 @@ fragment PageParts on Page {
     }
     ... on PageBlocksPalsta {
       palsta_kuva
+      palsta_reverse
       palsta_otsikko
       palsta_sisalto
       palsta_linkit {
