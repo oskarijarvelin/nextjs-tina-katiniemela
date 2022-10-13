@@ -94,15 +94,16 @@ type PageBlocksKuva {
   img: String
 }
 
-type PageBlocksPalstaLinkit {
+type PageBlocksPalstaPalsta_linkit {
   url: String
   title: String
 }
 
 type PageBlocksPalsta {
+  palsta_kuva: String
   palsta_otsikko: String
   palsta_sisalto: JSON
-  linkit: [PageBlocksPalstaLinkit]
+  palsta_linkit: [PageBlocksPalstaPalsta_linkit]
 }
 
 union PageBlocks = PageBlocksHero | PageBlocksKuva | PageBlocksPalsta
@@ -146,15 +147,16 @@ input RichTextFilter {
   exists: Boolean
 }
 
-input PageBlocksPalstaLinkitFilter {
+input PageBlocksPalstaPalsta_linkitFilter {
   url: StringFilter
   title: StringFilter
 }
 
 input PageBlocksPalstaFilter {
+  palsta_kuva: ImageFilter
   palsta_otsikko: StringFilter
   palsta_sisalto: RichTextFilter
-  linkit: PageBlocksPalstaLinkitFilter
+  palsta_linkit: PageBlocksPalstaPalsta_linkitFilter
 }
 
 input PageBlocksFilter {
@@ -246,15 +248,16 @@ input PageBlocksKuvaMutation {
   img: String
 }
 
-input PageBlocksPalstaLinkitMutation {
+input PageBlocksPalstaPalsta_linkitMutation {
   url: String
   title: String
 }
 
 input PageBlocksPalstaMutation {
+  palsta_kuva: String
   palsta_otsikko: String
   palsta_sisalto: JSON
-  linkit: [PageBlocksPalstaLinkitMutation]
+  palsta_linkit: [PageBlocksPalstaPalsta_linkitMutation]
 }
 
 input PageBlocksMutation {

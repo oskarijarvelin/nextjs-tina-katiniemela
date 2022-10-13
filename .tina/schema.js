@@ -101,6 +101,11 @@ const schema = defineSchema({
               },
               fields: [
                 {
+                  type: 'image',
+                  label: 'Kuva',
+                  name: 'palsta_kuva',
+                },
+                {
                   type: 'string',
                   label: 'Otsikko',
                   name: 'palsta_otsikko',
@@ -113,7 +118,7 @@ const schema = defineSchema({
                 {
                   type: "object",
                   label: "Linkit",
-                  name: "linkit",
+                  name: "palsta_linkit",
                   list: true,
                   ui: {
                     itemProps: (item) => {

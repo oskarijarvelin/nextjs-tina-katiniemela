@@ -12,9 +12,10 @@ fragment PageParts on Page {
       img
     }
     ... on PageBlocksPalsta {
+      palsta_kuva
       palsta_otsikko
       palsta_sisalto
-      linkit {
+      palsta_linkit {
         __typename
         url
         title

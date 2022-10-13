@@ -51,9 +51,8 @@ theme.typography.h2 = {
   fontSize: '3rem',
   fontFamily: 'MonteCarlo',
   fontWeight: 400,
-
-  [theme.breakpoints.up('md')]: {
-    fontSize: '5rem',
+  [theme.breakpoints.up('xl')]: {
+    fontSize: '4rem',
   },
 };
 

@@ -6,6 +6,10 @@ import Container from '@mui/material/Container';
 import Typography from '@mui/material/Typography';
 
 const PalstaBox = styled(Box)({
+  '& img': {
+    objectFit: 'cover',
+    objectPosition: 'top center',
+  },
   '& a:not(.linkki)': {
     color: '#AAA',
     textDecoration: 'underline',
@@ -29,24 +33,27 @@ const PalstaBox = styled(Box)({
 
 export default function PalstaBlock({block}) {
   return (
-    <Container maxWidth="md" >
-        <PalstaBox sx={{ py: {xs: 8, lg: 16 }, px: 2 }}>
-            <Typography variant="h2" sx={{ mb: { xs: 4, lg: 8 }, pr: { xs: 0, lg: 12 } }}>{block.palsta_otsikko}</Typography>
-            <Box sx={{ pl: {xs: 2, lg: 12 } }}>
-              <TinaMarkdown content={block.palsta_sisalto} />
+    <PalstaBox sx={{ display: 'flex', flexWrap: 'wrap', flexDirection: { xs: 'column-reverse', lg: 'row' }, justifyContent: 'center', height: { xs: 'auto', lg: block.palsta_kuva ? '100vh' : 'auto' }, overflow: 'hidden', my: { xs: 6, lg: '200px' } }}>
+      <Box sx={{ flex: {xs: '0 0 100%', lg: '0 0 50%' }, display: 'flex', alignItems: 'center', mt: { xs: 0, lg: '64px' }, px: {xs: 4, lg: 12 } }}>
+        <Box sx={{ textAlign: block.palsta_kuva ? 'left' : 'center', width: '100%' }}>
+          <Typography variant="h2" sx={{ fontSize: { xs: '4rem', lg: '7rem' }, mt: { xs: 4, lg: 0 }, mb: { xs: 4, lg: 8 } }}>{block.palsta_otsikko}</Typography>
+          <TinaMarkdown content={block.palsta_sisalto} />
+          {block.palsta_linkit &&
+            <Box sx={{ display: 'flex', flexWrap: 'wrap', justifyContent: block.palsta_kuva ? 'flex-start' : 'center', mt: { xs: 2, lg: 4 } }}>
+              {block?.palsta_linkit?.map((linkki, i) => (
+                <Box key={i} sx={{ mr: block.palsta_kuva ? 4 : 2, ml: block.palsta_kuva ? 0 : 2 }}>
+                  ↪ <Link className="linkki" href={linkki.url} sx={{ fontSize: { xs: 28, lg: 36 }, fontFamily: 'MonteCarlo' }}>{linkki.title}</Link>
+                </Box>
+              ))}
             </Box>
-
-            {block.linkit &&
-              <Box sx={{ pl: {xs: 2, lg: 12 }, display: 'flex', flexWrap: 'wrap' }}>
-                {block?.linkit?.map((linkki, i) => (
-                  <Box>
-                    ↪ <Link key={i} className="linkki" href={linkki.url} sx={{ mr: 4, fontSize: { xs: 28, lg: 36 }, fontFamily: 'MonteCarlo' }}>{linkki.title}</Link>
-                  </Box>
-                ))}
-              </Box>
-            }
-            
-        </PalstaBox>
-    </Container>
+          }
+        </Box>
+      </Box>
+      {block.palsta_kuva &&
+        <Box sx={{ flex: {xs: '0 0 100%', lg: '0 0 50%' }, pt: { xs: '64px', lg: 0 }, height: { xs: 'auto', lg: '100%' } }}>
+          <img src={block.palsta_kuva} width="100%" height="100%" />
+        </Box>
+      }
+    </PalstaBox>
   )
 }
