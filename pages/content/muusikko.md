@@ -1,7 +1,7 @@
 ---
-title: Muusikko
+title: Muusikko Kati Niemelä
 blocks:
-  - otsikko: Muusikko Kati Niemelä
+  - otsikko: Muusikko
     sisalto: >-
       Phasellus scelerisque, libero eu finibus rutrum, risus risus accumsan
       libero, nec molestie urna dui a leo.
