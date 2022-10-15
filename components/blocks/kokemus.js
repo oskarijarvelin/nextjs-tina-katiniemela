@@ -38,12 +38,12 @@ export default function KokemusBlock({ block }) {
         }
         {block?.kokemus_lista?.map((k, i) => (
           <Box key={i} sx={{ display: 'flex', flexWrap: 'wrap', mb: 8 }}>
-            <Box sx={{ py: 1, flex: { xs: '0 0 100%', md: '0 0 180px' }, maxWidth: { xs: '100%', md: '180px' }, width: { xs: '100%', md: '180px' } }}>
+            <Box sx={{ pt: '4px', pb: 3, flex: { xs: '0 0 100%', md: '0 0 180px' }, maxWidth: { xs: '100%', md: '180px' }, width: { xs: '100%', md: '180px' } }}>
               <Typography>{k.ajankohta}</Typography>
             </Box>
             <Box sx={{ pl: { xs: 3, md: 8 }, flex: { xs: '0 0 100%', md: '0 0 calc(100% - 180px)' }, maxWidth: { xs: '100%', md: 'calc(100% - 180px)' }, width: { xs: '100%', md: 'calc(100% - 180px)' } }}>
-              <Typography variant="h6" component="h3" sx={{ mb: 2 }}>{k.title}</Typography>
-              <Typography>{k.kuvaus}</Typography>
+              <Typography variant="body" component="h3" sx={{ mb: 2, fontWeight: 700 }}>{k.title}</Typography>
+              <TinaMarkdown content={k.kuvaus} />
             </Box>
           </Box>
         ))}

@@ -227,10 +227,7 @@ const schema = defineSchema({
                     {
                       name: 'kuvaus',
                       label: 'Kuvaus',
-                      type: 'string',
-                      ui: {
-                        component: 'textarea',
-                      },
+                      type: 'rich-text',
                     },
                   ],
                 },
