@@ -88,10 +88,12 @@ type PageBlocksHero {
   otsikko: String!
   sisalto: String
   bgImg: String
+  kuvateksti: String
 }
 
 type PageBlocksKuva {
   img: String
+  kuva_kuvateksti: String
 }
 
 type PageBlocksPalstaPalsta_linkit {
@@ -101,6 +103,7 @@ type PageBlocksPalstaPalsta_linkit {
 
 type PageBlocksPalsta {
   palsta_kuva: String
+  palsta_kuvateksti: String
   palsta_reverse: Boolean
   palsta_otsikko: String
   palsta_sisalto: JSON
@@ -136,10 +139,12 @@ input PageBlocksHeroFilter {
   otsikko: StringFilter
   sisalto: StringFilter
   bgImg: ImageFilter
+  kuvateksti: StringFilter
 }
 
 input PageBlocksKuvaFilter {
   img: ImageFilter
+  kuva_kuvateksti: StringFilter
 }
 
 input BooleanFilter {
@@ -160,6 +165,7 @@ input PageBlocksPalstaPalsta_linkitFilter {
 
 input PageBlocksPalstaFilter {
   palsta_kuva: ImageFilter
+  palsta_kuvateksti: StringFilter
   palsta_reverse: BooleanFilter
   palsta_otsikko: StringFilter
   palsta_sisalto: RichTextFilter
@@ -249,10 +255,12 @@ input PageBlocksHeroMutation {
   otsikko: String
   sisalto: String
   bgImg: String
+  kuvateksti: String
 }
 
 input PageBlocksKuvaMutation {
   img: String
+  kuva_kuvateksti: String
 }
 
 input PageBlocksPalstaPalsta_linkitMutation {
@@ -262,6 +270,7 @@ input PageBlocksPalstaPalsta_linkitMutation {
 
 input PageBlocksPalstaMutation {
   palsta_kuva: String
+  palsta_kuvateksti: String
   palsta_reverse: Boolean
   palsta_otsikko: String
   palsta_sisalto: JSON

@@ -85,6 +85,11 @@ const schema = defineSchema({
                   label: 'Taustakuva',
                   name: 'bgImg',
                 },
+                {
+                  type: 'string',
+                  label: 'Kuvateksti',
+                  name: 'kuvateksti',
+                },
               ],
             },  
             {
@@ -95,7 +100,12 @@ const schema = defineSchema({
                   type: 'image',
                   label: 'Kuva',
                   name: 'img',
-                }
+                },
+                {
+                  type: 'string',
+                  label: 'Kuvateksti',
+                  name: 'kuva_kuvateksti',
+                },
               ],
             },    
             {
@@ -112,6 +122,11 @@ const schema = defineSchema({
                   type: 'image',
                   label: 'Kuva',
                   name: 'palsta_kuva',
+                },
+                {
+                  type: 'string',
+                  label: 'Kuvateksti',
+                  name: 'palsta_kuvateksti',
                 },
                 {
                   type: 'boolean',

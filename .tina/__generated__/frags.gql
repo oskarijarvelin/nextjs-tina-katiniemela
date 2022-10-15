@@ -7,12 +7,15 @@ fragment PageParts on Page {
       otsikko
       sisalto
       bgImg
+      kuvateksti
     }
     ... on PageBlocksKuva {
       img
+      kuva_kuvateksti
     }
     ... on PageBlocksPalsta {
       palsta_kuva
+      palsta_kuvateksti
       palsta_reverse
       palsta_otsikko
       palsta_sisalto
