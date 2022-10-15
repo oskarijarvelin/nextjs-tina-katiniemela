@@ -179,6 +179,63 @@ const schema = defineSchema({
                 },
               ],
             },
+            {
+              name: 'kokemus',
+              label: 'Kokemuslista',
+              ui: {
+                defaultItem: {
+                  kokemus_otsikko: 'Työkokemus',
+                  kokemus_sisalto: 'Phasellus scelerisque, libero eu finibus rutrum, risus risus accumsan libero, nec molestie urna dui a leo.',
+                },
+              },
+              fields: [
+                {
+                  type: 'string',
+                  label: 'Otsikko',
+                  name: 'kokemus_otsikko',
+                },
+                {
+                  type: 'rich-text',
+                  label: 'Sisältö',
+                  name: 'kokemus_sisalto',
+                },
+                {
+                  type: 'object',
+                  label: 'Kokemukset',
+                  name: 'kokemus_lista',
+                  list: true,
+                  ui: {
+                    itemProps: (item) => {
+                      return { label: item?.title };
+                    },
+                    defaultItem: {
+                      title: 'Laulunopettaja',
+                      ajankohta: '01/2022 - 12/2022'
+                    },
+                  },
+                  fields: [
+                    {
+                      type: 'string',
+                      label: 'Teksti',
+                      name: 'title',
+                    },
+                    {
+                      type: 'string',
+                      label: 'Ajankohta',
+                      name: 'ajankohta',
+                    },
+                    {
+                      name: 'kuvaus',
+                      label: 'Kuvaus',
+                      type: 'string',
+                      ui: {
+                        component: 'textarea',
+                      },
+                    },
+                  ],
+                },
+              ],
+            },
           ],
         },
       ],

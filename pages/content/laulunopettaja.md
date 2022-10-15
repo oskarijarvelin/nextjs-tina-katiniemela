@@ -1,7 +1,7 @@
 ---
-title: Laulunopettaja
+title: Laulunopettaja Kati Niemelä
 blocks:
-  - otsikko: Laulunopettaja Kati Niemelä
+  - otsikko: Laulunopettaja
     sisalto: >-
       Phasellus scelerisque, libero eu finibus rutrum, risus risus accumsan
       libero, nec molestie urna dui a leo.

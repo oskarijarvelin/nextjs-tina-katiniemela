@@ -11,8 +11,6 @@ export default function Home(props) {
     data: props.data,
   });
 
-  console.log(data);
-
   return (
     <Layout title={data.page.title} description={data.page.description}>
       <Content blocks={data.page.blocks} />

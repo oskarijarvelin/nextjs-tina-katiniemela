@@ -34,8 +34,6 @@ export default function Layout({ title, description, children }) {
     setAnchorEl(null);
   }
 
-  console.log(settings)
-
   const StyledMenu = styled((props) => (
     <Menu
       elevation={0}

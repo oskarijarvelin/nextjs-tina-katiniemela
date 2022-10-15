@@ -25,6 +25,16 @@ fragment PageParts on Page {
         title
       }
     }
+    ... on PageBlocksKokemus {
+      kokemus_otsikko
+      kokemus_sisalto
+      kokemus_lista {
+        __typename
+        title
+        ajankohta
+        kuvaus
+      }
+    }
   }
 }
 

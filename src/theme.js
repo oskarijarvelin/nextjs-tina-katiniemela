@@ -44,6 +44,10 @@ const theme = createTheme({
     },
     h6: {
       fontFamily: 'MonteCarlo',
+      fontSize: 23,
+      '@media (min-width:600px)': {
+        fontSize: 25,
+      },
     },
   },
 });
