@@ -50,13 +50,13 @@ type Query {
   document(collection: String, relativePath: String): DocumentNode!
   page(relativePath: String): Page!
   pageConnection(before: String, after: String, first: Float, last: Float, sort: String, filter: PageFilter): PageConnection!
-  global(relativePath: String): Global!
-  globalConnection(before: String, after: String, first: Float, last: Float, sort: String, filter: GlobalFilter): GlobalConnection!
+  settings(relativePath: String): Settings!
+  settingsConnection(before: String, after: String, first: Float, last: Float, sort: String, filter: SettingsFilter): SettingsConnection!
 }
 
 input DocumentFilter {
   page: PageFilter
-  global: GlobalFilter
+  settings: SettingsFilter
 }
 
 type DocumentConnectionEdges {
@@ -82,7 +82,7 @@ type Collection {
   documents(before: String, after: String, first: Float, last: Float, sort: String, filter: DocumentFilter): DocumentConnection!
 }
 
-union DocumentNode = Page | Global
+union DocumentNode = Page | Settings
 
 type PageBlocksHero {
   otsikko: String!
@@ -195,44 +195,52 @@ type PageConnection implements Connection {
   edges: [PageConnectionEdges]
 }
 
-type GlobalMainnavNav {
-  href: String
-  label: String
+type SettingsMainnavNav {
+  url: String
+  title: String
 }
 
-type GlobalMainnav {
-  nav: [GlobalMainnavNav]
+type SettingsMainnav {
+  nav: [SettingsMainnavNav]
 }
 
-type Global implements Node & Document {
-  mainnav: GlobalMainnav
+type Settings implements Node & Document {
+  title: String!
+  sivuston_nimi: String
+  instagram_url: String
+  linkedin_url: String
+  mainnav: SettingsMainnav
   id: ID!
   _sys: SystemInfo!
   _values: JSON!
 }
 
-input GlobalMainnavNavFilter {
-  href: StringFilter
-  label: StringFilter
+input SettingsMainnavNavFilter {
+  url: StringFilter
+  title: StringFilter
 }
 
-input GlobalMainnavFilter {
-  nav: GlobalMainnavNavFilter
+input SettingsMainnavFilter {
+  nav: SettingsMainnavNavFilter
 }
 
-input GlobalFilter {
-  mainnav: GlobalMainnavFilter
+input SettingsFilter {
+  title: StringFilter
+  sivuston_nimi: StringFilter
+  instagram_url: StringFilter
+  linkedin_url: StringFilter
+  mainnav: SettingsMainnavFilter
 }
 
-type GlobalConnectionEdges {
+type SettingsConnectionEdges {
   cursor: String!
-  node: Global
+  node: Settings
 }
 
-type GlobalConnection implements Connection {
+type SettingsConnection implements Connection {
   pageInfo: PageInfo!
   totalCount: Float!
-  edges: [GlobalConnectionEdges]
+  edges: [SettingsConnectionEdges]
 }
 
 type Mutation {
@@ -242,13 +250,13 @@ type Mutation {
   createDocument(collection: String, relativePath: String!, params: DocumentMutation!): DocumentNode!
   updatePage(relativePath: String!, params: PageMutation!): Page!
   createPage(relativePath: String!, params: PageMutation!): Page!
-  updateGlobal(relativePath: String!, params: GlobalMutation!): Global!
-  createGlobal(relativePath: String!, params: GlobalMutation!): Global!
+  updateSettings(relativePath: String!, params: SettingsMutation!): Settings!
+  createSettings(relativePath: String!, params: SettingsMutation!): Settings!
 }
 
 input DocumentMutation {
   page: PageMutation
-  global: GlobalMutation
+  settings: SettingsMutation
 }
 
 input PageBlocksHeroMutation {
@@ -289,17 +297,21 @@ input PageMutation {
   blocks: [PageBlocksMutation]
 }
 
-input GlobalMainnavNavMutation {
-  href: String
-  label: String
+input SettingsMainnavNavMutation {
+  url: String
+  title: String
 }
 
-input GlobalMainnavMutation {
-  nav: [GlobalMainnavNavMutation]
+input SettingsMainnavMutation {
+  nav: [SettingsMainnavNavMutation]
 }
 
-input GlobalMutation {
-  mainnav: GlobalMainnavMutation
+input SettingsMutation {
+  title: String
+  sivuston_nimi: String
+  instagram_url: String
+  linkedin_url: String
+  mainnav: SettingsMainnavMutation
 }
 
 schema {

@@ -50,8 +50,8 @@ query pageConnection($before: String, $after: String, $first: Float, $last: Floa
   }
 }
 
-query global($relativePath: String!) {
-  global(relativePath: $relativePath) {
+query settings($relativePath: String!) {
+  settings(relativePath: $relativePath) {
     ... on Document {
       _sys {
         filename
@@ -63,12 +63,12 @@ query global($relativePath: String!) {
       }
       id
     }
-    ...GlobalParts
+    ...SettingsParts
   }
 }
 
-query globalConnection($before: String, $after: String, $first: Float, $last: Float, $sort: String, $filter: GlobalFilter) {
-  globalConnection(
+query settingsConnection($before: String, $after: String, $first: Float, $last: Float, $sort: String, $filter: SettingsFilter) {
+  settingsConnection(
     before: $before
     after: $after
     first: $first
@@ -96,7 +96,7 @@ query globalConnection($before: String, $after: String, $first: Float, $last: Fl
           }
           id
         }
-        ...GlobalParts
+        ...SettingsParts
       }
     }
   }

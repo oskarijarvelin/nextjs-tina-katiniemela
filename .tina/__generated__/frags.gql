@@ -28,13 +28,17 @@ fragment PageParts on Page {
   }
 }
 
-fragment GlobalParts on Global {
+fragment SettingsParts on Settings {
+  title
+  sivuston_nimi
+  instagram_url
+  linkedin_url
   mainnav {
     __typename
     nav {
       __typename
-      href
-      label
+      url
+      title
     }
   }
 }

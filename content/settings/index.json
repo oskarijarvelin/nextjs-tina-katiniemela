@@ -1,0 +1,26 @@
+{
+  "title": "Yleiset asetukset",
+  "sivuston_nimi": "Kati Niemelä",
+  "instagram_url": "https://www.instagram.com/kaniffi/",
+  "linkedin_url": "https://www.linkedin.com/in/kati-niemel%C3%A4-a81b08250/",
+  "mainnav": {
+    "nav": [
+      {
+        "url": "/",
+        "title": "Etusivu"
+      },
+      {
+        "url": "/cv",
+        "title": "CV"
+      },
+      {
+        "url": "/muusikko",
+        "title": "Muusikko"
+      },
+      {
+        "url": "/laulunopettaja",
+        "title": "Laulunopettaja"
+      }
+    ]
+  }
+}

@@ -1,5 +1,5 @@
-import { defineConfig, defineSchema, RouteMappingPlugin } from "tinacms";
-import { client } from "./__generated__/client";
+import { defineConfig, defineSchema, RouteMappingPlugin } from 'tinacms';
+import { client } from './__generated__/client';
 
 const schema = defineSchema({
   config: {
@@ -11,17 +11,17 @@ const schema = defineSchema({
     token: process.env.TINA_TOKEN,
     media: {
       tina: {
-        mediaRoot: "uploads",
-        publicFolder: "public",
+        mediaRoot: 'uploads',
+        publicFolder: 'public',
       },
     },
   },
   collections: [
     {
-      label: "Sivut",
-      name: "page",
-      path: "pages/content",
-      format: "md",
+      label: 'Sivut',
+      name: 'page',
+      path: 'pages/content',
+      format: 'md',
       ui: {
         filename: {
           readonly: true,
@@ -32,16 +32,23 @@ const schema = defineSchema({
       },
       fields: [
         {
-          name: "title",
-          label: "Otsikko",
-          type: "string",
+          name: 'title',
+          label: 'Otsikko',
+          type: 'string',
           isTitle: true,
           required: true,
+          ui: {
+            validate: value => {
+              if (value?.length > 60) {
+                return "Otsikon tulee olla alle 60 merkkiä pitkä"
+              }
+            },
+          },
         },
         {
-          name: "description",
-          label: "Kuvaus",
-          type: "string",
+          name: 'description',
+          label: 'Kuvaus',
+          type: 'string',
           isBody: true,
           ui: {
             component: 'textarea',
@@ -91,7 +98,7 @@ const schema = defineSchema({
                   name: 'kuvateksti',
                 },
               ],
-            },  
+            },
             {
               name: 'kuva',
               label: 'Kuva',
@@ -107,7 +114,7 @@ const schema = defineSchema({
                   name: 'kuva_kuvateksti',
                 },
               ],
-            },    
+            },
             {
               name: 'palsta',
               label: 'Sisältöpalsta',
@@ -144,76 +151,100 @@ const schema = defineSchema({
                   name: 'palsta_sisalto',
                 },
                 {
-                  type: "object",
-                  label: "Linkit",
-                  name: "palsta_linkit",
+                  type: 'object',
+                  label: 'Linkit',
+                  name: 'palsta_linkit',
                   list: true,
                   ui: {
                     itemProps: (item) => {
                       return { label: item?.title };
                     },
                     defaultItem: {
-                      url: "/",
-                      title: "Etusivu",
+                      url: '/',
+                      title: 'Etusivu',
                     },
                   },
                   fields: [
                     {
-                      type: "string",
-                      label: "URL",
-                      name: "url",
+                      type: 'string',
+                      label: 'URL',
+                      name: 'url',
                     },
                     {
-                      type: "string",
-                      label: "Teksti",
-                      name: "title",
+                      type: 'string',
+                      label: 'Teksti',
+                      name: 'title',
                     },
                   ],
                 },
               ],
-            },  
+            },
           ],
         },
       ],
     },
     {
-      label: "Global",
-      name: "global",
-      path: "content/global",
-      format: "json",
+      label: 'Asetukset',
+      name: 'settings',
+      path: 'content/settings',
+      format: 'json',
       ui: {
-        global: true,
+        title: {
+          readonly: true,
+        },
       },
       fields: [
         {
-          type: "object",
-          label: "Päävalikko",
-          name: "mainnav",
+          name: 'title',
+          label: 'Asetus-sivun otsikko',
+          type: 'string',
+          isTitle: true,
+          required: true,
+        },
+        {
+          type: 'string',
+          label: 'Sivuston nimi',
+          name: 'sivuston_nimi',
+        },
+        {
+          type: 'string',
+          label: 'Instagram URL',
+          name: 'instagram_url',
+        },
+        {
+          type: 'string',
+          label: 'LinkedIn URL',
+          name: 'linkedin_url',
+        },
+        {
+          type: 'object',
+          label: 'Päävalikko',
+          name: 'mainnav',
           fields: [
             {
-              type: "object",
-              label: "Linkit",
-              name: "nav",
+              type: 'object',
+              label: 'Linkit',
+              name: 'nav',
               list: true,
               ui: {
                 itemProps: (item) => {
-                  return { label: item?.label };
+                  return { label: item?.title };
                 },
                 defaultItem: {
-                  href: "home",
-                  label: "Home",
+                  url: '/',
+                  title: 'Etusivu',
                 },
               },
               fields: [
                 {
-                  type: "string",
-                  label: "Link",
-                  name: "href",
+                  type: 'string',
+                  label: 'Linkin osoite',
+                  name: 'url',
                 },
                 {
-                  type: "string",
-                  label: "Label",
-                  name: "label",
+                  type: 'string',
+                  label: 'Linkin teksti',
+                  name: 'title',
                 },
               ],
             },
@@ -231,9 +262,9 @@ export const tinaConfig = defineConfig({
   schema,
   cmsCallback: (cms) => {
     const RouteMapping = new RouteMappingPlugin((collection, document) => {
-      if (["page"].includes(collection.name)) {
-        if (document._sys.filename === "home") {
-          return "/";
+      if (['page'].includes(collection.name)) {
+        if (document._sys.filename === 'home') {
+          return '/';
         } else {
           return `/${document._sys.filename}`;
         }

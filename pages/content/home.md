@@ -1,5 +1,5 @@
 ---
-title: Kati Niemelä
+title: Kati Niemelä - Oululaislähtöinen laulaja ja laulunopettaja
 blocks:
   - otsikko: Kati Niemelä
     sisalto: >-
@@ -37,7 +37,5 @@ blocks:
       Niemelä](https://www.linkedin.com/in/kati-niemel%C3%A4-a81b08250/ "")
     _template: palsta
 ---
-
-
 
 Olen oululaislähtöinen laulaja-lauluntekijä ja laulunopettaja. Opiskelen laulunopettajaksi Jyväskylän ammattikorkeakoulussa.
