@@ -49,13 +49,13 @@ export default function PalstaBlock({ block }) {
         </Box>
         {block.palsta_kuvateksti &&
           <Box sx={{ position: 'absolute', left: { xs: 0, lg: block.palsta_reverse ? 0 : 'unset' }, right: { xs: 'unset', lg: block.palsta_reverse ? 'unset' : 0 }, bottom: { xs: 'unset', lg: 0 }, top: { xs: -4, lg: 'unset' } }}>
-            <Typography sx={{ fontSize: { xs: 11, lg: 14 }, color: '#666', px: { xs: '2px', lg: 0 }, py: { xs: 0, lg: '2px' }, lineHeight: 1, writingMode: { xs: 'unset', lg: 'vertical-rl' }, transform: { xs: 'unset', lg: block.palsta_reverse ? 'unset' : 'rotate(180deg)' } }}>{block.palsta_kuvateksti}</Typography>
+            <Typography sx={{ fontSize: { xs: 11, lg: 14 }, color: '#777', px: { xs: '2px', lg: 0 }, py: { xs: 0, lg: '2px' }, lineHeight: 1, writingMode: { xs: 'unset', lg: 'vertical-rl' }, transform: { xs: 'unset', lg: block.palsta_reverse ? 'unset' : 'rotate(180deg)' } }}>{block.palsta_kuvateksti}</Typography>
           </Box>
         }
       </Box>
       {block.palsta_kuva &&
         <Box sx={{ flex: { xs: '0 0 100%', lg: '0 0 50%' }, pt: { xs: '64px', lg: 0 }, height: { xs: 'auto', lg: '100%' } }}>
-          <img src={block.palsta_kuva} width="100%" height="100%" />
+          <img src={block.palsta_kuva} width="100%" height="100%" alt={ block.palsta_kuvateksti ? block.palsta_kuvateksti : '' } />
         </Box>
       }
     </PalstaBox>

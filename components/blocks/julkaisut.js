@@ -49,7 +49,7 @@ export default function JulkaisutBlock({ block }) {
           <Box key={i} sx={{ display: 'flex', flexWrap: 'wrap', mb: 8 }}>
 
             <Box sx={{ pt: '4px', pb: 3, flex: { xs: '0 0 100%', md: '0 0 240px' }, maxWidth: { xs: '100%', md: '240px' }, width: { xs: '100%', md: '240px' } }}>
-              <img src={j.kuva} />
+              <img src={j.kuva} alt={j.title} />
             </Box>
 
             <Box sx={{ pl: { xs: 3, md: 8 }, flex: { xs: '0 0 100%', md: '0 0 calc(100% - 240px)' }, maxWidth: { xs: '100%', md: 'calc(100% - 240px)' }, width: { xs: '100%', md: 'calc(100% - 240px)' } }}>
@@ -63,14 +63,14 @@ export default function JulkaisutBlock({ block }) {
                 }
                 {j.spotify &&
                   <Typography component="span" sx={{ mr: 3 }}>
-                    <Link href={j?.spotify} target="_blank" rel="noopener" sx={{ color: '#fff', textDecoration: "none", display: 'inline-flex' }}>
+                    <Link href={j?.spotify} target="_blank" rel="noopener" sx={{ color: '#fff', textDecoration: "none", display: 'inline-flex' }} aria-label={j.title + ' Spotifyssä'}>
                       <FaSpotify />
                     </Link>
                   </Typography>
                 }
                 {j.youtube &&
                   <Typography component="span">
-                    <Link href={j?.youtube} target="_blank" rel="noopener" sx={{ color: '#fff', textDecoration: "none", display: 'inline-flex' }}>
+                    <Link href={j?.youtube} target="_blank" rel="noopener" sx={{ color: '#fff', textDecoration: "none", display: 'inline-flex' }} aria-label={j.title + ' YouTubessa'}>
                       <FaYoutube />
                     </Link>
                   </Typography>

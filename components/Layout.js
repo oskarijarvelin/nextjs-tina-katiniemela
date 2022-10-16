@@ -85,12 +85,16 @@ export default function Layout({ title, description, children }) {
             <Box sx={{ display: 'flex' }}>
               {settings.instagram_url &&
                 <Typography color="inherit" sx={{ fontSize: 20, pl: { xs: 2, lg: 4 } }}>
-                  <Link href={settings.instagram_url} target="_blank" rel="noopener" sx={{ color: '#fff', textDecoration: "none", display: 'flex' }}><InstagramIcon /></Link>
+                  <Link href={settings.instagram_url} target="_blank" rel="noopener" sx={{ color: '#fff', textDecoration: "none", display: 'flex' }} aria-label="Linkki Instagram-profiiliin">
+                    <InstagramIcon />
+                  </Link>
                 </Typography>
               }
               {settings.linkedin_url &&
                 <Typography color="inherit" sx={{ fontSize: 20, pl: { xs: 2, lg: 4 } }}>
-                  <Link href={settings.linkedin_url} target="_blank" rel="noopener" sx={{ color: '#fff', textDecoration: "none", display: 'flex' }}><LinkedInIcon /></Link>
+                  <Link href={settings.linkedin_url} target="_blank" rel="noopener" sx={{ color: '#fff', textDecoration: "none", display: 'flex' }} aria-label="Linkki LinkedIn-profiiliin">
+                    <LinkedInIcon />
+                  </Link>
                 </Typography>
               }
             </Box>
