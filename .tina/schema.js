@@ -335,6 +335,60 @@ const schema = defineSchema({
                 },
               ],
             },
+            {
+              name: 'videot',
+              label: 'Videot',
+              ui: {
+                defaultItem: {
+                  videot_otsikko: 'Musiikkivideot',
+                  videot_sisalto: 'Phasellus scelerisque, libero eu finibus rutrum, risus risus accumsan libero, nec molestie urna dui a leo.',
+                },
+              },
+              fields: [
+                {
+                  type: 'string',
+                  label: 'Otsikko',
+                  name: 'videot_otsikko',
+                },
+                {
+                  type: 'rich-text',
+                  label: 'Sisältö',
+                  name: 'videot_sisalto',
+                },
+                {
+                  type: 'object',
+                  label: 'Videot',
+                  name: 'videot_lista',
+                  list: true,
+                  ui: {
+                    itemProps: (item) => {
+                      return { label: item?.title };
+                    },
+                    defaultItem: {
+                      title: 'Video 1',
+                      ajankohta: '2022'
+                    },
+                  },
+                  fields: [
+                    {
+                      type: 'string',
+                      label: 'Teksti',
+                      name: 'title',
+                    },
+                    {
+                      type: 'string',
+                      label: 'Ajankohta',
+                      name: 'ajankohta',
+                    },
+                    {
+                      type: 'string',
+                      label: 'YouTube URL',
+                      name: 'url',
+                    },
+                  ],
+                },
+              ],
+            },
           ],
         },
       ],

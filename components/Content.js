@@ -4,6 +4,7 @@ import KuvaBlock from "./blocks/kuva";
 import PalstaBlock from "./blocks/palsta";
 import KokemusBlock from "./blocks/kokemus";
 import JulkaisutBlock from "./blocks/julkaisut";
+import VideotBlock from "./blocks/videot";
 
 export default function Content({ blocks }) {
   return (
@@ -24,6 +25,9 @@ export default function Content({ blocks }) {
           }
           {(block.__typename == 'PageBlocksJulkaisut') &&
             <JulkaisutBlock block={block} />
+          }
+          {(block.__typename == 'PageBlocksVideot') &&
+            <VideotBlock block={block} />
           }
         </Box>
       ))}

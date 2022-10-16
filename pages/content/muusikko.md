@@ -114,6 +114,25 @@ blocks:
     _template: julkaisut
   - img: /uploads/DSC04273.jpg
     _template: kuva
+  - videot_otsikko: Musiikkivideot
+    videot_sisalto: "Kaikissa videoissa olen vastannut käsikirjoituksesta, ohjauksesta, organisoinnista ja visuaalisuudesta.\_\n\nEpäonnen huhtikuu videon olen myös editoinut itse.&#x20;\n"
+    videot_lista:
+      - title: Ronimus - Epäonnen huhtikuu
+        ajankohta: '2021'
+        url: 'https://www.youtube.com/watch?v=p-ZaMt6IPiI'
+      - title: SweetHard - One of These Nights -cover
+        ajankohta: '2021'
+        url: 'https://www.youtube.com/watch?v=Cdjv8v7dgx0'
+      - title: Ronimus – Minne tiet kuljettaa
+        ajankohta: '2019'
+        url: 'https://www.youtube.com/watch?v=7XK8I47NdoQ'
+      - title: Ronimus - Lennän taas
+        ajankohta: '2018'
+        url: 'https://www.youtube.com/watch?v=DpGYH-tP7B8'
+      - title: Ronimus - Bileet
+        ajankohta: '2018'
+        url: 'https://www.youtube.com/watch?v=bvKDC7BWXss'
+    _template: videot
   - palsta_otsikko: Ota yhteyttä
     palsta_sisalto: >
       **Sähköposti:** [moi@katiniemela.fi](mailto:moi@katiniemela.fi "")
@@ -126,6 +145,7 @@ blocks:
       Niemelä](https://www.linkedin.com/in/kati-niemel%C3%A4-a81b08250/ "")
     _template: palsta
 ---
+
 
 
 

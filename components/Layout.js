@@ -68,7 +68,7 @@ export default function Layout({ title, description, children }) {
         <meta name="description" content={description} />
       </Head>
       <Box sx={{ flexGrow: 1 }}>
-        <AppBar position="fixed" component="header" sx={{ backdropFilter: 'blur(10px)', backgroundColor: 'rgba(0,0,0,.66)', boxShadow: 0 }}>
+        <AppBar position="fixed" component="header" sx={{ backdropFilter: 'blur(6px)', backgroundColor: 'rgba(0,0,0,.66)', boxShadow: 0 }}>
           <Toolbar>
             <Typography variant="h6" component="div" sx={{ flexGrow: 1, fontFamily: 'MonteCarlo', fontSize: 30 }}>
               <Link href="/" sx={{ color: '#fff', textDecoration: 'none' }}>

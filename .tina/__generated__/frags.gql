@@ -54,6 +54,16 @@ fragment PageParts on Page {
         }
       }
     }
+    ... on PageBlocksVideot {
+      videot_otsikko
+      videot_sisalto
+      videot_lista {
+        __typename
+        title
+        ajankohta
+        url
+      }
+    }
   }
 }
 
