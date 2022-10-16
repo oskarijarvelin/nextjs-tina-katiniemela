@@ -5,7 +5,7 @@ blocks:
     sisalto: >-
       Opiskelen laulunopettajaksi Jyväskylän ammattikorkeakoulussa.
       Laulunopetustöitä olen tehnyt kevytyrittäjänä jo vuodesta 2017. 
-    bgImg: /uploads/DSC04431.jpg
+    bgImg: /uploads/kati-rajattu.png
     kuvateksti: 'Kuva: Tuomas Eronen'
     _template: hero
   - palsta_kuva: /uploads/DSC04273.jpg
@@ -25,5 +25,6 @@ blocks:
       Niemelä](https://www.linkedin.com/in/kati-niemel%C3%A4-a81b08250/ "")
     _template: palsta
 ---
+
 
 Opiskelen laulunopettajaksi Jyväskylän ammattikorkeakoulussa. Laulunopetustöitä olen tehnyt kevytyrittäjänä jo vuodesta 2017. 

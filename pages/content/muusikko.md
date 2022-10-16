@@ -6,10 +6,10 @@ blocks:
       Sydämeni sykkii keikkailulle ja esiintymiselle! Olen aina rakastanut
       laulamista ja esiintymistä ja olen iloksi ja onnekseni päässyt erilaisiin
       projekteihin mukaan.
-    bgImg: /uploads/DSC04398.jpg
+    bgImg: /uploads/kati-rajattu2.png
     kuvateksti: 'Kuva: Tuomas Eronen'
     _template: hero
-  - palsta_kuva: /uploads/DSC04273.jpg
+  - palsta_kuva: /uploads/DSC04398.jpg
     palsta_kuvateksti: 'Kuva: Tuomas Eronen'
     palsta_otsikko: Bändiprojektit
     palsta_sisalto: "Lukioaikoina bändimme, jossa olin vokalistina, soitti raskaampaa musiikkia ja samaan aikaan olin työstämässä koulumme Löpöti -musikaalia. Lukion jälkeen lähdin Helsinkiin opintojen perässä ja päädyin soittamaan ja laulamaan omaa musiikkia tekevään suomirockyhtye Ronimukseen sekä cover-yhtye SweetHardiin.\n\nRonimus julkaisi keväällä 2022 levyn Alusta aloitetaan, jossa olen useassa kappaleessa myös tekijäpuolella mukana. Ronimuksen kanssa olen päässyt myös käsikirjoittamaan ja suunnittelemaan musiikkivideoita: Bileet, Lennän taas, Minne tiet kuljettaa sekä Epäonnen huhtikuu.\_\n"
@@ -112,6 +112,8 @@ blocks:
         kuvaus: |
           (säv.\&san. Roy Bertula, sov. Ronimus)
     _template: julkaisut
+  - img: /uploads/DSC04273.jpg
+    _template: kuva
   - palsta_otsikko: Ota yhteyttä
     palsta_sisalto: >
       **Sähköposti:** [moi@katiniemela.fi](mailto:moi@katiniemela.fi "")
