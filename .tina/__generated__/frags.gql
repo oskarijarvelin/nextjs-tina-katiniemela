@@ -35,6 +35,25 @@ fragment PageParts on Page {
         kuvaus
       }
     }
+    ... on PageBlocksJulkaisut {
+      julkaisut_otsikko
+      julkaisut_sisalto
+      julkaisut_lista {
+        __typename
+        kuva
+        title
+        tyyppi
+        ajankohta
+        spotify
+        youtube
+        kuvaus
+        kappaleet {
+          __typename
+          title
+          meta
+        }
+      }
+    }
   }
 }
 

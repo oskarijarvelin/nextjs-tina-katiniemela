@@ -233,6 +233,108 @@ const schema = defineSchema({
                 },
               ],
             },
+            {
+              name: 'julkaisut',
+              label: 'Julkaisut',
+              ui: {
+                defaultItem: {
+                  julkaisut_otsikko: 'Discografia',
+                  julkaisut_sisalto: 'Phasellus scelerisque, libero eu finibus rutrum, risus risus accumsan libero, nec molestie urna dui a leo.',
+                },
+              },
+              fields: [
+                {
+                  type: 'string',
+                  label: 'Otsikko',
+                  name: 'julkaisut_otsikko',
+                },
+                {
+                  type: 'rich-text',
+                  label: 'Sisältö',
+                  name: 'julkaisut_sisalto',
+                },
+                {
+                  type: 'object',
+                  label: 'Julkaisut',
+                  name: 'julkaisut_lista',
+                  list: true,
+                  ui: {
+                    itemProps: (item) => {
+                      return { label: item?.title };
+                    },
+                    defaultItem: {
+                      title: 'Albumi X',
+                      tyyppi: 'Albumi',
+                      ajankohta: '01.01.2022'
+                    },
+                  },
+                  fields: [
+                    {
+                      type: 'image',
+                      label: 'Kuva',
+                      name: 'kuva',
+                    },
+                    {
+                      type: 'string',
+                      label: 'Nimi',
+                      name: 'title',
+                    },
+                    {
+                      type: 'string',
+                      label: 'Tyyppi',
+                      name: 'tyyppi',
+                    },
+                    {
+                      type: 'string',
+                      label: 'Ajankohta',
+                      name: 'ajankohta',
+                    },
+                    {
+                      type: 'string',
+                      label: 'Spotify URL',
+                      name: 'spotify',
+                    },
+                    {
+                      type: 'string',
+                      label: 'YouTube URL',
+                      name: 'youtube',
+                    },
+                    {
+                      name: 'kuvaus',
+                      label: 'Kuvaus',
+                      type: 'rich-text',
+                    },
+                    {
+                      type: 'object',
+                      label: 'Kappaleet',
+                      name: 'kappaleet',
+                      list: true,
+                      ui: {
+                        itemProps: (item) => {
+                          return { label: item?.title };
+                        },
+                        defaultItem: {
+                          title: '1. Laulu',
+                          meta: '(säv.&san. Kati Niemelä)',
+                        },
+                      },
+                      fields: [
+                        {
+                          type: 'string',
+                          label: 'Nimi',
+                          name: 'title',
+                        },
+                        {
+                          type: 'string',
+                          label: 'Meta',
+                          name: 'meta',
+                        },
+                      ],
+                    },
+                  ],
+                },
+              ],
+            },
           ],
         },
       ],

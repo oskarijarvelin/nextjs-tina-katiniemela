@@ -7,8 +7,7 @@ blocks:
     kuvateksti: 'Kuva: Tuomas Eronen'
     _template: hero
   - kokemus_otsikko: Työkokemus
-    kokemus_sisalto: |
-      Tässäpä olennainen työkokemukseni.
+    kokemus_sisalto: ''
     kokemus_lista:
       - title: Pop/jazz laulunopetusta kevytyrittäjänä
         ajankohta: 11/2017 -
@@ -72,16 +71,12 @@ blocks:
           Laulun opettajana: Hanne Kivioja
       - title: Pop & Jazz Konservatorio
         ajankohta: 08/2017 – 12/2021
-        kuvaus: "Laulun perusopetus, syventävinä opintoina laulunkirjoitus\\\nOpettajina: Jenni Ahlsved, Nelli Saarikoski,\_Lotta Rautiainen (laulunkirjoitus)\_\n\n\n\n\n"
+        kuvaus: "Laulun perusopetus, syventävinä opintoina laulunkirjoitus\\\nOpettajina: Jenni Ahlsved, Nelli Saarikoski,\_Lotta Rautiainen (laulunkirjoitus)\_\n"
       - title: Laajasalon opisto
         ajankohta: 08/2019 – 05/2020
-        kuvaus: |+
+        kuvaus: |
           Laulun linja\
           Opettajina: Jussi Liski, Kristiina Kattelus, Väinö Wallenius
-
-
-
-
       - title: Laajasalon opisto
         ajankohta: 08/2017 – 06/2018
         kuvaus: |
@@ -89,23 +84,18 @@ blocks:
           Opettajina: Antti Hyvärinen, Kristiina Kattelus
       - title: Laajasalon opisto
         ajankohta: 08/2016 – 05/2017
-        kuvaus: |+
+        kuvaus: |
           Rytmimusiikin solistilinja\
           Opettajina: Antti Hyvärinen, Kristiina Kattelus
-
-
-
-
       - title: Madetojan musiikkilukio
         ajankohta: 08/2013 – 06/2016
         kuvaus: |
           Ylioppilastutkinto
       - title: Oulun konservatorio
         ajankohta: 11/2003 – 05/2013
-        kuvaus: |+
+        kuvaus: |
           Musiikin perustason päättötodistus, klassinen piano\
           Opettajina: Magdy Spanyi, Hannele Hynninen
-
     _template: kokemus
   - kokemus_otsikko: Muu kokemus
     kokemus_sisalto: ''
@@ -121,15 +111,18 @@ blocks:
           Äänen säröefektin muodostus ja käyttö
       - title: Jussi Syrén - Keikkamyyntikoulutus
         ajankohta: 30.9-1.10.2017
+        kuvaus: ''
       - title: Madetojan musiikkilukion nuorisomusikaali Löpöti
         ajankohta: 01/2015
         kuvaus: |
           Perustuen Pikku Prinssin tarinaan. Rooli: Kettu.
       - title: 'Oulun NMKY:n Nuorisokuoro Oulun Fröökynät ja Lauluyhtye Friidut'
         ajankohta: 2010-2016
-        kuvaus: "1\\. sopraano.\_\n\nToimin myös kuoron puvustonhoitajana (v.2011-14) sekä kuoroneuvoston puheenjohtajana (v.2014-16). Olen myös toiminut muissa vastuutehtävissä mm. lipunkantajana.\_\n\n\n\n"
+        kuvaus: "1\\. sopraano.\_\n\nToimin myös kuoron puvustonhoitajana (v.2011-14) sekä kuoroneuvoston puheenjohtajana (v.2014-16). Olen myös toiminut muissa vastuutehtävissä mm. lipunkantajana.\_\n"
       - title: Oulun Konservatorion lapsikuoro
         ajankohta: 2005-2010
+        kuvaus: ''
     _template: kokemus
 ---
+
 
