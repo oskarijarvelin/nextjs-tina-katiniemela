@@ -1,5 +1,7 @@
 This is a [Tina CMS](https://tina.io/) project.
 
+![Vercel](https://vercelbadge.vercel.app/api/oskarijarvelin/nextjs-tina-katiniemela?style=for-the-badge)
+
 ## Local Development
 
 Install the project's dependencies:
