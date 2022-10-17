@@ -27,16 +27,17 @@ blocks:
     _template: kuva
   - palsta_otsikko: Ota yhteyttä
     palsta_sisalto: >
-      **Sähköposti:** [moi@katiniemela.fi](mailto:moi@katiniemela.fi)
+      **Sähköposti:** [moi@katiniemela.fi](mailto:moi@katiniemela.fi "")
 
 
-      **Instagram:** [@kaniffi](https://www.instagram.com/kaniffi/)
+      **Instagram:** [@kaniffi](https://www.instagram.com/kaniffi/ "")
 
 
       **LinkedIn:** [Kati
-      Niemelä](https://www.linkedin.com/in/kati-niemel%C3%A4-a81b08250/)
+      Niemelä](https://www.linkedin.com/in/kati-niemel%C3%A4-a81b08250/ "")
     _template: palsta
 ---
+
 
 
 Olen oululaislähtöinen laulaja-lauluntekijä ja laulunopettaja. Opiskelen laulunopettajaksi Jyväskylän ammattikorkeakoulussa.
