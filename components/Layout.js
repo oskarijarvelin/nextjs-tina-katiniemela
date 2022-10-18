@@ -61,8 +61,6 @@ export default function Layout({ title, description, children }) {
     },
   }));
 
-  console.log(router)
-
   return (
     <div>
       <Head>
@@ -71,7 +69,6 @@ export default function Layout({ title, description, children }) {
         <meta property="og:title" content={title} />
         <meta property="og:description" content={description} />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content={router.basePath} />
       </Head>
       <Box sx={{ flexGrow: 1 }}>
         <AppBar position="fixed" component="header" sx={{ backdropFilter: 'blur(6px)', backgroundColor: 'rgba(0,0,0,.66)', boxShadow: 0 }}>
