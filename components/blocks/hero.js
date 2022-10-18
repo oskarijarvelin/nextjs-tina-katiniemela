@@ -1,4 +1,5 @@
 import { styled } from '@mui/material/styles';
+import Image from '../Image';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 
@@ -9,15 +10,20 @@ export default function HeroBlock({ block }) {
     flexWrap: 'wrap',
     position: 'relative',
     overflowX: 'hidden',
+    '& .image': {
+      height: '100%',
+    },
     '& img': {
+      height: '100% !important',
       objectFit: 'cover',
+      width: '100%',
     }
   }));
 
   return (
     <HeroBox sx={{ minHeight: { xs: 'auto', lg: '100vh' }, height: { xs: 'auto', lg: '100%' }, maxHeight: { xs: 'auto', lg: '100vh' }, overflow: 'hidden', mb: { xs: 6, lg: '200px' }, position: 'relative' }}>
-      <Box sx={{ flex: { sm: '0 0 100%', lg: '0 0 50%' }, maxHeight: { xs: 'auto', lg: '100vh' }, pt: { xs: '56px', lg: 0 } }}>
-        <img src={block.bgImg} width="100%" height="100%" alt={block.kuvateksti ? block.kuvateksti : ''} />
+      <Box sx={{ flex: { sm: '0 0 100%', lg: '0 0 50%' }, height: { xs: 'auto', lg: '100vh' }, pt: { xs: '56px', lg: 0 } }}>
+        <Image src={block.bgImg} orientation="hero" alt={block.kuvateksti ? block.kuvateksti : ''} />
       </Box>
       <Box sx={{ flex: { sm: '0 0 100%', lg: '0 0 50%' }, display: 'flex', alignItems: 'center', mt: { xs: 0, lg: '64px' }, px: { xs: 4, lg: 14 }, textAlign: 'center', position: 'relative' }}>
         {block.kuvateksti &&

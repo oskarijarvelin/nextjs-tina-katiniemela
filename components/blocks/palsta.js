@@ -1,13 +1,18 @@
 import { TinaMarkdown } from 'tinacms/dist/rich-text'
 import { styled } from '@mui/material/styles';
+import Image from '../Image';
 import Link from '../Link';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 
 const PalstaBox = styled(Box)({
+  '& .image': {
+    height: '100%',
+  },
   '& img': {
+    height: '100% !important',
     objectFit: 'cover',
-    objectPosition: 'top center',
+    width: '100%',
   },
   '& a:not(.linkki)': {
     color: '#AAA',
@@ -55,7 +60,7 @@ export default function PalstaBlock({ block }) {
       </Box>
       {block.palsta_kuva &&
         <Box sx={{ flex: { xs: '0 0 100%', lg: '0 0 50%' }, pt: { xs: '64px', lg: 0 }, height: { xs: 'auto', lg: '100%' } }}>
-          <img src={block.palsta_kuva} width="100%" height="100%" alt={ block.palsta_kuvateksti ? block.palsta_kuvateksti : '' } />
+          <Image src={block.palsta_kuva} orientation="palsta" alt={ block.palsta_kuvateksti ? block.palsta_kuvateksti : '' } />
         </Box>
       }
     </PalstaBox>

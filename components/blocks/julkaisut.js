@@ -2,6 +2,7 @@ import { TinaMarkdown } from 'tinacms/dist/rich-text'
 import { styled } from '@mui/material/styles';
 
 import Link from './../Link'
+import Image from '../Image';
 
 import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
@@ -10,7 +11,7 @@ import Typography from '@mui/material/Typography';
 import { FaSpotify, FaYoutube } from 'react-icons/fa';
 
 const JulkaisutBox = styled(Box)({
-  '& img': {
+  '& .image': {
     maxWidth: '100%',
     height: 'auto',
   },
@@ -49,7 +50,7 @@ export default function JulkaisutBlock({ block }) {
           <Box key={i} sx={{ display: 'flex', flexWrap: 'wrap', mb: 8 }}>
 
             <Box sx={{ pt: '4px', pb: 3, flex: { xs: '0 0 100%', md: '0 0 240px' }, maxWidth: { xs: '100%', md: '240px' }, width: { xs: '100%', md: '240px' } }}>
-              <img src={j.kuva} alt={j.title} />
+              <Image src={j.kuva} orientation="julkaisu" alt={j.title} />
             </Box>
 
             <Box sx={{ pl: { xs: 3, md: 8 }, flex: { xs: '0 0 100%', md: '0 0 calc(100% - 240px)' }, maxWidth: { xs: '100%', md: 'calc(100% - 240px)' }, width: { xs: '100%', md: 'calc(100% - 240px)' } }}>
