@@ -22,7 +22,7 @@ export default function Image({src, orientation, alt}) {
                     <source media="(max-width: 1200px)" srcSet={processUrl(src, 1200, 675)} />
                     <source media="(max-width: 1919px)" srcSet={processUrl(src, 1920, 1080)} />
                     <source media="(min-width: 1920px)" srcSet={processUrl(src, 3840, 2160)} />
-                    <img src={processUrl(src, 480, 270)} alt={alt} loading="lazy" />
+                    <img src={processUrl(src, 480, 270)} alt={alt} width={480} height={270} loading="lazy" />
                 </picture>
             </KuvaBox>
         );
@@ -36,7 +36,7 @@ export default function Image({src, orientation, alt}) {
                     <source media="(max-width: 1200px)" srcSet={processUrl(src, 1200, 900)} />
                     <source media="(max-width: 1919px)" srcSet={processUrl(src, 1920, 1700)} />
                     <source media="(min-width: 1920px)" srcSet={processUrl(src, 3840, 3600)} />
-                    <img src={processUrl(src, 480, 270)} alt={alt} loading="lazy" />
+                    <img src={processUrl(src, 480, 480)} alt={alt} width={480} height={480} />
                 </picture>
             </KuvaBox>
         );
@@ -50,7 +50,7 @@ export default function Image({src, orientation, alt}) {
                     <source media="(max-width: 1200px)" srcSet={processUrl(src, 1200, 900)} />
                     <source media="(max-width: 1919px)" srcSet={processUrl(src, 1920, 1920)} />
                     <source media="(min-width: 1920px)" srcSet={processUrl(src, 3840, 3840)} />
-                    <img src={processUrl(src, 480, 270)} alt={alt} loading="lazy" />
+                    <img src={processUrl(src, 480, 480)} alt={alt} width={480} height={480} loading="lazy" />
                 </picture>
             </KuvaBox>
         );
@@ -62,7 +62,7 @@ export default function Image({src, orientation, alt}) {
                 <picture>
                     <source media="(max-width: 239px)" srcSet={processUrl(src, 240, 240)} />
                     <source media="(in-width: 240px)" srcSet={processUrl(src, 480, 480)} />
-                    <img src={processUrl(src, 480, 480)} alt={alt} loading="lazy" />
+                    <img src={processUrl(src, 480, 480)} alt={alt} width={480} height={480} loading="lazy" />
                 </picture>
             </KuvaBox>
         );
@@ -75,7 +75,7 @@ export default function Image({src, orientation, alt}) {
                 <source media="(max-width: 1200px)" srcSet={processUrl(src, 1200, 675)} />
                 <source media="(max-width: 1919px)" srcSet={processUrl(src, 1920, 1080)} />
                 <source media="(min-width: 1920px)" srcSet={processUrl(src, 3840, 2160)} />
-                <img src={processUrl(src, 480, 270)} alt={alt} loading="lazy" />
+                <img src={processUrl(src, 480, 270)} alt={alt} width={480} height={270} loading="lazy" />
             </picture>
         </KuvaBox>
     );
