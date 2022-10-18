@@ -43,7 +43,4 @@ blocks:
     _template: palsta
 ---
 
-
-
-
 Olen oululaislähtöinen laulaja-lauluntekijä ja laulunopettaja. Opiskelen laulunopettajaksi Jyväskylän ammattikorkeakoulussa.

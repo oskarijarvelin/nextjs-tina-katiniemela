@@ -1,14 +1,11 @@
 import { TinaMarkdown } from 'tinacms/dist/rich-text';
 import { styled } from '@mui/material/styles';
 
-import Link from '../Link';
 import Video from '../Video';
 
 import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
 import Typography from '@mui/material/Typography';
-
-import { FaYoutube } from 'react-icons/fa';
 
 const VideotBox = styled(Box)({
   '& img': {
