@@ -14,11 +14,6 @@ export default class MyDocument extends Document {
           <link rel="shortcut icon" href="/favicon.png" />
           <meta name="emotion-insertion-point" content="" />
           {this.props.emotionStyleTags}
-
-          <link rel="preconnect" href="https://fonts.googleapis.com" />
-          <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="true" />
-          <link href="https://fonts.googleapis.com/css2?family=MonteCarlo&family=Tillana:wght@400;700&display=swap" rel="stylesheet" />
-
         </Head>
         <body>
           <Main />

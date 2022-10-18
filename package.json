@@ -12,6 +12,8 @@
     "@emotion/react": "^11.10.4",
     "@emotion/server": "^11.10.0",
     "@emotion/styled": "^11.10.4",
+    "@fontsource/montecarlo": "^4.5.10",
+    "@fontsource/tillana": "^4.5.10",
     "@mui/icons-material": "^5.10.9",
     "@mui/material": "^5.10.9",
     "@tinacms/auth": "^0.50.4",

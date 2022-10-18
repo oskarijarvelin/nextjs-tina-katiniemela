@@ -5,6 +5,9 @@ import Head from 'next/head';
 import { ThemeProvider } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
 import { CacheProvider } from '@emotion/react';
+import "@fontsource/montecarlo";
+import "@fontsource/tillana/400.css";
+import "@fontsource/tillana/700.css";
 import theme from '../src/theme';
 import createEmotionCache from '../src/createEmotionCache';
 

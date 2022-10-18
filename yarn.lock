@@ -787,6 +787,16 @@
     "@floating-ui/dom" "^0.1.8"
     use-isomorphic-layout-effect "^1.1.1"
 
+"@fontsource/montecarlo@^4.5.10":
+  version "4.5.10"
+  resolved "https://registry.yarnpkg.com/@fontsource/montecarlo/-/montecarlo-4.5.10.tgz#a9d2096eb5125775feca1ecc4fe324a660af8c6a"
+  integrity sha512-OA1kTU25qyX3C+1ff7dwQHp0JF5xgnZ3uF78XLx+NIV1KS6F4NiHXvZUZIo47Wm6fSn2A3yiB/1JPNvLZtakCw==
+
+"@fontsource/tillana@^4.5.10":
+  version "4.5.10"
+  resolved "https://registry.yarnpkg.com/@fontsource/tillana/-/tillana-4.5.10.tgz#dcf37e6bb98e694d3785216b071c796cab97ef11"
+  integrity sha512-cMbdtbYVFMSkRaZsNVPPbxamIWtDwSAqadiZICS0dcOoEeRFDL+yTLMp8US0YLn6+nApoj24YJcAMda91QO6RA==
+
 "@formatjs/ecma402-abstract@1.13.0":
   version "1.13.0"
   resolved "https://registry.npmjs.org/@formatjs/ecma402-abstract/-/ecma402-abstract-1.13.0.tgz"
