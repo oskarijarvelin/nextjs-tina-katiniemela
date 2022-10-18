@@ -8,10 +8,12 @@ blocks:
       pyrkinyt aina kehittämään itseäni. Opiskelen parhaillaan laulunopettajaksi
       Jyväskylän ammattikorkeakoulussa ja laulunopetustöitä olen tehnyt
       kevytyrittäjänä jo vuodesta 2017. 
-    bgImg: /uploads/DSC04273.jpg
+    bgImg: >-
+      https://res.cloudinary.com/dk6xqxjli/image/upload/v1666077473/DSC04273_e9clud.jpg
     kuvateksti: 'Kuva: Tuomas Eronen'
     _template: hero
-  - palsta_kuva: /uploads/DSC04431.jpg
+  - palsta_kuva: >-
+      https://res.cloudinary.com/dk6xqxjli/image/upload/v1666077676/DSC04431_y6eclf.jpg
     palsta_kuvateksti: 'Kuva: Tuomas Eronen'
     palsta_reverse: false
     palsta_otsikko: Kuka minä olen?
@@ -24,7 +26,8 @@ blocks:
       - url: /laulunopettaja
         title: Laulunopettaja
     _template: palsta
-  - img: /uploads/DSC04458.jpg
+  - img: >-
+      https://res.cloudinary.com/dk6xqxjli/image/upload/v1666077676/DSC04458_dwgrzz.jpg
     kuva_kuvateksti: 'Kuva: Tuomas Eronen'
     _template: kuva
   - palsta_otsikko: Ota yhteyttä
@@ -39,6 +42,7 @@ blocks:
       Niemelä](https://www.linkedin.com/in/kati-niemel%C3%A4-a81b08250/ "")
     _template: palsta
 ---
+
 
 
 

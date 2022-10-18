@@ -3,7 +3,8 @@ title: CV
 blocks:
   - otsikko: Curriculum Vitae
     sisalto: ''
-    bgImg: /uploads/DSC04398.jpg
+    bgImg: >-
+      https://res.cloudinary.com/dk6xqxjli/image/upload/v1666077678/DSC04398_uqc6vu.jpg
     kuvateksti: 'Kuva: Tuomas Eronen'
     _template: hero
   - kokemus_otsikko: Työkokemus
@@ -124,6 +125,7 @@ blocks:
         kuvaus: ''
     _template: kokemus
 ---
+
 
 
 

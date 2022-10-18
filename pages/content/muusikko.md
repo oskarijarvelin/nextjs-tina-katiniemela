@@ -6,10 +6,12 @@ blocks:
       Sydämeni sykkii keikkailulle ja esiintymiselle! Olen aina rakastanut
       laulamista ja esiintymistä ja olen iloksi ja onnekseni päässyt erilaisiin
       projekteihin mukaan.
-    bgImg: /uploads/kati-rajattu2.png
+    bgImg: >-
+      https://res.cloudinary.com/dk6xqxjli/image/upload/v1666077234/kati-rajattu2_td2gzo.png
     kuvateksti: 'Kuva: Tuomas Eronen'
     _template: hero
-  - palsta_kuva: /uploads/DSC04398.jpg
+  - palsta_kuva: >-
+      https://res.cloudinary.com/dk6xqxjli/image/upload/v1666077678/DSC04398_uqc6vu.jpg
     palsta_kuvateksti: 'Kuva: Tuomas Eronen'
     palsta_otsikko: Bändiprojektit
     palsta_sisalto: "Lukioaikoina bändimme, jossa olin vokalistina, soitti raskaampaa musiikkia ja samaan aikaan olin työstämässä koulumme Löpöti -musikaalia. Lukion jälkeen lähdin Helsinkiin opintojen perässä ja päädyin soittamaan ja laulamaan omaa musiikkia tekevään suomirockyhtye Ronimukseen sekä cover-yhtye SweetHardiin.\n\nRonimus julkaisi keväällä 2022 levyn Alusta aloitetaan, jossa olen useassa kappaleessa myös tekijäpuolella mukana. Ronimuksen kanssa olen päässyt myös käsikirjoittamaan ja suunnittelemaan musiikkivideoita: Bileet, Lennän taas, Minne tiet kuljettaa sekä Epäonnen huhtikuu.\_\n"
@@ -17,7 +19,8 @@ blocks:
   - julkaisut_otsikko: Discografia
     julkaisut_sisalto: ''
     julkaisut_lista:
-      - kuva: /uploads/ronimus-alustaaloitetaan.jpg
+      - kuva: >-
+          https://res.cloudinary.com/dk6xqxjli/image/upload/v1666077233/ronimus-alustaaloitetaan_kkkjpf.jpg
         title: Alusta aloitetaan
         tyyppi: Albumi
         ajankohta: '2022'
@@ -49,7 +52,8 @@ blocks:
             meta: '(säv. Nico Bertula, san. Kati Niemelä, sov. Ronimus)'
           - title: 11. Vielä jää
             meta: '(säv. Nico Bertula, Kati Niemelä, san. Kati Niemelä, sov. Ronimus)'
-      - kuva: /uploads/ronimus-eijaadaeiliseen.jpg
+      - kuva: >-
+          https://res.cloudinary.com/dk6xqxjli/image/upload/v1666077233/ronimus-eijaadaeiliseen_yihpqr.jpg
         title: Ei jäädä eiliseen
         tyyppi: Single
         ajankohta: '2021'
@@ -57,7 +61,8 @@ blocks:
         youtube: 'https://www.youtube.com/watch?v=_9_dOpqZvbw'
         kuvaus: |
           (säv. Roy Bertula, san. Roy Bertula, Kati Niemelä, sov. Ronimus)
-      - kuva: /uploads/ronimus-tyhmakylmasydan.jpg
+      - kuva: >-
+          https://res.cloudinary.com/dk6xqxjli/image/upload/v1666077234/ronimus-tyhmakylmasydan_bgyhfl.jpg
         title: Tyhmä kylmä sydän
         tyyppi: Single
         ajankohta: '2021'
@@ -66,7 +71,8 @@ blocks:
         kuvaus: >
           (säv. Roy Bertula, Nico Bertula, Kati Niemelä, san. Kati Niemelä, sov.
           Ronimus)
-      - kuva: /uploads/ronimus-epaonnenhuhtikuu.jpg
+      - kuva: >-
+          https://res.cloudinary.com/dk6xqxjli/image/upload/v1666077233/ronimus-epaonnenhuhtikuu_a7vxso.jpg
         title: Epäonnen huhtikuu
         tyyppi: Single
         ajankohta: '2020'
@@ -74,7 +80,8 @@ blocks:
         youtube: 'https://www.youtube.com/watch?v=OISmVOJp-gI'
         kuvaus: |
           (säv. Nico Bertula, san. Kati Niemelä, sov. Ronimus)
-      - kuva: /uploads/ronimus-1500jalkeen.jpg
+      - kuva: >-
+          https://res.cloudinary.com/dk6xqxjli/image/upload/v1666077232/ronimus-1500jalkeen_lietrq.jpg
         title: '15:00 jälkeen'
         tyyppi: EP
         ajankohta: '2020'
@@ -87,7 +94,8 @@ blocks:
             meta: '(säv.&san. Roy Bertula, sov. Ronimus)'
           - title: 3. Lennän taas
             meta: '(säv.&san. Kati Niemelä, sov. Ronimus)'
-      - kuva: /uploads/ronimus-minnetietkuljettaa.jpg
+      - kuva: >-
+          https://res.cloudinary.com/dk6xqxjli/image/upload/v1666077233/ronimus-minnetietkuljettaa_trskal.jpg
         title: Minne tiet kuljettaa
         tyyppi: Single
         ajankohta: '2019'
@@ -95,7 +103,8 @@ blocks:
         youtube: 'https://www.youtube.com/watch?v=7XK8I47NdoQ'
         kuvaus: |
           (säv. Nico Bertula, san. Kati Niemelä, sov. Ronimus)
-      - kuva: /uploads/ronimus-lennantaas.jpg
+      - kuva: >-
+          https://res.cloudinary.com/dk6xqxjli/image/upload/v1666077233/ronimus-lennantaas_n2ku40.jpg
         title: Lennän taas
         tyyppi: Single
         ajankohta: '2018'
@@ -103,7 +112,8 @@ blocks:
         youtube: 'https://www.youtube.com/watch?v=DpGYH-tP7B8'
         kuvaus: |
           (säv.\&san. Kati Niemelä, sov. Ronimus)
-      - kuva: /uploads/ronimus-bileet.jpg
+      - kuva: >-
+          https://res.cloudinary.com/dk6xqxjli/image/upload/v1666077233/ronimus-bileet_gplqps.jpg
         title: Bileet
         tyyppi: Single
         ajankohta: '2018'
@@ -112,7 +122,8 @@ blocks:
         kuvaus: |
           (säv.\&san. Roy Bertula, sov. Ronimus)
     _template: julkaisut
-  - img: /uploads/DSC04273.jpg
+  - img: >-
+      https://res.cloudinary.com/dk6xqxjli/image/upload/v1666077473/DSC04273_e9clud.jpg
     _template: kuva
   - videot_otsikko: Musiikkivideot
     videot_sisalto: "Kaikissa videoissa olen vastannut käsikirjoituksesta, ohjauksesta, organisoinnista ja visuaalisuudesta.\_\n\nEpäonnen huhtikuu videon olen myös editoinut itse.&#x20;\n"
@@ -145,6 +156,7 @@ blocks:
       Niemelä](https://www.linkedin.com/in/kati-niemel%C3%A4-a81b08250/ "")
     _template: palsta
 ---
+
 
 
 
