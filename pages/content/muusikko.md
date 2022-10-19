@@ -14,7 +14,7 @@ blocks:
       https://res.cloudinary.com/dk6xqxjli/image/upload/v1666077678/DSC04398_uqc6vu.jpg
     palsta_kuvateksti: 'Kuva: Tuomas Eronen'
     palsta_otsikko: Bändiprojektit
-    palsta_sisalto: "Lukioaikoina bändimme, jossa olin vokalistina, soitti raskaampaa musiikkia ja samaan aikaan olin työstämässä koulumme Löpöti -musikaalia. Lukion jälkeen lähdin Helsinkiin opintojen perässä ja päädyin soittamaan ja laulamaan omaa musiikkia tekevään suomirockyhtye Ronimukseen sekä cover-yhtye SweetHardiin.\n\nRonimus julkaisi keväällä 2022 levyn Alusta aloitetaan, jossa olen useassa kappaleessa myös tekijäpuolella mukana. Ronimuksen kanssa olen päässyt myös käsikirjoittamaan ja suunnittelemaan musiikkivideoita: Bileet, Lennän taas, Minne tiet kuljettaa sekä Epäonnen huhtikuu.\_\n"
+    palsta_sisalto: "Ronimus julkaisi keväällä 2022 levyn Alusta aloitetaan, jossa olen useassa kappaleessa myös tekijäpuolella mukana soiton ja laulun lisäksi. Ronimuksen kanssa olen päässyt myös käsikirjoittamaan ja suunnittelemaan musiikkivideoita: Bileet, Lennän taas, Minne tiet kuljettaa sekä Epäonnen huhtikuu.\_\n\nBändiin voit tutustua lisää osoitteessa www.ronimus.fi&#x20;\n"
     _template: palsta
   - julkaisut_otsikko: Discografia
     julkaisut_sisalto: ''
@@ -156,6 +156,7 @@ blocks:
       Niemelä](https://www.linkedin.com/in/kati-niemel%C3%A4-a81b08250/ "")
     _template: palsta
 ---
+
 
 
 
