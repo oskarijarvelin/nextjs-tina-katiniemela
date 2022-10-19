@@ -126,7 +126,7 @@ blocks:
       https://res.cloudinary.com/dk6xqxjli/image/upload/v1666077473/DSC04273_e9clud.jpg
     _template: kuva
   - videot_otsikko: Musiikkivideot
-    videot_sisalto: "Kaikissa videoissa olen vastannut käsikirjoituksesta, ohjauksesta, organisoinnista ja visuaalisuudesta.\_\n\nEpäonnen huhtikuu videon olen myös editoinut itse.&#x20;\n"
+    videot_sisalto: "Kaikissa videoissa olen vastannut käsikirjoituksesta, ohjauksesta, organisoinnista ja visuaalisuudesta.\_\n\nEpäonnen huhtikuu videossa olen vastannut myös editoinnista.\n"
     videot_lista:
       - title: Ronimus - Epäonnen huhtikuu
         ajankohta: '2021'
@@ -156,6 +156,7 @@ blocks:
       Niemelä](https://www.linkedin.com/in/kati-niemel%C3%A4-a81b08250/ "")
     _template: palsta
 ---
+
 
 
 
