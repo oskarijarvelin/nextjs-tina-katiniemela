@@ -21,7 +21,7 @@ export default function HeroBlock({ block }) {
   }));
 
   return (
-    <HeroBox sx={{ minHeight: { xs: 'auto', lg: '100vh' }, height: { xs: 'auto', lg: '100%' }, maxHeight: { xs: 'auto', lg: '100vh' }, overflow: 'hidden', mb: { xs: 6, lg: '200px' }, position: 'relative' }}>
+    <HeroBox sx={{ minHeight: { xs: 'auto', lg: '100vh' }, height: { xs: 'auto', lg: '100%' }, overflow: 'hidden', mb: { xs: 6, lg: '200px' }, position: 'relative' }}>
       <Box sx={{ flex: { sm: '0 0 100%', lg: '0 0 50%' }, height: { xs: 'auto', lg: '100vh' }, pt: { xs: '56px', lg: 0 } }}>
         <Image src={block.bgImg} orientation="hero" alt={block.kuvateksti ? block.kuvateksti : ''} />
       </Box>
