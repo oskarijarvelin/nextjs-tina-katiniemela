@@ -1,5 +1,5 @@
 ---
-title: Kati Niemelä - Oululaislähtöinen laulaja ja laulunopettaja
+title: Kati Niemelä - Laulaja-lauluntekijä ja laulunopettaja
 blocks:
   - otsikko: Kati Niemelä
     sisalto: Muusikko - Laulaja - Lauluntekijä - Pop/Jazz Laulunopettaja
@@ -40,4 +40,5 @@ blocks:
 
 
 
-Olen oululaislähtöinen laulaja-lauluntekijä ja laulunopettaja. Opiskelen laulunopettajaksi Jyväskylän ammattikorkeakoulussa.
+
+Oululaislähtöinen laulaja-lauluntekijä ja laulunopettaja. Opiskelen laulunopettajaksi Jyväskylän ammattikorkeakoulussa.
