@@ -22,11 +22,15 @@ blocks:
       levyn Alusta aloitetaan, jossa olen mukana myös biisinkirjoittajana.
       Ronimuksen kanssa olen päässyt myös käsikirjoittamaan ja toteuttamaan
       musiikkivideoita. Videot löytyvät tämän sivun alaosasta. Bändiin voit
-      tutustua lisää osoitteessa: [www.ronimus.fi](www.ronimus.fi)  \
+      tutustua lisää osoitteessa: [www.ronimus.fi](www.ronimus.fi "")  \
 
-      [Ronimus-Facebook  ](https://www.facebook.com/ronimusofficial)\
+      [Ronimus-Facebook  ](https://www.facebook.com/ronimusofficial "")\
 
-      [Ronimus-Instagram](https://www.instagram.com/ronimusofficial/)\
+      [Ronimus-Instagram](https://www.instagram.com/ronimusofficial/ "")\
+
+      \
+
+      \
 
       IIST SIDE SINGERS\
 
@@ -35,9 +39,11 @@ blocks:
       yksityistilaisuuksissa, kuin suuremmissa tapahtumissa kuten Auto- ja
       Liikennegaala. Settilistassamme on suuria balladeja sekä meneviä
       potpureita. Mikäli haluat meidät keikalle, lähetä viesti niin räätälöidään
-      tapahtumaasi sopiva kokonaisuus! [Iist Side Singers-Facebook](https://www.facebook.com/IistSideSingersOfficial)  \
+      tapahtumaasi sopiva kokonaisuus! [Iist Side
+      Singers-Facebook](https://www.facebook.com/IistSideSingersOfficial "")  \
 
-      [Iist Side Singers-Instagram](https://www.instagram.com/iistsidesingers/)
+      [Iist Side Singers-Instagram](https://www.instagram.com/iistsidesingers/
+      "")
     _template: palsta
   - julkaisut_otsikko: Discografia
     julkaisut_sisalto: ''
@@ -179,6 +185,7 @@ blocks:
       Niemelä](https://www.linkedin.com/in/kati-niemel%C3%A4-a81b08250/ "")
     _template: palsta
 ---
+
 
 
 
