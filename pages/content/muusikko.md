@@ -17,7 +17,7 @@ blocks:
     palsta_sisalto: >
       RONIMUS\
 
-      Ronimuksessa olen toiminut vuodesta 2016 lähtien
+      Suomirock-yhtye Ronimuksessa olen toiminut vuodesta 2016 lähtien
       laulaja/kosketinsoittajana sekä keikkamyyjänä. Julkaisimme keväällä 2022
       levyn Alusta aloitetaan, jossa olen mukana myös biisinkirjoittajana.
       Ronimuksen kanssa olen päässyt myös käsikirjoittamaan ja toteuttamaan
