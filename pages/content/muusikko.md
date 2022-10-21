@@ -177,7 +177,7 @@ blocks:
     _template: videot
   - palsta_otsikko: Ota yhteyttä
     palsta_sisalto: >
-      **Sähköposti:** [moi@katiniemela.fi](mailto:moi@katiniemela.fi "")
+      **Sähköposti:** [info@katiniemela.fi](mailto:katini19@gmail.com)
 
 
       **Instagram:** [@kaniffi](https://www.instagram.com/kaniffi/ "")
