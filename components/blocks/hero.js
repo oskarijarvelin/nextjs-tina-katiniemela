@@ -10,9 +10,6 @@ export default function HeroBlock({ block }) {
     flexWrap: 'wrap',
     position: 'relative',
     overflowX: 'hidden',
-    '& .image': {
-      height: '100%',
-    },
     '& img': {
       height: '100% !important',
       objectFit: 'cover',
