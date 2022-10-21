@@ -24,7 +24,7 @@ blocks:
       musiikkivideoita. Videot löytyvät tämän sivun alaosasta. Bändiin voit
       tutustua lisää osoitteessa [www.ronimus.fi](www.ronimus.fi) tai
       [Ronimus-facebook](https://www.facebook.com/ronimusofficial) tai
-      Ronimus-instagram
+      [Ronimus-instagram](https://www.instagram.com/ronimusofficial/)
 
 
       IIST SIDE SINGERS\
