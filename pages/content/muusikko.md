@@ -14,7 +14,25 @@ blocks:
       https://res.cloudinary.com/dk6xqxjli/image/upload/v1666077678/DSC04398_uqc6vu.jpg
     palsta_kuvateksti: 'Kuva: Tuomas Eronen'
     palsta_otsikko: Bändiprojektit
-    palsta_sisalto: "Ronimus julkaisi keväällä 2022 levyn Alusta aloitetaan, jossa olen useassa kappaleessa myös tekijäpuolella mukana soiton ja laulun lisäksi. Ronimuksen kanssa olen päässyt myös käsikirjoittamaan ja suunnittelemaan musiikkivideoita: Bileet, Lennän taas, Minne tiet kuljettaa sekä Epäonnen huhtikuu.\_\n\nBändiin voit tutustua lisää osoitteessa www.ronimus.fi&#x20;\n"
+    palsta_sisalto: >
+      RONIMUS\
+
+      Ronimuksessa olen toiminut vuodesta 2016 lähtien
+      laulaja/kosketinsoittajana sekä keikkamyyjänä. Julkaisimme keväällä 2022
+      levyn Alusta aloitetaan, jossa olen mukana myös biisinkirjoittajana.
+      Ronimuksen kanssa olen päässyt myös käsikirjoittamaan ja toteuttamaan
+      musiikkivideoita. Videot löytyvät tämän sivun alaosasta. Bändiin voit
+      tutustua lisää osoitteessa www.ronimus.fi tai FB, IG @ronimusofficial
+
+
+      IIST SIDE SINGERS\
+
+      Lauluyhtye Iist Side Singers on tällä hetkellä ainoa aktiivinen
+      kokoonpano, jossa olen mukana. Yhtyeemme on keikkaillut niin pienissä
+      yksityistilaisuuksissa, kuin suuremmissa tapahtumissa kuten Auto- ja
+      Liikennegaala. Settilistassamme on suuria balladeja sekä meneviä
+      potpureita. Mikäli haluat meidät keikalle, lähetä viesti niin räätälöidään
+      tapahtumaasi sopiva kokonaisuus! FB, IG: @IistSideSingers
     _template: palsta
   - julkaisut_otsikko: Discografia
     julkaisut_sisalto: ''
