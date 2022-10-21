@@ -22,8 +22,9 @@ blocks:
       levyn Alusta aloitetaan, jossa olen mukana myös biisinkirjoittajana.
       Ronimuksen kanssa olen päässyt myös käsikirjoittamaan ja toteuttamaan
       musiikkivideoita. Videot löytyvät tämän sivun alaosasta. Bändiin voit
-      tutustua lisää osoitteessa [www.ronimus.fi](www.ronimus.fi) tai FB, IG
-      @ronimusofficial
+      tutustua lisää osoitteessa [www.ronimus.fi](www.ronimus.fi) tai
+      [Ronimus-facebook](https://www.facebook.com/ronimusofficial) tai
+      Ronimus-instagram
 
 
       IIST SIDE SINGERS\
