@@ -1,5 +1,5 @@
 ---
-title: Kati Niemelä - Oululaislähtöinen laulaja ja laulunopettaja
+title: Kati Niemelä - Laulaja-lauluntekijä ja laulunopettaja
 blocks:
   - otsikko: Kati Niemelä
     sisalto: Muusikko - Laulaja - Lauluntekijä - Pop/Jazz Laulunopettaja
@@ -27,7 +27,7 @@ blocks:
     _template: kuva
   - palsta_otsikko: Ota yhteyttä
     palsta_sisalto: >
-      **Sähköposti:** [moi@katiniemela.fi](mailto:moi@katiniemela.fi "")
+      **Sähköposti:** [info@katiniemela.fi](mailto:katini19@gmail.com "")
 
 
       **Instagram:** [@kaniffi](https://www.instagram.com/kaniffi/ "")
@@ -40,4 +40,5 @@ blocks:
 
 
 
-Olen oululaislähtöinen laulaja-lauluntekijä ja laulunopettaja. Opiskelen laulunopettajaksi Jyväskylän ammattikorkeakoulussa.
+
+Oululaislähtöinen laulaja-lauluntekijä ja laulunopettaja. Opiskelen laulunopettajaksi Jyväskylän ammattikorkeakoulussa.
