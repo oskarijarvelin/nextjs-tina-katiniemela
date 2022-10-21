@@ -12,7 +12,7 @@ blocks:
     palsta_kuvateksti: 'Kuva: Tuomas Eronen'
     palsta_reverse: false
     palsta_otsikko: Kuka minä olen?
-    palsta_sisalto: "Olen oululaislähtöinen laulaja-lauluntekijä ja laulunopettaja. Jo nuoresta iästä asti olen aina tiennyt musiikin olevan elämänpolkuni ja olen pyrkinyt aina kehittämään itseäni. Opiskelen parhaillaan laulunopettajaksi Jyväskylän ammattikorkeakoulussa ja laulunopetustöitä olen tehnyt kevytyrittäjänä jo vuodesta 2017.&#x20;\n\nSydämeni sykkii keikkailulle ja esiintymiselle! Olen aina rakastanut laulamista ja esiintymistä ja olen iloksi ja onnekseni päässyt erilaisiin projekteihin mukaan. Lukioaikoina bändimme, jossa olin vokalistina, soitti raskaampaa musiikkia ja samaan aikaan olin työstämässä koulumme Löpöti -musikaalia.&#x20;\n\nLukion jälkeen lähdin Helsinkiin opintojen perässä Laajasalon opistoon ja päädyin myös mukaan omaa musiikkia tekevään suomirockyhtye Ronimukseen, Lauluyhtye Iist Side Singersiin sekä myöhemmin cover-yhtye SweetHardiin. Vuonna 2021 lähdin Helsingistä Jyväskylään opiskelemaan laulunopettajaksi ja tällä hetkellä päiväni ovat täynnä opintoja, omia lauluoppilaita sekä ihan tavallista arkea.\_\n"
+    palsta_sisalto: "Olen oululaislähtöinen, nykyään Jyväskyläläinen, laulaja-lauluntekijä ja laulunopettaja. Jo nuoresta iästä asti olen aina tiennyt musiikin olevan elämänpolkuni ja olen pyrkinyt aina kehittämään itseäni. Opiskelen parhaillaan laulunopettajaksi Jyväskylän ammattikorkeakoulussa ja laulunopetustöitä olen tehnyt kevytyrittäjänä jo vuodesta 2017.&#x20;\n\nSydämeni sykkii keikkailulle ja esiintymiselle! Olen aina rakastanut laulamista ja esiintymistä ja olen iloksi ja onnekseni päässyt erilaisiin projekteihin mukaan. Lukioaikoina bändimme, jossa olin vokalistina, soitti raskaampaa musiikkia ja samaan aikaan olin työstämässä koulumme Löpöti -musikaalia.&#x20;\n\nLukion jälkeen lähdin Helsinkiin opintojen perässä Laajasalon opistoon ja päädyin myös mukaan omaa musiikkia tekevään suomirockyhtye Ronimukseen, Lauluyhtye Iist Side Singersiin sekä myöhemmin cover-yhtye SweetHardiin. Vuonna 2021 lähdin Helsingistä Jyväskylään opiskelemaan laulunopettajaksi ja tällä hetkellä päiväni ovat täynnä opintoja, omia lauluoppilaita sekä ihan tavallista arkea.\_\n"
     palsta_linkit:
       - url: /cv
         title: CV
@@ -37,6 +37,7 @@ blocks:
       Niemelä](https://www.linkedin.com/in/kati-niemel%C3%A4-a81b08250/ "")
     _template: palsta
 ---
+
 
 
 
