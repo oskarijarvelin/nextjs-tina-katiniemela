@@ -13,7 +13,7 @@ blocks:
       - title: Pop/jazz laulunopetusta kevytyrittäjänä
         ajankohta: 11/2017 -
         kuvaus: ''
-      - title: Lauluyhtye Iist Side Singers / Laajasalon opisto
+      - title: 'Lauluyhtye Iist Side Singers '
         ajankohta: 01/2017 –
         kuvaus: |
           1\. sopraano
@@ -125,6 +125,7 @@ blocks:
         kuvaus: ''
     _template: kokemus
 ---
+
 
 
 
