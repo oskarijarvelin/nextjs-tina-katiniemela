@@ -10,6 +10,9 @@ export default function HeroBlock({ block }) {
     flexWrap: 'wrap',
     position: 'relative',
     overflowX: 'hidden',
+    '& .image': {
+      height: '100%',
+    },
     '& img': {
       height: '100% !important',
       objectFit: 'cover',
@@ -19,7 +22,7 @@ export default function HeroBlock({ block }) {
 
   return (
     <HeroBox sx={{ minHeight: { xs: 'auto', lg: '100vh' }, height: { xs: 'auto', lg: '100%' }, overflow: 'hidden', mb: { xs: 6, lg: '200px' }, position: 'relative' }}>
-      <Box sx={{ flex: { sm: '0 0 100%', lg: '0 0 50%' }, height: { xs: 'auto', lg: '100vh' }, pt: { xs: '56px', lg: 0 } }}>
+      <Box sx={{ flex: { sm: '0 0 100%', lg: '0 0 50%' }, height: 'auto', pt: { xs: '56px', lg: 0 } }}>
         <Image src={block.bgImg} orientation="hero" alt={block.kuvateksti ? block.kuvateksti : ''} />
       </Box>
       <Box sx={{ flex: { sm: '0 0 100%', lg: '0 0 50%' }, display: 'flex', alignItems: 'center', mt: { xs: 0, lg: '64px' }, px: { xs: 4, lg: 14 }, textAlign: 'center', position: 'relative' }}>
