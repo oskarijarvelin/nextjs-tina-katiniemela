@@ -3,9 +3,9 @@ title: Muusikko Kati Niemelä
 blocks:
   - otsikko: Muusikko
     sisalto: >-
-      Sydämeni sykkii keikkailulle ja esiintymiselle! Olen aina rakastanut
-      laulamista ja esiintymistä ja olen iloksi ja onnekseni päässyt erilaisiin
-      projekteihin mukaan.
+      Sydämeni sykkii keikkailulle ja esiintymiselle! Keikkakokemusta minulla on
+      kertynyt monipuolisesti niin bändien kuin lauluyhtyeiden kera. Mikäli
+      haluat minut mukaan omaan projektiisi, laita rohkeasti viestiä! 
     bgImg: >-
       https://res.cloudinary.com/dk6xqxjli/image/upload/v1666077234/kati-rajattu2_td2gzo.png
     kuvateksti: 'Kuva: Tuomas Eronen'
@@ -156,6 +156,7 @@ blocks:
       Niemelä](https://www.linkedin.com/in/kati-niemel%C3%A4-a81b08250/ "")
     _template: palsta
 ---
+
 
 
 
