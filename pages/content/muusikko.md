@@ -36,7 +36,11 @@ blocks:
       yksityistilaisuuksissa, kuin suuremmissa tapahtumissa kuten Auto- ja
       Liikennegaala. Settilistassamme on suuria balladeja sekä meneviä
       potpureita. Mikäli haluat meidät keikalle, lähetä viesti niin räätälöidään
-      tapahtumaasi sopiva kokonaisuus! FB, IG: @IistSideSingers
+      tapahtumaasi sopiva kokonaisuus! \
+
+      [Iist Side Singers-Facebook]()\
+
+      [Iist Side Singers-Instagram](https://www.instagram.com/iistsidesingers/)
     _template: palsta
   - julkaisut_otsikko: Discografia
     julkaisut_sisalto: ''
