@@ -26,14 +26,7 @@ blocks:
 
       [Ronimus-Facebook  ](https://www.facebook.com/ronimusofficial)\
 
-      [Ronimus-Instagram\
-
-      \
-
-      ](https://www.instagram.com/ronimusofficial/)
-
-
-      \
+      [Ronimus-Instagram](https://www.instagram.com/ronimusofficial/)\
 
       IIST SIDE SINGERS\
 
@@ -42,10 +35,7 @@ blocks:
       yksityistilaisuuksissa, kuin suuremmissa tapahtumissa kuten Auto- ja
       Liikennegaala. Settilistassamme on suuria balladeja sekä meneviä
       potpureita. Mikäli haluat meidät keikalle, lähetä viesti niin räätälöidään
-      tapahtumaasi sopiva kokonaisuus! [\
-
-      Iist Side Singers-Facebook
-      ](https://www.facebook.com/IistSideSingersOfficial)  \
+      tapahtumaasi sopiva kokonaisuus! [Iist Side Singers-Facebook](https://www.facebook.com/IistSideSingersOfficial)  \
 
       [Iist Side Singers-Instagram](https://www.instagram.com/iistsidesingers/)
     _template: palsta
