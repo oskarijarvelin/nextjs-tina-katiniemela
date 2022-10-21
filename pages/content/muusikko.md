@@ -5,7 +5,7 @@ blocks:
     sisalto: >-
       Sydämeni sykkii keikkailulle ja esiintymiselle! Keikkakokemusta minulla on
       kertynyt monipuolisesti niin bändien kuin lauluyhtyeiden kera. Mikäli
-      haluat minut mukaan omaan projektiisi, laita rohkeasti viestiä! 
+      haluat minut mukaan omaan projektiisi, laita rohkeasti viestiä!
     bgImg: >-
       https://res.cloudinary.com/dk6xqxjli/image/upload/v1666077234/kati-rajattu2_td2gzo.png
     kuvateksti: 'Kuva: Tuomas Eronen'
@@ -177,7 +177,7 @@ blocks:
     _template: videot
   - palsta_otsikko: Ota yhteyttä
     palsta_sisalto: >
-      **Sähköposti:** [info@katiniemela.fi](mailto:katini19@gmail.com)
+      **Sähköposti:** [info@katiniemela.fi](mailto:katini19@gmail.com "")
 
 
       **Instagram:** [@kaniffi](https://www.instagram.com/kaniffi/ "")
@@ -187,6 +187,7 @@ blocks:
       Niemelä](https://www.linkedin.com/in/kati-niemel%C3%A4-a81b08250/ "")
     _template: palsta
 ---
+
 
 
 
