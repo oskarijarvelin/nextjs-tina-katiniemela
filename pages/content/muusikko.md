@@ -22,7 +22,8 @@ blocks:
       levyn Alusta aloitetaan, jossa olen mukana myös biisinkirjoittajana.
       Ronimuksen kanssa olen päässyt myös käsikirjoittamaan ja toteuttamaan
       musiikkivideoita. Videot löytyvät tämän sivun alaosasta. Bändiin voit
-      tutustua lisää osoitteessa www.ronimus.fi tai FB, IG @ronimusofficial
+      tutustua lisää osoitteessa [www.ronimus.fi ](www.ronimus.fi)tai FB, IG
+      @ronimusofficial
 
 
       IIST SIDE SINGERS\
@@ -174,6 +175,7 @@ blocks:
       Niemelä](https://www.linkedin.com/in/kati-niemel%C3%A4-a81b08250/ "")
     _template: palsta
 ---
+
 
 
 
