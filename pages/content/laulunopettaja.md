@@ -31,4 +31,5 @@ blocks:
 
 
 
-Opiskelen laulunopettajaksi Jyväskylän ammattikorkeakoulussa. Laulunopetustöitä olen tehnyt kevytyrittäjänä jo vuodesta 2017. 
+
+Opiskelen pop/jazz laulunopettajaksi Jyväskylän ammattikorkeakoulussa. Laulunopetustöitä olen tehnyt kevytyrittäjänä jo vuodesta 2017. 
