@@ -20,9 +20,10 @@ blocks:
       Suomirock-yhtye Ronimuksessa olen toiminut vuodesta 2016 lähtien
       laulaja/kosketinsoittajana sekä keikkamyyjänä. Julkaisimme keväällä 2022
       levyn Alusta aloitetaan, jossa olen mukana myös biisinkirjoittajana.
-      Ronimuksen kanssa olen päässyt myös käsikirjoittamaan ja toteuttamaan
-      musiikkivideoita. Videot löytyvät tämän sivun alaosasta. Bändiin voit
-      tutustua lisää osoitteessa: [www.ronimus.fi](www.ronimus.fi "")  \
+      Julkaisun jälkeen jäimme tauolle. Ronimuksen kanssa olen päässyt myös
+      käsikirjoittamaan ja toteuttamaan musiikkivideoita. Videot löytyvät tämän
+      sivun alaosasta. Bändiin voit tutustua lisää osoitteessa:
+      [www.ronimus.fi](www.ronimus.fi "")  \
 
       [Ronimus-Facebook  ](https://www.facebook.com/ronimusofficial "")\
 
@@ -36,9 +37,9 @@ blocks:
 
       Lauluyhtye Iist Side Singers on tällä hetkellä ainoa aktiivinen
       kokoonpano, jossa olen mukana. Yhtyeemme on keikkaillut niin pienissä
-      yksityistilaisuuksissa, kuin suuremmissa tapahtumissa kuten Auto- ja
-      Liikennegaala. Settilistassamme on suuria balladeja sekä meneviä
-      potpureita. Mikäli haluat meidät keikalle, lähetä viesti niin räätälöidään
+      yksityistilaisuuksissa, kuin suuremmissa tapahtumissa, kuten Auto- ja
+      Liikennegaala. Settilistassamme on suuria balladeja sekä meneviä sikermiä.
+      Mikäli haluat meidät keikalle, lähetä viesti niin räätälöidään
       tapahtumaasi sopiva kokonaisuus!\
 
       &#x20;[Iist Side
