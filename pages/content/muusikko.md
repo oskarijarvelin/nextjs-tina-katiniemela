@@ -19,8 +19,8 @@ blocks:
 
       Suomirock-yhtye Ronimuksessa olen toiminut vuodesta 2016 lähtien
       laulaja/kosketinsoittajana sekä keikkamyyjänä. Julkaisimme keväällä 2022
-      levyn Alusta aloitetaan, jossa olen mukana myös biisinkirjoittajana.
-      Julkaisun jälkeen jäimme tauolle. Ronimuksen kanssa olen päässyt myös
+      levyn Alusta aloitetaan, jossa olen mukana myös biisinkirjoittajana. Levyn
+      julkaisun jälkeen bändi jäi tauolle. Ronimuksen kanssa olen päässyt myös
       käsikirjoittamaan ja toteuttamaan musiikkivideoita. Videot löytyvät tämän
       sivun alaosasta. Bändiin voit tutustua lisää osoitteessa:
       [www.ronimus.fi](www.ronimus.fi "")  \
@@ -188,6 +188,7 @@ blocks:
       Niemelä](https://www.linkedin.com/in/kati-niemel%C3%A4-a81b08250/ "")
     _template: palsta
 ---
+
 
 
 
