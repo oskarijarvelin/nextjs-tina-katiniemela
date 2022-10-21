@@ -37,7 +37,7 @@ const PalstaBox = styled(Box)({
 
 export default function PalstaBlock({ block }) {
   return (
-    <PalstaBox sx={{ display: 'flex', flexWrap: 'wrap', flexDirection: { xs: 'column-reverse', lg: block.palsta_reverse ? 'row-reverse' : 'row' }, justifyContent: 'center', height: { xs: 'auto', lg: block.palsta_kuva ? '100vh' : 'auto' }, overflow: 'hidden', my: { xs: 6, lg: '200px' } }}>
+    <PalstaBox sx={{ display: 'flex', flexWrap: 'wrap', flexDirection: { xs: 'column-reverse', lg: block.palsta_reverse ? 'row-reverse' : 'row' }, justifyContent: 'center', minHeight: { xs: 'auto', lg: block.palsta_kuva ? '100vh' : 'auto' }, overflow: 'hidden', my: { xs: 6, lg: '200px' } }}>
       <Box sx={{ flex: { xs: '0 0 100%', lg: '0 0 50%' }, display: 'flex', alignItems: 'center', mt: { xs: 0, lg: '64px' }, px: { xs: 4, lg: 12 }, position: 'relative' }}>
         <Box sx={{ textAlign: block.palsta_kuva ? 'left' : 'center', width: '100%' }}>
           <Typography variant="h2" sx={{ fontSize: { xs: '4rem', lg: '7rem' }, mt: { xs: 4, lg: 0 }, mb: { xs: 4, lg: 8 } }}>{block.palsta_otsikko}</Typography>
@@ -59,7 +59,7 @@ export default function PalstaBlock({ block }) {
         }
       </Box>
       {block.palsta_kuva &&
-        <Box sx={{ flex: { xs: '0 0 100%', lg: '0 0 50%' }, pt: { xs: '64px', lg: 0 }, height: { xs: 'auto', lg: '100%' } }}>
+        <Box sx={{ flex: { xs: '0 0 100%', lg: '0 0 50%' }, pt: { xs: '64px', lg: 0 }, height: 'auto' }}>
           <Image src={block.palsta_kuva} orientation="palsta" alt={ block.palsta_kuvateksti ? block.palsta_kuvateksti : '' } />
         </Box>
       }
