@@ -38,8 +38,8 @@ blocks:
       Lauluyhtye Iist Side Singers on tällä hetkellä ainoa aktiivinen
       kokoonpano, jossa olen mukana. Yhtyeemme on keikkaillut niin pienissä
       yksityistilaisuuksissa, kuin suuremmissa tapahtumissa, kuten Auto- ja
-      Liikennegaala. Settilistassamme on suuria balladeja sekä meneviä sikermiä.
-      Mikäli haluat meidät keikalle, lähetä viesti niin räätälöidään
+      Liikennegaalassa. Settilistassamme on suuria balladeja sekä meneviä
+      sikermiä. Mikäli haluat meidät keikalle, lähetä viesti niin räätälöidään
       tapahtumaasi sopiva kokonaisuus!\
 
       &#x20;[Iist Side
