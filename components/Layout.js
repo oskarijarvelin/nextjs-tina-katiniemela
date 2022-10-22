@@ -145,8 +145,8 @@ export default function Layout({ title, description, children }) {
               }}
             >
               {settings.mainnav.nav.map((item, index) => (
-                <MenuItem key={index} onClick={closeMenu}>
-                  <Link href={item.url} sx={{ color: '#fff', textDecoration: (router.asPath == item.url) ? "underline" : "none" }}>{item.title}</Link>
+                <MenuItem key={index} onClick={closeMenu} sx={{ p: 0 }}>
+                  <Link href={item.url} sx={{ px: 2, py: 1, width: '100%', color: '#fff', transition: 'background-color .4s ease', '&:hover': { backgroundColor: 'rgba(255,255,255,.05)' }, textDecoration: (router.asPath == item.url) ? "underline" : "none" }}>{item.title}</Link>
                 </MenuItem>
               ))}
             </StyledMenu>
