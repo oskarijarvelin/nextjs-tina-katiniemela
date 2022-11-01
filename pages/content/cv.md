@@ -104,7 +104,7 @@ blocks:
       - title: Nunnia ja Konnia -musikaali.
         ajankohta: 2022-2023
         kuvaus: |
-          Rooli: Sisar Irene.\
+          Rooli: Joey \
           Jyväskylän ammattikorkeakoulu
       - title: 'Sara Strömmer: Steaming Effects Workshop'
         ajankohta: 11.10.2017
@@ -125,6 +125,7 @@ blocks:
         kuvaus: ''
     _template: kokemus
 ---
+
 
 
 
