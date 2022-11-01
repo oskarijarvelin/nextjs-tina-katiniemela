@@ -104,7 +104,7 @@ blocks:
       - title: Nunnia ja Konnia -musikaali.
         ajankohta: 2022-2023
         kuvaus: |
-          Rooli: Joey \
+          Rooli: Joey (sekä Nunna ensemble)\
           Jyväskylän ammattikorkeakoulu
       - title: 'Sara Strömmer: Steaming Effects Workshop'
         ajankohta: 11.10.2017
