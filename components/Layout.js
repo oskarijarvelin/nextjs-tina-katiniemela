@@ -79,11 +79,13 @@ export default function Layout({ title, description, children }) {
       <Box sx={{ flexGrow: 1 }}>
         <AppBar position="fixed" component="header" sx={{ backdropFilter: 'blur(6px)', backgroundColor: 'rgba(0,0,0,.66)', boxShadow: 0 }}>
           <Toolbar>
-            <Typography variant="h6" component="div" sx={{ flexGrow: 1, fontFamily: 'MonteCarlo', fontSize: 30 }}>
-              <Link href="/" sx={{ color: '#fff', textDecoration: 'none' }}>
-                {settings.sivuston_nimi}
-              </Link>
-            </Typography>
+            <NaviBox sx={{ flexGrow: 1 }}>
+              <Typography variant="h6" component="div" sx={{ flexGrow: 1, fontFamily: 'MonteCarlo', fontSize: 30 }}>
+                <Link href="/" sx={{ color: '#fff', textDecoration: 'none' }}>
+                  {settings.sivuston_nimi}
+                </Link>
+              </Typography>
+            </NaviBox>
             <NaviBox sx={{ display: { xs: 'none', lg: 'flex' } }}>
               {settings.mainnav.nav.map((item, index) => (
                 <Typography key={index} color="inherit" sx={{ fontSize: 20, pl: 4 }}>
@@ -162,7 +164,7 @@ export default function Layout({ title, description, children }) {
       <Box component="main">{children}</Box>
       <Box component="footer">
         <Typography sx={{ py: 4, fontSize: 14, textAlign: 'center', color: '#AAA' }} >
-          &copy; 2022 {settings.sivuston_nimi}
+          &copy; 2022 - {new Date().getFullYear()} {settings.sivuston_nimi}
         </Typography>
       </Box>
     </div>
