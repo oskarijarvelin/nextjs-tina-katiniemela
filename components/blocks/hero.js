@@ -31,7 +31,7 @@ export default function HeroBlock({ block }) {
             <Typography sx={{ fontSize: { xs: 11, lg: 14 }, color: '#777', px: { xs: '2px', lg: 0 }, py: '3px', lineHeight: 1, writingMode: { xs: 'unset', lg: 'vertical-rl' } }}>{block.kuvateksti}</Typography>
           </Box>
         }
-        <Box>
+        <Box sx={{ minWidth: "100%" }}>
           <Typography variant="h1" sx={{ fontSize: { xs: '5rem', lg: '8rem' }, mt: { xs: 8, lg: 0 }, mb: { xs: 4, lg: 8 } }}>{block.otsikko}</Typography>
           <Typography sx={{ mb: 4, fontSize: { sm: 22, lg: 25 } }}>{block.sisalto}</Typography>
         </Box>

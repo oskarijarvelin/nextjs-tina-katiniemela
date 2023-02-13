@@ -33,6 +33,6 @@
     "eslint-config-next": "^13.1.6"
   },
   "resolutions": {
-    "@headlessui/react": "latest"
+    "@headlessui/react": "1.4.1"
   }
 }
