@@ -1,4 +1,4 @@
-import { TinaMarkdown } from 'tinacms/dist/rich-text'
+import { TinaMarkdown } from 'tinacms/dist/rich-text';
 import { styled } from '@mui/material/styles';
 import Image from '../Image';
 import Link from '../Link';
@@ -22,13 +22,13 @@ const PalstaBox = styled(Box)({
   '& a:not(.linkki):hover': {
     color: '#FFF',
   },
-  '& a.linkki': {
+  '& .linkki': {
     color: '#FFF',
     textDecoration: 'none',
     paddingRight: 10,
     transition: 'padding .3s ease, color .3s ease',
   },
-  '& a.linkki:hover': {
+  '& .linkki:hover': {
     color: '#CCC',
     paddingLeft: 10,
     paddingRight: 0,

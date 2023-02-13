@@ -34,6 +34,12 @@ export default function Layout({ title, description, children }) {
     setAnchorEl(null);
   }
 
+  const NaviBox = styled(Box)({
+    '& a': {
+      textDecoration: 'none',
+    }
+  });
+
   const StyledMenu = styled((props) => (
     <Menu
       elevation={0}
@@ -78,13 +84,13 @@ export default function Layout({ title, description, children }) {
                 {settings.sivuston_nimi}
               </Link>
             </Typography>
-            <Box sx={{ display: { xs: 'none', lg: 'flex' } }}>
+            <NaviBox sx={{ display: { xs: 'none', lg: 'flex' } }}>
               {settings.mainnav.nav.map((item, index) => (
                 <Typography key={index} color="inherit" sx={{ fontSize: 20, pl: 4 }}>
-                  <Link href={item.url} sx={{ color: '#fff', textDecoration: (router.asPath == item.url) ? "underline" : "none" }}>{item.title}</Link>
+                  <Link href={item.url} passHref sx={{ color: '#fff', textDecoration: (router.asPath == item.url) ? "underline" : "none" }}>{item.title}</Link>
                 </Typography>
               ))}
-            </Box>
+            </NaviBox>
             <Box sx={{ display: 'flex' }}>
               {settings.instagram_url &&
                 <Typography color="inherit" sx={{ fontSize: 20, pl: { xs: 2, lg: 4 } }}>
