@@ -471,7 +471,7 @@ export default config = defineConfig({
   cmsCallback: (cms) => {
     const RouteMapping = new RouteMappingPlugin((collection, document) => {
       if (['page'].includes(collection.name)) {
-        if (document._sys.filename === 'home') {
+        if (document._sys.filename === 'home' ) {
           return '/';
         } else {
           return `/${document._sys.filename}`;
