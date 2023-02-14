@@ -1,4 +1,3 @@
-import TinaProvider from "../.tina/components/TinaDynamicProvider";
 import * as React from 'react';
 import PropTypes from 'prop-types';
 import Head from 'next/head';
@@ -25,9 +24,7 @@ export default function MyApp(props) {
       <ThemeProvider theme={theme}>
         {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
         <CssBaseline />
-        <TinaProvider>
-          <Component {...pageProps} />
-        </TinaProvider>
+        <Component {...pageProps} />
       </ThemeProvider>
     </CacheProvider>
   );

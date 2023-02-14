@@ -1,21 +1,6 @@
-import { defineConfig, defineSchema, RouteMappingPlugin } from 'tinacms';
-import { client } from './__generated__/client';
+import { defineConfig, RouteMappingPlugin } from 'tinacms';
 
-const schema = defineSchema({
-  config: {
-    clientId: process.env.NEXT_PUBLIC_TINA_CLIENT_ID,
-    branch:
-      process.env.NEXT_PUBLIC_TINA_BRANCH ||
-      process.env.NEXT_PUBLIC_VERCEL_GIT_COMMIT_REF ||
-      process.env.HEAD,
-    token: process.env.TINA_TOKEN,
-    media: {
-      loadCustomStore: async () => {
-        const pack = await import("next-tinacms-cloudinary");
-        return pack.TinaCloudCloudinaryMediaStore;
-      },
-    },
-  },
+const schema = {
   collections: [
     {
       label: 'Sivut',
@@ -463,13 +448,26 @@ const schema = defineSchema({
       ],
     },
   ],
-});
+};
 
-export default schema;
-
-export const tinaConfig = defineConfig({
-  client,
-  schema,
+export default config = defineConfig({
+  schema: schema,
+  clientId: process.env.NEXT_PUBLIC_TINA_CLIENT_ID,
+  branch:
+    process.env.NEXT_PUBLIC_TINA_BRANCH ||
+    process.env.NEXT_PUBLIC_VERCEL_GIT_COMMIT_REF ||
+    process.env.HEAD,
+  token: process.env.TINA_TOKEN,
+  media: {
+    loadCustomStore: async () => {
+      const pack = await import("next-tinacms-cloudinary");
+      return pack.TinaCloudCloudinaryMediaStore;
+    },
+  },
+  build: {
+    publicFolder: "public",
+    outputFolder: "admin"
+  },
   cmsCallback: (cms) => {
     const RouteMapping = new RouteMappingPlugin((collection, document) => {
       if (['page'].includes(collection.name)) {
