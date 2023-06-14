@@ -101,10 +101,10 @@ blocks:
   - kokemus_otsikko: Muu kokemus
     kokemus_sisalto: ''
     kokemus_lista:
-      - title: Nunnia ja Konnia -musikaali.
+      - title: Nunnia ja Konnia -musikaali
         ajankohta: 2022-2023
         kuvaus: |
-          Rooli: Joey (sekä Nunna ensemble)\
+          Roolit: Joey, Sisar Maria Irene \
           Jyväskylän ammattikorkeakoulu
       - title: 'Sara Strömmer: Steaming Effects Workshop'
         ajankohta: 11.10.2017
@@ -125,6 +125,7 @@ blocks:
         kuvaus: ''
     _template: kokemus
 ---
+
 
 
 
