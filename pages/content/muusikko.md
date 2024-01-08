@@ -3,9 +3,11 @@ title: Muusikko Kati Niemelä
 blocks:
   - otsikko: Muusikko
     sisalto: >-
-      Sydämeni sykkii keikkailulle ja esiintymiselle! Keikkakokemusta minulla on
-      kertynyt monipuolisesti niin bändien kuin lauluyhtyeiden kera. Mikäli
-      haluat minut mukaan omaan projektiisi, laita rohkeasti viestiä!
+      Keikkakokemusta minulla on kertynyt monipuolisesti eri kokoonpanoista ja
+      projekteista.
+
+      Tilaa minut tapahtumaasi niin räätälöidään sinulle sopiva paketti!
+      Yhteystiedot sivun alaosassa. 
     bgImg: >-
       https://res.cloudinary.com/dk6xqxjli/image/upload/v1666077234/kati-rajattu2_td2gzo.png
     kuvateksti: 'Kuva: Tuomas Eronen'
@@ -63,8 +65,7 @@ blocks:
       [Iist Side Singers-Instagram](https://www.instagram.com/iistsidesingers/)
 
 
-      \
-
+      \\
 
 
       RONIMUS  (ei-aktiivinen)\
@@ -79,7 +80,7 @@ blocks:
 
       [Ronimus-Facebook  ](https://www.facebook.com/ronimusofficial)\
 
-      [Ronimus-Instagram](https://www.instagram.com/ronimusofficial/)\
+      [Ronimus-Instagram](https://www.instagram.com/ronimusofficial/)\\
     _template: palsta
   - julkaisut_otsikko: Discografia
     julkaisut_sisalto: ''
@@ -221,6 +222,7 @@ blocks:
       Niemelä](https://www.linkedin.com/in/kati-niemel%C3%A4-a81b08250/)
     _template: palsta
 ---
+
 
 
 
