@@ -26,11 +26,14 @@ blocks:
 
 
       Lukion jälkeen lähdin Helsinkiin opintojen perässä Laajasalon opistoon ja
-      päädyin mukaan omaa musiikkia tekevään suomirockyhtye Ronimukseen,
-      Lauluyhtye Iist Side Singersiin sekä myöhemmin cover-yhtye SweetHardiin.
-      Vuonna 2021 lähdin Helsingistä Jyväskylään opiskelemaan laulunopettajaksi
-      ja tällä hetkellä päiväni ovat täynnä opintoja, omia lauluoppilaita,
-      säveltämistä sekä ihan tavallista arkea.
+      päädyin mukaan suomirockyhtye Ronimukseen ja Lauluyhtye Iist Side
+      Singersiin. Vuonna 2021 lähdin Helsingistä Jyväskylään opiskelemaan
+      laulunopettajaksi ja tänä vuotena oma artistiura Kaniffi saa alkunsa. Saan
+      tehdä töitä upean bändin kanssa ja ensimmäinen keikka on luvassa 17.2.
+      Popparissa.  \
+
+      Päiväni ovatkin siis täynnä opintoja, omia lauluoppilaita, säveltämistä,
+      bändihommia sekä ihan tavallista arkea. 
     palsta_linkit:
       - url: /cv
         title: CV
@@ -55,6 +58,7 @@ blocks:
       Niemelä](https://www.linkedin.com/in/kati-niemel%C3%A4-a81b08250/)
     _template: palsta
 ---
+
 
 
 
