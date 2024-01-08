@@ -15,7 +15,7 @@ blocks:
   - palsta_kuva: >-
       https://res.cloudinary.com/dk6xqxjli/image/upload/v1666077678/DSC04398_uqc6vu.jpg
     palsta_kuvateksti: 'Kuva: Tuomas Eronen'
-    palsta_otsikko: Projektit
+    palsta_otsikko: Kokoonpanot
     palsta_sisalto: >
       Voit tilata minut keikalle haluamaasi tapahtumaan, haluamallasi
       kokoonpanolla.\
@@ -62,8 +62,7 @@ blocks:
       [Iist Side Singers-Instagram](https://www.instagram.com/iistsidesingers/)
 
 
-      \
-
+      \\
 
 
       RONIMUS  (ei-aktiivinen)\
