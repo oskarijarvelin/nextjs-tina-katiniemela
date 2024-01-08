@@ -13,9 +13,61 @@ blocks:
   - palsta_kuva: >-
       https://res.cloudinary.com/dk6xqxjli/image/upload/v1666077678/DSC04398_uqc6vu.jpg
     palsta_kuvateksti: 'Kuva: Tuomas Eronen'
-    palsta_otsikko: Bändiprojektit
+    palsta_otsikko: Projektit
     palsta_sisalto: >
-      RONIMUS\
+      Voit tilata minut keikalle haluamaasi tapahtumaan, haluamallasi
+      kokoonpanolla. Räätälöidään juuri sinulle sopiva paketti! Yhteystiedot
+      sivun alaosassa. \
+
+      \
+
+      \
+
+      KANIFFI\
+
+      Oma taiteilijanimi sekä artistiura näki päivänvalon 2024 vuoden alussa.
+      Suomipop/rock artistina haluan välittää tunteita ja tarinoita. Olen saanut
+      sovittaa säveltämäni kappaleet upean bändini kanssa ja ensimmäinen keikka
+      on luvassa 17.2.2024 Popparissa. \
+
+      Facebook: @kaniffivirallinen\
+
+      Instagram: @kaniffi\
+
+      \
+
+      \
+
+      KANIFFI DUO\
+
+      Tämä duo valloittaa cover-keikoilla! Kitaristin kanssa soitamme kaksin
+      rakastamiamme suomipop/rock kappaleita. Koostamme settilistan tapahtuman
+      luonteen mukaisesti ja voit tilata meidät esiintymään pieniin ja suuriin
+      tapahtumiin. \
+
+      \
+
+      \
+
+      IIST SIDE SINGERS\
+
+      Lauluyhtye Iist Side Singers on keikkaillut niin pienissä
+      yksityistilaisuuksissa, kuin suuremmissa tapahtumissa, kuten Auto- ja
+      Liikennegaalassa. Settilistassamme on suuria balladeja sekä meneviä
+      sikermiä. Mikäli haluat meidät keikalle, lähetä viesti niin räätälöidään
+      tapahtumaasi sopiva kokonaisuus!\
+
+      [Iist Side
+      Singers-Facebook](https://www.facebook.com/IistSideSingersOfficial)  \
+
+      [Iist Side Singers-Instagram](https://www.instagram.com/iistsidesingers/)
+
+
+      \
+
+
+
+      RONIMUS  (ei-aktiivinen)\
 
       Suomirock-yhtye Ronimuksessa olen toiminut vuodesta 2016 lähtien
       laulaja/kosketinsoittajana sekä keikkamyyjänä. Julkaisimme keväällä 2022
@@ -28,21 +80,6 @@ blocks:
       [Ronimus-Facebook  ](https://www.facebook.com/ronimusofficial)\
 
       [Ronimus-Instagram](https://www.instagram.com/ronimusofficial/)\
-
-      \
-
-      \
-
-      IIST SIDE SINGERS\
-
-      Lauluyhtye Iist Side Singers on tällä hetkellä ainoa aktiivinen
-      kokoonpano, jossa olen mukana. Yhtyeemme on keikkaillut niin pienissä
-      yksityistilaisuuksissa, kuin suuremmissa tapahtumissa, kuten Auto- ja
-      Liikennegaalassa. Settilistassamme on suuria balladeja sekä meneviä
-      sikermiä. Mikäli haluat meidät keikalle, lähetä viesti niin räätälöidään
-      tapahtumaasi sopiva kokonaisuus!\
-       [Iist Side Singers-Facebook](https://www.facebook.com/IistSideSingersOfficial)  \
-      [Iist Side Singers-Instagram](https://www.instagram.com/iistsidesingers/)
     _template: palsta
   - julkaisut_otsikko: Discografia
     julkaisut_sisalto: ''
@@ -184,6 +221,7 @@ blocks:
       Niemelä](https://www.linkedin.com/in/kati-niemel%C3%A4-a81b08250/)
     _template: palsta
 ---
+
 
 
 
