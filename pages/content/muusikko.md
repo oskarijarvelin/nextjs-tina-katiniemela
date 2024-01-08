@@ -18,14 +18,11 @@ blocks:
     palsta_otsikko: Projektit
     palsta_sisalto: >
       Voit tilata minut keikalle haluamaasi tapahtumaan, haluamallasi
-      kokoonpanolla. Räätälöidään juuri sinulle sopiva paketti! Yhteystiedot
-      sivun alaosassa. \
+      kokoonpanolla.\
 
       \
 
-      \
-
-      KANIFFI\
+      **KANIFFI**\
 
       Oma taiteilijanimi sekä artistiura näki päivänvalon 2024 vuoden alussa.
       Suomipop/rock artistina haluan välittää tunteita ja tarinoita. Olen saanut
@@ -40,7 +37,7 @@ blocks:
 
       \
 
-      KANIFFI DUO\
+      **KANIFFI DUO**\
 
       Tämä duo valloittaa cover-keikoilla! Kitaristin kanssa soitamme kaksin
       rakastamiamme suomipop/rock kappaleita. Koostamme settilistan tapahtuman
@@ -51,7 +48,7 @@ blocks:
 
       \
 
-      IIST SIDE SINGERS\
+      **IIST SIDE SINGERS**\
 
       Lauluyhtye Iist Side Singers on keikkaillut niin pienissä
       yksityistilaisuuksissa, kuin suuremmissa tapahtumissa, kuten Auto- ja
@@ -65,7 +62,8 @@ blocks:
       [Iist Side Singers-Instagram](https://www.instagram.com/iistsidesingers/)
 
 
-      \\
+      \
+
 
 
       RONIMUS  (ei-aktiivinen)\
