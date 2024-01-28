@@ -11,7 +11,7 @@ blocks:
     bgImg: /uploads/JMo-2023-33.jpg
     kuvateksti: 'Kuva: Jan-Kristian Moilanen'
     _template: hero
-  - palsta_kuva: /uploads/DSC04398_uqc6vu.jpg
+  - palsta_kuva: /uploads/JMo-2023-139.jpg
     palsta_kuvateksti: 'Kuva: Tuomas Eronen'
     palsta_otsikko: Kokoonpanot
     palsta_sisalto: >
@@ -60,10 +60,9 @@ blocks:
       [Iist Side Singers-Instagram](https://www.instagram.com/iistsidesingers/)
 
 
-      \\
+      \
 
-
-      RONIMUS  (ei-aktiivinen)\
+      **RONIMUS  (ei-aktiivinen)**\
 
       Suomirock-yhtye Ronimuksessa olen toiminut vuodesta 2016 lähtien
       laulaja/kosketinsoittajana sekä keikkamyyjänä. Julkaisimme keväällä 2022
@@ -75,7 +74,7 @@ blocks:
 
       [Ronimus-Facebook  ](https://www.facebook.com/ronimusofficial)\
 
-      [Ronimus-Instagram](https://www.instagram.com/ronimusofficial/)\\
+      [Ronimus-Instagram](https://www.instagram.com/ronimusofficial/)
     _template: palsta
   - julkaisut_otsikko: Discografia
     julkaisut_sisalto: ''
