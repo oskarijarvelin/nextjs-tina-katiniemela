@@ -12,7 +12,7 @@ blocks:
     kuvateksti: 'Kuva: Jan-Kristian Moilanen'
     _template: hero
   - palsta_kuva: /uploads/jmo-cropattu.png
-    palsta_kuvateksti: 'Kuva: Tuomas Eronen'
+    palsta_kuvateksti: 'Kuva: Jan-Kristian Moilanen'
     palsta_otsikko: Kokoonpanot
     palsta_sisalto: >
       Voit tilata minut keikalle haluamaasi tapahtumaan, haluamallasi
@@ -209,6 +209,7 @@ blocks:
       Niemelä](https://www.linkedin.com/in/kati-niemel%C3%A4-a81b08250/)
     _template: palsta
 ---
+
 
 
 
