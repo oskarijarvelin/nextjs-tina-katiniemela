@@ -26,13 +26,12 @@ blocks:
       sovittaa säveltämäni kappaleet upean bändini kanssa ja ensimmäinen keikka
       on luvassa 17.2.2024 Popparissa. \
 
-      Facebook: @kaniffivirallinen\
+      Facebook: [@kaniffivirallinen\
 
-      Instagram: @kaniffi\
+      ](https://www.facebook.com/kaniffivirallinen)Instagram: @kaniffi
 
 
-
-      ![](/uploads/kaniffi-final-large-syvatty-inv.png)
+      ![](/uploads/kaniffi-final-large-syvatty-inv-PIENI.png)
 
 
       \
@@ -211,6 +210,7 @@ blocks:
       Niemelä](https://www.linkedin.com/in/kati-niemel%C3%A4-a81b08250/)
     _template: palsta
 ---
+
 
 
 
