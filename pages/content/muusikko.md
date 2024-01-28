@@ -16,7 +16,11 @@ blocks:
     palsta_otsikko: Kokoonpanot
     palsta_sisalto: >
       Voit tilata minut keikalle haluamaasi tapahtumaan, haluamallasi
-      kokoonpanolla.\
+      kokoonpanolla.
+
+
+      ![](/uploads/kaniffi-final-large-syvatty-inv.png)
+
 
       \
 
@@ -209,6 +213,7 @@ blocks:
       Niemelä](https://www.linkedin.com/in/kati-niemel%C3%A4-a81b08250/)
     _template: palsta
 ---
+
 
 
 
