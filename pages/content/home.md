@@ -3,12 +3,10 @@ title: Kati Niemelä - Laulaja-lauluntekijä ja laulunopettaja
 blocks:
   - otsikko: Kati Niemelä
     sisalto: Artisti - Laulaja - Lauluntekijä - Pop/Jazz Laulunopettaja
-    bgImg: >-
-      https://res.cloudinary.com/dk6xqxjli/image/upload/v1666077473/DSC04273_e9clud.jpg
+    bgImg: /uploads/DSC04273.jpg
     kuvateksti: 'Kuva: Tuomas Eronen'
     _template: hero
-  - palsta_kuva: >-
-      https://res.cloudinary.com/dk6xqxjli/image/upload/v1666077676/DSC04431_y6eclf.jpg
+  - palsta_kuva: /uploads/kati-rajattu.png
     palsta_kuvateksti: 'Kuva: Tuomas Eronen'
     palsta_reverse: false
     palsta_otsikko: Kuka minä olen?
@@ -42,13 +40,12 @@ blocks:
       - url: /laulunopettaja
         title: Laulunopettaja
     _template: palsta
-  - img: >-
-      https://res.cloudinary.com/dk6xqxjli/image/upload/v1666077676/DSC04458_dwgrzz.jpg
+  - img: /uploads/DSC04458_dwgrzz.jpg
     kuva_kuvateksti: 'Kuva: Tuomas Eronen'
     _template: kuva
   - palsta_otsikko: Ota yhteyttä
     palsta_sisalto: >
-      **Sähköposti:** [info@katiniemela.fi](mailto\:katini19@gmail.com)
+      **Sähköposti:** [info@katiniemela.fi](mailto:katini19@gmail.com)
 
 
       **Instagram:** [@kaniffi](https://www.instagram.com/kaniffi/)
@@ -58,6 +55,7 @@ blocks:
       Niemelä](https://www.linkedin.com/in/kati-niemel%C3%A4-a81b08250/)
     _template: palsta
 ---
+
 
 
 
