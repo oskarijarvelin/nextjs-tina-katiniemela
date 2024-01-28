@@ -8,12 +8,10 @@ blocks:
 
       Tilaa minut tapahtumaasi niin räätälöidään sinulle sopiva paketti!
       Yhteystiedot sivun alaosassa. 
-    bgImg: >-
-      https://res.cloudinary.com/dk6xqxjli/image/upload/v1666077234/kati-rajattu2_td2gzo.png
+    bgImg: /uploads/kati-rajattu2_td2gzo.png
     kuvateksti: 'Kuva: Tuomas Eronen'
     _template: hero
-  - palsta_kuva: >-
-      https://res.cloudinary.com/dk6xqxjli/image/upload/v1666077678/DSC04398_uqc6vu.jpg
+  - palsta_kuva: /uploads/DSC04398_uqc6vu.jpg
     palsta_kuvateksti: 'Kuva: Tuomas Eronen'
     palsta_otsikko: Kokoonpanot
     palsta_sisalto: >
@@ -82,8 +80,7 @@ blocks:
   - julkaisut_otsikko: Discografia
     julkaisut_sisalto: ''
     julkaisut_lista:
-      - kuva: >-
-          https://res.cloudinary.com/dk6xqxjli/image/upload/v1666077233/ronimus-alustaaloitetaan_kkkjpf.jpg
+      - kuva: /uploads/ronimus-alustaaloitetaan_kkkjpf.jpg
         title: Alusta aloitetaan
         tyyppi: Albumi
         ajankohta: '2022'
@@ -115,8 +112,7 @@ blocks:
             meta: '(säv. Nico Bertula, san. Kati Niemelä, sov. Ronimus)'
           - title: 11. Vielä jää
             meta: '(säv. Nico Bertula, Kati Niemelä, san. Kati Niemelä, sov. Ronimus)'
-      - kuva: >-
-          https://res.cloudinary.com/dk6xqxjli/image/upload/v1666077233/ronimus-eijaadaeiliseen_yihpqr.jpg
+      - kuva: /uploads/ronimus-eijaadaeiliseen_yihpqr.jpg
         title: Ei jäädä eiliseen
         tyyppi: Single
         ajankohta: '2021'
@@ -124,8 +120,7 @@ blocks:
         youtube: 'https://www.youtube.com/watch?v=_9_dOpqZvbw'
         kuvaus: |
           (säv. Roy Bertula, san. Roy Bertula, Kati Niemelä, sov. Ronimus)
-      - kuva: >-
-          https://res.cloudinary.com/dk6xqxjli/image/upload/v1666077234/ronimus-tyhmakylmasydan_bgyhfl.jpg
+      - kuva: /uploads/ronimus-tyhmakylmasydan_bgyhfl.jpg
         title: Tyhmä kylmä sydän
         tyyppi: Single
         ajankohta: '2021'
@@ -134,8 +129,7 @@ blocks:
         kuvaus: >
           (säv. Roy Bertula, Nico Bertula, Kati Niemelä, san. Kati Niemelä, sov.
           Ronimus)
-      - kuva: >-
-          https://res.cloudinary.com/dk6xqxjli/image/upload/v1666077233/ronimus-epaonnenhuhtikuu_a7vxso.jpg
+      - kuva: /uploads/ronimus-epaonnenhuhtikuu_a7vxso.jpg
         title: Epäonnen huhtikuu
         tyyppi: Single
         ajankohta: '2020'
@@ -143,8 +137,7 @@ blocks:
         youtube: 'https://www.youtube.com/watch?v=OISmVOJp-gI'
         kuvaus: |
           (säv. Nico Bertula, san. Kati Niemelä, sov. Ronimus)
-      - kuva: >-
-          https://res.cloudinary.com/dk6xqxjli/image/upload/v1666077232/ronimus-1500jalkeen_lietrq.jpg
+      - kuva: /uploads/ronimus-1500jalkeen_lietrq.jpg
         title: '15:00 jälkeen'
         tyyppi: EP
         ajankohta: '2020'
@@ -157,8 +150,7 @@ blocks:
             meta: '(säv.&san. Roy Bertula, sov. Ronimus)'
           - title: 3. Lennän taas
             meta: '(säv.&san. Kati Niemelä, sov. Ronimus)'
-      - kuva: >-
-          https://res.cloudinary.com/dk6xqxjli/image/upload/v1666077233/ronimus-minnetietkuljettaa_trskal.jpg
+      - kuva: /uploads/ronimus-minnetietkuljettaa_trskal.jpg
         title: Minne tiet kuljettaa
         tyyppi: Single
         ajankohta: '2019'
@@ -166,8 +158,7 @@ blocks:
         youtube: 'https://www.youtube.com/watch?v=7XK8I47NdoQ'
         kuvaus: |
           (säv. Nico Bertula, san. Kati Niemelä, sov. Ronimus)
-      - kuva: >-
-          https://res.cloudinary.com/dk6xqxjli/image/upload/v1666077233/ronimus-lennantaas_n2ku40.jpg
+      - kuva: /uploads/ronimus-lennantaas_n2ku40.jpg
         title: Lennän taas
         tyyppi: Single
         ajankohta: '2018'
@@ -175,8 +166,7 @@ blocks:
         youtube: 'https://www.youtube.com/watch?v=DpGYH-tP7B8'
         kuvaus: |
           (säv.\&san. Kati Niemelä, sov. Ronimus)
-      - kuva: >-
-          https://res.cloudinary.com/dk6xqxjli/image/upload/v1666077233/ronimus-bileet_gplqps.jpg
+      - kuva: /uploads/ronimus-bileet_gplqps.jpg
         title: Bileet
         tyyppi: Single
         ajankohta: '2018'
@@ -185,8 +175,7 @@ blocks:
         kuvaus: |
           (säv.\&san. Roy Bertula, sov. Ronimus)
     _template: julkaisut
-  - img: >-
-      https://res.cloudinary.com/dk6xqxjli/image/upload/v1666077473/DSC04273_e9clud.jpg
+  - img: /uploads/DSC04273_e9clud.jpg
     _template: kuva
   - videot_otsikko: Musiikkivideot
     videot_sisalto: "Kaikissa videoissa olen vastannut käsikirjoituksesta, ohjauksesta, organisoinnista ja visuaalisuudesta.\_\n\nEpäonnen huhtikuu videossa olen vastannut myös editoinnista.\n"
@@ -209,7 +198,7 @@ blocks:
     _template: videot
   - palsta_otsikko: Ota yhteyttä
     palsta_sisalto: >
-      **Sähköposti:** [info@katiniemela.fi](mailto\:katini19@gmail.com)
+      **Sähköposti:** [info@katiniemela.fi](mailto:katini19@gmail.com)
 
 
       **Instagram:** [@kaniffi](https://www.instagram.com/kaniffi/)
@@ -219,6 +208,7 @@ blocks:
       Niemelä](https://www.linkedin.com/in/kati-niemel%C3%A4-a81b08250/)
     _template: palsta
 ---
+
 
 
 
