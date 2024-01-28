@@ -8,8 +8,8 @@ blocks:
 
       Tilaa minut tapahtumaasi niin räätälöidään sinulle sopiva paketti!
       Yhteystiedot sivun alaosassa. 
-    bgImg: /uploads/kati-rajattu2_td2gzo.png
-    kuvateksti: 'Kuva: Tuomas Eronen'
+    bgImg: /uploads/JMo-2023-33.jpg
+    kuvateksti: 'Kuva: Jan-Kristian Moilanen'
     _template: hero
   - palsta_kuva: /uploads/DSC04398_uqc6vu.jpg
     palsta_kuvateksti: 'Kuva: Tuomas Eronen'
@@ -209,6 +209,7 @@ blocks:
       Niemelä](https://www.linkedin.com/in/kati-niemel%C3%A4-a81b08250/)
     _template: palsta
 ---
+
 
 
 
