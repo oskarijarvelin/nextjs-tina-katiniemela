@@ -11,7 +11,7 @@ blocks:
     bgImg: /uploads/JMo-2023-33.jpg
     kuvateksti: 'Kuva: Jan-Kristian Moilanen'
     _template: hero
-  - palsta_kuva: /uploads/JMo-2023-139.jpg
+  - palsta_kuva: /uploads/jmo-cropattu.png
     palsta_kuvateksti: 'Kuva: Tuomas Eronen'
     palsta_otsikko: Kokoonpanot
     palsta_sisalto: >
