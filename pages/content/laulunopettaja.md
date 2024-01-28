@@ -11,11 +11,12 @@ blocks:
   - palsta_kuva: /uploads/DSC04273_e9clud.jpg
     palsta_kuvateksti: 'Kuva: Tuomas Eronen'
     palsta_otsikko: Laulutunnit
-    palsta_sisalto: "Tarjoan laulunopetusta kevytyrittäjänä UKKO.fi palvelun kautta ja opetan kotonani Jyväskylässä. Toistaiseksi minulla ei ole kalenterissa aikaa uusille viikoittaisille oppilaille, mutta laita rohkeasti viestiä mikäli haluaisit tulla tunneille! Katsotaan sitten yhdessä mikä on toiveesi ja tarpeesi ja tehdään kalenteriin tilaa ☺\_Tunneillani haluan luoda positiivisen, innostavan ja turvallisen ilmapiirin oman instrumentin tutkimiseen ja opetteluun.\n\n> \"Todella rento ilmapiiri, tunneilla hyvä kannustus ja sen kautta uskaltaa yrittää itselleen vaikeita asioita.\" - Aapo\n\n**Tuntien peruuntuminen:**\n\nMikäli joudut perumaan tuntisi, ilmoitathan siitä viimeistään vuorokautta aiemmin. Myöhemmin perutusta tai ilmoittamattomasta poissaolosta veloitan normaalin tuntihinnan. \n"
+    palsta_sisalto: "Tarjoan laulunopetusta kevytyrittäjänä UKKO.fi palvelun kautta ja opetan kotonani Jyväskylässä. Toistaiseksi minulla ei ole kalenterissa aikaa uusille viikoittaisille oppilaille, mutta laita rohkeasti viestiä mikäli haluaisit tulla tunneille! Katsotaan sitten yhdessä mikä on toiveesi ja tarpeesi ja tehdään kalenteriin tilaa ☺\_Tunneillani haluan luoda positiivisen, innostavan ja turvallisen ilmapiirin oman instrumentin tutkimiseen ja opetteluun.\n\n> \"Todella rento ilmapiiri, tunneilla hyvä kannustus ja sen kautta uskaltaa yrittää itselleen vaikeita asioita.\" - Aapo\n\n**Tuntien peruuntuminen:**\n\nMikäli joudut perumaan tuntisi, ilmoitathan siitä viimeistään vuorokautta aiemmin. Myöhemmin perutusta tai ilmoittamattomasta poissaolosta veloitan normaalin tuntihinnan.\n"
     _template: palsta
   - palsta_otsikko: Ota yhteyttä
     palsta_sisalto: >
-      **Sähköposti:** [info@katiniemela.fi](mailto:katini19@gmail.com)
+      **Sähköposti:**
+      [kaniffivirallinen@gmail.com](mailto:kaniffivirallinen@gmail.com)
 
 
       **Instagram:** [@kaniffi](https://www.instagram.com/kaniffi/)
@@ -25,6 +26,7 @@ blocks:
       Niemelä](https://www.linkedin.com/in/kati-niemel%C3%A4-a81b08250/)
     _template: palsta
 ---
+
 
 
 
