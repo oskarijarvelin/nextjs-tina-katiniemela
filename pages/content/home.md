@@ -6,7 +6,7 @@ blocks:
     bgImg: /uploads/DSC04273.jpg
     kuvateksti: 'Kuva: Tuomas Eronen'
     _template: hero
-  - palsta_kuva: /uploads/kati-rajattu.png
+  - palsta_kuva: /uploads/JMo-2023-33.jpg
     palsta_kuvateksti: 'Kuva: Tuomas Eronen'
     palsta_reverse: false
     palsta_otsikko: Kuka minä olen?
@@ -56,6 +56,7 @@ blocks:
       Niemelä](https://www.linkedin.com/in/kati-niemel%C3%A4-a81b08250/)
     _template: palsta
 ---
+
 
 
 
