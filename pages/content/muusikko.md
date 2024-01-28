@@ -19,33 +19,35 @@ blocks:
       kokoonpanolla.
 
 
-      **KANIFFI**\
+      **KANIFFI**
 
       Oma taiteilijanimi sekä artistiura näki päivänvalon 2024 vuoden alussa.
       Suomipop/rock artistina haluan välittää tunteita ja tarinoita. Olen saanut
       sovittaa säveltämäni kappaleet upean bändini kanssa ja ensimmäinen keikka
-      on luvassa 17.2.2024 Popparissa. \
+      on luvassa 17.2.2024 Popparissa.\
 
-      Facebook: [@kaniffivirallinen\
+      Facebook:
+      [@kaniffivirallinen](https://www.facebook.com/kaniffivirallinen)\
 
-      ](https://www.facebook.com/kaniffivirallinen)Instagram:
-      [@kaniffi](https://www.instagram.com/kaniffi)
+      Instagram: [@kaniffi](https://www.instagram.com/kaniffi)
+
+
+      ![](/uploads/kaniffi-final-large-syvatty-inv.png)
 
 
       \
 
-      **KANIFFI DUO**\
+      **KANIFFI DUO**
 
       Tämä duo valloittaa cover-keikoilla! Kitaristin kanssa soitamme kaksin
       rakastamiamme suomipop/rock kappaleita. Koostamme settilistan tapahtuman
       luonteen mukaisesti ja voit tilata meidät esiintymään pieniin ja suuriin
-      tapahtumiin. \
+      tapahtumiin.
+
 
       \
 
-      \
-
-      **IIST SIDE SINGERS**\
+      **IIST SIDE SINGERS**
 
       Lauluyhtye Iist Side Singers on keikkaillut niin pienissä
       yksityistilaisuuksissa, kuin suuremmissa tapahtumissa, kuten Auto- ja
@@ -54,14 +56,15 @@ blocks:
       tapahtumaasi sopiva kokonaisuus!\
 
       [Iist Side
-      Singers-Facebook](https://www.facebook.com/IistSideSingersOfficial)  \
+      Singers-Facebook](https://www.facebook.com/IistSideSingersOfficial)\
 
-      [Iist Side Singers-Instagram](https://www.instagram.com/iistsidesingers/)
+      [Iist Side
+      Singers-Instagram](https://www.instagram.com/iistsidesingers/)****
 
 
       \
 
-      **RONIMUS  (ei-aktiivinen)**\
+      **RONIMUS  (ei-aktiivinen)**
 
       Suomirock-yhtye Ronimuksessa olen toiminut vuodesta 2016 lähtien
       laulaja/kosketinsoittajana sekä keikkamyyjänä. Julkaisimme keväällä 2022
@@ -69,7 +72,7 @@ blocks:
       julkaisun jälkeen bändi jäi tauolle. Ronimuksen kanssa olen päässyt myös
       käsikirjoittamaan ja toteuttamaan musiikkivideoita. Videot löytyvät tämän
       sivun alaosasta. Bändiin voit tutustua lisää osoitteessa:
-      [www.ronimus.fi](www.ronimus.fi)  \
+      [www.ronimus.fi](www.ronimus.fi)\
 
       [Ronimus-Facebook  ](https://www.facebook.com/ronimusofficial)\
 
@@ -208,6 +211,7 @@ blocks:
       Niemelä](https://www.linkedin.com/in/kati-niemel%C3%A4-a81b08250/)
     _template: palsta
 ---
+
 
 
 
