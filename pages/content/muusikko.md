@@ -28,7 +28,8 @@ blocks:
 
       Facebook: [@kaniffivirallinen\
 
-      ](https://www.facebook.com/kaniffivirallinen)Instagram: @kaniffi
+      ](https://www.facebook.com/kaniffivirallinen)Instagram:
+      [@kaniffi](https://www.instagram.com/kaniffi)
 
 
       ![](/uploads/kaniffi-final-large-syvatty-inv-PIENI.png)
