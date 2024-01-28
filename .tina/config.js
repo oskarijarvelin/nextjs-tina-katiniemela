@@ -458,9 +458,9 @@ const config = defineConfig({
     process.env.HEAD,
   token: process.env.TINA_TOKEN,
   media: {
-    loadCustomStore: async () => {
-      const pack = await import("next-tinacms-cloudinary");
-      return pack.TinaCloudCloudinaryMediaStore;
+    tina: {
+      publicFolder: 'public',
+      mediaRoot: 'uploads',
     },
   },
   build: {

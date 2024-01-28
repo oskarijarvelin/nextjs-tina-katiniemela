@@ -2,7 +2,7 @@ const withLess = require("next-with-less");
 
 const nextConfig = {
     images: {
-        domains: ['res.cloudinary.com'],
+        domains: ['res.cloudinary.com', 'assets.tina.io'],
     },
 };
 
