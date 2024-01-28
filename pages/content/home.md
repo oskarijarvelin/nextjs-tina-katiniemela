@@ -45,7 +45,8 @@ blocks:
     _template: kuva
   - palsta_otsikko: Ota yhteyttä
     palsta_sisalto: >
-      **Sähköposti:** [info@katiniemela.fi](mailto:katini19@gmail.com)
+      **Sähköposti:**
+      [kaniffivirallinen@gmail.com](mailto:kaniffivirallinen@gmail.com)
 
 
       **Instagram:** [@kaniffi](https://www.instagram.com/kaniffi/)
@@ -55,6 +56,7 @@ blocks:
       Niemelä](https://www.linkedin.com/in/kati-niemel%C3%A4-a81b08250/)
     _template: palsta
 ---
+
 
 
 
