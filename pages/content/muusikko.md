@@ -32,9 +32,6 @@ blocks:
       [@kaniffi](https://www.instagram.com/kaniffi)
 
 
-      ![](/uploads/kaniffi-final-large-syvatty-inv-PIENI.png)
-
-
       \
 
       **KANIFFI DUO**\
