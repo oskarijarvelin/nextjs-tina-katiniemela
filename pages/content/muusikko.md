@@ -19,11 +19,6 @@ blocks:
       kokoonpanolla.
 
 
-      ![](/uploads/kaniffi-final-large-syvatty-inv.png)
-
-
-      \
-
       **KANIFFI**\
 
       Oma taiteilijanimi sekä artistiura näki päivänvalon 2024 vuoden alussa.
@@ -35,7 +30,10 @@ blocks:
 
       Instagram: @kaniffi\
 
-      \
+
+
+      ![](/uploads/kaniffi-final-large-syvatty-inv.png)
+
 
       \
 
