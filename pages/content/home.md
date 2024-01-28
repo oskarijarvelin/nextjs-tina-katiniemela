@@ -7,7 +7,7 @@ blocks:
     kuvateksti: 'Kuva: Tuomas Eronen'
     _template: hero
   - palsta_kuva: /uploads/JMo-2023-33.jpg
-    palsta_kuvateksti: 'Kuva: Tuomas Eronen'
+    palsta_kuvateksti: 'Kuva: Jan-Kristian Moilanen'
     palsta_reverse: false
     palsta_otsikko: Kuka minä olen?
     palsta_sisalto: >
