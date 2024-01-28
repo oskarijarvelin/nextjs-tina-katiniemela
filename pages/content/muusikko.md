@@ -175,7 +175,8 @@ blocks:
         kuvaus: |
           (säv.\&san. Roy Bertula, sov. Ronimus)
     _template: julkaisut
-  - img: /uploads/DSC04273_e9clud.jpg
+  - img: /uploads/JMo-2023-130.jpg
+    kuva_kuvateksti: 'Kuva: Jan-Kristian Moilanen'
     _template: kuva
   - videot_otsikko: Musiikkivideot
     videot_sisalto: "Kaikissa videoissa olen vastannut käsikirjoituksesta, ohjauksesta, organisoinnista ja visuaalisuudesta.\_\n\nEpäonnen huhtikuu videossa olen vastannut myös editoinnista.\n"
