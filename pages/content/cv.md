@@ -3,8 +3,8 @@ title: CV
 blocks:
   - otsikko: Curriculum Vitae
     sisalto: ''
-    bgImg: /uploads/DSC04398_uqc6vu.jpg
-    kuvateksti: 'Kuva: Tuomas Eronen'
+    bgImg: /uploads/jmo-cropattu.png
+    kuvateksti: 'Kuva: Jan-Kristian Moilanen'
     _template: hero
   - kokemus_otsikko: Työkokemus
     kokemus_sisalto: ''
@@ -124,6 +124,7 @@ blocks:
         kuvaus: ''
     _template: kokemus
 ---
+
 
 
 
