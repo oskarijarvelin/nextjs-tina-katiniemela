@@ -19,6 +19,10 @@ blocks:
       [kaniffivirallinen@gmail.com](mailto:kaniffivirallinen@gmail.com)
 
 
+      **Facebook:**
+      [@kaniffivirallinen](https://www.facebook.com/kaniffivirallinen)
+
+
       **Instagram:** [@kaniffi](https://www.instagram.com/kaniffi/)
 
 
@@ -26,6 +30,7 @@ blocks:
       Niemelä](https://www.linkedin.com/in/kati-niemel%C3%A4-a81b08250/)
     _template: palsta
 ---
+
 
 
 
