@@ -204,17 +204,18 @@ blocks:
       [kaniffivirallinen@gmail.com](mailto:kaniffivirallinen@gmail.com)
 
 
-      **Instagram:** [@kaniffi](https://www.instagram.com/kaniffi/)
-
-
       **Facebook:**
       [@kaniffivirallinen](https://www.facebook.com/kaniffivirallinen)
+
+
+      **Instagram:** [@kaniffi](https://www.instagram.com/kaniffi/)
 
 
       **LinkedIn:** [Kati
       Niemelä](https://www.linkedin.com/in/kati-niemel%C3%A4-a81b08250/)
     _template: palsta
 ---
+
 
 
 
