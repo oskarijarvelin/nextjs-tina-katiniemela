@@ -59,7 +59,7 @@ blocks:
       Singers-Facebook](https://www.facebook.com/IistSideSingersOfficial)\
 
       [Iist Side
-      Singers-Instagram](https://www.instagram.com/iistsidesingers/)****
+      Singers-Instagram](https://www.instagram.com/iistsidesingers/)\*\*\*\*
 
 
       \
@@ -207,10 +207,15 @@ blocks:
       **Instagram:** [@kaniffi](https://www.instagram.com/kaniffi/)
 
 
+      **Facebook:**
+      [@kaniffivirallinen](https://www.facebook.com/kaniffivirallinen)
+
+
       **LinkedIn:** [Kati
       Niemelä](https://www.linkedin.com/in/kati-niemel%C3%A4-a81b08250/)
     _template: palsta
 ---
+
 
 
 
