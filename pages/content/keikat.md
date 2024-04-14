@@ -8,6 +8,11 @@ blocks:
     bgImg: /uploads/JMo-2023-33.jpg
     kuvateksti: 'Kuva: Jan-Kristian Moilanen'
     _template: hero
+  - palsta_kuva: /uploads/jmo-cropattu.png
+    palsta_kuvateksti: 'Kuva: Jan-Kristian Moilanen'
+    palsta_otsikko: Tulevat keikat
+    palsta_sisalto: "**10.5.** RockNeck, Jyväskylä\n\n**31.8.** Cafe Amalia,\_Sumiainen (duo)\n\n## Menneet keikat:\n\n17.2.2024 Poppari, Jyväskylä (Debyyttikeikka)\n"
+    _template: palsta
   - palsta_otsikko: Ota yhteyttä
     palsta_sisalto: >+
       Sähköposti:
