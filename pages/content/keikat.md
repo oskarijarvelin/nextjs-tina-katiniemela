@@ -5,7 +5,8 @@ blocks:
     sisalto: >-
       Phasellus scelerisque, libero eu finibus rutrum, risus risus accumsan
       libero, nec molestie urna dui a leo.
-    bgImg: /uploads/JMo-2023-130.jpg
+    bgImg: /uploads/jmo-cropattu.png
     _template: hero
 ---
+
 
