@@ -3,9 +3,10 @@ title: Keikat
 blocks:
   - otsikko: Keikat
     sisalto: >-
-      Phasellus scelerisque, libero eu finibus rutrum, risus risus accumsan
-      libero, nec molestie urna dui a leo.
+      Tilaa minut tapahtumaasi niin räätälöidään sinulle sopiva paketti!
+      Yhteystietoni löydät sivun alaosasta.
     bgImg: /uploads/JMo-2023-33.jpg
+    kuvateksti: 'Kuva: Jan-Kristian Moilanen'
     _template: hero
 ---
 
