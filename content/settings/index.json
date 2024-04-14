@@ -10,6 +10,10 @@
         "title": "Etusivu"
       },
       {
+        "url": "/keikat",
+        "title": "Keikat"
+      },
+      {
         "url": "/cv",
         "title": "CV"
       },
