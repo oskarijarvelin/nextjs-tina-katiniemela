@@ -32,7 +32,8 @@ blocks:
       \
 
       Päiväni ovat tällä hetkellä täynnä musiikkia sekä ihan tavallista arkea
-      avopuolison ja kahden karvatassun kanssa. 
+      avopuolison ja kahden karvatassun kanssa. Tätä kaikkea voit seurata mm.
+      Instagramista ja Facebookista.
 
 
       Lämpimästi tervetuloa tunneille ja keikoille!\
