@@ -15,7 +15,8 @@ blocks:
       laulunopettaja. Jo nuoresta iästä asti olen aina tiennyt musiikin olevan
       elämänpolkuni ja olen pyrkinyt aina kehittämään itseäni. Opiskelen
       parhaillaan laulunopettajaksi Jyväskylän ammattikorkeakoulussa ja
-      laulunopetustöitä olen tehnyt kevytyrittäjänä jo vuodesta 2017.
+      laulunopetustöitä olen tehnyt kevytyrittäjänä jo vuodesta 2017. Tällä
+      hetkellä minulla on hyvin tilaa uusille oppilaille!
 
 
       Sydämeni sykkii keikkailulle ja esiintymiselle! Olen aina rakastanut
@@ -23,15 +24,18 @@ blocks:
       projekteihin mukaan.
 
 
-      Lukion jälkeen lähdin Helsinkiin opintojen perässä Laajasalon opistoon ja
+      Lukion jälkeen lähdin opintojen perässä Helsinkiin Laajasalon opistoon ja
       päädyin mukaan suomirockyhtye Ronimukseen ja Lauluyhtye Iist Side
       Singersiin. Vuonna 2021 lähdin Helsingistä Jyväskylään opiskelemaan
-      laulunopettajaksi ja tänä vuotena oma artistiura Kaniffi saa alkunsa. Saan
-      tehdä töitä upean bändin kanssa ja ensimmäinen keikka on luvassa 17.2.
-      Popparissa.  \
+      laulunopettajaksi ja oma artistiura Kaniffi sai alkunsa keväällä 2024. \
 
-      Päiväni ovatkin siis täynnä opintoja, omia lauluoppilaita, säveltämistä,
-      bändihommia sekä ihan tavallista arkea.
+      \
+
+      Päiväni ovat tällä hetkellä täynnä musiikkia sekä ihan tavallista arkea
+      avopuolison ja kahden karvatassun kanssa. 
+
+
+      Lämpimästi tervetuloa tunneille ja keikoille!\
     palsta_linkit:
       - url: /cv
         title: CV
@@ -60,6 +64,7 @@ blocks:
       Niemelä](https://www.linkedin.com/in/kati-niemel%C3%A4-a81b08250/)
     _template: palsta
 ---
+
 
 
 
