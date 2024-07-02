@@ -11,10 +11,10 @@ blocks:
   - palsta_kuva: /uploads/jmo-cropattu.png
     palsta_kuvateksti: 'Kuva: Jan-Kristian Moilanen'
     palsta_otsikko: Tulevat keikat
-    palsta_sisalto: "**10.5.** RockNeck, Jyväskylä\n\n**31.8.** Cafe Amalia,\_Sumiainen (duo)\n\n## Menneet keikat:\n\n17.2.2024 Poppari, Jyväskylä (Debyyttikeikka)\n"
+    palsta_sisalto: "**20.7 **Heinärieha, SF-Caravan Keski-Suomi, Uurainen (trio)\n\n**31.8.** Cafe Amalia,\_Sumiainen (duo)\n\n## Menneet keikat:\n\n2024\n\n**17.2.** Poppari, Jyväskylä (Debyyttikeikka)\n\n**10.5.** RockNeck, Jyväskylä\n"
     _template: palsta
   - palsta_otsikko: Ota yhteyttä
-    palsta_sisalto: >+
+    palsta_sisalto: >
       Sähköposti:
       [kaniffivirallinen@gmail.com](mailto:kaniffivirallinen@gmail.com)
 
@@ -27,10 +27,8 @@ blocks:
 
       LinkedIn: [Kati
       Niemelä](https://www.linkedin.com/in/kati-niemel%C3%A4-a81b08250/)
-
-
-
     _template: palsta
 ---
+
 
 
