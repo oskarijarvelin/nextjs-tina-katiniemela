@@ -71,8 +71,9 @@ blocks:
       - title: Jyväskylän ammattikorkeakoulu
         ajankohta: '08/2021 – '
         kuvaus: |
-          Musiikkipedagogi, pop/jazz laulu\
-          Laulun opettajana: Hanne Kivioja
+          Musiikkipedagogi (AMK)\
+          Pop/jazz laulu\
+          Laulun opettajina: Hanne Kivioja, Heidi Ilves
       - title: Pop & Jazz Konservatorio
         ajankohta: 08/2017 – 12/2021
         kuvaus: "Laulun perusopetus, syventävinä opintoina laulunkirjoitus\\\nOpettajina: Jenni Ahlsved, Nelli Saarikoski,\_Lotta Rautiainen (laulunkirjoitus)\_\n"
