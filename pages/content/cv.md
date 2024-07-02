@@ -64,6 +64,10 @@ blocks:
   - kokemus_otsikko: Koulutus
     kokemus_sisalto: ''
     kokemus_lista:
+      - title: Ammattiopisto Gradia
+        ajankohta: '08/2024 - '
+        kuvaus: |
+          Muusikko, musiikkiteatterin opintolinja
       - title: Jyväskylän ammattikorkeakoulu
         ajankohta: '08/2021 – '
         kuvaus: |
@@ -124,6 +128,7 @@ blocks:
         kuvaus: ''
     _template: kokemus
 ---
+
 
 
 
