@@ -16,15 +16,18 @@ blocks:
     palsta_otsikko: Kokoonpanot
     palsta_sisalto: >
       Voit tilata minut keikalle haluamaasi tapahtumaan, haluamallasi
-      kokoonpanolla.
+      kokoonpanolla. Mukanani tulee tarvittava äänentoistolaitteisto sekä valot
+      ja taustakangas. \
+
 
 
       **KANIFFI**
 
       Oma taiteilijanimi sekä artistiura näki päivänvalon 2024 vuoden alussa.
-      Suomipop/rock artistina haluan välittää tunteita ja tarinoita. Olen saanut
-      sovittaa säveltämäni kappaleet upean bändini kanssa ja ensimmäinen keikka
-      on luvassa 17.2.2024 Popparissa.\
+      Suomipop/rock artistina haluan välittää tunteita ja tarinoita. Musiikkini
+      on saanut vaikutteita Irinasta sekä Suvi Teräsniskasta. Olen saanut
+      sovittaa kappaleet upean viisihenkisen bändini kanssa ja tulemme keikalle
+      tarvittaessa myös pienemmällä kokoonpanolla. \
 
       Facebook:
       [@kaniffivirallinen](https://www.facebook.com/kaniffivirallinen)\
@@ -39,10 +42,10 @@ blocks:
 
       **KANIFFI DUO**
 
-      Tämä duo valloittaa cover-keikoilla! Kitaristin kanssa soitamme kaksin
-      rakastamiamme suomipop/rock kappaleita. Koostamme settilistan tapahtuman
-      luonteen mukaisesti ja voit tilata meidät esiintymään pieniin ja suuriin
-      tapahtumiin.
+      Tämä duo valloittaa cover-keikoilla! Soitamme kitaristini kanssa
+      rakastamiamme suomipop/rock kappaleita oman musiikin lisäksi. Koostamme
+      settilistan tapahtuman luonteen mukaisesti ja voit tilata meidät
+      esiintymään pieniin ja suuriin tapahtumiin.
 
 
       \
@@ -215,6 +218,7 @@ blocks:
       Niemelä](https://www.linkedin.com/in/kati-niemel%C3%A4-a81b08250/)
     _template: palsta
 ---
+
 
 
 
