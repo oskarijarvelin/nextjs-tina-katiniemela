@@ -36,8 +36,10 @@ blocks:
       Instagramista ja Facebookista.
 
 
-      Lämpimästi tervetuloa tunneille ja keikoille!\
+      Lämpimästi tervetuloa tunneille ja keikoille!\\
     palsta_linkit:
+      - url: /keikat
+        title: Keikat
       - url: /cv
         title: CV
       - url: /muusikko
@@ -65,6 +67,7 @@ blocks:
       Niemelä](https://www.linkedin.com/in/kati-niemel%C3%A4-a81b08250/)
     _template: palsta
 ---
+
 
 
 
