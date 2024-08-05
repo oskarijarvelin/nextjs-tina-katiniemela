@@ -17,8 +17,7 @@ blocks:
     palsta_sisalto: >
       Voit tilata minut keikalle haluamaasi tapahtumaan, haluamallasi
       kokoonpanolla. Mukanani tulee tarvittava äänentoistolaitteisto sekä valot
-      ja taustakangas. \
-
+      ja taustakangas. 
 
 
       **KANIFFI**
@@ -61,8 +60,7 @@ blocks:
       [Iist Side
       Singers-Facebook](https://www.facebook.com/IistSideSingersOfficial)\
 
-      [Iist Side
-      Singers-Instagram](https://www.instagram.com/iistsidesingers/)\*\*\*\*
+      [Iist Side Singers-Instagram](https://www.instagram.com/iistsidesingers/)
 
 
       \
@@ -218,6 +216,7 @@ blocks:
       Niemelä](https://www.linkedin.com/in/kati-niemel%C3%A4-a81b08250/)
     _template: palsta
 ---
+
 
 
 
