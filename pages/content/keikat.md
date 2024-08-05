@@ -11,7 +11,7 @@ blocks:
   - palsta_kuva: /uploads/jmo-cropattu.png
     palsta_kuvateksti: 'Kuva: Jan-Kristian Moilanen'
     palsta_otsikko: Tulevat keikat
-    palsta_sisalto: "**20.7** Heinärieha, SF-Caravan Keski-Suomi, Uurainen (trio)\n\n**31.8.** Cafe Amalia,\_Sumiainen (duo)\n\n## Menneet keikat:\n\n**-2024-**\n\n**17.2.** Poppari, Jyväskylä (Debyyttikeikka)\n\n**10.5.** RockNeck, Jyväskylä\n"
+    palsta_sisalto: "**31.8.** Cafe Amalia,\_Sumiainen (duo)\n\n## Menneet keikat:\n\n**-2024-**\n\n**17.2.** Poppari, Jyväskylä (Debyyttikeikka)\n\n**10.5.** RockNeck, Jyväskylä\n\n**20.7** Heinärieha, SF-Caravan Keski-Suomi, Uurainen (trio)\n"
     _template: palsta
   - palsta_otsikko: Ota yhteyttä
     palsta_sisalto: >
@@ -29,6 +29,7 @@ blocks:
       Niemelä](https://www.linkedin.com/in/kati-niemel%C3%A4-a81b08250/)
     _template: palsta
 ---
+
 
 
 
