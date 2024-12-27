@@ -11,7 +11,7 @@ blocks:
   - palsta_kuva: /uploads/jmo-cropattu.png
     palsta_kuvateksti: 'Kuva: Jan-Kristian Moilanen'
     palsta_otsikko: 'Tulevat keikat '
-    palsta_sisalto: "**11.1.2025 **Yksityistilaisuus (Iist Side Singers)\n\n**18.1.2025  **Poppari, Jyväskylä\n\n## Menneet keikat:\n\n**-2024-**\n\n**17.2.** Poppari, Jyväskylä (Debyyttikeikka)\n\n**10.5.** RockNeck, Jyväskylä\n\n**20.7.** Heinärieha, SF-Caravan Keski-Suomi, Uurainen\n\n**10.8.** Yksityistilaisuus\n\n**31.8.** Cafe Amalia,\_Sumiainen\n\n**5.10.** Laajasalon VPK, Helsinki (Iist Side Singers)\n\n**14.12** Laajasalon opiston juhlasali, Helsinki (Iist Side Singers)\n"
+    palsta_sisalto: "**-2025-**\n\n**11.1. **Yksityistilaisuus (Iist Side Singers)\n\n**18.1.  **Poppari, Jyväskylä\n\n## Menneet keikat:\n\n**-2024-**\n\n**17.2.** Poppari, Jyväskylä (Debyyttikeikka)\n\n**10.5.** RockNeck, Jyväskylä\n\n**20.7.** Heinärieha, SF-Caravan Keski-Suomi, Uurainen\n\n**10.8.** Yksityistilaisuus\n\n**31.8.** Cafe Amalia,\_Sumiainen\n\n**5.10.** Laajasalon VPK, Helsinki (Iist Side Singers)\n\n**14.12** Laajasalon opiston juhlasali, Helsinki (Iist Side Singers)\n"
     _template: palsta
   - palsta_otsikko: Ota yhteyttä
     palsta_sisalto: >
