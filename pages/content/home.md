@@ -15,8 +15,8 @@ blocks:
       laulunopettaja. Jo nuoresta iästä asti olen aina tiennyt musiikin olevan
       elämänpolkuni ja olen pyrkinyt aina kehittämään itseäni. Opiskelen
       parhaillaan laulunopettajaksi Jyväskylän ammattikorkeakoulussa ja
-      laulunopetustöitä olen tehnyt kevytyrittäjänä jo vuodesta 2017. Tällä
-      hetkellä minulla on hyvin tilaa uusille oppilaille!
+      valmistun keväällä 2025. Laulunopetustöitä olen tehnyt kevytyrittäjänä jo
+      vuodesta 2017. Tällä hetkellä minulla on hyvin tilaa uusille oppilaille!
 
 
       Sydämeni sykkii keikkailulle ja esiintymiselle! Olen aina rakastanut
@@ -67,6 +67,7 @@ blocks:
       Niemelä](https://www.linkedin.com/in/kati-niemel%C3%A4-a81b08250/)
     _template: palsta
 ---
+
 
 
 
