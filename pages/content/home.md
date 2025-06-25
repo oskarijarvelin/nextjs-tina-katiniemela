@@ -2,7 +2,7 @@
 title: Kati Niemelä - Laulaja-lauluntekijä ja laulunopettaja
 blocks:
   - otsikko: Kati Niemelä
-    sisalto: Artisti - Laulaja - Lauluntekijä - Pop/Jazz Laulunopettaja
+    sisalto: Artisti - Laulaja - Lauluntekijä - Pop/jazz laulunopettaja
     bgImg: /uploads/DSC04273.jpg
     kuvateksti: 'Kuva: Tuomas Eronen'
     _template: hero
@@ -68,6 +68,7 @@ blocks:
       Niemelä](https://www.linkedin.com/in/kati-niemel%C3%A4-a81b08250/)
     _template: palsta
 ---
+
 
 
 
