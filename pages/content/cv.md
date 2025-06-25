@@ -69,7 +69,7 @@ blocks:
         kuvaus: |
           Muusikko, musiikkiteatterin opintolinja
       - title: Jyväskylän ammattikorkeakoulu
-        ajankohta: '08/2021 – '
+        ajankohta: 08/2021 – 06/2025
         kuvaus: |
           Musiikkipedagogi (AMK)\
           Pop/jazz laulu\
@@ -129,6 +129,7 @@ blocks:
         kuvaus: ''
     _template: kokemus
 ---
+
 
 
 
