@@ -13,10 +13,11 @@ blocks:
     palsta_sisalto: >
       Olen oululaislähtöinen, nykyään jyväskyläläinen, laulaja-lauluntekijä ja
       laulunopettaja. Jo nuoresta iästä asti olen aina tiennyt musiikin olevan
-      elämänpolkuni ja olen pyrkinyt aina kehittämään itseäni. Opiskelen
-      parhaillaan laulunopettajaksi Jyväskylän ammattikorkeakoulussa ja
-      valmistun keväällä 2025. Laulunopetustöitä olen tehnyt kevytyrittäjänä jo
-      vuodesta 2017. Tällä hetkellä minulla on hyvin tilaa uusille oppilaille!
+      elämänpolkuni ja olen pyrkinyt aina kehittämään itseäni. Valmistuin
+      keväällä 2025 musiikkipedagogiksi (amk) ja opiskelen parhaillaan muusikon
+      ammattitutkintoa musiikkiteatterin puolelta Gradialla. Laulunopetustöitä
+      olen tehnyt kevytyrittäjänä jo vuodesta 2017. Tällä hetkellä minulla on
+      hyvin tilaa uusille oppilaille!
 
 
       Sydämeni sykkii keikkailulle ja esiintymiselle! Olen aina rakastanut
@@ -67,6 +68,7 @@ blocks:
       Niemelä](https://www.linkedin.com/in/kati-niemel%C3%A4-a81b08250/)
     _template: palsta
 ---
+
 
 
 
