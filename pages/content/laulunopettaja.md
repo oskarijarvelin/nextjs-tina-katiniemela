@@ -2,9 +2,11 @@
 title: Laulunopettaja Kati Niemelä
 blocks:
   - otsikko: Laulunopettaja
-    sisalto: |-
-      Opetusta musiikin ilon ja positiivisuuden kautta!
-      Kaikenikäiset ja kaikentasoiset laulajat ovat tervetulleita tunneille!
+    sisalto: >-
+      Laulunopetusta musiikin ilon ja positiivisuuden kautta!
+
+      Kaikenikäiset ja kaikentasoiset laulajat ovat tervetulleita tunneilleni
+      Jyväskylän Savelaan!
     bgImg: /uploads/kati-rajattu.png
     kuvateksti: 'Kuva: Tuomas Eronen'
     _template: hero
