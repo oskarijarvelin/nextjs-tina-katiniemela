@@ -22,11 +22,11 @@ blocks:
 
       **KANIFFI**
 
-      Oma taiteilijanimi sekä artistiura näki päivänvalon 2024 vuoden alussa.
-      Suomipop/rock artistina haluan välittää tunteita ja tarinoita. Musiikkini
-      on saanut vaikutteita Irinasta sekä Suvi Teräsniskasta. Olen saanut
-      sovittaa kappaleet upean viisihenkisen bändini kanssa ja tulemme keikalle
-      myös pienemmällä kokoonpanolla. \
+      Oma artistiura näki päivänvalon 2024 vuoden alussa. Suomipop/rock
+      artistina haluan välittää tunteita ja tarinoita. Musiikkini on saanut
+      vaikutteita Irinasta sekä Suvi Teräsniskasta. Olen saanut sovittaa
+      kappaleet upean viisihenkisen bändini kanssa ja tulemme keikalle myös
+      pienemmällä kokoonpanolla. \
 
       Facebook:
       [@kaniffivirallinen](https://www.facebook.com/kaniffivirallinen)\
