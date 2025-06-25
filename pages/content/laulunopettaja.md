@@ -30,7 +30,7 @@ blocks:
       ukko.fi palvelun kuukausittain.
 
 
-      **Kalenterissani on hyvin tilaa uusille oppilaille! **
+      **Kalenterissani on hyvin tilaa uusille oppilaille!** 
 
 
       **HINNASTO**\
@@ -135,6 +135,7 @@ blocks:
       Niemelä](https://www.linkedin.com/in/kati-niemel%C3%A4-a81b08250/)
     _template: palsta
 ---
+
 
 
 
