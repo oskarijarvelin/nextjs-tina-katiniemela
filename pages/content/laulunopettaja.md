@@ -16,21 +16,27 @@ blocks:
     palsta_sisalto: >
       Olen opettanut laulua jo vuodesta 2017 alkaen kevytyrittäjänä.
       Koulutukseltani olen pop/jazz lauluun erikoistunut musiikkipedagogi (AMK).
-      Opettajana haluan luoda positiivisen, innostavan ja turvallisen ilmapiirin
-      oman instrumentin tutkimiseen ja opetteluun. Tunneille ovat tervetulleita
-      kaikki iästä, taitotasosta ja muista lähtökohdista riippumatta. Pääset
-      kanssani tutustumaan omaan instrumenttiisi ja löytämään juuri sinun
-      äänesi. Tunneillani pääset  myös halutessasi tutustumaan laajasti eri
-      genreihin eli musiikin tyylisuuntiin ja pääset myös oppimaan musiikin
-      teoriaa lauluopetuksen lisäksi. Laulutunteja voidaan pitää viikoittain tai
-      satunnaisesti.
+      Vahvuusalueitani ovat pop, rock, iskelmä, laulelmat ja musikaalit sekä
+      etenkin laulun tulkinnan opetus. Opettajana haluan luoda positiivisen,
+      innostavan ja turvallisen ilmapiirin oman instrumentin tutkimiseen ja
+      opetteluun. 
 
 
-      Opetan Jyväskylän Savelassa sijaitsevassa treenitilassani. Laskutan tunnit
-      ukko.fi palvelun kuukausittain.
+      Tunneille ovat kaikki tervetulleita iästä, taitotasosta ja muista
+      lähtökohdista riippumatta. Pääset kanssani tutustumaan omaan
+      instrumenttiisi ja löytämään juuri sinun äänesi. Tunneillani pääset myös
+      halutessasi tutustumaan laajasti eri genreihin eli musiikin tyylisuuntiin
+      ja pääset myös oppimaan musiikin teoriaa lauluopetuksen lisäksi. 
 
 
-      **Kalenterissani on hyvin tilaa uusille oppilaille!** 
+      Laulutunteja on mahdollista pitää viikoittain tai satunnaisesti. \
+
+      Opetus tapahtuu Jyväskylän Savelassa sijaitsevassa treenitilassani.
+      Laulutunnit laskutetaan ukko.fi palvelun kuukausittain.
+
+
+      **Kalenterissani on hyvin tilaa uusille oppilaille! Laita rohkeasti
+      viestiä!**
 
 
       **HINNASTO**\
@@ -135,6 +141,7 @@ blocks:
       Niemelä](https://www.linkedin.com/in/kati-niemel%C3%A4-a81b08250/)
     _template: palsta
 ---
+
 
 
 
