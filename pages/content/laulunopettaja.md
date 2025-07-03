@@ -53,7 +53,7 @@ blocks:
 
       Mikäli joudut perumaan tai siirtämään tuntisi ajankohtaa, ilmoitathan
       siitä viimeistään vuorokautta aiemmin. Myöhemmin perutusta tai
-      ilmoittamattomasta poissaolosta veloitetaan tunnin hinta.
+      ilmoittamattomasta poissaolosta laskutetaan tunnin hinta.
 
 
       . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
