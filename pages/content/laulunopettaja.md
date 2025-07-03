@@ -16,13 +16,16 @@ blocks:
     palsta_sisalto: >
       Olen opettanut laulua jo vuodesta 2017 alkaen kevytyrittäjänä.
       Koulutukseltani olen pop/jazz lauluun erikoistunut musiikkipedagogi (AMK).
-      Vahvuusalueitani ovat pop, rock, iskelmä, laulelmat ja musikaalit sekä
-      etenkin laulun tulkinnan opetus. Opettajana haluan luoda positiivisen,
+      Vahvuusalueitani ovat pop/rock, iskelmä ja musikaalit sekä itselleni
+      rakkaimpana aiheena laulun tulkinnan opetus. Opetan myös paljon muita
+      laulun tyylilajeja sekä esimerkiksi esiintymistä ja mikkitekniikkaa.
+      Opetettavat asiat muotoutuvat jokaisen oppilaan omien tarpeiden, toiveiden
+      ja mielenkiinnon kohteiden mukaan. Opettajana haluan luoda positiivisen,
       innostavan ja turvallisen ilmapiirin oman instrumentin tutkimiseen ja
       opetteluun. 
 
 
-      Tunneille ovat kaikki tervetulleita iästä, taitotasosta ja muista
+      Tunneilleni ovat kaikki tervetulleita iästä, taitotasosta ja muista
       lähtökohdista riippumatta. Pääset kanssani tutustumaan omaan
       instrumenttiisi ja löytämään juuri sinun äänesi. Tunneillani pääset myös
       halutessasi tutustumaan laajasti eri genreihin eli musiikin tyylisuuntiin
