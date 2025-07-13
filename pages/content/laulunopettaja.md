@@ -22,14 +22,14 @@ blocks:
       Opetettavat asiat muotoutuvat jokaisen oppilaan omien tarpeiden, toiveiden
       ja mielenkiinnon kohteiden mukaan. Opettajana haluan luoda positiivisen,
       innostavan ja turvallisen ilmapiirin oman instrumentin tutkimiseen ja
-      opetteluun. 
+      opetteluun.
 
 
       Tunneilleni ovat kaikki tervetulleita iästä, taitotasosta ja muista
       lähtökohdista riippumatta. Pääset kanssani tutustumaan omaan
       instrumenttiisi ja löytämään juuri sinun äänesi. Tunneillani pääset myös
       halutessasi tutustumaan laajasti eri genreihin eli musiikin tyylisuuntiin
-      ja pääset myös oppimaan musiikin teoriaa lauluopetuksen lisäksi. 
+      ja pääset myös oppimaan musiikin teoriaa lauluopetuksen lisäksi.
 
 
       Laulutunteja on mahdollista pitää viikoittain tai satunnaisesti. \
@@ -73,14 +73,8 @@ blocks:
 
       > \
 
-      > \
-
       > "Todella rento ilmapiiri, tunneilla hyvä kannustus ja sen kautta
       uskaltaa yrittää itselleen vaikeita asioita." - Aapo\
-
-      > \
-
-      > \
 
       > \
 
@@ -144,6 +138,7 @@ blocks:
       Niemelä](https://www.linkedin.com/in/kati-niemel%C3%A4-a81b08250/)
     _template: palsta
 ---
+
 
 
 
