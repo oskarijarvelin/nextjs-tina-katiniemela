@@ -3,7 +3,7 @@ title: Muusikko Kati Niemelä
 blocks:
   - otsikko: Muusikko
     sisalto: >-
-      Keikkakokemusta minulla on kertynyt monipuolisesti eri kokoonpanoista ja
+      Keikkakokemusta on kertynyt monipuolisesti eri kokoonpanoista ja
       projekteista.
 
       Tilaa minut tapahtumaasi niin räätälöidään sinulle sopiva paketti!
@@ -216,6 +216,7 @@ blocks:
       Niemelä](https://www.linkedin.com/in/kati-niemel%C3%A4-a81b08250/)
     _template: palsta
 ---
+
 
 
 
