@@ -3,7 +3,7 @@ title: Laulunopettaja Kati Niemelä
 blocks:
   - otsikko: Laulunopettaja
     sisalto: >-
-      Laulunopetusta musiikin ilon ja positiivisuuden kautta!
+      Laulunopetusta ilon ja positiivisuuden kautta!
 
       Kaikenikäiset ja kaikentasoiset laulajat ovat tervetulleita tunneilleni
       Jyväskylän Savelaan!
@@ -138,6 +138,7 @@ blocks:
       Niemelä](https://www.linkedin.com/in/kati-niemel%C3%A4-a81b08250/)
     _template: palsta
 ---
+
 
 
 
