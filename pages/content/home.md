@@ -27,7 +27,7 @@ blocks:
       haluamallasi kokoonpanolla niin pieneen kuin suureen tilaisuuteen!
 
 
-      Lämpimästi tervetuloa tunneille ja keikoille!
+      Lämpimästi tervetuloa laulutunneille ja keikoille!
     palsta_linkit:
       - url: /keikat
         title: Keikat
