@@ -32,7 +32,7 @@ blocks:
       ja pääset myös oppimaan musiikin teoriaa lauluopetuksen lisäksi.
 
 
-      Laulutunteja on mahdollista pitää viikoittain tai satunnaisesti. \
+      Laulutunteja on mahdollista pitää viikoittain tai satunnaisesti.\
 
       Opetus tapahtuu Jyväskylän Savelassa sijaitsevassa treenitilassani.
       Laulutunnit laskutetaan ukko.fi palvelun kuukausittain.
@@ -138,6 +138,7 @@ blocks:
       Niemelä](https://www.linkedin.com/in/kati-niemel%C3%A4-a81b08250/)
     _template: palsta
 ---
+
 
 
 
