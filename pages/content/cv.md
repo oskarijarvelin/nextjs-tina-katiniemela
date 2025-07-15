@@ -73,7 +73,7 @@ blocks:
         kuvaus: |
           Musiikkipedagogi (AMK)\
           Pop/jazz laulu\
-          Laulun opettajina: Hanne Kivioja, Heidi Ilves
+          Laulun opettajina: Hanne Wirta, Heidi Ilves
       - title: Pop & Jazz Konservatorio
         ajankohta: 08/2017 – 12/2021
         kuvaus: "Laulun perusopetus, syventävinä opintoina laulunkirjoitus\\\nOpettajina: Jenni Ahlsved, Nelli Saarikoski,\_Lotta Rautiainen (laulunkirjoitus)\_\n"
@@ -129,6 +129,7 @@ blocks:
         kuvaus: ''
     _template: kokemus
 ---
+
 
 
 
