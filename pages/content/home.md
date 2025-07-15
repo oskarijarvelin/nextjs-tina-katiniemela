@@ -2,7 +2,7 @@
 title: Kati Niemelä - Laulaja-lauluntekijä ja laulunopettaja
 blocks:
   - otsikko: Kati Niemelä
-    sisalto: Artisti - Laulaja - Lauluntekijä - Pop/jazz laulunopettaja
+    sisalto: 'Artisti - Laulaja - Lauluntekijä - Pop/jazz laulunopettaja '
     bgImg: /uploads/DSC04273.jpg
     kuvateksti: 'Kuva: Tuomas Eronen'
     _template: hero
@@ -15,7 +15,7 @@ blocks:
       laulunopettaja. Jo nuoresta iästä asti olen tiennyt musiikin olevan
       elämänpolkuni ja olen pyrkinyt aina kehittämään itseäni. Valmistuin
       keväällä 2025 musiikkipedagogiksi (AMK) ja opiskelen parhaillaan muusikon
-      ammattitutkintoa musiikkiteatterin puolella Gradialla. 
+      ammattitutkintoa musiikkiteatterin puolella Gradialla.
 
 
       Laulunopetustöitä olen tehnyt kevytyrittäjänä jo vuodesta 2017. Tällä
@@ -23,7 +23,7 @@ blocks:
 
 
       Sydämeni sykkii keikkailulle ja esiintymiselle! Voit tilata minut
-      haluamallasi kokoonpanolla niin pieneen kuin suureen tilaisuuteen! 
+      haluamallasi kokoonpanolla niin pieneen kuin suureen tilaisuuteen!
 
 
       Lämpimästi tervetuloa tunneille ja keikoille!
@@ -57,6 +57,7 @@ blocks:
       Niemelä](https://www.linkedin.com/in/kati-niemel%C3%A4-a81b08250/)
     _template: palsta
 ---
+
 
 
 
