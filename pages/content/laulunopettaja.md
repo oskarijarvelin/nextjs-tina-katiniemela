@@ -5,7 +5,7 @@ blocks:
     sisalto: >-
       Laulunopetusta ilon ja positiivisuuden kautta!
 
-      Kaikenikäiset ja kaikentasoiset laulajat ovat tervetulleita tunneilleni
+      Kaikenikäiset ja -tasoiset laulajat ovat tervetulleita tunneilleni
       Jyväskylän Savelaan!
     bgImg: /uploads/kati-rajattu.png
     kuvateksti: 'Kuva: Tuomas Eronen'
