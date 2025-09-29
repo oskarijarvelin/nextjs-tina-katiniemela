@@ -9,9 +9,11 @@ blocks:
   - kokemus_otsikko: Työkokemus
     kokemus_sisalto: ''
     kokemus_lista:
-      - title: Pop/jazz laulunopetusta kevytyrittäjänä
+      - title: Pop/jazz laulunopettaja
         ajankohta: 11/2017 -
-        kuvaus: ''
+        kuvaus: |
+          Kevytyrittäjä 11/2017 - 09/2025\
+          Yrittäjä 10/2025 -> 
       - title: 'Lauluyhtye Iist Side Singers '
         ajankohta: 01/2017 –
         kuvaus: |
@@ -129,6 +131,7 @@ blocks:
         kuvaus: ''
     _template: kokemus
 ---
+
 
 
 
