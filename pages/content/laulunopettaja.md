@@ -14,15 +14,15 @@ blocks:
     palsta_kuvateksti: 'Kuva: Tuomas Eronen'
     palsta_otsikko: Laulutunnit
     palsta_sisalto: >
-      Olen opettanut laulua jo vuodesta 2017 alkaen kevytyrittäjänä.
-      Koulutukseltani olen pop/jazz lauluun erikoistunut musiikkipedagogi (AMK).
-      Vahvuusalueitani ovat pop/rock, iskelmä ja musikaalit sekä itselleni
-      rakkaimpana aiheena laulun tulkinnan opetus. Opetan myös paljon muita
-      laulun tyylilajeja sekä esimerkiksi esiintymistä ja mikkitekniikkaa.
-      Opetettavat asiat muotoutuvat jokaisen oppilaan omien tarpeiden, toiveiden
-      ja mielenkiinnon kohteiden mukaan. Opettajana haluan luoda positiivisen,
-      innostavan ja turvallisen ilmapiirin oman instrumentin tutkimiseen ja
-      opetteluun.
+      Olen opettanut laulua jo vuodesta 2017 alkaen kevytyrittäjänä ja
+      lokakuusta 2025 alkaen yrittäjänä. Koulutukseltani olen pop/jazz lauluun
+      erikoistunut musiikkipedagogi (AMK). Vahvuusalueitani ovat pop/rock,
+      iskelmä ja musikaalit sekä itselleni rakkaimpana aiheena laulun tulkinnan
+      opetus. Opetan myös paljon muita laulun tyylilajeja sekä esimerkiksi
+      esiintymistä ja mikkitekniikkaa. Opetettavat asiat muotoutuvat jokaisen
+      oppilaan omien tarpeiden, toiveiden ja mielenkiinnonkohteiden mukaan.
+      Opettajana haluan luoda positiivisen, innostavan ja turvallisen ilmapiirin
+      oman instrumentin tutkimiseen ja opetteluun.
 
 
       Tunneilleni ovat kaikki tervetulleita iästä, taitotasosta ja muista
@@ -34,8 +34,7 @@ blocks:
 
       Laulutunteja on mahdollista pitää viikoittain tai satunnaisesti.\
 
-      Opetus tapahtuu Jyväskylän Savelassa sijaitsevassa treenitilassani.
-      Laulutunnit laskutetaan ukko.fi palvelun kuukausittain.
+      Opetus tapahtuu Jyväskylän Savelassa sijaitsevassa treenitilassani. 
 
 
       **Kalenterissani on hyvin tilaa uusille oppilaille! Laita rohkeasti
@@ -44,19 +43,26 @@ blocks:
 
       **HINNASTO**\
 
-      **60€** / tunti (sis. alv. 25,5%)\
+      **60€** / tunti (sis. alv.)\
 
-      Ensimmäinen tunti 35€ (sis. alv. 25,5%)\
+      Ensimmäinen tunti 35€ (sis. alv.)\
 
       Opiskelijat ja alle 20-vuotiaat: -30%
 
 
-      **Tuntien peruuntuminen:**
-
+      **Tuntien peruuntuminen:**\
 
       Mikäli joudut perumaan tai siirtämään tuntisi ajankohtaa, ilmoitathan
       siitä viimeistään vuorokautta aiemmin. Myöhemmin perutusta tai
-      ilmoittamattomasta poissaolosta laskutetaan tunnin hinta.
+      ilmoittamattomasta poissaolosta tunti katsotaan pidetyksi ja se
+      laskutetaan kokonaisuudessaan.
+
+
+      **Tuntien laskutus:**\
+
+      Pidetyt tunnit laskutetaan kerran kuussa, jokaisen kuukauden vaihteessa.
+      Lasku toimitetaan sähköpostitse. Mikäli laskua ei ole maksettu eräpäivään
+      mennessä, peritään viivästyskorkoa 7%. 
 
 
       . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
@@ -138,6 +144,7 @@ blocks:
       Niemelä](https://www.linkedin.com/in/kati-niemel%C3%A4-a81b08250/)
     _template: palsta
 ---
+
 
 
 
