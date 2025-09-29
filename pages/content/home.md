@@ -19,8 +19,8 @@ blocks:
       puolella Gradialla.
 
 
-      Laulunopetustöitä olen tehnyt kevytyrittäjänä jo vuodesta 2017. Tällä
-      hetkellä minulla on hyvin tilaa uusille oppilaille!
+      Laulunopetustöitä olen tehnyt jo vuodesta 2017 alkaen. Tällä hetkellä
+      minulla on hyvin tilaa uusille oppilaille!
 
 
       Sydämeni sykkii keikkailulle ja esiintymiselle! Voit tilata minut
@@ -58,6 +58,7 @@ blocks:
       Niemelä](https://www.linkedin.com/in/kati-niemel%C3%A4-a81b08250/)
     _template: palsta
 ---
+
 
 
 
