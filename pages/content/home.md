@@ -56,8 +56,12 @@ blocks:
 
       **LinkedIn:** [Kati
       Niemelä](https://www.linkedin.com/in/kati-niemel%C3%A4-a81b08250/)
+
+
+      Kaniffi Tmi
     _template: palsta
 ---
+
 
 
 
