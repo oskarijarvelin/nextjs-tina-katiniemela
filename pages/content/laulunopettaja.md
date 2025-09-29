@@ -75,12 +75,16 @@ blocks:
       > "Kati on hyvä tekemään havaintoja ja niiden myötä antamaan yksilöityjä
       neuvoja. Laulutekniikkani ja biisien tulkinta on parantunut merkittävästi
       Katin monipuolisten oppien ansiosta. Lisäksi Katin tunneilla on mukava
-      tunnelma!" - Tommi\
+      tunnelma!" \
+
+      > \- Tommi\
 
       > \
 
       > "Todella rento ilmapiiri, tunneilla hyvä kannustus ja sen kautta
-      uskaltaa yrittää itselleen vaikeita asioita." - Aapo\
+      uskaltaa yrittää itselleen vaikeita asioita." \
+
+      > \- Aapo\
 
       > \
 
