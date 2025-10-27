@@ -22,11 +22,10 @@ blocks:
 
       **KANIFFI**
 
-      Oma artistiura näki päivänvalon 2024 vuoden alussa. Suomipop/rock
-      artistina haluan välittää tunteita ja tarinoita. Musiikkini on saanut
-      vaikutteita Irinasta sekä Suvi Teräsniskasta. Olen saanut sovittaa
-      kappaleet upean viisihenkisen bändini kanssa ja tulemme keikalle myös
-      pienemmällä kokoonpanolla. \
+      Suomipop/rock artistina haluan välittää tunteita ja tarinoita. Musiikkini
+      on saanut vaikutteita Irinasta sekä Suvi Teräsniskasta. Olen saanut
+      sovittaa kappaleet upean viisihenkisen bändini kanssa ja tulemme keikalle
+      myös pienemmällä kokoonpanolla. \
 
       Facebook:
       [@kaniffivirallinen](https://www.facebook.com/kaniffivirallinen)\
@@ -216,6 +215,7 @@ blocks:
       Niemelä](https://www.linkedin.com/in/kati-niemel%C3%A4-a81b08250/)
     _template: palsta
 ---
+
 
 
 
