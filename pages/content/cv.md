@@ -70,6 +70,10 @@ blocks:
         ajankohta: '08/2024 - '
         kuvaus: |
           Muusikko, musiikkiteatterin opintolinja
+
+          Laulunopettaja: Tuija Kiviranta\
+          Tanssinopettaja: Noora Kolanen\
+          Näyttelijäntyönopettaja: Paula Honkimäki
       - title: Jyväskylän ammattikorkeakoulu
         ajankohta: 08/2021 – 06/2025
         kuvaus: |
