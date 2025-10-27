@@ -13,7 +13,7 @@ blocks:
         ajankohta: 11/2017 -
         kuvaus: |
           Kevytyrittäjä 11/2017 - 09/2025\
-          Yrittäjä 10/2025 -> 
+          Yrittäjä 10/2025 ->
       - title: 'Lauluyhtye Iist Side Singers '
         ajankohta: 01/2017 –
         kuvaus: |
@@ -107,6 +107,11 @@ blocks:
   - kokemus_otsikko: Muu kokemus
     kokemus_sisalto: ''
     kokemus_lista:
+      - title: Martta 2.0 -musiikkinäytelmä
+        ajankohta: 10/2025 - 11/2025
+        kuvaus: |
+          Rooli: Paula\
+          Teatterikone
       - title: Nunnia ja Konnia -musikaali
         ajankohta: 2022-2023
         kuvaus: |
@@ -131,6 +136,7 @@ blocks:
         kuvaus: ''
     _template: kokemus
 ---
+
 
 
 
