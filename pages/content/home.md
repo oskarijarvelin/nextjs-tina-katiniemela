@@ -12,11 +12,11 @@ blocks:
     palsta_otsikko: Kuka minä olen?
     palsta_sisalto: >
       Olen Kati Niemelä eli Kaniffi - artisti, laulaja-lauluntekijä ja
-      laulunopettaja. Opetan ja esiinnyn aina suurella sydämellä. Jo nuoresta
-      iästä asti olen tiennyt musiikin olevan elämänpolkuni ja olen pyrkinyt
-      aina kehittämään itseäni. Valmistuin keväällä 2025 musiikkipedagogiksi
-      (AMK) ja opiskelen parhaillaan muusikon ammattitutkintoa musiikkiteatterin
-      puolella Gradialla.
+      laulunopettaja. Opetan ja esiinnyn suurella sydämellä. Jo nuoresta iästä
+      asti olen tiennyt musiikin olevan elämänpolkuni ja olen pyrkinyt aina
+      kehittämään itseäni. Koulutukseltani olen musiikkipedagogi (AMK) ja
+      opiskelen parhaillaan muusikon ammattitutkintoa musiikkiteatterin puolella
+      Gradialla.
 
 
       Laulunopetustöitä olen tehnyt jo vuodesta 2017 alkaen. Tällä hetkellä
