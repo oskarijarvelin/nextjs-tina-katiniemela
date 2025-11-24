@@ -111,6 +111,11 @@ blocks:
   - kokemus_otsikko: Muu kokemus
     kokemus_sisalto: ''
     kokemus_lista:
+      - title: Elossa -musikaali
+        ajankohta: 02/2026
+        kuvaus: |
+          Rooli: Kuvaussihteeri sekä osana tanssiensemblea\
+          Suomalainen musiikkikampus
       - title: Tahdon sanoa EI
         ajankohta: 25.11.2025
         kuvaus: >
