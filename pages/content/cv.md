@@ -132,7 +132,7 @@ blocks:
         ajankohta: 2022-2023
         kuvaus: |
           Roolit: Joey, Sisar Maria Irene \
-          Jyväskylän ammattikorkeakoulu
+          Suomalainen musiikkikampus
       - title: 'Sara Strömmer: Steaming Effects Workshop'
         ajankohta: 11.10.2017
         kuvaus: |
