@@ -114,7 +114,8 @@ blocks:
       - title: Elossa -musikaali
         ajankohta: 02/2026
         kuvaus: |
-          Rooli: Kuvaussihteeri sekä osana tanssiensemblea\
+          Rooli: Kuvaussihteeri\
+          Tanssiensemble\
           Suomalainen musiikkikampus
       - title: Tahdon sanoa EI
         ajankohta: 25.11.2025
