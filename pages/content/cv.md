@@ -111,6 +111,13 @@ blocks:
   - kokemus_otsikko: Muu kokemus
     kokemus_sisalto: ''
     kokemus_lista:
+      - title: Tahdon sanoa EI
+        ajankohta: 25.11.2025
+        kuvaus: >
+          Teatterikoneen toteuttama esitys Voitko kuunnella minua?
+          -runonäyttelyn runojen pohjalta, jotka käsittelevät
+          lähisuhdeväkivallan, vihan ja haastavien elämäntilanteiden teemoja 
+          nostaen kuitenkin esille selviytymisen ja toivon näkökulmaa. 
       - title: Martta 2.0 -musiikkinäytelmä
         ajankohta: 10/2025 - 11/2025
         kuvaus: |
@@ -140,6 +147,7 @@ blocks:
         kuvaus: ''
     _template: kokemus
 ---
+
 
 
 
