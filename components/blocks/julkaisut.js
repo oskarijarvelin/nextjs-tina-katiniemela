@@ -64,14 +64,14 @@ export default function JulkaisutBlock({ block }) {
                 }
                 {j.spotify &&
                   <Typography component="span" sx={{ mr: 3 }}>
-                    <Link href={j?.spotify} target="_blank" rel="noopener" sx={{ color: '#fff', textDecoration: "none", display: 'inline-flex' }} aria-label={j.title + ' Spotifyssä'}>
+                    <Link href={j?.spotify} target="_blank" rel="noopener noreferrer" sx={{ color: '#fff', textDecoration: "none", display: 'inline-flex' }} aria-label={`${j.title} Spotifyssä`}>
                       <FaSpotify />
                     </Link>
                   </Typography>
                 }
                 {j.youtube &&
                   <Typography component="span">
-                    <Link href={j?.youtube} target="_blank" rel="noopener" sx={{ color: '#fff', textDecoration: "none", display: 'inline-flex' }} aria-label={j.title + ' YouTubessa'}>
+                    <Link href={j?.youtube} target="_blank" rel="noopener noreferrer" sx={{ color: '#fff', textDecoration: "none", display: 'inline-flex' }} aria-label={`${j.title} YouTubessa`}>
                       <FaYoutube />
                     </Link>
                   </Typography>
