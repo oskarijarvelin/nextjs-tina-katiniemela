@@ -59,7 +59,7 @@ export default function VideotBlock({ block }) {
                   <Typography component="span" sx={{ pl: 4 }}>{j?.ajankohta}</Typography>
                 }
               </Typography>
-              <Video video={youtube_parser(j.url)} />
+              <Video video={youtube_parser(j.url)} title={j.title} />
             </Box>
           ))}
         </Box>

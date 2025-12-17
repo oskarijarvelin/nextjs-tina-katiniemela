@@ -50,6 +50,20 @@ const theme = createTheme({
       },
     },
   },
+  components: {
+    MuiCssBaseline: {
+      styleOverrides: {
+        '*:focus-visible': {
+          outline: '2px solid #556cd6',
+          outlineOffset: '2px',
+        },
+        'a:focus-visible': {
+          outline: '2px solid #556cd6',
+          outlineOffset: '2px',
+        },
+      },
+    },
+  },
 });
 
 theme.typography.h2 = {
