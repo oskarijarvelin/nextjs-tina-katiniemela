@@ -50,7 +50,7 @@ export default function Image({src, orientation, alt}) {
                     alt={altText}
                     width={1920}
                     height={1700}
-                    sizes="(max-width: 480px) 480px, (max-width: 1200px) 1200px, 50vw"
+                    sizes="(max-width: 768px) 100vw, 50vw"
                     placeholder="blur"
                     blurDataURL={getBlurDataURL()}
                     priority
@@ -68,7 +68,7 @@ export default function Image({src, orientation, alt}) {
                     alt={altText}
                     width={1920}
                     height={1500}
-                    sizes="(max-width: 480px) 480px, (max-width: 1200px) 1200px, 50vw"
+                    sizes="(max-width: 768px) 100vw, 50vw"
                     placeholder="blur"
                     blurDataURL={getBlurDataURL()}
                     style={{ width: '100%', height: 'auto' }}
