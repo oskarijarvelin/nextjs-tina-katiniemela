@@ -5,8 +5,7 @@
     "dev": "tinacms dev -c \"next dev\"",
     "build": "node scripts/generate-sitemap.js && tinacms build && next build",
     "start": "tinacms build && next start",
-    "lint": "next lint",
-    "postbuild": "node scripts/generate-sitemap.js"
+    "lint": "next lint"
   },
   "dependencies": {
     "@emotion/cache": "^11.10.5",

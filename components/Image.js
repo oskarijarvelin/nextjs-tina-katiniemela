@@ -40,7 +40,7 @@ export default function Image({src, orientation, alt}) {
                     <source media="(max-width: 1200px)" srcSet={processUrl(src, 1200, 900)} />
                     <source media="(max-width: 1919px)" srcSet={processUrl(src, 1920, 1700)} />
                     <source media="(min-width: 1920px)" srcSet={processUrl(src, 3840, 3600)} />
-                    <img src={processUrl(src, 480, 480)} alt={altText} width={480} height={480} fetchpriority="high" />
+                    <img src={processUrl(src, 480, 480)} alt={altText} width={480} height={480} fetchPriority="high" />
                 </picture>
             </KuvaBox>
         );
