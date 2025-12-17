@@ -11,7 +11,17 @@ export default class MyDocument extends Document {
         <Head>
           {/* PWA primary color */}
           <meta name="theme-color" content={theme.palette.primary.main} />
-          <link rel="shortcut icon" href="/favicon.png" />
+          <link rel="icon" href="/favicon.png" />
+          <link rel="apple-touch-icon" href="/favicon.png" />
+          <link rel="manifest" href="/manifest.json" />
+          
+          {/* Preconnect to external domains for performance */}
+          <link rel="preconnect" href="https://res.cloudinary.com" />
+          <link rel="dns-prefetch" href="https://res.cloudinary.com" />
+          
+          {/* Charset and viewport are handled in _app.js */}
+          <meta charSet="utf-8" />
+          
           <meta name="emotion-insertion-point" content="" />
           {this.props.emotionStyleTags}
         </Head>

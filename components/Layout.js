@@ -21,7 +21,7 @@ import theme from '../src/theme';
 
 import settings from "../content/settings/index.json";
 
-export default function Layout({ title, description, children }) {
+export default function Layout({ title, description, children, ogImage }) {
   const router = useRouter();
   const [anchorEl, setAnchorEl] = useState(null);
   const open = Boolean(anchorEl);
@@ -33,6 +33,48 @@ export default function Layout({ title, description, children }) {
   const closeMenu = () => {
     setAnchorEl(null);
   }
+
+  const siteUrl = 'https://katiniemela.fi';
+  const currentUrl = `${siteUrl}${router.asPath}`;
+  const defaultOgImage = `${siteUrl}/favicon.png`;
+  const imageUrl = ogImage || defaultOgImage;
+
+  // Structured Data for SEO (JSON-LD)
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Person",
+        "name": "Kati Niemelä",
+        "alternateName": "Kaniffi",
+        "description": "Artisti, laulaja-lauluntekijä ja pop/jazz laulunopettaja",
+        "url": siteUrl,
+        "image": imageUrl,
+        "jobTitle": ["Laulaja", "Lauluntekijä", "Laulunopettaja", "Artisti"],
+        "knowsAbout": ["Musiikki", "Laulu", "Musiikkipedagogia", "Pop", "Jazz", "Musiikkiteatteri"],
+        "sameAs": [
+          settings.instagram_url,
+          settings.linkedin_url,
+          "https://www.facebook.com/kaniffivirallinen"
+        ],
+        "address": {
+          "@type": "PostalAddress",
+          "addressCountry": "FI"
+        }
+      },
+      {
+        "@type": "WebSite",
+        "name": settings.sivuston_nimi,
+        "url": siteUrl,
+        "description": description,
+        "inLanguage": "fi",
+        "publisher": {
+          "@type": "Person",
+          "name": "Kati Niemelä"
+        }
+      }
+    ]
+  };
 
   const NaviBox = styled(Box)({
     '& a': {
@@ -67,43 +109,95 @@ export default function Layout({ title, description, children }) {
     },
   }));
 
+  // Skip to main content link for accessibility
+  const SkipLink = styled('a')({
+    position: 'absolute',
+    left: '-9999px',
+    zIndex: 999,
+    padding: '1rem',
+    backgroundColor: theme.palette.primary.main,
+    color: '#fff',
+    textDecoration: 'none',
+    '&:focus': {
+      left: '50%',
+      transform: 'translateX(-50%)',
+      top: '10px',
+    }
+  });
+
   return (
     <div>
       <Head>
         <title>{title}</title>
         <meta name="description" content={description} />
+        
+        {/* Canonical URL */}
+        <link rel="canonical" href={currentUrl} />
+        
+        {/* Open Graph / Facebook */}
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content={currentUrl} />
         <meta property="og:title" content={title} />
         <meta property="og:description" content={description} />
-        <meta property="og:type" content="website" />
+        <meta property="og:image" content={imageUrl} />
+        <meta property="og:image:alt" content={title} />
+        <meta property="og:site_name" content={settings.sivuston_nimi} />
+        <meta property="og:locale" content="fi_FI" />
+        
+        {/* Twitter Card */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:url" content={currentUrl} />
+        <meta name="twitter:title" content={title} />
+        <meta name="twitter:description" content={description} />
+        <meta name="twitter:image" content={imageUrl} />
+        <meta name="twitter:image:alt" content={title} />
+        
+        {/* Additional SEO tags */}
+        <meta name="author" content="Kati Niemelä" />
+        <meta name="robots" content="index, follow" />
+        <meta name="googlebot" content="index, follow" />
+        <meta name="language" content="Finnish" />
+        
+        {/* Structured Data */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+        />
       </Head>
+      
+      {/* Skip to main content link for accessibility */}
+      <SkipLink href="#main-content">
+        Siirry pääsisältöön
+      </SkipLink>
+      
       <Box sx={{ flexGrow: 1 }}>
         <AppBar position="fixed" component="header" sx={{ backdropFilter: 'blur(6px)', backgroundColor: 'rgba(0,0,0,.66)', boxShadow: 0 }}>
           <Toolbar>
             <NaviBox sx={{ flexGrow: 1 }}>
               <Typography variant="h6" component="div" sx={{ flexGrow: 1, fontFamily: 'MonteCarlo', fontSize: 30 }}>
-                <Link href="/" sx={{ color: '#fff', textDecoration: 'none' }}>
+                <Link href="/" sx={{ color: '#fff', textDecoration: 'none' }} aria-label="Koti - Kati Niemelä">
                   {settings.sivuston_nimi}
                 </Link>
               </Typography>
             </NaviBox>
-            <NaviBox sx={{ display: { xs: 'none', lg: 'flex' } }}>
+            <NaviBox sx={{ display: { xs: 'none', lg: 'flex' } }} component="nav" aria-label="Päänavigaatio">
               {settings.mainnav.nav.map((item, index) => (
                 <Typography key={index} color="inherit" sx={{ fontSize: 20, pl: 4 }}>
                   <Link href={item.url} passHref sx={{ color: '#fff', textDecoration: (router.asPath == item.url) ? "underline" : "none" }}>{item.title}</Link>
                 </Typography>
               ))}
             </NaviBox>
-            <Box sx={{ display: 'flex' }}>
+            <Box sx={{ display: 'flex' }} aria-label="Sosiaalinen media">
               {settings.instagram_url &&
                 <Typography color="inherit" sx={{ fontSize: 20, pl: { xs: 2, lg: 4 } }}>
-                  <Link href={settings.instagram_url} target="_blank" rel="noopener" sx={{ color: '#fff', textDecoration: "none", display: 'flex' }} aria-label="Linkki Instagram-profiiliin">
+                  <Link href={settings.instagram_url} target="_blank" rel="noopener noreferrer" sx={{ color: '#fff', textDecoration: "none", display: 'flex' }} aria-label="Seuraa Instagramissa">
                     <InstagramIcon />
                   </Link>
                 </Typography>
               }
               {settings.linkedin_url &&
                 <Typography color="inherit" sx={{ fontSize: 20, pl: { xs: 2, lg: 4 } }}>
-                  <Link href={settings.linkedin_url} target="_blank" rel="noopener" sx={{ color: '#fff', textDecoration: "none", display: 'flex' }} aria-label="Linkki LinkedIn-profiiliin">
+                  <Link href={settings.linkedin_url} target="_blank" rel="noopener noreferrer" sx={{ color: '#fff', textDecoration: "none", display: 'flex' }} aria-label="Yhdistä LinkedInissä">
                     <LinkedInIcon />
                   </Link>
                 </Typography>
@@ -161,8 +255,8 @@ export default function Layout({ title, description, children }) {
           </Toolbar>
         </AppBar>
       </Box>
-      <Box component="main">{children}</Box>
-      <Box component="footer">
+      <Box component="main" id="main-content">{children}</Box>
+      <Box component="footer" role="contentinfo">
         <Typography sx={{ py: 4, fontSize: 14, textAlign: 'center', color: '#AAA' }} >
           &copy; 2022 - {new Date().getFullYear()} {settings.sivuston_nimi}
         </Typography>
