@@ -54,6 +54,7 @@ export default function Image({src, orientation, alt}) {
                     placeholder="blur"
                     blurDataURL={getBlurDataURL()}
                     priority
+                    fetchPriority="high"
                     style={{ width: '100%', height: 'auto' }}
                 />
             </KuvaBox>
