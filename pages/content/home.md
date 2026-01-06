@@ -3,8 +3,8 @@ title: Kati Niemelä - Laulaja-lauluntekijä ja laulunopettaja
 blocks:
   - otsikko: Kati Niemelä
     sisalto: 'Artisti - Laulaja - Lauluntekijä - Pop/jazz laulunopettaja '
-    bgImg: /uploads/DSC04273.jpg
-    kuvateksti: 'Kuva: Tuomas Eronen'
+    bgImg: /uploads/DSC_2504.jpg
+    kuvateksti: 'Kuva: Viola Tarvainen'
     _template: hero
   - palsta_kuva: /uploads/JMo-2023-33.jpg
     palsta_kuvateksti: 'Kuva: Jan-Kristian Moilanen'
@@ -61,6 +61,7 @@ blocks:
       Kaniffi Tmi
     _template: palsta
 ---
+
 
 
 
