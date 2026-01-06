@@ -5,8 +5,8 @@ blocks:
     sisalto: >-
       Tilaa minut tapahtumaasi niin räätälöidään sinulle sopiva paketti!
       Yhteystietoni löydät sivun alaosasta.
-    bgImg: /uploads/JMo-2023-33.jpg
-    kuvateksti: 'Kuva: Jan-Kristian Moilanen'
+    bgImg: /uploads/DSC_2599.jpg
+    kuvateksti: 'Kuva: Viola Tarvainen'
     _template: hero
   - palsta_kuva: /uploads/jmo-cropattu.png
     palsta_kuvateksti: 'Kuva: Jan-Kristian Moilanen'
@@ -29,6 +29,7 @@ blocks:
       Niemelä](https://www.linkedin.com/in/kati-niemel%C3%A4-a81b08250/)
     _template: palsta
 ---
+
 
 
 
