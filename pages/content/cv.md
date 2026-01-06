@@ -111,11 +111,10 @@ blocks:
   - kokemus_otsikko: Muu kokemus
     kokemus_sisalto: ''
     kokemus_lista:
-      - title: Elossa -musikaali
+      - title: Elossa! -musikaali
         ajankohta: 02/2026
         kuvaus: |
-          Rooli: Kuvaussihteeri\
-          Tanssiensemble\
+          Tanssiensemblen jäsen\
           Suomalainen musiikkikampus
       - title: Tahdon sanoa EI
         ajankohta: 25.11.2025
@@ -123,7 +122,7 @@ blocks:
           Teatterikoneen toteuttama esitys Voitko kuunnella minua?
           -runonäyttelyn runojen pohjalta, jotka käsittelevät
           lähisuhdeväkivallan, vihan ja haastavien elämäntilanteiden teemoja 
-          nostaen kuitenkin esille selviytymisen ja toivon näkökulmaa. 
+          nostaen kuitenkin esille selviytymisen ja toivon näkökulmaa.
       - title: Martta 2.0 -musiikkinäytelmä
         ajankohta: 10/2025 - 11/2025
         kuvaus: |
@@ -153,6 +152,7 @@ blocks:
         kuvaus: ''
     _template: kokemus
 ---
+
 
 
 
