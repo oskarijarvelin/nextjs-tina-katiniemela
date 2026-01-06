@@ -34,7 +34,7 @@ blocks:
 
       Laulutunteja on mahdollista pitää viikoittain tai satunnaisesti.\
 
-      Opetus tapahtuu Jyväskylän Savelassa sijaitsevassa treenitilassani. 
+      Opetus tapahtuu Jyväskylän Savelassa sijaitsevassa treenitilassani.
 
 
       **Kalenterissani on hyvin tilaa uusille oppilaille! Laita rohkeasti
@@ -47,7 +47,7 @@ blocks:
 
       Ensimmäinen tunti 35€ (sis. alv.)\
 
-      Opiskelijat ja alle 20-vuotiaat: -30%
+      Opiskelijat ja alle 20-vuotiaat: -15%
 
 
       **Tuntien peruuntuminen:**\
@@ -62,7 +62,7 @@ blocks:
 
       Pidetyt tunnit laskutetaan kerran kuussa, jokaisen kuukauden vaihteessa.
       Lasku toimitetaan sähköpostitse. Mikäli laskua ei ole maksettu eräpäivään
-      mennessä, peritään viivästyskorkoa 7%. 
+      mennessä, peritään viivästyskorkoa 7%.
 
 
       . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
@@ -148,6 +148,7 @@ blocks:
       Niemelä](https://www.linkedin.com/in/kati-niemel%C3%A4-a81b08250/)
     _template: palsta
 ---
+
 
 
 
