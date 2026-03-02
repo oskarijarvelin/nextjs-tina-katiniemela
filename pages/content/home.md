@@ -10,22 +10,12 @@ blocks:
     palsta_kuvateksti: 'Kuva: Jan-Kristian Moilanen'
     palsta_reverse: false
     palsta_otsikko: Kuka minä olen?
-    palsta_sisalto: >
-      Olen Kati Niemelä eli Kaniffi - artisti, laulaja-lauluntekijä ja
-      laulunopettaja. Opetan ja esiinnyn suurella sydämellä. Jo nuoresta iästä
-      asti olen tiennyt musiikin olevan elämänpolkuni ja olen pyrkinyt aina
-      kehittämään itseäni. Koulutukseltani olen musiikkipedagogi (AMK) ja
-      opiskelen parhaillaan muusikon ammattitutkintoa musiikkiteatterin puolella
-      Gradialla.
+    palsta_sisalto: |
+      Olen Kati Niemelä eli Kaniffi - artisti, laulaja-lauluntekijä ja laulunopettaja. Opetan ja esiinnyn suurella sydämellä. Musiikki on elämänpolkuni ja olen pyrkinyt aina kehittämään itseäni. Koulutukseltani olen musiikkipedagogi (AMK) ja opiskelen parhaillaan muusikon ammattitutkintoa musiikkiteatterin puolella Gradialla.
 
+      Laulunopetustöitä olen tehnyt jo vuodesta 2017 alkaen. Tällä hetkellä minulla on hyvin tilaa uusille oppilaille!
 
-      Laulunopetustöitä olen tehnyt jo vuodesta 2017 alkaen. Tällä hetkellä
-      minulla on hyvin tilaa uusille oppilaille!
-
-
-      Sydämeni sykkii keikkailulle ja esiintymiselle! Voit tilata minut
-      haluamallasi kokoonpanolla niin pieneen kuin suureen tilaisuuteen!
-
+      Sydämeni sykkii keikkailulle ja esiintymiselle! Voit tilata minut haluamallasi kokoonpanolla niin pieneen kuin suureen tilaisuuteen!
 
       Lämpimästi tervetuloa laulutunneille ja keikoille!
     palsta_linkit:
@@ -42,25 +32,19 @@ blocks:
     kuva_kuvateksti: 'Kuva: Tuomas Eronen'
     _template: kuva
   - palsta_otsikko: Ota yhteyttä
-    palsta_sisalto: >
-      **Sähköposti:**
-      [kaniffivirallinen@gmail.com](mailto:kaniffivirallinen@gmail.com)
+    palsta_sisalto: |
+      **Sähköposti:** [kaniffivirallinen@gmail.com](mailto:kaniffivirallinen@gmail.com)
 
-
-      **Facebook:**
-      [@kaniffivirallinen](https://www.facebook.com/kaniffivirallinen)
-
+      **Facebook:** [@kaniffivirallinen](https://www.facebook.com/kaniffivirallinen)
 
       **Instagram:** [@kaniffi](https://www.instagram.com/kaniffi/)
 
-
-      **LinkedIn:** [Kati
-      Niemelä](https://www.linkedin.com/in/kati-niemel%C3%A4-a81b08250/)
-
+      **LinkedIn:** [Kati Niemelä](https://www.linkedin.com/in/kati-niemel%C3%A4-a81b08250/)
 
       Kaniffi Tmi
     _template: palsta
 ---
+
 
 
 
