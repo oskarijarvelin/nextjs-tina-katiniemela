@@ -2,80 +2,39 @@
 title: Muusikko Kati Niemelä
 blocks:
   - otsikko: Muusikko
-    sisalto: >-
-      Keikkakokemusta on kertynyt monipuolisesti eri kokoonpanoista ja
-      projekteista.
-
-      Tilaa minut tapahtumaasi niin räätälöidään sinulle sopiva paketti!
-      Yhteystiedot sivun alaosassa. 
+    sisalto: |-
+      Keikkakokemusta on kertynyt monipuolisesti eri kokoonpanoista ja projekteista.
+      Tilaa minut tapahtumaasi niin räätälöidään sinulle sopiva paketti! Yhteystiedot sivun alaosassa. 
     bgImg: /uploads/JMo-2023-33.jpg
     kuvateksti: 'Kuva: Jan-Kristian Moilanen'
     _template: hero
   - palsta_kuva: /uploads/jmo-cropattu.png
     palsta_kuvateksti: 'Kuva: Jan-Kristian Moilanen'
     palsta_otsikko: Kokoonpanot
-    palsta_sisalto: >
-      Voit tilata minut keikalle haluamaasi tapahtumaan, haluamallasi
-      kokoonpanolla. Mukanani tulee tarvittava äänentoistolaitteisto sekä valot
-      ja taustakangas.
-
+    palsta_sisalto: |
+      Voit tilata minut keikalle haluamaasi tapahtumaan, haluamallasi kokoonpanolla. Mukanani tulee tarvittava äänentoistolaitteisto sekä valot ja taustakangas.
 
       **KANIFFI**
-
-      Suomipop/rock artistina haluan välittää tunteita ja tarinoita. Musiikkini
-      on saanut vaikutteita Irinasta sekä Suvi Teräsniskasta. Olen saanut
-      sovittaa kappaleet upean viisihenkisen bändini kanssa ja tulemme keikalle
-      myös pienemmällä kokoonpanolla. \
-
-      Facebook:
-      [@kaniffivirallinen](https://www.facebook.com/kaniffivirallinen)\
-
+      Suomipop/rock artistina haluan välittää tunteita ja tarinoita. Musiikkini on saanut vaikutteita Irinasta sekä Suvi Teräsniskasta. Olen saanut sovittaa kappaleet upean viisihenkisen bändini kanssa ja tulemme keikalle myös pienemmällä kokoonpanolla. \
+      Facebook: [@kaniffivirallinen](https://www.facebook.com/kaniffivirallinen)\
       Instagram: [@kaniffi](https://www.instagram.com/kaniffi)
-
 
       ![](/uploads/kaniffi-final-large-syvatty-inv.png)
 
-
       \
-
       **KANIFFI DUO**
-
-      Tämä duo valloittaa cover-keikoilla! Soitamme kitaristini kanssa
-      rakastamiamme suomipop/rock kappaleita oman musiikin lisäksi. Koostamme
-      settilistan tapahtuman luonteen mukaisesti ja voit tilata meidät
-      esiintymään pieniin ja suuriin tapahtumiin.
-
+      Tämä duo valloittaa cover-keikoilla! Soitamme kitaristini kanssa rakastamiamme suomipop/rock kappaleita oman musiikin lisäksi. Koostamme settilistan tapahtuman luonteen mukaisesti ja voit tilata meidät esiintymään pieniin ja suuriin tapahtumiin.
 
       \
-
       **IIST SIDE SINGERS**
-
-      Lauluyhtye Iist Side Singers on keikkaillut niin pienissä
-      yksityistilaisuuksissa, kuin suuremmissa tapahtumissa, kuten Auto- ja
-      Liikennegaalassa. Settilistassamme on suuria balladeja sekä meneviä
-      sikermiä. Mikäli haluat meidät keikalle, lähetä viesti niin räätälöidään
-      tapahtumaasi sopiva kokonaisuus!\
-
-      [Iist Side
-      Singers-Facebook](https://www.facebook.com/IistSideSingersOfficial)\
-
+      Lauluyhtye Iist Side Singers on keikkaillut niin pienissä yksityistilaisuuksissa, kuin suuremmissa tapahtumissa, kuten Auto- ja Liikennegaalassa. Settilistassamme on suuria balladeja sekä meneviä sikermiä. Mikäli haluat meidät keikalle, lähetä viesti niin räätälöidään tapahtumaasi sopiva kokonaisuus!\
+      [Iist Side Singers-Facebook](https://www.facebook.com/IistSideSingersOfficial)\
       [Iist Side Singers-Instagram](https://www.instagram.com/iistsidesingers/)
 
-
       \
-
       **RONIMUS  (ei-aktiivinen)**
-
-      Suomirock-yhtye Ronimuksessa olen toiminut vuodesta 2016 lähtien
-      laulaja/kosketinsoittajana sekä keikkamyyjänä. Julkaisimme keväällä 2022
-      levyn Alusta aloitetaan, jossa olen mukana myös biisinkirjoittajana. Levyn
-      julkaisun jälkeen bändi jäi tauolle. Ronimuksen kanssa olen päässyt myös
-      käsikirjoittamaan ja toteuttamaan musiikkivideoita. Videot löytyvät tämän
-      sivun alaosasta. Bändiin voit tutustua lisää osoitteessa:
-      [www.ronimus.fi](www.ronimus.fi)\
-
+      Suomirock-yhtye Ronimuksessa olen toiminut vuodesta 2016 lähtien laulaja/kosketinsoittajana sekä keikkamyyjänä. Julkaisimme keväällä 2022 levyn Alusta aloitetaan, jossa olen mukana myös biisinkirjoittajana. Levyn julkaisun jälkeen bändi jäi tauolle. Ronimuksen kanssa olen päässyt myös käsikirjoittamaan ja toteuttamaan musiikkivideoita. Videot löytyvät tämän sivun alaosasta. Bändiin voit tutustua lisää osoitteessa: [www.ronimus.fi](www.ronimus.fi)\
       [Ronimus-Facebook  ](https://www.facebook.com/ronimusofficial)\
-
       [Ronimus-Instagram](https://www.instagram.com/ronimusofficial/)
     _template: palsta
   - julkaisut_otsikko: Discografia
@@ -104,9 +63,7 @@ blocks:
           - title: 7. Onnellinen suudelma
             meta: '(säv.&san. Roy Bertula, sov. Ronimus)'
           - title: 8. Tyhmä kylmä sydän
-            meta: >-
-              (säv. Roy Bertula, Nico Bertula, Kati Niemelä, san. Kati Niemelä,
-              sov. Ronimus)
+            meta: '(säv. Roy Bertula, Nico Bertula, Kati Niemelä, san. Kati Niemelä, sov. Ronimus)'
           - title: 9. Rannalla ruikuttaja
             meta: '(säv. Jiri Bertula, san. Jarmo Mutanen, sov. Ronimus)'
           - title: 10. Kohdillaan
@@ -127,9 +84,8 @@ blocks:
         ajankohta: '2021'
         spotify: 'https://open.spotify.com/album/4AAETNwapVrfcatnwk9U3K'
         youtube: 'https://www.youtube.com/watch?v=1FGRF0gRipQ'
-        kuvaus: >
-          (säv. Roy Bertula, Nico Bertula, Kati Niemelä, san. Kati Niemelä, sov.
-          Ronimus)
+        kuvaus: |
+          (säv. Roy Bertula, Nico Bertula, Kati Niemelä, san. Kati Niemelä, sov. Ronimus)
       - kuva: /uploads/ronimus-epaonnenhuhtikuu_a7vxso.jpg
         title: Epäonnen huhtikuu
         tyyppi: Single
@@ -187,7 +143,7 @@ blocks:
         url: 'https://www.youtube.com/watch?v=p-ZaMt6IPiI'
       - title: SweetHard - One of These Nights -cover
         ajankohta: '2021'
-        url: 'https://www.youtube.com/watch?v=Cdjv8v7dgx0'
+        url: 'https://www.youtube.com/watch?v=ERrsmQJMurk'
       - title: Ronimus – Minne tiet kuljettaa
         ajankohta: '2019'
         url: 'https://www.youtube.com/watch?v=7XK8I47NdoQ'
@@ -199,22 +155,17 @@ blocks:
         url: 'https://www.youtube.com/watch?v=bvKDC7BWXss'
     _template: videot
   - palsta_otsikko: Ota yhteyttä
-    palsta_sisalto: >
-      **Sähköposti:**
-      [kaniffivirallinen@gmail.com](mailto:kaniffivirallinen@gmail.com)
+    palsta_sisalto: |
+      **Sähköposti:** [kaniffivirallinen@gmail.com](mailto:kaniffivirallinen@gmail.com)
 
-
-      **Facebook:**
-      [@kaniffivirallinen](https://www.facebook.com/kaniffivirallinen)
-
+      **Facebook:** [@kaniffivirallinen](https://www.facebook.com/kaniffivirallinen)
 
       **Instagram:** [@kaniffi](https://www.instagram.com/kaniffi/)
 
-
-      **LinkedIn:** [Kati
-      Niemelä](https://www.linkedin.com/in/kati-niemel%C3%A4-a81b08250/)
+      **LinkedIn:** [Kati Niemelä](https://www.linkedin.com/in/kati-niemel%C3%A4-a81b08250/)
     _template: palsta
 ---
+
 
 
 
