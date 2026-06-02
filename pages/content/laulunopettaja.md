@@ -26,7 +26,8 @@ blocks:
       Ensimmäinen tunti 35€ (sis. alv.)\
       Opiskelijat ja alle 20-vuotiaat: -15%
 
-      KESÄALE = ENSIMMÄINEN TUNTI 20€ (voimassa kesä- ja heinäkuussa)
+      **KESÄALE = ENSIMMÄINEN TUNTI 20€**\
+      (voimassa kesä- ja heinäkuussa)
 
       **Tuntien peruuntuminen:**\
       Mikäli joudut perumaan tai siirtämään tuntisi ajankohtaa, ilmoitathan siitä viimeistään vuorokautta aiemmin. Myöhemmin perutusta tai ilmoittamattomasta poissaolosta tunti katsotaan pidetyksi ja se laskutetaan kokonaisuudessaan.
