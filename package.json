@@ -27,7 +27,7 @@
     "react-icons": "^4.7.1",
     "react-is": "^18.2.0",
     "styled-components": "^5.3.6",
-    "tinacms": "^1.2.1"
+    "tinacms": "^1.2.2"
   },
   "devDependencies": {
     "@tinacms/cli": "^1.2.1",
