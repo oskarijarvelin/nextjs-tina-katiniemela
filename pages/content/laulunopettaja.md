@@ -26,8 +26,7 @@ blocks:
       Ensimmäinen tunti 35€ (sis. alv.)\
       Opiskelijat ja alle 20-vuotiaat: -15%
 
-      **KESÄALE = ENSIMMÄINEN TUNTI 20€**\
-      (voimassa kesä- ja heinäkuussa)
+      **Saatavilla myös laulutuntilahjakortteja.**
 
       **Tuntien peruuntuminen:**\
       Mikäli joudut perumaan tai siirtämään tuntisi ajankohtaa, ilmoitathan siitä viimeistään vuorokautta aiemmin. Myöhemmin perutusta tai ilmoittamattomasta poissaolosta tunti katsotaan pidetyksi ja se laskutetaan kokonaisuudessaan.
@@ -69,6 +68,7 @@ blocks:
       **LinkedIn:** [Kati Niemelä](https://www.linkedin.com/in/kati-niemel%C3%A4-a81b08250/)
     _template: palsta
 ---
+
 
 
 
