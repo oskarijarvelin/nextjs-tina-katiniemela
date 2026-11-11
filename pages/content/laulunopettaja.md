@@ -12,14 +12,17 @@ blocks:
     palsta_kuvateksti: 'Kuva: Tuomas Eronen'
     palsta_otsikko: Laulutunnit
     palsta_sisalto: |
-      Olen opettanut laulua jo vuodesta 2017 alkaen kevytyrittäjänä ja lokakuusta 2025 alkaen yrittäjänä. Koulutukseltani olen pop/jazz lauluun erikoistunut musiikkipedagogi (AMK) sekä keväällä -26 valmistuva muusikko, musiikkiteatterin suuntauksella. Vahvuusalueitani ovat pop/rock, iskelmä ja musikaalit sekä itselleni rakkaimpana aiheena on laulun tulkinnan opetus. Opetan myös paljon muita laulun tyylilajeja sekä esimerkiksi esiintymistä, mikkitekniikkaa ja musiikin teoriaa. Opetettavat asiat muotoutuvat jokaisen oppilaan omien tarpeiden, toiveiden ja mielenkiinnonkohteiden mukaan. Opettajana haluan luoda positiivisen, innostavan ja turvallisen ilmapiirin oman instrumentin tutkimiseen ja opetteluun.
+      Olen opettanut laulua jo vuodesta 2017 alkaen kevytyrittäjänä ja lokakuusta 2025 alkaen yrittäjänä. Koulutukseltani olen pop/jazz lauluun erikoistunut musiikkipedagogi (AMK) sekä muusikko, musiikkiteatterin suuntauksella. Vahvuusalueitani ovat pop/rock, iskelmä ja musikaalit sekä itselleni rakkaimpana aiheena laulun tulkinnan opetus. Opetan myös muita laulun tyylilajeja sekä esimerkiksi esiintymistä, mikkitekniikkaa ja musiikin teoriaa. Opetettavat asiat muotoutuvat jokaisen oppilaan omien tarpeiden, toiveiden ja mielenkiinnonkohteiden mukaan.
 
-      Tunneilleni ovat kaikki tervetulleita iästä, taitotasosta ja muista lähtökohdista riippumatta. Pääset kanssani tutustumaan omaan instrumenttiisi ja löytämään juuri sinun äänesi. Tunneillani pääset myös halutessasi tutustumaan laajasti eri genreihin eli musiikin tyylisuuntiin ja pääset myös oppimaan musiikin teoriaa lauluopetuksen lisäksi.
+      Opettajana haluan luoda positiivisen, innostavan ja turvallisen ilmapiirin oman instrumentin tutkimiseen ja opetteluun.
+
+      Tunneilleni ovat kaikki tervetulleita iästä, taitotasosta ja muista lähtökohdista riippumatta. Pääset kanssani tutustumaan omaan instrumenttiisi ja löytämään juuri sinun äänesi. 
 
       Laulutunteja on mahdollista pitää viikoittain tai satunnaisesti.\
       Opetus tapahtuu Jyväskylän Savelassa sijaitsevassa treenitilassani.
 
-      **Kalenterissani on hyvin tilaa uusille oppilaille! Laita rohkeasti viestiä!**
+      **Kalenterissani on hyvin tilaa uusille oppilaille! **\
+      **Laita rohkeasti viestiä!**
 
       **HINNASTO**\
       **60€** / tunti (sis. alv.)\
