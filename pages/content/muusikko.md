@@ -23,7 +23,7 @@ blocks:
 
       \
       **KANIFFI DUO**
-      Tämä duo valloittaa cover-keikoilla! Soitamme kitaristini kanssa rakastamiamme suomipop/rock kappaleita oman musiikin lisäksi. Koostamme settilistan tapahtuman luonteen mukaisesti ja voit tilata meidät esiintymään pieniin ja suuriin tapahtumiin.
+      Tämä duo valloittaa cover-keikoilla! Soitamme kitaristini kanssa rakastamiamme suomipop/rock kappaleita oman musiikin lisäksi. Koostamme settilistan tapahtuman luonteen mukaisesti ja voit tilata meidät esiintymään pieniin ja suuriin tapahtumiin. Tarvittaessa myös trio saatavilla!
 
       \
       **IIST SIDE SINGERS**
@@ -165,6 +165,7 @@ blocks:
       **LinkedIn:** [Kati Niemelä](https://www.linkedin.com/in/kati-niemel%C3%A4-a81b08250/)
     _template: palsta
 ---
+
 
 
 
