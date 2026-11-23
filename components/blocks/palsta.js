@@ -1,4 +1,4 @@
-import { TinaMarkdown } from 'tinacms/dist/rich-text';
+import RichText from '../RichText';
 import { styled } from '@mui/material/styles';
 import Image from '../Image';
 import Link from '../Link';
@@ -41,7 +41,7 @@ export default function PalstaBlock({ block }) {
       <Box sx={{ flex: { xs: '0 0 100%', lg: '0 0 50%' }, display: 'flex', alignItems: 'center', mt: { xs: 0, lg: '64px' }, px: { xs: 4, lg: 12 }, position: 'relative' }}>
         <Box sx={{ textAlign: block.palsta_kuva ? 'left' : 'center', width: '100%' }}>
           <Typography variant="h2" sx={{ fontSize: { xs: '4rem', lg: '7rem' }, mt: { xs: 4, lg: 0 }, mb: { xs: 4, lg: 8 } }}>{block.palsta_otsikko}</Typography>
-          <TinaMarkdown content={block.palsta_sisalto} />
+          <RichText content={block.palsta_sisalto} />
           {block.palsta_linkit &&
             <Box sx={{ display: 'flex', flexWrap: 'wrap', justifyContent: block.palsta_kuva ? 'flex-start' : 'center', mt: { xs: 2, lg: 4 } }}>
               {block?.palsta_linkit?.map((linkki, i) => (

@@ -1,4 +1,4 @@
-import { TinaMarkdown } from 'tinacms/dist/rich-text'
+import RichText from '../RichText';
 import { styled } from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
@@ -33,7 +33,7 @@ export default function KokemusBlock({ block }) {
         <Typography variant="h2" sx={{ fontSize: { xs: '4rem', lg: '7rem' }, mt: { xs: 4, lg: 0 }, mb: { xs: 3, lg: 6 }, textAlign: 'center' }}>{block?.kokemus_otsikko}</Typography>
         {block.kokemus_sisalto &&
           <Box sx={{ mb: { xs: 6, lg: 12 }, textAlign: 'center' }}>
-            <TinaMarkdown content={block?.kokemus_sisalto} />
+            <RichText content={block?.kokemus_sisalto} />
           </Box>
         }
         {block?.kokemus_lista?.map((k, i) => (
@@ -43,7 +43,7 @@ export default function KokemusBlock({ block }) {
             </Box>
             <Box sx={{ pl: { xs: 3, md: 8 }, flex: { xs: '0 0 100%', md: '0 0 calc(100% - 180px)' }, maxWidth: { xs: '100%', md: 'calc(100% - 180px)' }, width: { xs: '100%', md: 'calc(100% - 180px)' } }}>
               <Typography variant="body" component="h3" sx={{ mb: 2, fontWeight: 700 }}>{k.title}</Typography>
-              <TinaMarkdown content={k.kuvaus} />
+              <RichText content={k.kuvaus} />
             </Box>
           </Box>
         ))}

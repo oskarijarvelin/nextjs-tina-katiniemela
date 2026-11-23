@@ -13,8 +13,8 @@ export default function Home(props) {
   });
 
   return (
-    <Layout title={data.page.title} description={data.page.description}>
-      <Content blocks={data.page.blocks} />
+    <Layout title={data.page.title} description={data.page.description} ogImage={data.page.blocks?.find((b) => b?.__typename === "PageBlocksHero")?.bgImg}>
+      <Content blocks={data.page.blocks} rakennettu={props.rakennettu} />
     </Layout>
   );
 }
@@ -32,15 +32,24 @@ export const getStaticPaths = async () => {
 };
 
 export const getStaticProps = async (ctx) => {
-  const { data, query, variables } = await client.queries.page({
-    relativePath: ctx.params.slug + ".md",
-  });
+  let tulos;
+  try {
+    tulos = await client.queries.page({
+      relativePath: ctx.params.slug + ".md",
+    });
+  } catch (e) {
+    // Tuntematon osoite (esim. /favicon.ico) → 404 eikä palvelinvirhe
+    return { notFound: true };
+  }
+  const { data, query, variables } = tulos;
 
   return {
     props: {
       data,
       query,
       variables,
+      // Sivun rakennusaika: keikkalista erottelee tulevat ja menneet tämän mukaan ennen kuin selain tarkistaa päivän
+      rakennettu: new Date().toISOString(),
     },
   };
 };

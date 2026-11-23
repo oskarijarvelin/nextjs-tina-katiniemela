@@ -6,64 +6,66 @@ blocks:
     bgImg: /uploads/DSC_2599.jpg
     kuvateksti: 'Kuva: Viola Tarvainen'
     _template: hero
-  - palsta_kuva: /uploads/jmo-cropattu.png
-    palsta_kuvateksti: 'Kuva: Jan-Kristian Moilanen'
-    palsta_otsikko: 'Tulevat keikat '
-    palsta_sisalto: "**-2026-**\n\n\\--\n\n**-2027-**\n\n**9.1.** Yksityistilaisuus\n\n**28.8.** Yksityistilaisuus\n\n## Menneet keikat:\n\n**-2026-**\n\n**1.4.** Taidenäyttelyn avajaiset, Hoppa, Jyväskylä\n\n**6.6.** Yksityistilaisuus\n\n**11.6.** Paiste-lava Villa Rana, Jyväskylä\n\n**13.6.** A-kiltafestarit, Jyväskylä\n\n**16.6.** Paiste-lava Villa Rana, Jyväskylä (Duo Kati Niemelä ja Oona-Kaisa Siltanen)\n\n**4.7.** Yksityistilaisuus (Bilebändi Buumi, tuuraus)\n\n**25.7.** Yksityistilaisuus (Bilebändi Buumi, tuuraus)\n\n**2.8.** Yksityistilaisuus\n\n**-2025-**\n\n**11.1.** Yksityistilaisuus (Iist Side Singers)\n\n**18.1.**  Poppari, Jyväskylä\n\n**8.5.** Pop/jazz laulun B-konsertti, Siltasali, Jyväskylä\n\n**10.7.** Iisveden Rantapaviljonki, Mansikkakarnevaalien etkot, Suonenjoki\n\n**8.8.** Lauluntekijät lauteilla, Kankaan sauna, Jyväskylä\n\n**-2024-**\n\n**17.2.** Poppari, Jyväskylä (Kaniffi debyyttikeikka)\n\n**10.5.** RockNeck, Jyväskylä\n\n**20.7.** Heinärieha, SF-Caravan Keski-Suomi, Uurainen\n\n**10.8.** Yksityistilaisuus\n\n**31.8.** Cafe Amalia,\_Sumiainen\n\n**5.10.** Laajasalon VPK, Helsinki (Iist Side Singers)\n\n**14.12.** Laajasalon opiston juhlasali, Helsinki (Iist Side Singers)\n"
-    _template: palsta
-  - palsta_otsikko: Ota yhteyttä
-    palsta_sisalto: |
-      Sähköposti: [kaniffivirallinen@gmail.com](mailto:kaniffivirallinen@gmail.com)
-
-      Facebook: [@kaniffivirallinen](https://www.facebook.com/kaniffivirallinen)
-
-      Instagram: [@kaniffi](https://www.instagram.com/kaniffi/)
-
-      LinkedIn: [Kati Niemelä](https://www.linkedin.com/in/kati-niemel%C3%A4-a81b08250/)
-    _template: palsta
+  - ankkuri: keikat
+    keikat_otsikko: Tulevat keikat
+    keikat_tyhja: Uusia keikkoja on tulossa, seuraa Instagramia!
+    keikat_cta_teksti: Tilaa keikka
+    keikat_cta_url: '/muusikko#tilaa-keikka'
+    keikat_menneet_otsikko: Menneet keikat
+    keikat_lista:
+      - pvm: '2024-02-17T10:00:00.000Z'
+        tapahtuma: 'Poppari, Jyväskylä'
+        lisatieto: 'Kaniffi debyyttikeikka'
+      - pvm: '2024-05-10T10:00:00.000Z'
+        tapahtuma: 'RockNeck, Jyväskylä'
+      - pvm: '2024-07-20T10:00:00.000Z'
+        tapahtuma: 'Heinärieha, SF-Caravan Keski-Suomi, Uurainen'
+      - pvm: '2024-08-10T10:00:00.000Z'
+        tapahtuma: 'Yksityistilaisuus'
+      - pvm: '2024-08-31T10:00:00.000Z'
+        tapahtuma: 'Cafe Amalia, Sumiainen'
+      - pvm: '2024-10-05T10:00:00.000Z'
+        tapahtuma: 'Laajasalon VPK, Helsinki'
+        lisatieto: 'Iist Side Singers'
+      - pvm: '2024-12-14T10:00:00.000Z'
+        tapahtuma: 'Laajasalon opiston juhlasali, Helsinki'
+        lisatieto: 'Iist Side Singers'
+      - pvm: '2025-01-11T10:00:00.000Z'
+        tapahtuma: 'Yksityistilaisuus'
+        lisatieto: 'Iist Side Singers'
+      - pvm: '2025-01-18T10:00:00.000Z'
+        tapahtuma: 'Poppari, Jyväskylä'
+      - pvm: '2025-05-08T10:00:00.000Z'
+        tapahtuma: 'Pop/jazz laulun B-konsertti, Siltasali, Jyväskylä'
+      - pvm: '2025-07-10T10:00:00.000Z'
+        tapahtuma: 'Iisveden Rantapaviljonki, Mansikkakarnevaalien etkot, Suonenjoki'
+      - pvm: '2025-08-08T10:00:00.000Z'
+        tapahtuma: 'Lauluntekijät lauteilla, Kankaan sauna, Jyväskylä'
+      - pvm: '2026-04-01T10:00:00.000Z'
+        tapahtuma: 'Taidenäyttelyn avajaiset, Hoppa, Jyväskylä'
+      - pvm: '2026-06-06T10:00:00.000Z'
+        tapahtuma: 'Yksityistilaisuus'
+      - pvm: '2026-06-11T10:00:00.000Z'
+        tapahtuma: 'Paiste-lava Villa Rana, Jyväskylä'
+      - pvm: '2026-06-13T10:00:00.000Z'
+        tapahtuma: 'A-kiltafestarit, Jyväskylä'
+      - pvm: '2026-06-16T10:00:00.000Z'
+        tapahtuma: 'Paiste-lava Villa Rana, Jyväskylä'
+        lisatieto: 'Duo Kati Niemelä ja Oona-Kaisa Siltanen'
+      - pvm: '2026-07-04T10:00:00.000Z'
+        tapahtuma: 'Yksityistilaisuus'
+        lisatieto: 'Bilebändi Buumi, tuuraus'
+      - pvm: '2026-07-25T10:00:00.000Z'
+        tapahtuma: 'Yksityistilaisuus'
+        lisatieto: 'Bilebändi Buumi, tuuraus'
+      - pvm: '2026-08-02T10:00:00.000Z'
+        tapahtuma: 'Yksityistilaisuus'
+      - pvm: '2027-01-09T10:00:00.000Z'
+        tapahtuma: 'Yksityistilaisuus'
+      - pvm: '2027-08-28T10:00:00.000Z'
+        tapahtuma: 'Yksityistilaisuus'
+    _template: keikat
+  - yhteystiedot_otsikko: Ota yhteyttä
+    _template: yhteystiedot
 ---
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+Kati Niemelän ja Kaniffin tulevat ja menneet keikat. Tilaa keikka tapahtumaasi: bändi, duo tai lauluyhtye, äänentoisto mukana.

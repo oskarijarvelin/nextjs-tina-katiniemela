@@ -6,6 +6,18 @@ blocks:
     bgImg: /uploads/DSC_2504.jpg
     kuvateksti: 'Kuva: Viola Tarvainen'
     _template: hero
+  - nosto_pieni_otsikko: Uusi vuosi, uusi harrastus
+    nosto_otsikko: Aloita laulaminen tammikuussa
+    nosto_sisalto: |
+      Oletko haaveillut laulutunneista? Nyt on hyvä hetki aloittaa! Tunneilleni Jyväskylän Savelassa ovat tervetulleita kaikenikäiset ja -tasoiset laulajat, ja ensimmäinen tunti maksaa vain 35 €.
+    nosto_kuva: /uploads/DSC04273_e9clud.jpg
+    nosto_kuvateksti: 'Kuva: Tuomas Eronen'
+    nosto_painikkeet:
+      - url: '/laulutunnit-jyvaskyla#varaa'
+        title: Varaa tutustumistunti
+      - url: /laulutunnit-jyvaskyla
+        title: Lue lisää
+    _template: nosto
   - palsta_kuva: /uploads/JMo-2023-33.jpg
     palsta_kuvateksti: 'Kuva: Jan-Kristian Moilanen'
     palsta_reverse: false
@@ -31,18 +43,8 @@ blocks:
   - img: /uploads/DSC04458_dwgrzz.jpg
     kuva_kuvateksti: 'Kuva: Tuomas Eronen'
     _template: kuva
-  - palsta_otsikko: Ota yhteyttä
-    palsta_sisalto: |
-      **Sähköposti:** [kaniffivirallinen@gmail.com](mailto:kaniffivirallinen@gmail.com)
-
-      **Facebook:** [@kaniffivirallinen](https://www.facebook.com/kaniffivirallinen)
-
-      **Instagram:** [@kaniffi](https://www.instagram.com/kaniffi/)
-
-      **LinkedIn:** [Kati Niemelä](https://www.linkedin.com/in/kati-niemel%C3%A4-a81b08250/)
-
-      Kaniffi Tmi
-    _template: palsta
+  - yhteystiedot_otsikko: Ota yhteyttä
+    _template: yhteystiedot
 ---
 
 
@@ -72,4 +74,4 @@ blocks:
 
 
 
-Oululaislähtöinen laulaja-lauluntekijä ja laulunopettaja. Opiskelen laulunopettajaksi Jyväskylän ammattikorkeakoulussa.
+Kati Niemelä eli Kaniffi: artisti, laulaja-lauluntekijä ja pop/jazz-laulunopettaja (AMK). Laulutunnit Jyväskylän Savelassa ja keikat eri kokoonpanoilla.

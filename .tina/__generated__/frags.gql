@@ -8,12 +8,18 @@ fragment PageParts on Page {
       sisalto
       bgImg
       kuvateksti
+      hero_linkit {
+        __typename
+        url
+        title
+      }
     }
     ... on PageBlocksKuva {
       img
       kuva_kuvateksti
     }
     ... on PageBlocksPalsta {
+      ankkuri
       palsta_kuva
       palsta_kuvateksti
       palsta_reverse
@@ -36,6 +42,7 @@ fragment PageParts on Page {
       }
     }
     ... on PageBlocksJulkaisut {
+      ankkuri
       julkaisut_otsikko
       julkaisut_sisalto
       julkaisut_lista {
@@ -55,6 +62,8 @@ fragment PageParts on Page {
       }
     }
     ... on PageBlocksVideot {
+      ankkuri
+      videot_nakyvissa
       videot_otsikko
       videot_sisalto
       videot_lista {
@@ -64,14 +73,66 @@ fragment PageParts on Page {
         url
       }
     }
+    ... on PageBlocksNosto {
+      ankkuri
+      nosto_pieni_otsikko
+      nosto_otsikko
+      nosto_sisalto
+      nosto_kuva
+      nosto_kuvateksti
+      nosto_reverse
+      nosto_painikkeet {
+        __typename
+        url
+        title
+      }
+    }
+    ... on PageBlocksLomake {
+      ankkuri
+      lomake_tyyppi
+      lomake_otsikko
+      lomake_sisalto
+      lomake_kiitos
+    }
+    ... on PageBlocksYhteystiedot {
+      yhteystiedot_otsikko
+    }
+    ... on PageBlocksKeikat {
+      ankkuri
+      keikat_otsikko
+      keikat_tyhja
+      keikat_cta_teksti
+      keikat_cta_url
+      keikat_menneet_otsikko
+      keikat_lista {
+        __typename
+        pvm
+        tapahtuma
+        lisatieto
+        linkki
+      }
+    }
+    ... on PageBlocksUkk {
+      ankkuri
+      ukk_otsikko
+      ukk_sisalto
+      ukk_lista {
+        __typename
+        kysymys
+        vastaus
+      }
+    }
   }
 }
 
 fragment SettingsParts on Settings {
   title
   sivuston_nimi
+  sahkoposti
+  facebook_url
   instagram_url
   linkedin_url
+  yritys
   mainnav {
     __typename
     nav {

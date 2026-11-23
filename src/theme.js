@@ -53,6 +53,9 @@ const theme = createTheme({
   components: {
     MuiCssBaseline: {
       styleOverrides: {
+        html: {
+          scrollBehavior: 'smooth',
+        },
         '*:focus-visible': {
           outline: '2px solid #556cd6',
           outlineOffset: '2px',

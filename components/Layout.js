@@ -15,6 +15,7 @@ import IconButton from '@mui/material/IconButton';
 import { styled } from '@mui/material/styles';
 
 import MenuIcon from '@mui/icons-material/Menu';
+import FacebookIcon from '@mui/icons-material/Facebook';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import theme from '../src/theme';
@@ -35,9 +36,11 @@ export default function Layout({ title, description, children, ogImage }) {
   }
 
   const siteUrl = 'https://katiniemela.fi';
+  // Tinan body-kenttä voi alkaa tyhjillä riveillä, siistitään metatageja varten
+  const kuvaus = (description || '').replace(/\s+/g, ' ').trim();
   const currentUrl = `${siteUrl}${router.asPath}`;
   const defaultOgImage = `${siteUrl}/favicon.png`;
-  const imageUrl = ogImage || defaultOgImage;
+  const imageUrl = ogImage ? (ogImage.startsWith('http') ? ogImage : `${siteUrl}${ogImage}`) : defaultOgImage;
 
   // Structured Data for SEO (JSON-LD)
   const structuredData = {
@@ -52,11 +55,7 @@ export default function Layout({ title, description, children, ogImage }) {
         "image": imageUrl,
         "jobTitle": ["Laulaja", "Lauluntekijä", "Laulunopettaja", "Artisti"],
         "knowsAbout": ["Musiikki", "Laulu", "Musiikkipedagogia", "Pop", "Jazz", "Musiikkiteatteri"],
-        "sameAs": [
-          settings.instagram_url,
-          settings.linkedin_url,
-          "https://www.facebook.com/kaniffivirallinen"
-        ],
+        "sameAs": [settings.facebook_url, settings.instagram_url, settings.linkedin_url].filter(Boolean),
         "address": {
           "@type": "PostalAddress",
           "addressCountry": "FI"
@@ -66,7 +65,7 @@ export default function Layout({ title, description, children, ogImage }) {
         "@type": "WebSite",
         "name": settings.sivuston_nimi,
         "url": siteUrl,
-        "description": description,
+        "description": kuvaus,
         "inLanguage": "fi",
         "publisher": {
           "@type": "Person",
@@ -129,7 +128,7 @@ export default function Layout({ title, description, children, ogImage }) {
     <div>
       <Head>
         <title>{title}</title>
-        <meta name="description" content={description} />
+        <meta name="description" content={kuvaus} />
         
         {/* Canonical URL */}
         <link rel="canonical" href={currentUrl} />
@@ -138,7 +137,7 @@ export default function Layout({ title, description, children, ogImage }) {
         <meta property="og:type" content="website" />
         <meta property="og:url" content={currentUrl} />
         <meta property="og:title" content={title} />
-        <meta property="og:description" content={description} />
+        <meta property="og:description" content={kuvaus} />
         <meta property="og:image" content={imageUrl} />
         <meta property="og:image:alt" content={title} />
         <meta property="og:site_name" content={settings.sivuston_nimi} />
@@ -148,7 +147,7 @@ export default function Layout({ title, description, children, ogImage }) {
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:url" content={currentUrl} />
         <meta name="twitter:title" content={title} />
-        <meta name="twitter:description" content={description} />
+        <meta name="twitter:description" content={kuvaus} />
         <meta name="twitter:image" content={imageUrl} />
         <meta name="twitter:image:alt" content={title} />
         
@@ -188,6 +187,13 @@ export default function Layout({ title, description, children, ogImage }) {
               ))}
             </NaviBox>
             <Box sx={{ display: 'flex' }} aria-label="Sosiaalinen media">
+              {settings.facebook_url &&
+                <Typography color="inherit" sx={{ fontSize: 20, pl: { xs: 2, lg: 4 } }}>
+                  <Link href={settings.facebook_url} target="_blank" rel="noopener noreferrer" sx={{ color: '#fff', textDecoration: "none", display: 'flex' }} aria-label="Seuraa Facebookissa">
+                    <FacebookIcon />
+                  </Link>
+                </Typography>
+              }
               {settings.instagram_url &&
                 <Typography color="inherit" sx={{ fontSize: 20, pl: { xs: 2, lg: 4 } }}>
                   <Link href={settings.instagram_url} target="_blank" rel="noopener noreferrer" sx={{ color: '#fff', textDecoration: "none", display: 'flex' }} aria-label="Seuraa Instagramissa">
