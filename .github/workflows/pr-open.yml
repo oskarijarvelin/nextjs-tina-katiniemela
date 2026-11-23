@@ -2,10 +2,6 @@ name: Build Pull request
 on:
   pull_request:
     types: [opened, synchronize, reopened]
-env:
-  NEXT_PUBLIC_TINA_CLIENT_ID: ${{ secrets.NEXT_PUBLIC_TINA_CLIENT_ID }}
-  TINA_TOKEN: ${{ secrets.TINA_TOKEN }}
-  NEXT_PUBLIC_TINA_BRANCH: ${{ github.head_ref }}
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -19,4 +15,5 @@ jobs:
           cache: yarn
       - run: yarn install --frozen-lockfile
       - run: yarn test:mdx
-      - run: yarn build
+      # Paikallinen sisältö: ei vaadi Tina Cloud -tunnuksia. Tina Cloud -build tarkistetaan Vercelin preview-deployssa.
+      - run: yarn build:local

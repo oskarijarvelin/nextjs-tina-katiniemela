@@ -745,9 +745,12 @@ const config = defineConfig({
     ],
   },
   clientId: process.env.NEXT_PUBLIC_TINA_CLIENT_ID,
+  // Vercelin git-haara ensin: preview-deploy lukee oman haaransa skeeman ja sisällön Tina Cloudista
+  // (tuotannossa haara on main). NEXT_PUBLIC_TINA_BRANCH on varalla muille ympäristöille.
   branch:
-    process.env.NEXT_PUBLIC_TINA_BRANCH ||
     process.env.NEXT_PUBLIC_VERCEL_GIT_COMMIT_REF ||
+    process.env.VERCEL_GIT_COMMIT_REF ||
+    process.env.NEXT_PUBLIC_TINA_BRANCH ||
     process.env.HEAD,
   token: process.env.TINA_TOKEN,
   media: {
