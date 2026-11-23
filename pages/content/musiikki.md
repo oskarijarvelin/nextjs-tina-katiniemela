@@ -6,11 +6,26 @@ blocks:
     bgImg: /uploads/JMo-2023-139.jpg
     kuvateksti: 'Kuva: Jan-Kristian Moilanen'
     hero_linkit:
+      - url: '#ajankohtaista'
+        title: Ajankohtaista
       - url: '#videot'
         title: Musiikkivideot
       - url: '#diskografia'
         title: Diskografia
     _template: hero
+  - ankkuri: ajankohtaista
+    nosto_pieni_otsikko: Ajankohtaista
+    nosto_otsikko: Saman katon alla
+    nosto_sisalto: |
+      Tähän lyhyt kuvaus Saman katon alla -projektista: mistä on kyse, keitä on mukana ja missä sitä pääsee kuulemaan tai näkemään.
+
+      Toinen kappale on vapaaehtoinen, esimerkiksi tulevat esitykset tai julkaisupäivä.
+    nosto_kuva: /uploads/DSC04458_dwgrzz.jpg
+    nosto_kuvateksti: 'Kuva: Tuomas Eronen'
+    nosto_painikkeet:
+      - url: 'https://www.instagram.com/kaniffi/'
+        title: Tutustu projektiin
+    _template: nosto
   - ankkuri: videot
     videot_nakyvissa: 4
     videot_otsikko: Musiikkivideot
