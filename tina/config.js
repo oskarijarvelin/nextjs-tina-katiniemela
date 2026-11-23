@@ -1,5 +1,4 @@
-import { defineConfig, RouteMappingPlugin } from 'tinacms';
-import { client } from "./__generated__/client";
+import { defineConfig } from 'tinacms';
 
 const config = defineConfig({
   schema: {
@@ -10,6 +9,9 @@ const config = defineConfig({
         path: 'pages/content',
         format: 'md',
         ui: {
+          // Visuaalinen editori: mikä sivu avataan esikatseluun kunkin dokumentin kohdalla
+          router: ({ document }) =>
+            document._sys.filename === 'home' ? '/' : `/${document._sys.filename}`,
           filename: {
             readonly: true,
             slugify: values => {
@@ -757,23 +759,7 @@ const config = defineConfig({
   build: {
     publicFolder: "public",
     outputFolder: "admin"
-  },
-  cmsCallback: (cms) => {
-    const RouteMapping = new RouteMappingPlugin((collection, document) => {
-      if (['page'].includes(collection.name)) {
-        if (document._sys.filename === 'home' ) {
-          return '/';
-        } else {
-          return `/${document._sys.filename}`;
-        }
-      }
-      return undefined;
-    });
-
-    cms.plugins.add(RouteMapping);
-
-    return cms;
-  },
+  }
 });
 
 export default config;

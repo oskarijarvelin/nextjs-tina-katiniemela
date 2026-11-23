@@ -34,3 +34,6 @@ yarn-error.log*
 
 # vercel
 .vercel
+
+# tinacms (generoidaan buildissa; tina/tina-lock.json commitoidaan)
+/tina/__generated__

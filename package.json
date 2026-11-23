@@ -4,8 +4,10 @@
   "scripts": {
     "dev": "tinacms dev -c \"next dev\"",
     "build": "node scripts/generate-sitemap.js && tinacms build && next build",
-    "start": "tinacms build && next start",
-    "lint": "next lint"
+    "build:local": "node scripts/generate-sitemap.js && tinacms build --local --skip-cloud-checks --skip-search-index -c \"NODE_ENV=production next build\"",
+    "start": "next start",
+    "lint": "next lint",
+    "test:mdx": "node scripts/test-lihavointi.mjs"
   },
   "dependencies": {
     "@emotion/cache": "^11.10.5",
@@ -17,21 +19,21 @@
     "@headlessui/react": "^1.7.10",
     "@mui/icons-material": "^5.11.0",
     "@mui/material": "^5.11.8",
-    "@tinacms/auth": "^1.0.3",
-    "next": "^13.1.6",
-    "next-tinacms-cloudinary": "^4.1.2",
-    "next-with-less": "^2.0.5",
+    "next": "^15.5.0",
     "prop-types": "^15.8.1",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
     "react-icons": "^4.7.1",
-    "react-is": "^18.2.0",
+    "react-is": "^18.3.1",
     "styled-components": "^5.3.6",
-    "tinacms": "^1.2.1"
+    "tinacms": "^3.15.2"
   },
   "devDependencies": {
-    "@tinacms/cli": "^1.2.1",
-    "eslint": "^8.34.0",
-    "eslint-config-next": "^13.1.6"
+    "@tinacms/cli": "^4.0.5",
+    "eslint": "^8.57.1",
+    "eslint-config-next": "^15.5.0"
+  },
+  "engines": {
+    "node": "24.x"
   }
 }

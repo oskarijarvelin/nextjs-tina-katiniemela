@@ -1,8 +1,7 @@
-const withLess = require("next-with-less");
-
 const nextConfig = {
     images: {
-        domains: ['res.cloudinary.com', 'assets.tina.io', 'katiniemela.vercel.app', 'katiniemela.fi', 'kaniffi.fi'],
+        remotePatterns: ['res.cloudinary.com', 'assets.tina.io', 'katiniemela.vercel.app', 'katiniemela.fi', 'kaniffi.fi']
+            .map((hostname) => ({ protocol: 'https', hostname })),
     },
     async headers() {
         return [
@@ -39,7 +38,7 @@ const nextConfig = {
     },
 };
 
-module.exports = withLess({
+module.exports = {
     async rewrites() {
         return [
           {
@@ -49,4 +48,4 @@ module.exports = withLess({
         ]
     },
     ...nextConfig
-});
+};
