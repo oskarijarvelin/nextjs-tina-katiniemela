@@ -21,7 +21,7 @@ blocks:
       Laulutunteja on mahdollista pitää viikoittain tai satunnaisesti.\
       Opetus tapahtuu Jyväskylän Savelassa sijaitsevassa treenitilassani.
 
-      **Kalenterissani on hyvin tilaa uusille oppilaille! **\
+      **Kalenterissani on hyvin tilaa uusille oppilaille!**\
       **Laita rohkeasti viestiä!**
 
       **HINNASTO**\
@@ -59,17 +59,12 @@ blocks:
       > \
       > Voin todella lämpimästi suositella Katia laulunopettajaksi kelle tahansa. Laulutunnin jälkeen on aina sellainen olo, kuin olisi meditoinut tunnin, ja sitä kautta laulutaitojen lisäksi myös mun elämänlaatu on parantunut. Kiitos siitä Katille" \
       > \- Tiina
+    palsta_linkit:
+      - url: '/laulutunnit-jyvaskyla#varaa'
+        title: Varaa tutustumistunti
     _template: palsta
-  - palsta_otsikko: Ota yhteyttä
-    palsta_sisalto: |
-      **Sähköposti:** [kaniffivirallinen@gmail.com](mailto:kaniffivirallinen@gmail.com)
-
-      **Facebook:** [@kaniffivirallinen](https://www.facebook.com/kaniffivirallinen)
-
-      **Instagram:** [@kaniffi](https://www.instagram.com/kaniffi/)
-
-      **LinkedIn:** [Kati Niemelä](https://www.linkedin.com/in/kati-niemel%C3%A4-a81b08250/)
-    _template: palsta
+  - yhteystiedot_otsikko: Ota yhteyttä
+    _template: yhteystiedot
 ---
 
 
@@ -98,4 +93,4 @@ blocks:
 
 
 
-Opiskelen pop/jazz laulunopettajaksi Jyväskylän ammattikorkeakoulussa. Laulunopetustöitä olen tehnyt kevytyrittäjänä jo vuodesta 2017. 
+Pop/jazz-laulunopettaja (AMK) Jyväskylän Savelassa. Laulutunnit kaikenikäisille ja -tasoisille vuodesta 2017, ensimmäinen tunti 35 €.

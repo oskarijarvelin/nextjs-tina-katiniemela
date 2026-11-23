@@ -1,8 +1,11 @@
 {
   "title": "Yleiset asetukset",
   "sivuston_nimi": "Kati Niemelä",
+  "sahkoposti": "kaniffivirallinen@gmail.com",
+  "facebook_url": "https://www.facebook.com/kaniffivirallinen",
   "instagram_url": "https://www.instagram.com/kaniffi/",
   "linkedin_url": "https://www.linkedin.com/in/kati-niemel%C3%A4-a81b08250/",
+  "yritys": "Kaniffi Tmi",
   "mainnav": {
     "nav": [
       {
@@ -20,6 +23,10 @@
       {
         "url": "/muusikko",
         "title": "Muusikko"
+      },
+      {
+        "url": "/musiikki",
+        "title": "Musiikki"
       },
       {
         "url": "/laulunopettaja",

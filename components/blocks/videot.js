@@ -1,4 +1,6 @@
-import { TinaMarkdown } from 'tinacms/dist/rich-text';
+import { useState } from 'react';
+import RichText from '../RichText';
+import ButtonBase from '@mui/material/ButtonBase';
 import { styled } from '@mui/material/styles';
 
 import Video from '../Video';
@@ -36,9 +38,14 @@ const VideotBox = styled(Box)({
 export default function VideotBlock({ block }) {
   function youtube_parser(url){
     var regExp = /^.*((youtu.be\/)|(v\/)|(\/u\/\w\/)|(embed\/)|(watch\?))\??v?=?([^#&?]*).*/;
-    var match = url.match(regExp);
+    var match = (url || "").match(regExp);
     return (match&&match[7].length==11)? match[7] : false;
   }
+
+  const [kaikki, setKaikki] = useState(false);
+  const lista = block?.videot_lista || [];
+  const raja = block?.videot_nakyvissa > 0 ? block.videot_nakyvissa : lista.length;
+  const naytettavat = kaikki ? lista : lista.slice(0, raja);
 
   return (
     <VideotBox sx={{ my: { xs: 6, lg: '200px' } }}>
@@ -46,23 +53,30 @@ export default function VideotBlock({ block }) {
         <Typography variant="h2" sx={{ fontSize: { xs: '4rem', lg: '7rem' }, mt: { xs: 4, lg: 0 }, mb: { xs: 3, lg: 6 }, textAlign: 'center' }}>{block?.videot_otsikko}</Typography>
         {block.videot_sisalto &&
           <Box sx={{ mb: { xs: 6, lg: 12 }, textAlign: 'center' }}>
-            <TinaMarkdown content={block?.videot_sisalto} />
+            <RichText content={block?.videot_sisalto} />
           </Box>
         }
         
         <Box sx={{ display: 'flex', flexWrap: 'wrap', mr: '-80px', mb: '-80px' }} >
-          {block?.videot_lista?.map((j, i) => (
-            <Box key={i} sx={{ mb: 8, flex: { xs: '0 0 calc(100% - 80px)', md: '0 0 calc(50% - 80px)' }, mr: '80px', mb: '80px' }}>
+          {naytettavat.map((j, i) => (
+            <Box key={i} sx={{ flex: { xs: '0 0 calc(100% - 80px)', md: '0 0 calc(50% - 80px)' }, mr: '80px', mb: '80px' }}>
               <Typography variant="body" component="h3" sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', mb: 2, fontSize: 16, fontWeight: 700 }}>
                 {j.title}
                 {j.ajankohta &&
                   <Typography component="span" sx={{ pl: 4 }}>{j?.ajankohta}</Typography>
                 }
               </Typography>
-              <Video video={youtube_parser(j.url)} title={j.title} />
+              {youtube_parser(j.url) && <Video video={youtube_parser(j.url)} title={j.title} />}
             </Box>
           ))}
         </Box>
+        {!kaikki && lista.length > raja && (
+          <Box sx={{ textAlign: 'center', mt: 6 }}>
+            <ButtonBase onClick={() => setKaikki(true)} focusRipple sx={{ px: 3, py: 1, borderRadius: 999, border: '1px solid rgba(255,255,255,.7)', fontFamily: 'inherit', fontSize: 17, '&:hover': { backgroundColor: 'rgba(255,255,255,.12)' } }}>
+              Näytä kaikki videot ({lista.length}) ▾
+            </ButtonBase>
+          </Box>
+        )}
       </Container>
     </VideotBox>
   )

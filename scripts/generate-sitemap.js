@@ -2,25 +2,34 @@ const fs = require('fs');
 const path = require('path');
 
 const baseUrl = 'https://katiniemela.fi';
+const contentDir = path.join(__dirname, '../pages/content');
 
-// Define your pages
-const pages = [
-  { url: '/', priority: '1.0', changefreq: 'monthly' },
-  { url: '/keikat', priority: '0.8', changefreq: 'weekly' },
-  { url: '/cv', priority: '0.8', changefreq: 'monthly' },
-  { url: '/muusikko', priority: '0.8', changefreq: 'monthly' },
-  { url: '/laulunopettaja', priority: '0.8', changefreq: 'monthly' },
-];
+// Sivut luetaan suoraan Tinan sisältökansiosta, joten uudet sivut päätyvät sivukarttaan automaattisesti.
+function getPages() {
+  return fs
+    .readdirSync(contentDir)
+    .filter((file) => file.endsWith('.md'))
+    .map((file) => {
+      const slug = file.replace(/\.md$/, '');
+      const isHome = slug === 'home';
+      return {
+        url: isHome ? '/' : `/${slug}`,
+        priority: isHome ? '1.0' : '0.8',
+        changefreq: slug === 'keikat' ? 'weekly' : 'monthly',
+      };
+    })
+    .sort((a, b) => (a.url === '/' ? -1 : b.url === '/' ? 1 : a.url.localeCompare(b.url)));
+}
 
 function generateSitemap() {
+  const lastmod = new Date().toISOString();
   const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:xhtml="http://www.w3.org/1999/xhtml">
-${pages.map(page => `  <url>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+${getPages().map(page => `  <url>
     <loc>${baseUrl}${page.url}</loc>
     <changefreq>${page.changefreq}</changefreq>
     <priority>${page.priority}</priority>
-    <lastmod>${new Date().toISOString()}</lastmod>
+    <lastmod>${lastmod}</lastmod>
   </url>`).join('\n')}
 </urlset>`;
 

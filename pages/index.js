@@ -12,8 +12,8 @@ export default function Home(props) {
   });
 
   return (
-    <Layout title={data.page.title} description={data.page.description}>
-      <Content blocks={data.page.blocks} />
+    <Layout title={data.page.title} description={data.page.description} ogImage={data.page.blocks?.find((b) => b?.__typename === "PageBlocksHero")?.bgImg}>
+      <Content blocks={data.page.blocks} rakennettu={props.rakennettu} />
     </Layout>
   );
 }
@@ -28,6 +28,8 @@ export const getStaticProps = async () => {
       data,
       query,
       variables,
+      // Sivun rakennusaika: keikkalista erottelee tulevat ja menneet tämän mukaan ennen kuin selain tarkistaa päivän
+      rakennettu: new Date().toISOString(),
     },
   };
 };

@@ -5,32 +5,39 @@ import PalstaBlock from "./blocks/palsta";
 import KokemusBlock from "./blocks/kokemus";
 import JulkaisutBlock from "./blocks/julkaisut";
 import VideotBlock from "./blocks/videot";
+import NostoBlock from "./blocks/nosto";
+import LomakeBlock from "./blocks/lomake";
+import UkkBlock from "./blocks/ukk";
+import KeikatBlock from "./blocks/keikat";
+import YhteystiedotBlock from "./blocks/yhteystiedot";
 
-export default function Content({ blocks }) {
+const LOHKOT = {
+  PageBlocksHero: HeroBlock,
+  PageBlocksKuva: KuvaBlock,
+  PageBlocksPalsta: PalstaBlock,
+  PageBlocksKokemus: KokemusBlock,
+  PageBlocksJulkaisut: JulkaisutBlock,
+  PageBlocksVideot: VideotBlock,
+  PageBlocksNosto: NostoBlock,
+  PageBlocksLomake: LomakeBlock,
+  PageBlocksUkk: UkkBlock,
+  PageBlocksKeikat: KeikatBlock,
+  PageBlocksYhteystiedot: YhteystiedotBlock,
+};
+
+export default function Content({ blocks, rakennettu }) {
   return (
     <>
-      {blocks?.map((block, i) => (
-        <Box key={i}>
-          {(block.__typename == 'PageBlocksHero') &&
-            <HeroBlock block={block} />
-          }
-          {(block.__typename == 'PageBlocksKuva') &&
-            <KuvaBlock block={block} />
-          }
-          {(block.__typename == 'PageBlocksPalsta') &&
-            <PalstaBlock block={block} />
-          }
-          {(block.__typename == 'PageBlocksKokemus') &&
-            <KokemusBlock block={block} />
-          }
-          {(block.__typename == 'PageBlocksJulkaisut') &&
-            <JulkaisutBlock block={block} />
-          }
-          {(block.__typename == 'PageBlocksVideot') &&
-            <VideotBlock block={block} />
-          }
-        </Box>
-      ))}
+      {blocks?.map((block, i) => {
+        const Lohko = LOHKOT[block?.__typename];
+        if (!Lohko) return null;
+        // Ankkuri mahdollistaa linkit tyyliin /musiikki#videot; scrollMarginTop jättää tilaa kiinteälle yläpalkille
+        return (
+          <Box key={i} id={block.ankkuri || undefined} sx={{ scrollMarginTop: '72px' }}>
+            <Lohko block={block} rakennettu={rakennettu} />
+          </Box>
+        );
+      })}
     </>
   )
 }

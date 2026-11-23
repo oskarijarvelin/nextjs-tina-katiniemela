@@ -140,22 +140,4 @@ blocks:
         kuvaus: ''
     _template: kokemus
 ---
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+Kati Niemelän CV: pop/jazz-laulunopettaja (AMK) ja muusikko. Työkokemus, koulutus sekä musikaali-, teatteri- ja kuorokokemus.

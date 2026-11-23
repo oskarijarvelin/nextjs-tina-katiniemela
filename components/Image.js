@@ -22,6 +22,9 @@ function getBlurDataURL() {
 }
 
 export default function Image({src, orientation, alt}) {
+    // Ilman kuvaa ei renderöidä mitään (muuten processUrl kaatuisi)
+    if (!src) return null;
+
     // Ensure alt text is always provided for accessibility
     const altText = alt || '';
     
@@ -54,7 +57,6 @@ export default function Image({src, orientation, alt}) {
                     placeholder="blur"
                     blurDataURL={getBlurDataURL()}
                     priority
-                    fetchPriority="high"
                     style={{ width: '100%', height: 'auto' }}
                 />
             </KuvaBox>
