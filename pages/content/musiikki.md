@@ -6,21 +6,11 @@ blocks:
     bgImg: /uploads/JMo-2023-139.jpg
     kuvateksti: 'Kuva: Jan-Kristian Moilanen'
     hero_linkit:
-      - url: '#ajankohtaista'
-        title: Ajankohtaista
       - url: '#videot'
         title: Musiikkivideot
       - url: '#diskografia'
         title: Diskografia
     _template: hero
-  - ankkuri: ajankohtaista
-    nosto_pieni_otsikko: Ajankohtaista
-    nosto_otsikko: Saman katon alla
-    nosto_sisalto: |
-      TÄYTÄ: Lyhyt kuvaus Saman katon alla -projektista ja painike projektin sivuille.
-    nosto_kuva: /uploads/DSC04458_dwgrzz.jpg
-    nosto_kuvateksti: 'Kuva: Tuomas Eronen'
-    _template: nosto
   - ankkuri: videot
     videot_nakyvissa: 4
     videot_otsikko: Musiikkivideot
