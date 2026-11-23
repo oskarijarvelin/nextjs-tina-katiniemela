@@ -5,6 +5,8 @@ import Container from '@mui/material/Container';
 import Typography from '@mui/material/Typography';
 
 const KokemusBox = styled(Box)({
+  // Pitkät yhdyssanat (esim. Assistentti/vertaiskouluttaja) rivitetään kapealla näytöllä
+  overflowWrap: 'break-word',
   '& a:not(.linkki)': {
     color: '#AAA',
     textDecoration: 'underline',

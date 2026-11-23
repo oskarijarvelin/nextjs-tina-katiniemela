@@ -172,8 +172,8 @@ export default function Layout({ title, description, children, ogImage }) {
       <Box sx={{ flexGrow: 1 }}>
         <AppBar position="fixed" component="header" sx={{ backdropFilter: 'blur(6px)', backgroundColor: 'rgba(0,0,0,.66)', boxShadow: 0 }}>
           <Toolbar>
-            <NaviBox sx={{ flexGrow: 1 }}>
-              <Typography variant="h6" component="div" sx={{ flexGrow: 1, fontFamily: 'MonteCarlo', fontSize: 30 }}>
+            <NaviBox sx={{ flexGrow: 1, minWidth: 0 }}>
+              <Typography variant="h6" component="div" sx={{ flexGrow: 1, fontFamily: 'MonteCarlo', fontSize: { xs: 25, sm: 30 }, whiteSpace: 'nowrap' }}>
                 <Link href="/" sx={{ color: '#fff', textDecoration: 'none' }} aria-label="Koti - Kati Niemelä">
                   {settings.sivuston_nimi}
                 </Link>
@@ -186,23 +186,23 @@ export default function Layout({ title, description, children, ogImage }) {
                 </Typography>
               ))}
             </NaviBox>
-            <Box sx={{ display: 'flex' }} aria-label="Sosiaalinen media">
+            <Box sx={{ display: 'flex', flexShrink: 0, '@media (max-width: 359px)': { display: 'none' } }} aria-label="Sosiaalinen media">
               {settings.facebook_url &&
-                <Typography color="inherit" sx={{ fontSize: 20, pl: { xs: 2, lg: 4 } }}>
+                <Typography color="inherit" sx={{ fontSize: 20, pl: { xs: 1.5, sm: 2, lg: 4 } }}>
                   <Link href={settings.facebook_url} target="_blank" rel="noopener noreferrer" sx={{ color: '#fff', textDecoration: "none", display: 'flex' }} aria-label="Seuraa Facebookissa">
                     <FacebookIcon />
                   </Link>
                 </Typography>
               }
               {settings.instagram_url &&
-                <Typography color="inherit" sx={{ fontSize: 20, pl: { xs: 2, lg: 4 } }}>
+                <Typography color="inherit" sx={{ fontSize: 20, pl: { xs: 1.5, sm: 2, lg: 4 } }}>
                   <Link href={settings.instagram_url} target="_blank" rel="noopener noreferrer" sx={{ color: '#fff', textDecoration: "none", display: 'flex' }} aria-label="Seuraa Instagramissa">
                     <InstagramIcon />
                   </Link>
                 </Typography>
               }
               {settings.linkedin_url &&
-                <Typography color="inherit" sx={{ fontSize: 20, pl: { xs: 2, lg: 4 } }}>
+                <Typography color="inherit" sx={{ fontSize: 20, pl: { xs: 1.5, sm: 2, lg: 4 } }}>
                   <Link href={settings.linkedin_url} target="_blank" rel="noopener noreferrer" sx={{ color: '#fff', textDecoration: "none", display: 'flex' }} aria-label="Yhdistä LinkedInissä">
                     <LinkedInIcon />
                   </Link>
@@ -219,7 +219,7 @@ export default function Layout({ title, description, children, ogImage }) {
               aria-haspopup="true"
               aria-expanded={open ? 'true' : undefined}
               onClick={openMenu}
-              sx={{ ml: 4, display: { xs: 'flex', lg: 'none' } }}
+              sx={{ ml: { xs: 0.5, sm: 2 }, mr: -1.5, flexShrink: 0, display: { xs: 'flex', lg: 'none' } }}
             >
               <MenuIcon />
             </IconButton>

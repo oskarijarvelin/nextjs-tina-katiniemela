@@ -57,9 +57,9 @@ export default function VideotBlock({ block }) {
           </Box>
         }
         
-        <Box sx={{ display: 'flex', flexWrap: 'wrap', mr: '-80px', mb: '-80px' }} >
+        <Box sx={{ display: 'grid', gridTemplateColumns: { xs: 'minmax(0, 1fr)', md: 'repeat(2, minmax(0, 1fr))' }, columnGap: 10, rowGap: { xs: 6, md: 10 } }}>
           {naytettavat.map((j, i) => (
-            <Box key={i} sx={{ flex: { xs: '0 0 calc(100% - 80px)', md: '0 0 calc(50% - 80px)' }, mr: '80px', mb: '80px' }}>
+            <Box key={i} sx={{ minWidth: 0 }}>
               <Typography variant="body" component="h3" sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', mb: 2, fontSize: 16, fontWeight: 700 }}>
                 {j.title}
                 {j.ajankohta &&
