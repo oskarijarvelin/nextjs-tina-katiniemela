@@ -12,10 +12,15 @@ export default function FaktatBlock({ block, id }) {
   if (block.fak_asettelu === 'cv') {
     return (
       <section className="sec wrap spot" id={id} aria-labelledby={`${id || 'faktat'}-otsikko`} style={{ paddingBottom: 0 }}>
-        {block.fak_otsikko && <p className="lbl" id={`${id || 'faktat'}-otsikko`} style={{ marginBottom: 24 }}>{block.fak_otsikko}</p>}
+        {block.fak_otsikko && <h2 className="lbl" id={`${id || 'faktat'}-otsikko`} style={{ marginBottom: 24 }}>{block.fak_otsikko}</h2>}
         <div className="cv-high">{kortit}</div>
       </section>
     );
   }
-  return <section className="wrap lo-facts" id={id} aria-label={block.fak_otsikko || 'Lyhyesti'}>{kortit}</section>;
+  return (
+    <section className="wrap lo-facts" id={id} aria-labelledby={`${id || 'faktat'}-otsikko`}>
+      <h2 className="visually-hidden" id={`${id || 'faktat'}-otsikko`}>{block.fak_otsikko || 'Lyhyesti'}</h2>
+      {kortit}
+    </section>
+  );
 }
