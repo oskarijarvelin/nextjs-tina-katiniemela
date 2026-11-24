@@ -47,3 +47,21 @@ export default function RichText({ content, ...props }) {
   if (!content) return null;
   return <TinaMarkdown content={korjaaLihavoinnit(content)} {...props} />;
 }
+
+// Tina palauttaa tyhjänkin rikastekstikentän tyhjänä dokumenttina; tämä kertoo, onko kentässä oikeaa sisältöä
+export function onTaytetty(content) {
+  if (!content) return false;
+  if (typeof content === 'string') return content.trim().length > 0;
+  const teksti = (n) => (n?.type === 'text' ? (n.text || '').trim() : (n?.children || []).map(teksti).join(''));
+  return teksti(content).length > 0 || JSON.stringify(content).includes('"type":"img"');
+}
+
+// Rikasteksti pelkäksi tekstiksi (rakenteinen data, meta-tiedot)
+export function tekstiksi(node) {
+  if (!node) return '';
+  if (typeof node === 'string') return node;
+  if (node.text) return node.text;
+  const lapset = (node.children || []).map(tekstiksi);
+  const lohko = ['p', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'li', 'blockquote'].includes(node.type);
+  return lapset.join('') + (lohko ? '\n' : '');
+}

@@ -1,272 +1,156 @@
-import { useState } from 'react';
-import Head from 'next/head'
+import { useEffect } from 'react';
+import Head from 'next/head';
 import { useRouter } from 'next/router';
 
-import Link from './Link'
+import settings from '../content/settings/index.json';
+import { initLava } from '../lib/lava';
+import { Ikoni, Linkki } from './lava/ui';
 
-import AppBar from '@mui/material/AppBar';
-import Box from '@mui/material/Box';
-import Menu from '@mui/material/Menu';
-import MenuItem from '@mui/material/MenuItem';
-import Toolbar from '@mui/material/Toolbar';
-import Typography from '@mui/material/Typography';
-import IconButton from '@mui/material/IconButton';
+const SITE_URL = 'https://katiniemela.fi';
 
-import { styled } from '@mui/material/styles';
+// Some-linkit asetuksista: [ikoni, url, näkyvä nimi]
+export function someLinkit() {
+  return [
+    ['facebook', settings.facebook_url, settings.facebook_nimi || 'Facebook'],
+    ['instagram', settings.instagram_url, settings.instagram_nimi || 'Instagram'],
+    ['linkedin', settings.linkedin_url, settings.linkedin_nimi || 'LinkedIn'],
+  ].filter(([, url]) => url);
+}
 
-import MenuIcon from '@mui/icons-material/Menu';
-import FacebookIcon from '@mui/icons-material/Facebook';
-import InstagramIcon from '@mui/icons-material/Instagram';
-import LinkedInIcon from '@mui/icons-material/LinkedIn';
-import theme from '../src/theme';
+const NIMET = { facebook: 'Facebook', instagram: 'Instagram', linkedin: 'LinkedIn' };
 
-import settings from "../content/settings/index.json";
+function onNykyinen(polku, url) {
+  if (!url) return false;
+  if (url === '/') return polku === '/';
+  // Laulutunnit Jyväskylässä -laskeutumissivu kuuluu Laulunopettaja-osioon
+  if (url === '/laulunopettaja' && polku.startsWith('/laulutunnit-jyvaskyla')) return true;
+  return polku === url || polku.startsWith(url + '/') || polku.startsWith(url + '#');
+}
 
-export default function Layout({ title, description, children, ogImage }) {
+export default function Layout({ title, description, children, ogImage, jsonLd = [] }) {
   const router = useRouter();
-  const [anchorEl, setAnchorEl] = useState(null);
-  const open = Boolean(anchorEl);
+  const polku = router.asPath.split('?')[0];
+  const sivu = polku.split('#')[0];
 
-  const openMenu = (e) => {
-    setAnchorEl(e.currentTarget);
-  }
+  // Selainefektit käynnistetään jokaiselle sivulle erikseen
+  useEffect(() => initLava(), [sivu]);
 
-  const closeMenu = () => {
-    setAnchorEl(null);
-  }
-
-  const siteUrl = 'https://katiniemela.fi';
-  // Tinan body-kenttä voi alkaa tyhjillä riveillä, siistitään metatageja varten
   const kuvaus = (description || '').replace(/\s+/g, ' ').trim();
-  const currentUrl = `${siteUrl}${router.asPath}`;
-  const defaultOgImage = `${siteUrl}/favicon.png`;
-  const imageUrl = ogImage ? (ogImage.startsWith('http') ? ogImage : `${siteUrl}${ogImage}`) : defaultOgImage;
+  // Lyhyt otsikko (esim. Keikat, CV) saa nimen perään hakutuloksia ja välilehteä varten
+  const otsikko = title && title.length <= 30 && !/Kati Niemelä|Kaniffi/.test(title) ? `${title} | Kati Niemelä` : title;
+  const currentUrl = `${SITE_URL}${sivu}`;
+  const imageUrl = ogImage ? (ogImage.startsWith('http') ? ogImage : `${SITE_URL}${ogImage}`) : `${SITE_URL}/favicon.png`;
+  const nav = settings.mainnav?.nav || [];
+  const somet = someLinkit();
+  const vuosi = new Date().getFullYear();
 
-  // Structured Data for SEO (JSON-LD)
   const structuredData = {
-    "@context": "https://schema.org",
-    "@graph": [
+    '@context': 'https://schema.org',
+    '@graph': [
       {
-        "@type": "Person",
-        "name": "Kati Niemelä",
-        "alternateName": "Kaniffi",
-        "description": "Artisti, laulaja-lauluntekijä ja pop/jazz laulunopettaja",
-        "url": siteUrl,
-        "image": imageUrl,
-        "jobTitle": ["Laulaja", "Lauluntekijä", "Laulunopettaja", "Artisti"],
-        "knowsAbout": ["Musiikki", "Laulu", "Musiikkipedagogia", "Pop", "Jazz", "Musiikkiteatteri"],
-        "sameAs": [settings.facebook_url, settings.instagram_url, settings.linkedin_url].filter(Boolean),
-        "address": {
-          "@type": "PostalAddress",
-          "addressCountry": "FI"
-        }
+        '@type': 'Person',
+        name: 'Kati Niemelä',
+        alternateName: 'Kaniffi',
+        description: 'Artisti, laulaja-lauluntekijä ja pop/jazz laulunopettaja',
+        url: SITE_URL,
+        image: imageUrl,
+        jobTitle: ['Laulaja', 'Lauluntekijä', 'Laulunopettaja', 'Artisti'],
+        knowsAbout: ['Musiikki', 'Laulu', 'Musiikkipedagogia', 'Pop', 'Jazz', 'Musiikkiteatteri'],
+        sameAs: [settings.facebook_url, settings.instagram_url, settings.linkedin_url].filter(Boolean),
+        address: { '@type': 'PostalAddress', addressLocality: 'Jyväskylä', addressCountry: 'FI' },
       },
       {
-        "@type": "WebSite",
-        "name": settings.sivuston_nimi,
-        "url": siteUrl,
-        "description": kuvaus,
-        "inLanguage": "fi",
-        "publisher": {
-          "@type": "Person",
-          "name": "Kati Niemelä"
-        }
-      }
-    ]
+        '@type': 'WebSite',
+        name: settings.sivuston_nimi,
+        url: SITE_URL,
+        description: kuvaus,
+        inLanguage: 'fi',
+        publisher: { '@type': 'Person', name: 'Kati Niemelä' },
+      },
+      ...jsonLd,
+    ],
   };
 
-  const NaviBox = styled(Box)({
-    '& a': {
-      textDecoration: 'none',
-    }
-  });
-
-  const StyledMenu = styled((props) => (
-    <Menu
-      elevation={0}
-      anchorOrigin={{
-        vertical: 'bottom',
-        horizontal: 'right',
-      }}
-      transformOrigin={{
-        vertical: 'top',
-        horizontal: 'right',
-      }}
-      {...props}
-    />
-  ))(({ theme }) => ({
-    '& .MuiPaper-root': {
-      borderRadius: 6,
-      marginTop: 0,
-      minWidth: 180,
-      color: theme.palette.grey[300],
-      boxShadow:
-        'rgb(255, 255, 255) 0px 0px 0px 0px, rgba(0, 0, 0, 0.05) 0px 0px 0px 1px, rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px',
-      '& .MuiMenu-list': {
-        padding: '4px 0',
-      },
-    },
-  }));
-
-  // Skip to main content link for accessibility
-  const SkipLink = styled('a')({
-    position: 'absolute',
-    left: '-9999px',
-    zIndex: 999,
-    padding: '1rem',
-    backgroundColor: theme.palette.primary.main,
-    color: '#fff',
-    textDecoration: 'none',
-    '&:focus': {
-      left: '50%',
-      transform: 'translateX(-50%)',
-      top: '10px',
-    }
-  });
-
   return (
-    <div>
+    <>
       <Head>
-        <title>{title}</title>
+        <title>{otsikko}</title>
         <meta name="description" content={kuvaus} />
-        
-        {/* Canonical URL */}
         <link rel="canonical" href={currentUrl} />
-        
-        {/* Open Graph / Facebook */}
         <meta property="og:type" content="website" />
         <meta property="og:url" content={currentUrl} />
-        <meta property="og:title" content={title} />
+        <meta property="og:title" content={otsikko} />
         <meta property="og:description" content={kuvaus} />
         <meta property="og:image" content={imageUrl} />
         <meta property="og:image:alt" content={title} />
         <meta property="og:site_name" content={settings.sivuston_nimi} />
         <meta property="og:locale" content="fi_FI" />
-        
-        {/* Twitter Card */}
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:url" content={currentUrl} />
-        <meta name="twitter:title" content={title} />
+        <meta name="twitter:title" content={otsikko} />
         <meta name="twitter:description" content={kuvaus} />
         <meta name="twitter:image" content={imageUrl} />
-        <meta name="twitter:image:alt" content={title} />
-        
-        {/* Additional SEO tags */}
         <meta name="author" content="Kati Niemelä" />
         <meta name="robots" content="index, follow" />
-        <meta name="googlebot" content="index, follow" />
-        <meta name="language" content="Finnish" />
-        
-        {/* Structured Data */}
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
-        />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }} />
       </Head>
-      
-      {/* Skip to main content link for accessibility */}
-      <SkipLink href="#main-content">
-        Siirry pääsisältöön
-      </SkipLink>
-      
-      <Box sx={{ flexGrow: 1 }}>
-        <AppBar position="fixed" component="header" sx={{ backdropFilter: 'blur(6px)', backgroundColor: 'rgba(0,0,0,.66)', boxShadow: 0 }}>
-          <Toolbar>
-            <NaviBox sx={{ flexGrow: 1, minWidth: 0 }}>
-              <Typography variant="h6" component="div" sx={{ flexGrow: 1, fontFamily: 'MonteCarlo', fontSize: { xs: 25, sm: 30 }, whiteSpace: 'nowrap' }}>
-                <Link href="/" sx={{ color: '#fff', textDecoration: 'none' }} aria-label="Koti - Kati Niemelä">
-                  {settings.sivuston_nimi}
-                </Link>
-              </Typography>
-            </NaviBox>
-            <NaviBox sx={{ display: { xs: 'none', lg: 'flex' } }} component="nav" aria-label="Päänavigaatio">
-              {settings.mainnav.nav.map((item, index) => (
-                <Typography key={index} color="inherit" sx={{ fontSize: 20, pl: 4 }}>
-                  <Link href={item.url} passHref sx={{ color: '#fff', textDecoration: (router.asPath == item.url) ? "underline" : "none" }}>{item.title}</Link>
-                </Typography>
-              ))}
-            </NaviBox>
-            <Box sx={{ display: 'flex', flexShrink: 0, '@media (max-width: 359px)': { display: 'none' } }} aria-label="Sosiaalinen media">
-              {settings.facebook_url &&
-                <Typography color="inherit" sx={{ fontSize: 20, pl: { xs: 1.5, sm: 2, lg: 4 } }}>
-                  <Link href={settings.facebook_url} target="_blank" rel="noopener noreferrer" sx={{ color: '#fff', textDecoration: "none", display: 'flex' }} aria-label="Seuraa Facebookissa">
-                    <FacebookIcon />
-                  </Link>
-                </Typography>
-              }
-              {settings.instagram_url &&
-                <Typography color="inherit" sx={{ fontSize: 20, pl: { xs: 1.5, sm: 2, lg: 4 } }}>
-                  <Link href={settings.instagram_url} target="_blank" rel="noopener noreferrer" sx={{ color: '#fff', textDecoration: "none", display: 'flex' }} aria-label="Seuraa Instagramissa">
-                    <InstagramIcon />
-                  </Link>
-                </Typography>
-              }
-              {settings.linkedin_url &&
-                <Typography color="inherit" sx={{ fontSize: 20, pl: { xs: 1.5, sm: 2, lg: 4 } }}>
-                  <Link href={settings.linkedin_url} target="_blank" rel="noopener noreferrer" sx={{ color: '#fff', textDecoration: "none", display: 'flex' }} aria-label="Yhdistä LinkedInissä">
-                    <LinkedInIcon />
-                  </Link>
-                </Typography>
-              }
-            </Box>
-            <IconButton
-              id="mainmenutoggle"
-              size="large"
-              edge="start"
-              color="inherit"
-              aria-label="Avaa päävalikko"
-              aria-controls={open ? 'mainmenu' : undefined}
-              aria-haspopup="true"
-              aria-expanded={open ? 'true' : undefined}
-              onClick={openMenu}
-              sx={{ ml: { xs: 0.5, sm: 2 }, mr: -1.5, flexShrink: 0, display: { xs: 'flex', lg: 'none' } }}
-            >
-              <MenuIcon />
-            </IconButton>
-            <StyledMenu
-              id="mainmenu"
-              anchorEl={anchorEl}
-              open={open}
-              onClose={closeMenu}
-              MenuListProps={{
-                'aria-labelledby': 'mainmenutoggle',
-              }}
-              PaperProps={{
-                elevation: 0,
-                sx: {
-                  overflow: 'visible',
-                  filter: 'drop-shadow(0px 2px 8px rgba(0,0,0,0.32))',
-                  mt: 1.5,
-                  '&:before': {
-                    content: '""',
-                    display: 'block',
-                    position: 'absolute',
-                    top: 0,
-                    right: 20,
-                    width: 10,
-                    height: 10,
-                    bgcolor: theme.palette.background.paper,
-                    transform: 'translateY(-50%) rotate(45deg)',
-                    zIndex: 0,
-                  },
-                },
-              }}
-            >
-              {settings.mainnav.nav.map((item, index) => (
-                <MenuItem key={index} onClick={closeMenu} sx={{ p: 0 }}>
-                  <Link href={item.url} sx={{ px: 2, py: 1, width: '100%', color: '#fff', transition: 'background-color .4s ease', '&:hover': { backgroundColor: 'rgba(255,255,255,.05)' }, textDecoration: (router.asPath == item.url) ? "underline" : "none" }}>{item.title}</Link>
-                </MenuItem>
-              ))}
-            </StyledMenu>
-          </Toolbar>
-        </AppBar>
-      </Box>
-      <Box component="main" id="main-content">{children}</Box>
-      <Box component="footer" role="contentinfo">
-        <Typography sx={{ py: 4, fontSize: 14, textAlign: 'center', color: '#AAA' }} >
-          &copy; 2022 - {new Date().getFullYear()} {settings.sivuston_nimi}
-        </Typography>
-      </Box>
-    </div>
-  )
+
+      <a className="skip" href="#sisalto">Siirry sisältöön</a>
+      <div className="progress" aria-hidden="true"><span /></div>
+
+      <header className="site-head gutter">
+        <Linkki className="logo" href="/">{settings.sivuston_nimi}</Linkki>
+        <nav className="main-nav" id="main-nav" aria-label="Päävalikko">
+          {nav.map((item, i) => (
+            <Linkki key={i} href={item.url} aria-current={onNykyinen(polku, item.url) ? 'page' : undefined}>{item.title}</Linkki>
+          ))}
+        </nav>
+        <div className="head-actions">
+          <div className="social">
+            {somet.map(([ikoni, url]) => (
+              <a key={ikoni} href={url} target="_blank" rel="noopener noreferrer" aria-label={NIMET[ikoni]}><Ikoni nimi={ikoni} koko={20} /></a>
+            ))}
+          </div>
+          {settings.varaa_teksti && <a className="btn btn-line btn-sm" href="#yhteys" data-topic="laulutunnit">{settings.varaa_teksti}</a>}
+          <button className="menu-btn" type="button" aria-expanded="false" aria-controls="main-nav" aria-label="Avaa valikko">
+            <Ikoni nimi="valikko" koko={24} />
+          </button>
+        </div>
+      </header>
+
+      <main id="sisalto">
+        <div className="view" key={sivu}>{children}</div>
+      </main>
+
+      <footer className="site-foot">
+        <span className="foot-mark" aria-hidden="true">Kaniffi</span>
+        <div className="wrap foot-top">
+          <div className="foot-brand">
+            <Linkki className="logo" href="/">{settings.sivuston_nimi}</Linkki>
+            {settings.rooli_teksti && <p className="lbl">{settings.rooli_teksti}</p>}
+            {settings.alapalkki_painike && <a className="btn btn-line btn-sm" href="#yhteys" data-topic="laulutunnit">{settings.alapalkki_painike}</a>}
+          </div>
+          <nav className="foot-col" aria-label="Alavalikko">
+            <p className="foot-h">Sivut</p>
+            {nav.map((item, i) => <Linkki key={i} href={item.url}>{item.title}</Linkki>)}
+          </nav>
+          <div className="foot-col">
+            <p className="foot-h">Seuraa</p>
+            {somet.map(([ikoni, url, nimi]) => (
+              <a key={ikoni} href={url} target="_blank" rel="noopener noreferrer"><Ikoni nimi={ikoni} koko={18} />{nimi}</a>
+            ))}
+          </div>
+          <div className="foot-col">
+            <p className="foot-h">Yhteystiedot</p>
+            {settings.sahkoposti && <a href={`mailto:${settings.sahkoposti}`}><Ikoni nimi="sahkoposti" koko={18} />{settings.sahkoposti}</a>}
+            {settings.sijainti && <p><Ikoni nimi="sijainti" koko={18} />{settings.sijainti}</p>}
+            {settings.yritys && <p>{settings.yritys}</p>}
+          </div>
+        </div>
+        <div className="wrap foot-bottom">
+          <span>© {vuosi} {settings.yritys}</span>
+          <button type="button" className="to-top"><Ikoni nimi="ylos" koko={16} viiva={1.8} />Takaisin ylös</button>
+        </div>
+      </footer>
+    </>
+  );
 }

@@ -1,68 +1,77 @@
-import RichText from '../RichText';
-import { styled } from '@mui/material/styles';
-import Image from '../Image';
-import Link from '../Link';
-import Box from '@mui/material/Box';
-import Typography from '@mui/material/Typography';
+import RichText, { onTaytetty } from '../RichText';
+import { Ikoni, Kuva, Kuvaaja, Linkki, Painikkeet } from '../lava/ui';
+import { Merkki } from './nosto';
 
-const PalstaBox = styled(Box)({
-  '& .image': {
-    height: '100%',
-  },
-  '& img': {
-    height: '100% !important',
-    objectFit: 'cover',
-    width: '100%',
-  },
-  '& a:not(.linkki)': {
-    color: '#AAA',
-    textDecoration: 'underline',
-    transition: 'color .3s ease',
-  },
-  '& a:not(.linkki):hover': {
-    color: '#FFF',
-  },
-  '& .linkki': {
-    color: '#FFF',
-    textDecoration: 'none',
-    paddingRight: 10,
-    transition: 'padding .3s ease, color .3s ease',
-  },
-  '& .linkki:hover': {
-    color: '#CCC',
-    paddingLeft: 10,
-    paddingRight: 0,
-  },
-});
+const Sydan = () => (
+  <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+    <path d="M12 21s-7.5-4.6-9.6-9.3C.9 8.2 3 4.5 6.6 4.5c2.1 0 3.6 1.2 4.4 2.6.8-1.4 2.3-2.6 4.4-2.6 3.6 0 5.7 3.7 4.2 7.2C19.5 16.4 12 21 12 21z" />
+  </svg>
+);
 
-export default function PalstaBlock({ block }) {
+export default function PalstaBlock({ block, id }) {
+  const otsikkoId = `${id || 'palsta'}-${(block.palsta_otsikko || '').toLowerCase().replace(/[^a-z0-9]+/g, '-').slice(0, 24)}`;
+  const listat = (block.palsta_listat || []).filter((l) => l?.kohteet?.length);
+  const edut = (block.palsta_edut || []).filter((e) => e?.otsikko);
+  const tilastot = (block.palsta_tilastot || []).filter((t) => t?.arvo);
+  const pillerit = (block.palsta_linkit || []).filter((l) => l?.title);
+  const kuvaVasemmalla = !!block.palsta_reverse;
+  const merkki = block.palsta_merkki_arvo;
+
+  const teksti = (
+    <div className="split-text-inner">
+      {block.palsta_pieni_otsikko && <p className="lbl">{block.palsta_pieni_otsikko}</p>}
+      {block.palsta_otsikko && <h2 className="scr h2" id={otsikkoId} style={{ fontSize: 'clamp(56px, 5.6vw, 88px)' }}>{block.palsta_otsikko}</h2>}
+      {onTaytetty(block.palsta_sisalto) && <div className="prose"><RichText content={block.palsta_sisalto} /></div>}
+      {listat.length > 0 && (
+        <div className="styles">
+          {listat.map((l, i) => (
+            <div key={i} style={{ display: 'contents' }}>
+              {l.otsikko && <h3 className="lbl muted">{l.otsikko}</h3>}
+              <ul className={l.pehmea ? 'soft' : undefined}>
+                {l.kohteet.filter(Boolean).map((k, j) => (k === l.suosikki
+                  ? <li key={j} className="fav"><Sydan />{k}<span className="visually-hidden"> (rakkain aiheeni)</span></li>
+                  : <li key={j}>{k}</li>))}
+              </ul>
+            </div>
+          ))}
+        </div>
+      )}
+      {onTaytetty(block.palsta_sisalto_jalkeen) && <div className="prose"><RichText content={block.palsta_sisalto_jalkeen} /></div>}
+      {edut.length > 0 && (
+        <ul className="perks">
+          {edut.map((e, i) => <li key={i}><Ikoni nimi={e.ikoni || 'tahti'} koko={26} viiva={1.5} /><strong>{e.otsikko}</strong>{e.teksti && <span>{e.teksti}</span>}</li>)}
+        </ul>
+      )}
+      {tilastot.length > 0 && (
+        <ul className="mini-stats">
+          {tilastot.map((t, i) => <li key={i}><b>{t.arvo}</b><span>{t.teksti}</span></li>)}
+        </ul>
+      )}
+      {block.palsta_allekirjoitus && <p className="sign scr">{block.palsta_allekirjoitus}</p>}
+      <Painikkeet lista={block.palsta_painikkeet} />
+      {pillerit.length > 0 && (
+        <nav className="pills" aria-label={block.palsta_otsikko ? `${block.palsta_otsikko}: lisää` : 'Lisää'}>
+          {pillerit.map((l, i) => <Linkki key={i} className="pill" href={l.url}>{l.title}</Linkki>)}
+        </nav>
+      )}
+    </div>
+  );
+
+  if (!block.palsta_kuva) {
+    return <section className="sec wrap" id={id} aria-labelledby={block.palsta_otsikko ? otsikkoId : undefined}>{teksti}</section>;
+  }
+  const media = (
+    <div className="split-media">
+      <Kuva src={block.palsta_kuva} alt={block.palsta_alt || ''} sizes="(max-width: 960px) 100vw, 50vw" kohdistus={block.palsta_kohdistus} />
+      <Kuvaaja teksti={block.palsta_kuvateksti} />
+      <Merkki arvo={merkki} teksti={block.palsta_merkki_teksti} />
+    </div>
+  );
+  const tekstiPalsta = <div className="split-text">{teksti}</div>;
   return (
-    <PalstaBox sx={{ display: 'flex', flexWrap: 'wrap', flexDirection: { xs: 'column-reverse', lg: block.palsta_reverse ? 'row-reverse' : 'row' }, justifyContent: 'center', minHeight: { xs: 'auto', lg: block.palsta_kuva ? '100vh' : 'auto' }, overflow: 'hidden', my: { xs: 6, lg: '200px' } }}>
-      <Box sx={{ flex: { xs: '0 0 100%', lg: '0 0 50%' }, display: 'flex', alignItems: 'center', mt: { xs: 0, lg: '64px' }, px: { xs: 4, lg: 12 }, position: 'relative' }}>
-        <Box sx={{ textAlign: block.palsta_kuva ? 'left' : 'center', width: '100%' }}>
-          <Typography variant="h2" sx={{ fontSize: { xs: '4rem', lg: '7rem' }, mt: { xs: 4, lg: 0 }, mb: { xs: 4, lg: 8 } }}>{block.palsta_otsikko}</Typography>
-          <RichText content={block.palsta_sisalto} />
-          {block.palsta_linkit &&
-            <Box sx={{ display: 'flex', flexWrap: 'wrap', justifyContent: block.palsta_kuva ? 'flex-start' : 'center', mt: { xs: 2, lg: 4 } }}>
-              {block?.palsta_linkit?.map((linkki, i) => (
-                <Box key={i} sx={{ mr: block.palsta_kuva ? 4 : 2, ml: block.palsta_kuva ? 0 : 2 }}>
-                  ↪ <Link className="linkki" href={linkki.url} sx={{ fontSize: { xs: 28, lg: 36 }, fontFamily: 'MonteCarlo' }}>{linkki.title}</Link>
-                </Box>
-              ))}
-            </Box>
-          }
-        </Box>
-        {block.palsta_kuvateksti &&
-          <Box sx={{ position: 'absolute', left: { xs: 0, lg: block.palsta_reverse ? 0 : 'unset' }, right: { xs: 'unset', lg: block.palsta_reverse ? 'unset' : 0 }, bottom: { xs: 'unset', lg: 0 }, top: { xs: -4, lg: 'unset' } }}>
-            <Typography sx={{ fontSize: { xs: 11, lg: 14 }, color: '#777', px: { xs: '2px', lg: 0 }, py: { xs: 0, lg: '2px' }, lineHeight: 1, writingMode: { xs: 'unset', lg: 'vertical-rl' }, transform: { xs: 'unset', lg: block.palsta_reverse ? 'unset' : 'rotate(180deg)' } }}>{block.palsta_kuvateksti}</Typography>
-          </Box>
-        }
-      </Box>
-      {block.palsta_kuva &&
-        <Box sx={{ flex: { xs: '0 0 100%', lg: '0 0 50%' }, pt: { xs: '64px', lg: 0 }, height: 'auto' }}>
-          <Image src={block.palsta_kuva} orientation="palsta" alt={ block.palsta_kuvateksti ? block.palsta_kuvateksti : '' } />
-        </Box>
-      }
-    </PalstaBox>
-  )
+    <section className={`split ${kuvaVasemmalla ? 'text-right' : 'text-left'} plain${merkki ? ' has-badge' : ''}${merkki && kuvaVasemmalla ? ' lj-split' : ''}`}
+      id={id} aria-labelledby={block.palsta_otsikko ? otsikkoId : undefined}>
+      {kuvaVasemmalla ? <>{media}{tekstiPalsta}</> : <>{tekstiPalsta}{media}</>}
+    </section>
+  );
 }

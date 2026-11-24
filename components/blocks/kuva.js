@@ -1,23 +1,19 @@
-import { styled } from '@mui/material/styles';
-import Image from '../Image';
-import Box from '@mui/material/Box';
-import Typography from '@mui/material/Typography';
+import { Kuva, Kuvaaja } from '../lava/ui';
 
-const KuvaBox = styled(Box)(({ theme }) => ({
-  position: 'relative',
-  display: 'flex',
-  height: 'auto',
-}));
-
-export default function KuvaBlock({ block }) {
+export default function KuvaBlock({ block, id }) {
+  if (!block.img) return null;
+  const kuva = (
+    <figure className="wide-photo" id={block.kuva_lainaus ? undefined : id}>
+      <Kuva src={block.img} alt={block.kuva_alt || ''} sizes="100vw" kohdistus={block.kuva_kohdistus} kohdistusM={block.kuva_kohdistus_mobiili} />
+      <Kuvaaja teksti={block.kuva_kuvateksti} figcaption />
+    </figure>
+  );
+  if (!block.kuva_lainaus) return kuva;
+  const rivit = block.kuva_lainaus.split('\n');
   return (
-    <KuvaBox sx={{ my: { xs: 6, lg: '200px' } }}>
-      <Image src={block.img} orientation="landscape" alt={block?.kuva_kuvateksti} />
-      {block.kuva_kuvateksti &&
-        <Box sx={{ position: 'absolute', left: 0, bottom: { xs: '-8px', lg: '-12px' } }}>
-          <Typography sx={{ fontSize: { xs: 11, lg: 14 }, color: '#777', p: '2px', lineHeight: 1 }}>{block.kuva_kuvateksti}</Typography>
-        </Box>
-      }
-    </KuvaBox>
-  )
+    <div className="wide-wrap" id={id}>
+      {kuva}
+      <p className="wide-quote scr">{rivit.map((r, i) => <span key={i}>{r}{i < rivit.length - 1 && <br />}</span>)}</p>
+    </div>
+  );
 }

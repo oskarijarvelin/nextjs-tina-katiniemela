@@ -1,5 +1,389 @@
 import { defineConfig } from 'tinacms';
 
+// ---------- Kenttäapurit ----------
+const teksti = (name, label, extra = {}) => ({ type: 'string', name, label, ...extra });
+const alue = (name, label, extra = {}) => ({ type: 'string', name, label, ui: { component: 'textarea' }, ...extra });
+const rikas = (name, label) => ({ type: 'rich-text', name, label });
+const kuva = (name, label = 'Kuva') => ({ type: 'image', name, label });
+const kytkin = (name, label) => ({ type: 'boolean', name, label });
+const valinta = (name, label, vaihtoehdot) => ({ type: 'string', name, label, options: vaihtoehdot.map(([value, l]) => ({ value, label: l })) });
+const ankkuri = teksti('ankkuri', 'Ankkuri (esim. videot → linkki #videot)');
+const kohdistus = (name, label = 'Kuvan kohdistus (esim. 50% 30% = vaaka pystykohta)') => teksti(name, label);
+
+const AIHEET = [['laulutunnit', 'Laulutunnit'], ['keikka', 'Keikka'], ['lahjakortti', 'Lahjakortti'], ['muu', 'Muu']];
+const IKONIT = [
+  ['aanentoisto', 'Äänentoisto'], ['valot', 'Valot'], ['taustakangas', 'Taustakangas'], ['ihmiset', 'Ihmiset'],
+  ['kalenteri', 'Kalenteri'], ['peruutus', 'Peruutus'], ['lasku', 'Lasku'], ['sijainti', 'Sijainti'], ['tahti', 'Tähti'],
+  ['sydan', 'Sydän'], ['nuotti', 'Nuotti'], ['lahja', 'Lahja'], ['mikki', 'Mikrofoni'], ['viesti', 'Viesti'],
+  ['verkko', 'Verkkosivu'], ['facebook', 'Facebook'], ['instagram', 'Instagram'], ['linkedin', 'LinkedIn'], ['sahkoposti', 'Sähköposti'],
+];
+const ikoni = (name = 'ikoni') => valinta(name, 'Ikoni', IKONIT);
+
+// Painikelista: tyyli ja aihe (aihe vie yhteydenottolomakkeeseen ja valitsee asian valmiiksi)
+const painikkeet = (name, label = 'Painikkeet', pillerit = false) => ({
+  type: 'object', name, label, list: true,
+  ui: { itemProps: (item) => ({ label: item?.title }), defaultItem: { title: 'Painike', tyyli: 'ensisijainen' } },
+  fields: [
+    teksti('title', 'Teksti'),
+    teksti('url', 'Osoite (esim. /keikat, #hinnasto tai https://…). Tyhjä + aihe = yhteydenottolomake'),
+    valinta('tyyli', 'Tyyli', [['ensisijainen', 'Kultainen painike'], ['haamu', 'Ääriviivapainike'], ...(pillerit ? [['pilleri', 'Pilleri (osiolinkki)']] : [])]),
+    valinta('aihe', 'Lomakkeen aihe (valinnainen)', AIHEET),
+  ],
+});
+const linkkilista = (name, label) => ({
+  type: 'object', name, label, list: true,
+  ui: { itemProps: (item) => ({ label: item?.title }), defaultItem: { url: '/', title: 'Linkki' } },
+  fields: [teksti('url', 'URL'), teksti('title', 'Teksti')],
+});
+const varusteet = (name) => ({
+  type: 'object', name, label: 'Mukana keikalla (ikoniruudut)', list: true,
+  ui: { itemProps: (item) => ({ label: item?.teksti }) },
+  fields: [ikoni(), teksti('teksti', 'Teksti')],
+});
+
+// ---------- Lohkot ----------
+const TEMPLATES = [
+  {
+    name: 'hero', label: 'Hero (sivun yläosa)',
+    ui: { defaultItem: { otsikko: 'Sivun otsikko', hero_tyyli: 'sivu' } },
+    fields: [
+      valinta('hero_tyyli', 'Asettelu', [['sivu', 'Alasivu (kuva sivussa)'], ['etusivu', 'Etusivu (täysleveä kuva)']]),
+      teksti('pieni_otsikko', 'Pieni otsikko (etusivu)'),
+      teksti('saatavuus', 'Saatavuusrivi (esim. Uusille oppilaille on tilaa)'),
+      teksti('otsikko', 'Otsikko', { required: true }),
+      teksti('murupolku', 'Nimi murupolussa (jos eri kuin otsikko)'),
+      alue('sisalto', 'Sisältö'),
+      kuva('bgImg', 'Kuva'),
+      teksti('kuvateksti', 'Kuvateksti (kuvaaja)'),
+      teksti('kuva_alt', 'Kuvan kuvaus näkövammaisille'),
+      kohdistus('kuva_kohdistus'),
+      kohdistus('kuva_kohdistus_desktop', 'Kuvan kohdistus tietokoneella (valinnainen)'),
+      kohdistus('kuva_kohdistus_mobiili', 'Kuvan kohdistus puhelimella (valinnainen)'),
+      kytkin('aalto', 'Äänialto ja kuva oikealla (Musiikki-sivu)'),
+      painikkeet('hero_linkit', 'Painikkeet ja osiolinkit', true),
+    ],
+  },
+  {
+    name: 'nauha', label: 'Juokseva nauha',
+    fields: [
+      { type: 'string', name: 'nauha_tekstit', label: 'Tekstit', list: true },
+      valinta('nauha_tyyli', 'Tyyli', [['normaali', 'Normaali'], ['roolit', 'Iso käsiala (etusivu)']]),
+    ],
+  },
+  {
+    name: 'polut', label: 'Polkukortit (kuva, otsikko, linkki)',
+    fields: [
+      ankkuri,
+      {
+        type: 'object', name: 'polut_lista', label: 'Kortit', list: true,
+        ui: { itemProps: (item) => ({ label: item?.otsikko }) },
+        fields: [
+          kuva('kuva'), teksti('kuvateksti', 'Kuvateksti (kuvaaja)'), teksti('alt', 'Kuvan kuvaus näkövammaisille'),
+          kohdistus('kohdistus'), kohdistus('kohdistus_mobiili', 'Kuvan kohdistus puhelimella (valinnainen)'),
+          { type: 'number', name: 'zoom_mobiili', label: 'Lähennys puhelimella (esim. 1.75, valinnainen)' },
+          teksti('otsikko', 'Otsikko'), alue('teksti', 'Teksti'), teksti('linkki_teksti', 'Linkin teksti'), teksti('linkki_url', 'Linkin osoite'),
+        ],
+      },
+    ],
+  },
+  {
+    name: 'nosto', label: 'Nosto (kuva tai video ja teksti)',
+    ui: { defaultItem: { nosto_pieni_otsikko: 'Ajankohtaista', nosto_otsikko: 'Noston otsikko', nosto_reverse: true } },
+    fields: [
+      ankkuri,
+      teksti('nosto_pieni_otsikko', 'Pieni otsikko'),
+      kytkin('nosto_taajuus', 'Taajuuspalkit pienen otsikon edessä'),
+      teksti('nosto_otsikko', 'Otsikko', { required: true }),
+      rikas('nosto_sisalto', 'Sisältö'),
+      kuva('nosto_kuva'),
+      teksti('nosto_kuvateksti', 'Kuvateksti (kuvaaja)'),
+      teksti('nosto_alt', 'Kuvan kuvaus näkövammaisille'),
+      kohdistus('nosto_kohdistus'),
+      teksti('nosto_video', 'YouTube-video (osoite, näytetään kuvan paikalla)'),
+      kytkin('nosto_reverse', 'Kuva oikealle'),
+      teksti('nosto_merkki_arvo', 'Pyöreä merkki: iso teksti (esim. 35 €)'),
+      alue('nosto_merkki_teksti', 'Pyöreä merkki: pieni teksti'),
+      painikkeet('nosto_painikkeet'),
+    ],
+  },
+  {
+    name: 'palsta', label: 'Sisältöpalsta (kuva ja teksti)',
+    fields: [
+      ankkuri,
+      kuva('palsta_kuva'),
+      teksti('palsta_kuvateksti', 'Kuvateksti (kuvaaja)'),
+      teksti('palsta_alt', 'Kuvan kuvaus näkövammaisille'),
+      kohdistus('palsta_kohdistus'),
+      kytkin('palsta_reverse', 'Kuva vasemmalle'),
+      teksti('palsta_merkki_arvo', 'Pyöreä merkki: iso teksti (esim. 35 €)'),
+      alue('palsta_merkki_teksti', 'Pyöreä merkki: pieni teksti'),
+      teksti('palsta_pieni_otsikko', 'Pieni otsikko'),
+      teksti('palsta_otsikko', 'Otsikko'),
+      rikas('palsta_sisalto', 'Sisältö'),
+      {
+        type: 'object', name: 'palsta_listat', label: 'Listat (esim. vahvuusalueet)', list: true,
+        ui: { itemProps: (item) => ({ label: item?.otsikko }) },
+        fields: [
+          teksti('otsikko', 'Listan otsikko'),
+          { type: 'string', name: 'kohteet', label: 'Kohteet', list: true },
+          teksti('suosikki', 'Sydämellä merkitty kohde (kirjoita täsmälleen sama teksti)'),
+          kytkin('pehmea', 'Himmeämpi tyyli'),
+        ],
+      },
+      rikas('palsta_sisalto_jalkeen', 'Sisältö listojen jälkeen'),
+      {
+        type: 'object', name: 'palsta_edut', label: 'Edut (ikonikortit)', list: true,
+        ui: { itemProps: (item) => ({ label: item?.otsikko }) },
+        fields: [ikoni(), teksti('otsikko', 'Otsikko'), teksti('teksti', 'Teksti')],
+      },
+      {
+        type: 'object', name: 'palsta_tilastot', label: 'Luvut (esim. 2017 Laulunopettajana)', list: true,
+        ui: { itemProps: (item) => ({ label: `${item?.arvo || ''} ${item?.teksti || ''}` }) },
+        fields: [teksti('arvo', 'Luku'), teksti('teksti', 'Teksti')],
+      },
+      teksti('palsta_allekirjoitus', 'Käsialarivi lopussa'),
+      painikkeet('palsta_painikkeet'),
+      linkkilista('palsta_linkit', 'Pillerilinkit'),
+    ],
+  },
+  {
+    name: 'kuva', label: 'Leveä kuva',
+    fields: [
+      kuva('img'), teksti('kuva_kuvateksti', 'Kuvateksti (kuvaaja)'), teksti('kuva_alt', 'Kuvan kuvaus näkövammaisille'),
+      kohdistus('kuva_kohdistus'), kohdistus('kuva_kohdistus_mobiili', 'Kuvan kohdistus puhelimella (valinnainen)'),
+      alue('kuva_lainaus', 'Käsialalainaus kuvan päällä (valinnainen)'),
+    ],
+  },
+  {
+    name: 'keikat', label: 'Keikat',
+    ui: {
+      defaultItem: {
+        keikat_nakyma: 'keikkasivu', keikat_otsikko: 'Tulevat keikat', keikat_menneet_otsikko: 'Menneet keikat',
+        keikat_tyhja: 'Uusia keikkoja on tulossa, seuraa Instagramia!', keikat_cta_teksti: 'Tilaa keikalle',
+      },
+    },
+    fields: [
+      ankkuri,
+      valinta('keikat_nakyma', 'Näkymä', [['keikkasivu', 'Tulevat keikat lippuina'], ['menneet', 'Menneet keikat'], ['kaikki', 'Tulevat ja menneet'], ['etusivu', 'Etusivun tiivis lista ja tilauslaatikko']]),
+      teksti('keikat_otsikko', 'Otsikko (tulevat keikat)'),
+      teksti('keikat_tyhja', 'Teksti, kun tulevia keikkoja ei ole'),
+      teksti('keikat_cta_teksti', 'Tilaa keikalle -painikkeen teksti'),
+      teksti('keikat_cta_url', 'Painikkeen osoite (tyhjä = yhteydenottolomake)'),
+      teksti('keikat_menneet_otsikko', 'Otsikko (menneet keikat)'),
+      teksti('keikat_linkki_teksti', 'Etusivu: linkin teksti (esim. Menneet keikat)'),
+      teksti('keikat_linkki_url', 'Etusivu: linkin osoite'),
+      teksti('tilaa_otsikko', 'Etusivu: tilauslaatikon otsikko'),
+      rikas('tilaa_sisalto', 'Etusivu: tilauslaatikon teksti'),
+      kuva('tilaa_kuva', 'Etusivu: tilauslaatikon kuva'),
+      teksti('tilaa_kuvateksti', 'Etusivu: kuvateksti (kuvaaja)'),
+      teksti('tilaa_alt', 'Etusivu: kuvan kuvaus näkövammaisille'),
+      kohdistus('tilaa_kohdistus'),
+      {
+        type: 'object', name: 'keikat_lista', label: 'Keikat (järjestyksellä ei väliä, päivämäärä ratkaisee). Lista ylläpidetään Keikat-sivulla.', list: true,
+        ui: {
+          itemProps: (item) => {
+            const d = item?.pvm ? new Date(item.pvm) : null;
+            const pvm = d && !isNaN(d) ? d.toLocaleDateString('fi-FI', { timeZone: 'Europe/Helsinki' }) : '?';
+            return { label: `${pvm} ${item?.tapahtuma || ''}` };
+          },
+        },
+        fields: [
+          { type: 'datetime', label: 'Päivämäärä', name: 'pvm', required: true, ui: { dateFormat: 'D.M.YYYY' } },
+          teksti('tapahtuma', 'Tapahtuma ja paikka (esim. Paiste-lava Villa Rana, Jyväskylä)', { required: true }),
+          teksti('lisatieto', 'Lisätieto (esim. kokoonpano)'),
+          teksti('linkki', 'Linkki (esim. liput tai tapahtuman sivu)'),
+        ],
+      },
+    ],
+  },
+  {
+    name: 'musiikkinosto', label: 'Musiikki-nosto (etusivu, sisältö Musiikki-sivulta)',
+    ui: { defaultItem: { mn_otsikko: 'Musiikki', mn_linkki_teksti: 'Kuuntele musiikkiani', mn_linkki_url: '/musiikki', mn_videoita: 4 } },
+    fields: [
+      ankkuri, teksti('mn_otsikko', 'Otsikko'), teksti('mn_linkki_teksti', 'Linkin teksti'), teksti('mn_linkki_url', 'Linkin osoite'),
+      { type: 'number', name: 'mn_videoita', label: 'Näytettävien videoiden määrä' },
+    ],
+  },
+  {
+    name: 'palautteet', label: 'Oppilaiden palautteet (sisältö: Oppilaiden palautteet)',
+    fields: [
+      ankkuri, teksti('pal_otsikko', 'Otsikko (valinnainen)'),
+      valinta('pal_nakyma', 'Näkymä', [['karuselli', 'Vaihtuva nosto'], ['kortit', 'Kortit (nostettu palaute isona)']]),
+    ],
+  },
+  {
+    name: 'faktat', label: 'Lyhyesti-kortit',
+    fields: [
+      ankkuri, teksti('fak_otsikko', 'Pieni otsikko (valinnainen)'),
+      valinta('fak_asettelu', 'Asettelu', [['laulunopettaja', 'Heron alla'], ['cv', 'Oma osio (CV)']]),
+      {
+        type: 'object', name: 'fak_lista', label: 'Kortit', list: true,
+        ui: { itemProps: (item) => ({ label: `${item?.arvo || ''} ${item?.otsikko || ''}` }) },
+        fields: [teksti('arvo', 'Iso teksti (esim. 2017, AMK, 35 €)'), teksti('pieni', 'Pieni lisäteksti (esim. alkaen)'), teksti('otsikko', 'Otsikko'), alue('teksti', 'Teksti')],
+      },
+    ],
+  },
+  {
+    name: 'kokemus', label: 'Kokemuslista (CV)',
+    fields: [
+      ankkuri, teksti('kokemus_otsikko', 'Otsikko'), rikas('kokemus_sisalto', 'Sisältö'),
+      {
+        type: 'object', name: 'kokemus_lista', label: 'Kokemukset', list: true,
+        ui: { itemProps: (item) => ({ label: item?.title }) },
+        fields: [teksti('title', 'Otsikko'), teksti('ajankohta', 'Ajankohta'), rikas('kuvaus', 'Kuvaus')],
+      },
+    ],
+  },
+  {
+    name: 'julkaisut', label: 'Diskografia',
+    fields: [
+      ankkuri, teksti('julkaisut_otsikko', 'Otsikko'), rikas('julkaisut_sisalto', 'Sisältö'),
+      {
+        type: 'object', name: 'julkaisut_lista', label: 'Julkaisut (ensimmäinen albumi näytetään isona)', list: true,
+        ui: { itemProps: (item) => ({ label: `${item?.ajankohta || ''} ${item?.title || ''}` }) },
+        fields: [
+          kuva('kuva', 'Kansikuva'), teksti('title', 'Nimi'), teksti('tyyppi', 'Tyyppi (Albumi, EP, Single)'), teksti('ajankohta', 'Vuosi'),
+          teksti('spotify', 'Spotify URL'), teksti('youtube', 'YouTube URL'), rikas('kuvaus', 'Kuvaus (esim. tekijät)'),
+          {
+            type: 'object', name: 'kappaleet', label: 'Kappaleet', list: true,
+            ui: { itemProps: (item) => ({ label: item?.title }) },
+            fields: [teksti('title', 'Kappale'), teksti('meta', 'Tekijät')],
+          },
+        ],
+      },
+    ],
+  },
+  {
+    name: 'videot', label: 'Musiikkivideot',
+    fields: [
+      ankkuri, teksti('videot_otsikko', 'Otsikko'), rikas('videot_sisalto', 'Sisältö'),
+      { type: 'number', name: 'videot_nakyvissa', label: '(Ei käytössä uudessa ilmeessä)' },
+      {
+        type: 'object', name: 'videot_lista', label: 'Videot (ensimmäinen näytetään isona)', list: true,
+        ui: { itemProps: (item) => ({ label: item?.title }) },
+        fields: [
+          teksti('title', 'Nimi (muodossa Esittäjä - Kappale)'), teksti('ajankohta', 'Vuosi'), teksti('url', 'YouTube URL'),
+          kuva('kuva', 'Kuva (valinnainen; ilman kuvaa nimi näytetään käsialalla)'),
+        ],
+      },
+    ],
+  },
+  {
+    name: 'lainaus', label: 'Lainaus (iso käsiala)',
+    fields: [ankkuri, alue('lai_teksti', 'Lainaus')],
+  },
+  {
+    name: 'ominaisuudet', label: 'Ikoniruudut',
+    fields: [
+      ankkuri, teksti('omi_otsikko', 'Otsikko'),
+      {
+        type: 'object', name: 'omi_lista', label: 'Ruudut', list: true,
+        ui: { itemProps: (item) => ({ label: item?.otsikko }) },
+        fields: [ikoni(), teksti('otsikko', 'Otsikko'), alue('teksti', 'Teksti')],
+      },
+    ],
+  },
+  {
+    name: 'hinnasto', label: 'Hinnasto',
+    ui: { defaultItem: { hin_otsikko: 'Hinnasto' } },
+    fields: [
+      ankkuri, teksti('hin_otsikko', 'Otsikko'),
+      {
+        type: 'object', name: 'hin_kortit', label: 'Hintakortit', list: true,
+        ui: { itemProps: (item) => ({ label: `${item?.otsikko || ''} ${item?.hinta || ''}${item?.yksikko || ''}` }) },
+        fields: [
+          teksti('chip', 'Pieni merkintä (valinnainen)'), teksti('otsikko', 'Otsikko'), teksti('hinta', 'Hinta (esim. 35)'),
+          teksti('yksikko', 'Yksikkö (esim. € tai %)'), teksti('alv', 'Pieni teksti (esim. sis. alv.)'), kytkin('korostettu', 'Korostettu kortti'),
+          teksti('painike_teksti', 'Painikkeen teksti (valinnainen)'), valinta('painike_aihe', 'Painikkeen lomakeaihe', AIHEET),
+        ],
+      },
+      rikas('hin_lahja_teksti', 'Lahjakorttirivi'),
+      teksti('hin_lahja_painike', 'Lahjakorttipainikkeen teksti'),
+      teksti('hin_paikka_teksti', 'Paikkarivi (valinnainen)'),
+      teksti('hin_paikka_linkki', 'Paikkarivin linkin teksti'),
+      teksti('hin_paikka_url', 'Paikkarivin linkin osoite'),
+      {
+        type: 'object', name: 'hin_ehdot', label: 'Ehdot', list: true,
+        ui: { itemProps: (item) => ({ label: item?.otsikko }) },
+        fields: [ikoni(), teksti('otsikko', 'Otsikko'), alue('teksti', 'Teksti')],
+      },
+    ],
+  },
+  {
+    name: 'cta', label: 'Kehotus kuvalla (esim. Tilaa keikalle)',
+    fields: [
+      ankkuri, kuva('cta_kuva'), teksti('cta_kuvateksti', 'Kuvateksti (kuvaaja)'), teksti('cta_alt', 'Kuvan kuvaus näkövammaisille'),
+      kohdistus('cta_kohdistus'), kohdistus('cta_kohdistus_mobiili', 'Kuvan kohdistus puhelimella (valinnainen)'),
+      teksti('cta_saatavuus', 'Saatavuusrivi (valinnainen)'), teksti('cta_otsikko', 'Otsikko'), rikas('cta_sisalto', 'Sisältö'),
+      varusteet('cta_varusteet'),
+      teksti('cta_painike_teksti', 'Painikkeen teksti'), teksti('cta_painike_url', 'Painikkeen osoite (tyhjä = yhteydenottolomake)'),
+      valinta('cta_painike_aihe', 'Painikkeen lomakeaihe', AIHEET),
+    ],
+  },
+  {
+    name: 'kokoonpanot', label: 'Kokoonpanot',
+    fields: [
+      ankkuri, kuva('kok_kuva'), teksti('kok_kuvateksti', 'Kuvateksti (kuvaaja)'), teksti('kok_alt', 'Kuvan kuvaus näkövammaisille'), kohdistus('kok_kohdistus'),
+      teksti('kok_otsikko', 'Otsikko'), rikas('kok_sisalto', 'Sisältö'), varusteet('kok_varusteet'), painikkeet('kok_painikkeet'),
+      {
+        type: 'object', name: 'kok_kortit', label: 'Kokoonpanokortit', list: true,
+        ui: { itemProps: (item) => ({ label: item?.otsikko }) },
+        fields: [
+          valinta('tyyli', 'Tyyli', [['normaali', 'Normaali'], ['nostettu', 'Nostettu (leveä, logo)'], ['mennyt', 'Ei-aktiivinen (kansikuva)']]),
+          kuva('kuva', 'Logo tai kuva'), teksti('alt', 'Kuvan kuvaus näkövammaisille'), teksti('chip', 'Pieni merkintä'), teksti('otsikko', 'Nimi'),
+          rikas('teksti', 'Teksti'),
+          {
+            type: 'object', name: 'linkit', label: 'Linkit', list: true,
+            ui: { itemProps: (item) => ({ label: item?.teksti }) },
+            fields: [ikoni(), teksti('teksti', 'Teksti'), teksti('url', 'Osoite')],
+          },
+        ],
+      },
+    ],
+  },
+  {
+    name: 'vaiheet', label: 'Vaiheet (Näin pääset alkuun)',
+    fields: [
+      ankkuri, teksti('vai_otsikko', 'Otsikko'),
+      {
+        type: 'object', name: 'vai_lista', label: 'Vaiheet', list: true,
+        ui: { itemProps: (item) => ({ label: item?.otsikko }) },
+        fields: [teksti('otsikko', 'Otsikko'), alue('teksti', 'Teksti'), teksti('merkki', 'Pieni merkintä (esim. 35 €)'), kytkin('korostettu', 'Korostettu')],
+      },
+      teksti('vai_painike_teksti', 'Painikkeen teksti'), valinta('vai_painike_aihe', 'Painikkeen lomakeaihe', AIHEET),
+    ],
+  },
+  {
+    name: 'ukk', label: 'Usein kysyttyä',
+    ui: { defaultItem: { ukk_otsikko: 'Usein kysyttyä' } },
+    fields: [
+      ankkuri, teksti('ukk_otsikko', 'Otsikko'), rikas('ukk_sisalto', 'Sisältö'),
+      teksti('ukk_painike_teksti', 'Painikkeen teksti (esim. Kysy lisää)'), valinta('ukk_painike_aihe', 'Painikkeen lomakeaihe', AIHEET),
+      {
+        type: 'object', name: 'ukk_lista', label: 'Kysymykset', list: true,
+        ui: { itemProps: (item) => ({ label: item?.kysymys }) },
+        fields: [teksti('kysymys', 'Kysymys'), rikas('vastaus', 'Vastaus')],
+      },
+    ],
+  },
+  {
+    name: 'lomake', label: 'Ota yhteyttä + lomakkeen johdanto',
+    ui: { defaultItem: { lomake_tyyppi: 'laulutunti', lomake_otsikko: 'Varaa tutustumistunti', lomake_kiitos: 'Kiitos viestistäsi! Vastaan sinulle mahdollisimman pian.' } },
+    fields: [
+      ankkuri,
+      valinta('lomake_tyyppi', 'Lomakkeen oletusaihe', [['laulutunti', 'Laulutunnit'], ['keikka', 'Keikka'], ['lahjakortti', 'Lahjakortti'], ['muu', 'Muu']]),
+      teksti('yhteystiedot_otsikko', 'Osion otsikko (oletus: Ota yhteyttä)'),
+      teksti('lomake_otsikko', 'Lomakkeen otsikko'), rikas('lomake_sisalto', 'Lomakkeen johdanto'),
+      alue('lomake_kiitos', 'Kiitosviesti lähetyksen jälkeen'),
+    ],
+  },
+  {
+    name: 'yhteystiedot', label: 'Ota yhteyttä (yhteystiedot Asetuksista)',
+    ui: { defaultItem: { yhteystiedot_otsikko: 'Ota yhteyttä' } },
+    fields: [teksti('yhteystiedot_otsikko', 'Otsikko (yhteystiedot muokataan Asetuksissa)')],
+  },
+];
+
 const config = defineConfig({
   schema: {
     collections: [
@@ -14,651 +398,36 @@ const config = defineConfig({
             document._sys.filename === 'home' ? '/' : `/${document._sys.filename}`,
           filename: {
             readonly: true,
-            slugify: values => {
-              return `${(values?.title || '').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '')}`
-            },
+            slugify: (values) => `${(values?.title || '').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '')}`,
           },
         },
         fields: [
           {
-            name: 'title',
-            label: 'Otsikko',
-            type: 'string',
-            isTitle: true,
-            required: true,
-            ui: {
-              validate: value => {
-                if (value?.length > 60) {
-                  return "Otsikon tulee olla alle 60 merkkiä pitkä"
-                }
-              },
-            },
+            name: 'title', label: 'Otsikko', type: 'string', isTitle: true, required: true,
+            ui: { validate: (value) => (value?.length > 60 ? 'Otsikon tulee olla alle 60 merkkiä pitkä' : undefined) },
           },
+          { name: 'description', label: 'Kuvaus (hakukoneille)', type: 'string', isBody: true, ui: { component: 'textarea' } },
+          valinta('lomake_aihe', 'Yhteydenottolomakkeen oletusaihe tällä sivulla', AIHEET),
+          { type: 'object', list: true, name: 'blocks', label: 'Sisältöeditori', ui: { visualSelector: true }, templates: TEMPLATES },
+        ],
+      },
+      {
+        label: 'Oppilaiden palautteet',
+        name: 'palautteet',
+        path: 'content/palautteet',
+        format: 'md',
+        ui: { allowedActions: { create: false, delete: false } },
+        fields: [
+          { name: 'title', label: 'Otsikko', type: 'string', isTitle: true, required: true },
           {
-            name: 'description',
-            label: 'Kuvaus',
-            type: 'string',
-            isBody: true,
-            ui: {
-              component: 'textarea',
-            },
-          },
-          {
-            type: 'object',
-            list: true,
-            name: 'blocks',
-            label: 'Sisältöeditori',
-            ui: {
-              visualSelector: true,
-            },
-            templates: [
-              {
-                name: 'hero',
-                label: 'Hero',
-                ui: {
-                  defaultItem: {
-                    otsikko: 'Tähän tulee heron otsikko',
-                    sisalto: 'Phasellus scelerisque, libero eu finibus rutrum, risus risus accumsan libero, nec molestie urna dui a leo.',
-                  },
-                },
-                fields: [
-                  {
-                    type: 'string',
-                    label: 'Otsikko',
-                    name: 'otsikko',
-                    required: true,
-                  },
-                  {
-                    type: 'string',
-                    label: 'Sisältö',
-                    name: 'sisalto',
-                    ui: {
-                      component: 'textarea',
-                    },
-                  },
-                  {
-                    type: 'image',
-                    label: 'Taustakuva',
-                    name: 'bgImg',
-                  },
-                  {
-                    type: 'string',
-                    label: 'Kuvateksti',
-                    name: 'kuvateksti',
-                  },
-                  {
-                    type: 'object',
-                    label: 'Painikkeet',
-                    name: 'hero_linkit',
-                    list: true,
-                    ui: {
-                      itemProps: (item) => ({ label: item?.title }),
-                      defaultItem: { url: '#', title: 'Painike' },
-                    },
-                    fields: [
-                      { type: 'string', label: 'URL (esim. /keikat tai #videot)', name: 'url' },
-                      { type: 'string', label: 'Teksti', name: 'title' },
-                    ],
-                  },
-                ],
-              },
-              {
-                name: 'kuva',
-                label: 'Kuva',
-                fields: [
-                  {
-                    type: 'image',
-                    label: 'Kuva',
-                    name: 'img',
-                  },
-                  {
-                    type: 'string',
-                    label: 'Kuvateksti',
-                    name: 'kuva_kuvateksti',
-                  },
-                ],
-              },
-              {
-                name: 'palsta',
-                label: 'Sisältöpalsta',
-                ui: {
-                  defaultItem: {
-                    palsta_otsikko: 'Tähän tulee heron otsikko',
-                    palsta_sisalto: 'Phasellus scelerisque, libero eu finibus rutrum, risus risus accumsan libero, nec molestie urna dui a leo.',
-                  },
-                },
-                fields: [
-                  {
-                    type: 'string',
-                    label: 'Ankkuri (esim. videot → linkki #videot)',
-                    name: 'ankkuri',
-                  },
-                  {
-                    type: 'image',
-                    label: 'Kuva',
-                    name: 'palsta_kuva',
-                  },
-                  {
-                    type: 'string',
-                    label: 'Kuvateksti',
-                    name: 'palsta_kuvateksti',
-                  },
-                  {
-                    type: 'boolean',
-                    label: 'Kuva vasemmalle',
-                    name: 'palsta_reverse',
-                  },
-                  {
-                    type: 'string',
-                    label: 'Otsikko',
-                    name: 'palsta_otsikko',
-                  },
-                  {
-                    type: 'rich-text',
-                    label: 'Sisältö',
-                    name: 'palsta_sisalto',
-                  },
-                  {
-                    type: 'object',
-                    label: 'Linkit',
-                    name: 'palsta_linkit',
-                    list: true,
-                    ui: {
-                      itemProps: (item) => {
-                        return { label: item?.title };
-                      },
-                      defaultItem: {
-                        url: '/',
-                        title: 'Etusivu',
-                      },
-                    },
-                    fields: [
-                      {
-                        type: 'string',
-                        label: 'URL',
-                        name: 'url',
-                      },
-                      {
-                        type: 'string',
-                        label: 'Teksti',
-                        name: 'title',
-                      },
-                    ],
-                  },
-                ],
-              },
-              {
-                name: 'kokemus',
-                label: 'Kokemuslista',
-                ui: {
-                  defaultItem: {
-                    kokemus_otsikko: 'Työkokemus',
-                    kokemus_sisalto: 'Phasellus scelerisque, libero eu finibus rutrum, risus risus accumsan libero, nec molestie urna dui a leo.',
-                  },
-                },
-                fields: [
-                  {
-                    type: 'string',
-                    label: 'Otsikko',
-                    name: 'kokemus_otsikko',
-                  },
-                  {
-                    type: 'rich-text',
-                    label: 'Sisältö',
-                    name: 'kokemus_sisalto',
-                  },
-                  {
-                    type: 'object',
-                    label: 'Kokemukset',
-                    name: 'kokemus_lista',
-                    list: true,
-                    ui: {
-                      itemProps: (item) => {
-                        return { label: item?.title };
-                      },
-                      defaultItem: {
-                        title: 'Laulunopettaja',
-                        ajankohta: '01/2022 - 12/2022'
-                      },
-                    },
-                    fields: [
-                      {
-                        type: 'string',
-                        label: 'Teksti',
-                        name: 'title',
-                      },
-                      {
-                        type: 'string',
-                        label: 'Ajankohta',
-                        name: 'ajankohta',
-                      },
-                      {
-                        name: 'kuvaus',
-                        label: 'Kuvaus',
-                        type: 'rich-text',
-                      },
-                    ],
-                  },
-                ],
-              },
-              {
-                name: 'julkaisut',
-                label: 'Julkaisut',
-                ui: {
-                  defaultItem: {
-                    julkaisut_otsikko: 'Discografia',
-                    julkaisut_sisalto: 'Phasellus scelerisque, libero eu finibus rutrum, risus risus accumsan libero, nec molestie urna dui a leo.',
-                  },
-                },
-                fields: [
-                  {
-                    type: 'string',
-                    label: 'Ankkuri (esim. videot → linkki #videot)',
-                    name: 'ankkuri',
-                  },
-                  {
-                    type: 'string',
-                    label: 'Otsikko',
-                    name: 'julkaisut_otsikko',
-                  },
-                  {
-                    type: 'rich-text',
-                    label: 'Sisältö',
-                    name: 'julkaisut_sisalto',
-                  },
-                  {
-                    type: 'object',
-                    label: 'Julkaisut',
-                    name: 'julkaisut_lista',
-                    list: true,
-                    ui: {
-                      itemProps: (item) => {
-                        return { label: item?.title };
-                      },
-                      defaultItem: {
-                        title: 'Albumi X',
-                        tyyppi: 'Albumi',
-                        ajankohta: '01.01.2022'
-                      },
-                    },
-                    fields: [
-                      {
-                        type: 'image',
-                        label: 'Kuva',
-                        name: 'kuva',
-                      },
-                      {
-                        type: 'string',
-                        label: 'Nimi',
-                        name: 'title',
-                      },
-                      {
-                        type: 'string',
-                        label: 'Tyyppi',
-                        name: 'tyyppi',
-                      },
-                      {
-                        type: 'string',
-                        label: 'Ajankohta',
-                        name: 'ajankohta',
-                      },
-                      {
-                        type: 'string',
-                        label: 'Spotify URL',
-                        name: 'spotify',
-                      },
-                      {
-                        type: 'string',
-                        label: 'YouTube URL',
-                        name: 'youtube',
-                      },
-                      {
-                        name: 'kuvaus',
-                        label: 'Kuvaus',
-                        type: 'rich-text',
-                      },
-                      {
-                        type: 'object',
-                        label: 'Kappaleet',
-                        name: 'kappaleet',
-                        list: true,
-                        ui: {
-                          itemProps: (item) => {
-                            return { label: item?.title };
-                          },
-                          defaultItem: {
-                            title: '1. Laulu',
-                            meta: '(säv.&san. Kati Niemelä)',
-                          },
-                        },
-                        fields: [
-                          {
-                            type: 'string',
-                            label: 'Nimi',
-                            name: 'title',
-                          },
-                          {
-                            type: 'string',
-                            label: 'Meta',
-                            name: 'meta',
-                          },
-                        ],
-                      },
-                    ],
-                  },
-                ],
-              },
-              {
-                name: 'videot',
-                label: 'Videot',
-                ui: {
-                  defaultItem: {
-                    videot_otsikko: 'Musiikkivideot',
-                    videot_sisalto: 'Phasellus scelerisque, libero eu finibus rutrum, risus risus accumsan libero, nec molestie urna dui a leo.',
-                  },
-                },
-                fields: [
-                  {
-                    type: 'string',
-                    label: 'Ankkuri (esim. videot → linkki #videot)',
-                    name: 'ankkuri',
-                  },
-                  {
-                    type: 'number',
-                    label: 'Näytä aluksi (tyhjä = kaikki)',
-                    name: 'videot_nakyvissa',
-                  },
-                  {
-                    type: 'string',
-                    label: 'Otsikko',
-                    name: 'videot_otsikko',
-                  },
-                  {
-                    type: 'rich-text',
-                    label: 'Sisältö',
-                    name: 'videot_sisalto',
-                  },
-                  {
-                    type: 'object',
-                    label: 'Videot',
-                    name: 'videot_lista',
-                    list: true,
-                    ui: {
-                      itemProps: (item) => {
-                        return { label: item?.title };
-                      },
-                      defaultItem: {
-                        title: 'Video 1',
-                        ajankohta: '2022'
-                      },
-                    },
-                    fields: [
-                      {
-                        type: 'string',
-                        label: 'Teksti',
-                        name: 'title',
-                      },
-                      {
-                        type: 'string',
-                        label: 'Ajankohta',
-                        name: 'ajankohta',
-                      },
-                      {
-                        type: 'string',
-                        label: 'YouTube URL',
-                        name: 'url',
-                      },
-                    ],
-                  },
-                ],
-              },
-
-              {
-                name: 'nosto',
-                label: 'Nosto',
-                ui: {
-                  defaultItem: {
-                    nosto_pieni_otsikko: 'Ajankohtaista',
-                    nosto_otsikko: 'Noston otsikko',
-                  },
-                },
-                fields: [
-                  {
-                    type: 'string',
-                    label: 'Ankkuri (esim. videot → linkki #videot)',
-                    name: 'ankkuri',
-                  },
-                  {
-                    type: 'string',
-                    label: 'Pieni otsikko',
-                    name: 'nosto_pieni_otsikko',
-                  },
-                  {
-                    type: 'string',
-                    label: 'Otsikko',
-                    name: 'nosto_otsikko',
-                    required: true,
-                  },
-                  {
-                    type: 'rich-text',
-                    label: 'Sisältö',
-                    name: 'nosto_sisalto',
-                  },
-                  {
-                    type: 'image',
-                    label: 'Kuva',
-                    name: 'nosto_kuva',
-                  },
-                  {
-                    type: 'string',
-                    label: 'Kuvateksti',
-                    name: 'nosto_kuvateksti',
-                  },
-                  {
-                    type: 'string',
-                    label: 'YouTube-video (osoite, näytetään kuvan paikalla)',
-                    name: 'nosto_video',
-                  },
-                  {
-                    type: 'boolean',
-                    label: 'Kuva oikealle',
-                    name: 'nosto_reverse',
-                  },
-                  {
-                    type: 'object',
-                    label: 'Painikkeet',
-                    name: 'nosto_painikkeet',
-                    list: true,
-                    ui: {
-                      itemProps: (item) => ({ label: item?.title }),
-                      defaultItem: { url: '/', title: 'Lue lisää' },
-                    },
-                    fields: [
-                      { type: 'string', label: 'URL', name: 'url' },
-                      { type: 'string', label: 'Teksti', name: 'title' },
-                    ],
-                  },
-                ],
-              },
-              {
-                name: 'lomake',
-                label: 'Lomake',
-                ui: {
-                  defaultItem: {
-                    lomake_tyyppi: 'laulutunti',
-                    lomake_otsikko: 'Varaa tutustumistunti',
-                    lomake_kiitos: 'Kiitos viestistäsi! Vastaan sinulle mahdollisimman pian.',
-                  },
-                },
-                fields: [
-                  {
-                    type: 'string',
-                    label: 'Ankkuri (esim. videot → linkki #videot)',
-                    name: 'ankkuri',
-                  },
-                  {
-                    type: 'string',
-                    label: 'Lomakkeen tyyppi',
-                    name: 'lomake_tyyppi',
-                    options: [
-                      { value: 'laulutunti', label: 'Laulutunti / tutustumistunti' },
-                      { value: 'keikka', label: 'Keikkatarjouspyyntö' },
-                    ],
-                  },
-                  {
-                    type: 'string',
-                    label: 'Otsikko',
-                    name: 'lomake_otsikko',
-                  },
-                  {
-                    type: 'rich-text',
-                    label: 'Sisältö',
-                    name: 'lomake_sisalto',
-                  },
-                  {
-                    type: 'string',
-                    label: 'Kiitosviesti lähetyksen jälkeen',
-                    name: 'lomake_kiitos',
-                    ui: { component: 'textarea' },
-                  },
-                ],
-              },
-              {
-                name: 'yhteystiedot',
-                label: 'Yhteystiedot (Asetuksista)',
-                ui: {
-                  defaultItem: { yhteystiedot_otsikko: 'Ota yhteyttä' },
-                },
-                fields: [
-                  {
-                    type: 'string',
-                    label: 'Otsikko (yhteystiedot muokataan Asetuksissa)',
-                    name: 'yhteystiedot_otsikko',
-                  },
-                ],
-              },
-              {
-                name: 'keikat',
-                label: 'Keikkalista',
-                ui: {
-                  defaultItem: {
-                    keikat_otsikko: 'Tulevat keikat',
-                    keikat_menneet_otsikko: 'Menneet keikat',
-                    keikat_tyhja: 'Uusia keikkoja on tulossa, seuraa Instagramia!',
-                    keikat_cta_teksti: 'Tilaa keikka',
-                    keikat_cta_url: '/muusikko#tilaa-keikka',
-                  },
-                },
-                fields: [
-                  {
-                    type: 'string',
-                    label: 'Ankkuri (esim. keikat → linkki #keikat)',
-                    name: 'ankkuri',
-                  },
-                  {
-                    type: 'string',
-                    label: 'Otsikko (tulevat keikat)',
-                    name: 'keikat_otsikko',
-                  },
-                  {
-                    type: 'string',
-                    label: 'Teksti, kun tulevia keikkoja ei ole',
-                    name: 'keikat_tyhja',
-                  },
-                  {
-                    type: 'string',
-                    label: 'Tilaa keikka -painikkeen teksti',
-                    name: 'keikat_cta_teksti',
-                  },
-                  {
-                    type: 'string',
-                    label: 'Tilaa keikka -painikkeen osoite',
-                    name: 'keikat_cta_url',
-                  },
-                  {
-                    type: 'string',
-                    label: 'Otsikko (menneet keikat)',
-                    name: 'keikat_menneet_otsikko',
-                  },
-                  {
-                    type: 'object',
-                    label: 'Keikat (järjestyksellä ei väliä, päivämäärä ratkaisee)',
-                    name: 'keikat_lista',
-                    list: true,
-                    ui: {
-                      itemProps: (item) => {
-                        const d = item?.pvm ? new Date(item.pvm) : null;
-                        const pvm = d && !isNaN(d) ? d.toLocaleDateString('fi-FI', { timeZone: 'Europe/Helsinki' }) : '?';
-                        return { label: `${pvm} ${item?.tapahtuma || ''}` };
-                      },
-                    },
-                    fields: [
-                      {
-                        type: 'datetime',
-                        label: 'Päivämäärä',
-                        name: 'pvm',
-                        required: true,
-                        ui: { dateFormat: 'D.M.YYYY' },
-                      },
-                      {
-                        type: 'string',
-                        label: 'Tapahtuma ja paikka',
-                        name: 'tapahtuma',
-                        required: true,
-                      },
-                      {
-                        type: 'string',
-                        label: 'Lisätieto (esim. kokoonpano)',
-                        name: 'lisatieto',
-                      },
-                      {
-                        type: 'string',
-                        label: 'Linkki (esim. liput tai tapahtuman sivu)',
-                        name: 'linkki',
-                      },
-                    ],
-                  },
-                ],
-              },
-              {
-                name: 'ukk',
-                label: 'Usein kysyttyä',
-                ui: {
-                  defaultItem: {
-                    ukk_otsikko: 'Usein kysyttyä',
-                  },
-                },
-                fields: [
-                  {
-                    type: 'string',
-                    label: 'Ankkuri (esim. videot → linkki #videot)',
-                    name: 'ankkuri',
-                  },
-                  {
-                    type: 'string',
-                    label: 'Otsikko',
-                    name: 'ukk_otsikko',
-                  },
-                  {
-                    type: 'rich-text',
-                    label: 'Sisältö',
-                    name: 'ukk_sisalto',
-                  },
-                  {
-                    type: 'object',
-                    label: 'Kysymykset',
-                    name: 'ukk_lista',
-                    list: true,
-                    ui: {
-                      itemProps: (item) => ({ label: item?.kysymys }),
-                    },
-                    fields: [
-                      { type: 'string', label: 'Kysymys', name: 'kysymys' },
-                      { type: 'rich-text', label: 'Vastaus', name: 'vastaus' },
-                    ],
-                  },
-                ],
-              },
+            type: 'object', name: 'palautteet', label: 'Palautteet', list: true,
+            ui: { itemProps: (item) => ({ label: item?.nimi }) },
+            fields: [
+              teksti('nimi', 'Nimi'),
+              teksti('kuvaus', 'Lisätieto (esim. Oppilaana kaksi vuotta)'),
+              alue('lainaus', 'Lyhyt lainaus (näkyy vaihtuvassa nostossa ja pienissä korteissa)'),
+              kytkin('nostettu', 'Nostettu palaute (näytetään isona Laulunopettaja-sivulla)'),
+              rikas('teksti', 'Koko palaute (nostetulle palautteelle)'),
             ],
           },
         ],
@@ -668,82 +437,25 @@ const config = defineConfig({
         name: 'settings',
         path: 'content/settings',
         format: 'json',
-        ui: {
-          title: {
-            readonly: true,
-          },
-        },
+        ui: { allowedActions: { create: false, delete: false } },
         fields: [
+          { name: 'title', label: 'Asetus-sivun otsikko', type: 'string', isTitle: true, required: true },
+          teksti('sivuston_nimi', 'Sivuston nimi'),
+          teksti('rooli_teksti', 'Roolirivi alapalkissa (esim. Artisti · Laulaja · …)'),
+          teksti('varaa_teksti', 'Yläpalkin painike (esim. Varaa tunti)'),
+          teksti('alapalkki_painike', 'Alapalkin painike (esim. Varaa tutustumistunti)'),
+          teksti('sahkoposti', 'Sähköposti'),
+          teksti('sijainti', 'Laulutuntien sijainti (esim. Savela, Jyväskylä)'),
+          teksti('yritys', 'Yrityksen nimi'),
+          teksti('facebook_url', 'Facebook URL'), teksti('facebook_nimi', 'Facebook-nimi (esim. @kaniffivirallinen)'),
+          teksti('instagram_url', 'Instagram URL'), teksti('instagram_nimi', 'Instagram-nimi (esim. @kaniffi)'),
+          teksti('linkedin_url', 'LinkedIn URL'), teksti('linkedin_nimi', 'LinkedIn-nimi'),
+          kuva('yhteys_kuva', 'Ota yhteyttä -osion kuva'),
+          teksti('yhteys_kuvateksti', 'Ota yhteyttä -kuvan kuvateksti (kuvaaja)'),
+          teksti('yhteys_kuva_alt', 'Ota yhteyttä -kuvan kuvaus näkövammaisille'),
           {
-            name: 'title',
-            label: 'Asetus-sivun otsikko',
-            type: 'string',
-            isTitle: true,
-            required: true,
-          },
-          {
-            type: 'string',
-            label: 'Sivuston nimi',
-            name: 'sivuston_nimi',
-          },
-          {
-            type: 'string',
-            label: 'Sähköposti (näkyy Ota yhteyttä -lohkossa)',
-            name: 'sahkoposti',
-          },
-          {
-            type: 'string',
-            label: 'Facebook URL',
-            name: 'facebook_url',
-          },
-          {
-            type: 'string',
-            label: 'Instagram URL',
-            name: 'instagram_url',
-          },
-          {
-            type: 'string',
-            label: 'LinkedIn URL',
-            name: 'linkedin_url',
-          },
-          {
-            type: 'string',
-            label: 'Yrityksen nimi (näkyy Ota yhteyttä -lohkossa)',
-            name: 'yritys',
-          },
-          {
-            type: 'object',
-            label: 'Päävalikko',
-            name: 'mainnav',
-            fields: [
-              {
-                type: 'object',
-                label: 'Linkit',
-                name: 'nav',
-                list: true,
-                ui: {
-                  itemProps: (item) => {
-                    return { label: item?.title };
-                  },
-                  defaultItem: {
-                    url: '/',
-                    title: 'Etusivu',
-                  },
-                },
-                fields: [
-                  {
-                    type: 'string',
-                    label: 'Linkin osoite',
-                    name: 'url',
-                  },
-                  {
-                    type: 'string',
-                    label: 'Linkin teksti',
-                    name: 'title',
-                  },
-                ],
-              },
-            ],
+            type: 'object', label: 'Päävalikko', name: 'mainnav',
+            fields: [linkkilista('nav', 'Linkit')],
           },
         ],
       },
@@ -765,9 +477,9 @@ const config = defineConfig({
     },
   },
   build: {
-    publicFolder: "public",
-    outputFolder: "admin"
-  }
+    publicFolder: 'public',
+    outputFolder: 'admin',
+  },
 });
 
 export default config;

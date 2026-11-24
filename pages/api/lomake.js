@@ -8,8 +8,10 @@
 // Kehityksessä ilman API-avainta viesti tulostetaan konsoliin eikä sitä lähetetä.
 
 const OTSIKOT = {
-  laulutunti: 'Laulutuntipyyntö',
+  laulutunnit: 'Laulutuntipyyntö',
   keikka: 'Keikkatarjouspyyntö',
+  lahjakortti: 'Lahjakorttikysely',
+  muu: 'Yhteydenotto',
 };
 
 const KENTTIEN_NIMET = {
@@ -46,7 +48,8 @@ export default async function handler(req, res) {
   // Roskapostisuoja: piilokenttä täytetty → hiljainen "onnistui"
   if (body.kotisivu) return res.status(200).json({ ok: true });
 
-  const tyyppi = body.tyyppi === 'keikka' ? 'keikka' : 'laulutunti';
+  // Vanha lomake lähetti tyypin 'laulutunti'
+  const tyyppi = body.tyyppi === 'laulutunti' ? 'laulutunnit' : (Object.prototype.hasOwnProperty.call(OTSIKOT, body.tyyppi) ? body.tyyppi : 'muu');
   const tiedot = {};
   for (const kentta of Object.keys(KENTTIEN_NIMET)) {
     const arvo = siisti(body[kentta], kentta === 'viesti' ? 3000 : 200);

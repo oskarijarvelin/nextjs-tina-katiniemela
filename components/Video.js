@@ -1,82 +1,28 @@
-import { useRef } from 'react';
-import { styled } from '@mui/material/styles';
-import Box from '@mui/material/Box';
-
-const VideoBox = styled(Box)({
-    '& img': {
-        position: 'absolute',
-        width: '100%',
-        height: '100%',
-        objectFit: 'cover',
-        top: 0,
-        left: 0,
-    },
-    '& iframe': {
-        position: 'absolute',
-        width: '100%',
-        height: '100%',
-        top: 0,
-        left: 0,
-    },
-    '& button': {
-        position: 'absolute',
-        top: '50%',
-        left: '50%',
-        transform: 'translate(-50%, -50%)',
-        background: 'rgba(0, 0, 0, 0.7)',
-        border: 'none',
-        borderRadius: '50%',
-        width: '80px',
-        height: '80px',
-        cursor: 'pointer',
-        zIndex: 1,
-        transition: 'background 0.3s ease',
-        '&:hover': {
-            background: 'rgba(0, 0, 0, 0.9)',
-        },
-        '&::before': {
-            content: '""',
-            position: 'absolute',
-            top: '50%',
-            left: '55%',
-            transform: 'translate(-50%, -50%)',
-            width: 0,
-            height: 0,
-            borderLeft: '20px solid white',
-            borderTop: '12px solid transparent',
-            borderBottom: '12px solid transparent',
-        }
-    }
-  });
+// YouTube-video: esikatselukuva ensin, soitin ladataan vasta klikkauksesta (kevyempi sivu, ei evästeitä ennen toistoa)
+import { useState } from 'react';
 
 export function youtubeId(url) {
-    const match = (url || '').match(/^.*((youtu.be\/)|(v\/)|(\/u\/\w\/)|(embed\/)|(watch\?))\??v?=?([^#&?]*).*/);
-    return match && match[7].length === 11 ? match[7] : null;
+  const match = (url || '').match(/^.*((youtu.be\/)|(v\/)|(\/u\/\w\/)|(embed\/)|(watch\?))\??v?=?([^#&?]*).*/);
+  return match && match[7].length === 11 ? match[7] : null;
 }
 
-export default function Video({video, title}) {
-    const divRef = useRef(null);
-
-    const onClick = () => {
-        const iframe = document.createElement( "iframe" );
-        iframe.setAttribute( "frameborder", "0" );
-        iframe.setAttribute( "allowfullscreen", "1");
-        iframe.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture');
-        iframe.setAttribute( "title", title || "YouTube video");
-        iframe.style.width = '100%';
-        iframe.style.height = '100%';
-        iframe.setAttribute( "src", `https://www.youtube.com/embed/${video}?rel=0&showinfo=1&autoplay=1` );
-        if (divRef.current) {
-            divRef.current.innerHTML = "";
-            divRef.current.appendChild(iframe);
-        }
-    }
-
-
-    return (
-        <VideoBox ref={divRef} sx={{ position: 'relative', height: 0, maxHeight: 0, paddingTop: '56.25%' }}>
-            <button onClick={onClick} aria-label={`Toista video: ${title || 'YouTube video'}`} type="button" />
-            <img onClick={onClick} loading="lazy" src={`https://img.youtube.com/vi/${video}/hqdefault.jpg`} alt={`Video thumbnail: ${title || 'YouTube video'}`} width="480" height="360" />
-        </VideoBox>
-    );
+export default function Video({ video, title }) {
+  const [toista, setToista] = useState(false);
+  const nimi = title || 'YouTube-video';
+  return (
+    <div className="yt">
+      {toista ? (
+        <iframe src={`https://www.youtube-nocookie.com/embed/${video}?rel=0&autoplay=1`} title={nimi}
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen />
+      ) : (
+        <>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src={`https://img.youtube.com/vi/${video}/hqdefault.jpg`} alt="" loading="lazy" width="480" height="360" />
+          <button type="button" className="yt-play" onClick={() => setToista(true)} aria-label={`Toista video: ${nimi}`}>
+            <span><svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 4v16l13-8z" /></svg></span>
+          </button>
+        </>
+      )}
+    </div>
+  );
 }

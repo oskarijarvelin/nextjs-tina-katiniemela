@@ -1,12 +1,43 @@
 ---
 title: CV
 blocks:
-  - otsikko: Curriculum Vitae
-    sisalto: ''
+  - hero_tyyli: sivu
+    otsikko: Curriculum Vitae
+    murupolku: CV
     bgImg: /uploads/jmo-cropattu.png
     kuvateksti: 'Kuva: Jan-Kristian Moilanen'
+    kuva_alt: Kati laulaa vihreässä mekossa lavalla
+    kuva_kohdistus: 55% 40%
+    hero_linkit:
+      - title: Työkokemus
+        url: '#tyokokemus'
+        tyyli: pilleri
+      - title: Koulutus
+        url: '#koulutus'
+        tyyli: pilleri
+      - title: Muu kokemus
+        url: '#muu-kokemus'
+        tyyli: pilleri
     _template: hero
-  - kokemus_otsikko: Työkokemus
+  - fak_otsikko: Lyhyesti
+    fak_asettelu: cv
+    fak_lista:
+      - arvo: '2017'
+        pieni: alkaen
+        otsikko: Pop/jazz laulunopettaja
+        teksti: Yrittäjä 10/2025 alkaen
+      - arvo: '2025'
+        otsikko: Musiikkipedagogi (AMK)
+        teksti: 'Jyväskylän ammattikorkeakoulu, pop/jazz laulu'
+      - arvo: '2026'
+        otsikko: Muusikko
+        teksti: 'Ammattiopisto Gradia, musiikkiteatterin opintolinja'
+      - arvo: '2026'
+        otsikko: Estill Voice Training
+        teksti: Level 1 & 2
+    _template: faktat
+  - ankkuri: tyokokemus
+    kokemus_otsikko: Työkokemus
     kokemus_sisalto: ''
     kokemus_lista:
       - title: Pop/jazz laulunopettaja
@@ -47,7 +78,8 @@ blocks:
           Laajasalon opisto, rytmimusiikin solistilinja\
           Toimin solistilinjan vastaavan opettajan, kapellimestari Antti Hyvärisen assistenttina. Työtehtäviini kuuluivat mm. nuottimateriaalien hoitaminen, konserttikäsiohjelmien koonti, musiikinteorian tukiopetus ja tutor-henkilönä sekä opiskelijoiden tukena toimiminen.
     _template: kokemus
-  - kokemus_otsikko: Koulutus
+  - ankkuri: koulutus
+    kokemus_otsikko: Koulutus
     kokemus_sisalto: ''
     kokemus_lista:
       - title: Estill Voice Training Level 1 & 2
@@ -99,7 +131,8 @@ blocks:
           Musiikin perustason päättötodistus, klassinen piano\
           Opettajina: Magdy Spanyi, Hannele Hynninen
     _template: kokemus
-  - kokemus_otsikko: Muu kokemus
+  - ankkuri: muu-kokemus
+    kokemus_otsikko: Muu kokemus
     kokemus_sisalto: ''
     kokemus_lista:
       - title: Elossa! -musikaali
@@ -139,5 +172,7 @@ blocks:
         ajankohta: 2005-2010
         kuvaus: ''
     _template: kokemus
+  - yhteystiedot_otsikko: Ota yhteyttä
+    _template: yhteystiedot
 ---
 Kati Niemelän CV: pop/jazz-laulunopettaja (AMK) ja muusikko. Työkokemus, koulutus sekä musikaali-, teatteri- ja kuorokokemus.

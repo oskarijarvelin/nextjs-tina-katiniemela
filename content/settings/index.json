@@ -1,11 +1,21 @@
 {
   "title": "Yleiset asetukset",
   "sivuston_nimi": "Kati Niemelä",
+  "rooli_teksti": "Artisti · Laulaja · Lauluntekijä · Pop/jazz laulunopettaja",
+  "varaa_teksti": "Varaa tunti",
+  "alapalkki_painike": "Varaa tutustumistunti",
   "sahkoposti": "kaniffivirallinen@gmail.com",
-  "facebook_url": "https://www.facebook.com/kaniffivirallinen",
-  "instagram_url": "https://www.instagram.com/kaniffi/",
-  "linkedin_url": "https://www.linkedin.com/in/kati-niemel%C3%A4-a81b08250/",
+  "sijainti": "Savela, Jyväskylä",
   "yritys": "Kaniffi Tmi",
+  "facebook_url": "https://www.facebook.com/kaniffivirallinen",
+  "facebook_nimi": "@kaniffivirallinen",
+  "instagram_url": "https://www.instagram.com/kaniffi/",
+  "instagram_nimi": "@kaniffi",
+  "linkedin_url": "https://www.linkedin.com/in/kati-niemel%C3%A4-a81b08250/",
+  "linkedin_nimi": "Kati Niemelä",
+  "yhteys_kuva": "/uploads/DSC04341_v3bknh.jpg",
+  "yhteys_kuvateksti": "Kuva: Tuomas Eronen",
+  "yhteys_kuva_alt": "Kati nojaa kallioon tummassa mekossa",
   "mainnav": {
     "nav": [
       {

@@ -1,6 +1,8 @@
 import { useTina } from "tinacms/dist/react";
 import { client } from "../tina/__generated__/client";
+import { haeGlobaali } from "../lib/sivudata";
 
+import { sivunRakenne } from "../lib/seo";
 import Layout from "../components/Layout";
 import Content from "../components/Content";
 
@@ -13,8 +15,8 @@ export default function Home(props) {
   });
 
   return (
-    <Layout title={data.page.title} description={data.page.description} ogImage={data.page.blocks?.find((b) => b?.__typename === "PageBlocksHero")?.bgImg}>
-      <Content blocks={data.page.blocks} rakennettu={props.rakennettu} />
+    <Layout title={data.page.title} description={data.page.description} jsonLd={sivunRakenne({ blocks: data.page.blocks || [], title: data.page.title, description: data.page.description, polku: `/${props.slug}` })} ogImage={data.page.blocks?.find((b) => b?.__typename === "PageBlocksHero")?.bgImg}>
+      <Content blocks={data.page.blocks} rakennettu={props.rakennettu} globaali={props.globaali} oletusAihe={data.page.lomake_aihe} />
     </Layout>
   );
 }
@@ -48,6 +50,8 @@ export const getStaticProps = async (ctx) => {
       data,
       query,
       variables,
+      slug: ctx.params.slug,
+      globaali: await haeGlobaali(),
       // Sivun rakennusaika: keikkalista erottelee tulevat ja menneet tämän mukaan ennen kuin selain tarkistaa päivän
       rakennettu: new Date().toISOString(),
     },
