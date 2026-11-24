@@ -7,8 +7,11 @@ function tekstiksi(ast) {
   return (ast ? kerää(ast) : '').trim();
 }
 
+const slug = (t) => (t || '').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '');
+
 export default function JulkaisutBlock({ block, id }) {
-  const lista = (block.julkaisut_lista || []).filter((j) => j?.title);
+  // Vanhan sivuston ankkurit (esim. #julkaisu-4-15-00-jalkeen) säilytetään
+  const lista = (block.julkaisut_lista || []).map((j, i) => j && { ...j, ankkuri: `julkaisu-${i}-${slug(j.title)}` }).filter((j) => j?.title);
   const albumi = lista.find((j) => (j.tyyppi || '').toLowerCase() === 'albumi');
   const muut = lista.filter((j) => j !== albumi);
   const vuodet = [];
@@ -25,7 +28,7 @@ export default function JulkaisutBlock({ block, id }) {
         <h2 className="scr h2" id={otsikkoId} style={{ marginBottom: 'clamp(40px, 5vw, 64px)' }}>{block.julkaisut_otsikko}</h2>
         {onTaytetty(block.julkaisut_sisalto) && <div className="prose" style={{ marginBottom: 32 }}><RichText content={block.julkaisut_sisalto} /></div>}
         {albumi && (
-          <article className="album-feature" aria-labelledby="albumi-otsikko">
+          <article className="album-feature" id={albumi.ankkuri} aria-labelledby="albumi-otsikko">
             <div className="vinyl-stage">
               <div className="vinyl" aria-hidden="true"><div className="vinyl-disc"><Kuva src={albumi.kuva} leveys={480} korkeus={480} sizes="160px" /></div></div>
               <div className="sleeve tilt"><Kuva src={albumi.kuva} alt={`${albumi.title} – kansikuva`} leveys={800} korkeus={800} sizes="(max-width: 960px) 80vw, 420px" /></div>
@@ -58,7 +61,7 @@ export default function JulkaisutBlock({ block, id }) {
                   const linkki = j.spotify || j.youtube;
                   const krediitit = tekstiksi(j.kuvaus);
                   return (
-                    <article className="disc" key={i}>
+                    <article className="disc" id={j.ankkuri} key={i}>
                       <a className="disc-cover tilt" href={linkki || '#'} target="_blank" rel="noopener noreferrer" aria-label={`Kuuntele ${j.title}${j.spotify ? ' Spotifyssa' : ''}`}>
                         <Kuva src={j.kuva} alt={`${j.title} – kansikuva`} leveys={480} korkeus={480} sizes="(max-width: 560px) 40vw, 168px" />
                         <span className="vplay"><Toisto koko={20} /></span>

@@ -27,7 +27,7 @@ function onNykyinen(polku, url) {
   return polku === url || polku.startsWith(url + '/') || polku.startsWith(url + '#');
 }
 
-export default function Layout({ title, description, children, ogImage }) {
+export default function Layout({ title, description, children, ogImage, jsonLd = [] }) {
   const router = useRouter();
   const polku = router.asPath.split('?')[0];
   const sivu = polku.split('#')[0];
@@ -36,6 +36,8 @@ export default function Layout({ title, description, children, ogImage }) {
   useEffect(() => initLava(), [sivu]);
 
   const kuvaus = (description || '').replace(/\s+/g, ' ').trim();
+  // Lyhyt otsikko (esim. Keikat, CV) saa nimen perään hakutuloksia ja välilehteä varten
+  const otsikko = title && title.length <= 30 && !/Kati Niemelä|Kaniffi/.test(title) ? `${title} | Kati Niemelä` : title;
   const currentUrl = `${SITE_URL}${sivu}`;
   const imageUrl = ogImage ? (ogImage.startsWith('http') ? ogImage : `${SITE_URL}${ogImage}`) : `${SITE_URL}/favicon.png`;
   const nav = settings.mainnav?.nav || [];
@@ -65,25 +67,26 @@ export default function Layout({ title, description, children, ogImage }) {
         inLanguage: 'fi',
         publisher: { '@type': 'Person', name: 'Kati Niemelä' },
       },
+      ...jsonLd,
     ],
   };
 
   return (
     <>
       <Head>
-        <title>{title}</title>
+        <title>{otsikko}</title>
         <meta name="description" content={kuvaus} />
         <link rel="canonical" href={currentUrl} />
         <meta property="og:type" content="website" />
         <meta property="og:url" content={currentUrl} />
-        <meta property="og:title" content={title} />
+        <meta property="og:title" content={otsikko} />
         <meta property="og:description" content={kuvaus} />
         <meta property="og:image" content={imageUrl} />
         <meta property="og:image:alt" content={title} />
         <meta property="og:site_name" content={settings.sivuston_nimi} />
         <meta property="og:locale" content="fi_FI" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content={title} />
+        <meta name="twitter:title" content={otsikko} />
         <meta name="twitter:description" content={kuvaus} />
         <meta name="twitter:image" content={imageUrl} />
         <meta name="author" content="Kati Niemelä" />
