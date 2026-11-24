@@ -49,6 +49,11 @@ const VideoBox = styled(Box)({
     }
   });
 
+export function youtubeId(url) {
+    const match = (url || '').match(/^.*((youtu.be\/)|(v\/)|(\/u\/\w\/)|(embed\/)|(watch\?))\??v?=?([^#&?]*).*/);
+    return match && match[7].length === 11 ? match[7] : null;
+}
+
 export default function Video({video, title}) {
     const divRef = useRef(null);
 

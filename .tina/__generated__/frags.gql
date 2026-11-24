@@ -80,6 +80,7 @@ fragment PageParts on Page {
       nosto_sisalto
       nosto_kuva
       nosto_kuvateksti
+      nosto_video
       nosto_reverse
       nosto_painikkeet {
         __typename

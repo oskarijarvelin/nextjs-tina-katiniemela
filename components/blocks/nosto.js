@@ -6,6 +6,7 @@ import Typography from '@mui/material/Typography';
 
 import Image from '../Image';
 import PillLink from '../PillLink';
+import Video, { youtubeId } from '../Video';
 
 const NostoBox = styled(Box)({
   '& .image, & .image img': {
@@ -22,7 +23,9 @@ const NostoBox = styled(Box)({
 });
 
 export default function NostoBlock({ block }) {
-  const kuva = block.nosto_kuva;
+  const video = youtubeId(block.nosto_video);
+  const kuva = video ? null : block.nosto_kuva;
+  const media = Boolean(video || kuva);
   return (
     <NostoBox sx={{ my: { xs: 6, lg: '160px' } }}>
       <Container maxWidth="lg">
@@ -35,6 +38,13 @@ export default function NostoBlock({ block }) {
             overflow: 'hidden',
           }}
         >
+          {video && (
+            <Box sx={{ flex: { md: '0 0 50%' }, minWidth: 0, display: 'flex', alignItems: 'center', backgroundColor: '#000' }}>
+              <Box sx={{ width: '100%' }}>
+                <Video video={video} title={block.nosto_otsikko} />
+              </Box>
+            </Box>
+          )}
           {kuva && (
             <Box sx={{ flex: { md: '0 0 42%' }, minHeight: { xs: 220, md: 360 }, position: 'relative' }}>
               <Image src={kuva} orientation="palsta" alt={block.nosto_kuvateksti || block.nosto_otsikko || ''} />
@@ -45,7 +55,7 @@ export default function NostoBlock({ block }) {
               )}
             </Box>
           )}
-          <Box sx={{ flex: 1, minWidth: 0, p: { xs: 4, md: 6, lg: 8 }, display: 'flex', flexDirection: 'column', justifyContent: 'center', textAlign: kuva ? 'left' : 'center' }}>
+          <Box sx={{ flex: 1, minWidth: 0, p: { xs: 4, md: 6, lg: 8 }, display: 'flex', flexDirection: 'column', justifyContent: 'center', textAlign: media ? 'left' : 'center' }}>
             {block.nosto_pieni_otsikko && (
               <Typography sx={{ fontSize: 13, letterSpacing: '.18em', textTransform: 'uppercase', color: '#ffd28a', mb: 1 }}>
                 {block.nosto_pieni_otsikko}
@@ -56,7 +66,7 @@ export default function NostoBlock({ block }) {
             </Typography>
             {block.nosto_sisalto && <RichText content={block.nosto_sisalto} />}
             {block.nosto_painikkeet?.length > 0 && (
-              <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 2, mt: 3, justifyContent: kuva ? 'flex-start' : 'center' }}>
+              <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 2, mt: 3, justifyContent: media ? 'flex-start' : 'center' }}>
                 {block.nosto_painikkeet.filter((p) => p?.url).map((p, i) => (
                   <PillLink key={i} className="linkki" href={p.url} filled={i === 0}>
                     {p.title}

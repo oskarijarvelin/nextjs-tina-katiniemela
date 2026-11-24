@@ -453,6 +453,11 @@ const config = defineConfig({
                     name: 'nosto_kuvateksti',
                   },
                   {
+                    type: 'string',
+                    label: 'YouTube-video (osoite, näytetään kuvan paikalla)',
+                    name: 'nosto_video',
+                  },
+                  {
                     type: 'boolean',
                     label: 'Kuva oikealle',
                     name: 'nosto_reverse',
