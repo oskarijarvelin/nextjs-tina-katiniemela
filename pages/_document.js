@@ -10,9 +10,6 @@ export default class MyDocument extends Document {
           <link rel="icon" href="/favicon.png" />
           <link rel="apple-touch-icon" href="/favicon.png" />
           <link rel="manifest" href="/manifest.json" />
-          <link rel="preconnect" href="https://fonts.googleapis.com" />
-          <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-          <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=MonteCarlo&family=Jost:wght@400;500;600&display=swap" />
         </Head>
         <body>
           <Main />
