@@ -28,8 +28,7 @@ blocks:
     videot_nakyvissa: 4
     videot_otsikko: Musiikkivideot
     videot_sisalto: |
-      Videoiden käsikirjoitus, ohjaus, organisointi ja visuaalisuus: Kati Niemelä\
-      Epäonnen huhtikuu -videon editointi: Kati Niemelä
+      Videoiden käsikirjoitus, ohjaus, organisointi ja visuaalisuus sekä Epäonnen huhtikuun editointi: Kati Niemelä
     videot_lista:
       - title: Ronimus - Epäonnen huhtikuu
         ajankohta: '2021'
