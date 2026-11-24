@@ -11,6 +11,8 @@ yarn install
 yarn dev
 ```
 
-`yarn dev` käynnistää Tinan ja Nextin. Sivusto aukeaa osoitteeseen http://localhost:3000 ja editori osoitteeseen http://localhost:3000/admin.
+`yarn dev` käynnistää Tinan ja Nextin (Node 24). Sivusto aukeaa osoitteeseen http://localhost:3000 ja editori osoitteeseen http://localhost:3000/admin.
 
 Buildia (`yarn build`) varten tarvitaan `.env`-tiedosto. Siihen tulee `NEXT_PUBLIC_TINA_CLIENT_ID` ja `TINA_TOKEN` Tina Cloudista (app.tina.io), lomaketta varten lisäksi `RESEND_API_KEY`.
+
+Ilman Tina Cloud -tunnuksia buildin voi testata paikallisella sisällöllä: `yarn build:local`. Rikastekstin lihavointitesti: `yarn test:mdx`.

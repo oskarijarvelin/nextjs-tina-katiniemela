@@ -32,16 +32,16 @@ Hinnat (11/2026): tutustumistunti 35 €, laulutunti 60 €/h, opiskelijat ja al
 
 ## Tekniikka
 
-- **Next.js 13.1.6 (Pages Router)** + **TinaCMS 1.2.1** (Tina Cloud). React 18.2. Yarn. MUI ja Emotion on poistettu käytöstä, mutta paketit ovat vielä `package.json`issa (ks. Ylläpito).
+- **Next.js 15.5 (Pages Router)** + **TinaCMS 3.15** ja `@tinacms/cli` 4 (Tina Cloud). React 18.3. Node 24 (`engines`). Yarn 1. Päivitetty 24.11.2026 versioista Next 13.1 ja Tina 1.2.
 - **Tyylit:** `styles/lava.css` on luonnoksen CSS sellaisenaan, ja loppuun on lisätty toteutuksen omat säännöt (kuvan kohdistus, YouTube-upotus, lahjakorttirivi). Tuodaan `pages/_app.js`:ssä.
-- **Fontit:** omina tiedostoina `@fontsource/montecarlo` (400) ja `@fontsource/jost` v5 (400/500/600). Jostin v5-paketti tuodaan ilman `.css`-päätettä (`import '@fontsource/jost/400'`), koska Next 13.1:n webpack tulkitsee paketin exports-kartan väärin.
+- **Fontit:** omina tiedostoina `@fontsource/montecarlo` (400) ja `@fontsource/jost` v5 (400/500/600). Jostin v5-paketti tuodaan ilman `.css`-päätettä (`import '@fontsource/jost/400'`), koska Next 13.1:n webpack tulkitsi paketin exports-kartan väärin (toimii näin myös Next 15:ssä).
 - **Reititys:** `pages/index.js` (home.md) ja `pages/[slug].js` (SSG, `fallback: "blocking"`). Kumpikin hakee `lib/sivudata.js`:llä globaalin datan (keikkalista Keikat-sivulta, musiikki Musiikki-sivulta, palautteet omasta kokoelmastaan) ja `lib/seo.js`:llä sivun rakennedatan.
 - **Pohja:** `components/Layout.js` sisältää headin (SEO), yläpalkin, valikon ja alapalkin. Valikko, some-linkit ja yhteystiedot tulevat `content/settings/index.json`:sta.
 - **Rakennuspalat:** `components/lava/ui.js` sisältää ikonit (Tinan ikonivalinnat), `Kuva`-komponentin (next/image ja kohdistukset `--pos`/`--pos-d`/`--pos-m`), `Painike`/`Painikkeet` (aihe → `#yhteys` ja lomakkeen esivalinta), `Nauha`-komponentin ja päivämääräapurit.
 - **Selainefektit:** `lib/lava.js` (`initLava()`, käynnistyy Layoutissa sivukohtaisesti ja siivoaa jälkensä) hoitaa valikon, edistymispalkin, kimallusvanan, kultapölyn, palautekarusellin, kansien kallistuksen, osioiden nousuanimaation, sähköpostin kopioinnin, takaisin ylös -painikkeen ja `data-topic` → `lava-aihe`-tapahtuman. Kaikki liike kunnioittaa `prefers-reduced-motion`-asetusta.
 - **Rikasteksti:** `components/RichText.js` sisältää lihavointibugin korjauksen sekä apurit `onTaytetty()` (Tina palauttaa tyhjänkin kentän tyhjänä dokumenttina, jonka pitää tulkita tyhjäksi) ja `tekstiksi()`.
 
-### Tina-skeema (`.tina/config.js`)
+### Tina-skeema (`tina/config.js`)
 
 Kokoelmat:
 - **Sivut** (`page`): `title`, `description` (markdownin body = meta description), `lomake_aihe` (sivun lomakkeen oletusaihe), `blocks`.
@@ -51,7 +51,7 @@ Kokoelmat:
 Lohkot (22), kentät suomeksi ja omilla etuliitteillään:
 `hero` (asettelu etusivu/sivu, saatavuusrivi, murupolku, kuvan kohdistukset, äänialto, painikkeet/pillerit), `nauha`, `polut`, `nosto` (kuva tai YouTube-video, pyöreä merkki, taajuuspalkit), `palsta` (listat ja sydän, edut, luvut, allekirjoitus), `kuva` (+ käsialalainaus), `keikat` (näkymät: liput / menneet / kaikki / etusivu), `musiikkinosto`, `palautteet` (karuselli / kortit), `faktat`, `kokemus`, `julkaisut` (ensimmäinen albumi vinyylinä, muut vuosittain), `videot` (ensimmäinen isona, ilman kuvaa käsialalla), `lainaus`, `ominaisuudet`, `hinnasto`, `cta`, `kokoonpanot`, `vaiheet`, `ukk`, `lomake`, `yhteystiedot`.
 
-Skeemamuutoksen jälkeen `tinacms dev` generoi `.tina/__generated__`-tiedostot, ja ne commitoidaan muutoksen mukana.
+`tina/__generated__` generoidaan buildissa eikä sitä commitoida. Skeemamuutoksen jälkeen commitoidaan `tina/config.js` ja `tina/tina-lock.json` (tinacms dev/build päivittää lukkotiedoston), ja Tina Cloud indeksoi skeeman lukkotiedostosta.
 
 ### Yhteydenottolomake
 
@@ -86,13 +86,14 @@ Skeemamuutoksen jälkeen `tinacms dev` generoi `.tina/__generated__`-tiedostot, 
 ## Avoimet asiat ja jatkokehitys
 
 ### Kesken
-- **Tina 3 -päivitys** tehtiin kokeiluna haaraan `claude/brave-kapitsa-8f119f` (PR #51), mutta haara poistettiin ja PR suljettiin 24.11.2026 yhdistämättä. Viimeinen commit d78bfc9 on palautettavissa GitHubista suljetun PR:n kautta. Päivitys korjaisi editorin lihavointibugin pysyvästi (`@tinacms/mdx` 2.x).
-- **Editorin lihavointibugi** (Tina 1.x): valitse lihavoitava teksti ilman reunavälilyöntejä. `RichText.js` korjaa näkyvän lopputuloksen.
+- **Tina 3 / Next 15.5 -päivitys** tehtiin haarassa `claude/brave-kapitsa-8f119f` (PR #51). Haaraan yhdistettiin 24.11.2026 Lava-ilme, kaniffi.fi ja siivous. Testit: `yarn test:mdx` (lihavoinnin sarjallistus) ja `yarn build:local` (build paikallisella sisällöllä ilman Tina Cloud -tunnuksia).
+- **Editorin lihavointibugi** korjaantuu Tina 3:ssa (`@tinacms/mdx` 2.x siirtää reunavälilyönnin tähtien ulkopuolelle). `RichText.js`:n korjaus jätettiin vanhan sisällön vuoksi.
 
 ### Ylläpito
-- Käyttämättömät riippuvuudet voi poistaa (tarkistettu 24.11.2026): `@mui/*`, `@emotion/*`, `@fontsource/tillana`, `styled-components`, `next-tinacms-cloudinary`, `@headlessui/react`, `@tinacms/auth`, `react-icons`, `prop-types`, `react-is`. `next-with-less` on yhä käytössä `next.config.js`:ssä, mutta Less-tiedostoja ei ole, joten senkin voi poistaa samalla. `package.json`:n nimi on yhä `starter-basic`.
+- Käyttämättömät riippuvuudet (MUI, Emotion, styled-components, Headless UI, react-icons, next-with-less ym.) poistettiin 24.11.2026.
 - `public/uploads` on noin 159 Mt. Live-kuvat tulevat Tina Cloudin mediasta (`assets.tina.io`) next/imagen optimoimina, joten repon alkuperäiset 5–10 Mt:n kuvat eivät hidasta sivustoa. Käyttämättömiä kuvia on noin 12 (esim. DSC0425x–DSC0433x, kati-flipattu, kati-rajattu2).
-- Next 13.1.6 ja Tina 1.2.1 ovat vuoden 2023 versioita. CI-matriisi käyttää Node 14/16/17:ää (EOL).
+- **Tietoturva (yarn audit 24.11.2026):** ei kriittisiä. Jäljellä Nextin sisäänrakennettu PostCSS 8.4.31 (koskee hyökkääjän syöttämän CSS:n käsittelyä, ei tätä sivustoa) ja Tinan Zod 3 (korjaus vain Zod 4:ssä). Next 15.5.x saa tietoturvapäivityksiä: päivitä patch-versioon (`yarn upgrade next eslint-config-next`) säännöllisesti. Seuraava isompi askel olisi Next 16 ja React 19.
+- CI (`.github/workflows/pr-open.yml`) ajaa PR:issä Node 24:llä `test:mdx`- ja `build:local`-komennot.
 - Pienet Lighthouse-huomiot (eivät laske pisteitä): polkukorttien kuvat ovat mobiilissa hieman ylisuuria (noin 47 kt), Nextin omat polyfillit noin 12 kt.
 
 ### Sisältöideat
