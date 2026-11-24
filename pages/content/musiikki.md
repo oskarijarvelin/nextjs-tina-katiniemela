@@ -17,14 +17,11 @@ blocks:
     nosto_pieni_otsikko: Ajankohtaista
     nosto_otsikko: Saman katon alla
     nosto_sisalto: |
-      Tähän lyhyt kuvaus Saman katon alla -projektista: mistä on kyse, keitä on mukana ja missä sitä pääsee kuulemaan tai näkemään.
+      Kaniffi säveltää ja sanoittaa omaa musiikkia. Saman katon alla on ensimmäinen julkaistu livetaltiointi.
 
-      Toinen kappale on vapaaehtoinen, esimerkiksi tulevat esitykset tai julkaisupäivä.
+      Kappale kertoo siitä, kuinka arki voi etäännyttää rakkaat toisistaan.
     nosto_kuva: /uploads/DSC04458_dwgrzz.jpg
     nosto_kuvateksti: 'Kuva: Tuomas Eronen'
-    nosto_painikkeet:
-      - url: 'https://www.instagram.com/kaniffi/'
-        title: Tutustu projektiin
     _template: nosto
   - ankkuri: videot
     videot_nakyvissa: 4
