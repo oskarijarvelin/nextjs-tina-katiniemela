@@ -5,8 +5,8 @@ import { useRouter } from 'next/router';
 import settings from '../content/settings/index.json';
 import { initLava } from '../lib/lava';
 import { Ikoni, Linkki } from './lava/ui';
+import { SITE_URL } from '../lib/sivusto';
 
-const SITE_URL = 'https://katiniemela.fi';
 
 // Some-linkit asetuksista: [ikoni, url, näkyvä nimi]
 export function someLinkit() {

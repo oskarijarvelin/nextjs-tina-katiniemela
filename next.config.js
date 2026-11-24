@@ -1,7 +1,15 @@
 const nextConfig = {
     images: {
-        remotePatterns: ['res.cloudinary.com', 'assets.tina.io', 'katiniemela.vercel.app', 'katiniemela.fi', 'kaniffi.fi']
-            .map((hostname) => ({ protocol: 'https', hostname })),
+        remotePatterns: ['assets.tina.io', 'kaniffi.fi'].map((hostname) => ({ protocol: 'https', hostname })),
+    },
+    // Pääosoite on kaniffi.fi: vanha osoite ohjataan pysyvästi (308) samaan polkuun uudessa osoitteessa
+    async redirects() {
+        return ['katiniemela.fi', 'www.katiniemela.fi'].map((host) => ({
+            source: '/:path*',
+            has: [{ type: 'host', value: host }],
+            destination: 'https://kaniffi.fi/:path*',
+            permanent: true,
+        }));
     },
     async headers() {
         return [
@@ -36,16 +44,14 @@ const nextConfig = {
         locales: ['fi'],
         defaultLocale: 'fi',
     },
-};
-
-module.exports = {
     async rewrites() {
         return [
-          {
-            source: '/admin',
-            destination: '/admin/index.html',
-          },
-        ]
+            {
+                source: '/admin',
+                destination: '/admin/index.html',
+            },
+        ];
     },
-    ...nextConfig
 };
+
+module.exports = nextConfig;

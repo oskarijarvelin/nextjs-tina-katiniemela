@@ -4,8 +4,8 @@
   "description": "Artisti, laulaja-lauluntekijä ja pop/jazz laulunopettaja. Tilaa minut keikoille tai tule laulutunneille!",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#000000",
-  "theme_color": "#1976d2",
+  "background_color": "#0B0A0A",
+  "theme_color": "#0B0A0A",
   "orientation": "portrait-primary",
   "icons": [
     {
@@ -17,5 +17,9 @@
   ],
   "lang": "fi",
   "dir": "ltr",
-  "categories": ["music", "entertainment", "education"]
+  "categories": [
+    "music",
+    "entertainment",
+    "education"
+  ]
 }

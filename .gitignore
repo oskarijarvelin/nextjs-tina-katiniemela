@@ -37,3 +37,7 @@ yarn-error.log*
 
 # tinacms (generoidaan buildissa; tina/tina-lock.json commitoidaan)
 /tina/__generated__
+
+# toimitettavat tiedostot repon juuressa (videot, PDF:t) eivät kuulu versionhallintaan
+/*.mp4
+/*.pdf

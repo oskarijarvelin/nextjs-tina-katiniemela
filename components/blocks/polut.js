@@ -4,7 +4,8 @@ export default function PolutBlock({ block, id }) {
   const polut = (block.polut_lista || []).filter(Boolean);
   if (!polut.length) return null;
   return (
-    <section className="sec wrap" id={id} aria-label={polut.map((p) => p.otsikko).join(', ')}>
+    <section className="sec wrap" id={id} aria-labelledby={`${id || 'polut'}-otsikko`}>
+      <h2 className="visually-hidden" id={`${id || 'polut'}-otsikko`}>{polut.map((p) => p.otsikko).join(', ')}</h2>
       <div className="paths">
         {polut.map((p, i) => (
           <article className="path" key={i}>

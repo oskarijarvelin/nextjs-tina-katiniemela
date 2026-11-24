@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 
-const baseUrl = 'https://katiniemela.fi';
+const baseUrl = 'https://kaniffi.fi';
 const contentDir = path.join(__dirname, '../pages/content');
 
 // Sivut luetaan suoraan Tinan sisältökansiosta, joten uudet sivut päätyvät sivukarttaan automaattisesti.

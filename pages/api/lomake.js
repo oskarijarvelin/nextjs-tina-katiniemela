@@ -3,7 +3,7 @@
 // Ympäristömuuttujat (Vercel → Project → Settings → Environment Variables):
 //   RESEND_API_KEY          Resendin API-avain (pakollinen tuotannossa)
 //   LOMAKE_VASTAANOTTAJA    Mihin viestit lähetetään (oletus: kaniffivirallinen@gmail.com)
-//   LOMAKE_LAHETTAJA        Lähettäjä, esim. "Kotisivut <lomake@katiniemela.fi>" (domain varmennettava Resendissä)
+//   LOMAKE_LAHETTAJA        Lähettäjä, esim. "Kotisivut <lomake@kaniffi.fi>" (domain varmennettava Resendissä)
 //
 // Kehityksessä ilman API-avainta viesti tulostetaan konsoliin eikä sitä lähetetä.
 

@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 
 # Sitemaps
-Sitemap: https://katiniemela.fi/sitemap.xml
+Sitemap: https://kaniffi.fi/sitemap.xml
