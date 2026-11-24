@@ -51,6 +51,59 @@ query pageConnection($before: String, $after: String, $first: Float, $last: Floa
   }
 }
 
+query palautteet($relativePath: String!) {
+  palautteet(relativePath: $relativePath) {
+    ... on Document {
+      _sys {
+        filename
+        basename
+        breadcrumbs
+        path
+        relativePath
+        extension
+      }
+      id
+    }
+    ...PalautteetParts
+  }
+}
+
+query palautteetConnection($before: String, $after: String, $first: Float, $last: Float, $sort: String, $filter: PalautteetFilter) {
+  palautteetConnection(
+    before: $before
+    after: $after
+    first: $first
+    last: $last
+    sort: $sort
+    filter: $filter
+  ) {
+    pageInfo {
+      hasPreviousPage
+      hasNextPage
+      startCursor
+      endCursor
+    }
+    totalCount
+    edges {
+      cursor
+      node {
+        ... on Document {
+          _sys {
+            filename
+            basename
+            breadcrumbs
+            path
+            relativePath
+            extension
+          }
+          id
+        }
+        ...PalautteetParts
+      }
+    }
+  }
+}
+
 query settings($relativePath: String!) {
   settings(relativePath: $relativePath) {
     ... on Document {

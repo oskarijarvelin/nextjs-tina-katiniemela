@@ -47,3 +47,11 @@ export default function RichText({ content, ...props }) {
   if (!content) return null;
   return <TinaMarkdown content={korjaaLihavoinnit(content)} {...props} />;
 }
+
+// Tina palauttaa tyhjänkin rikastekstikentän tyhjänä dokumenttina; tämä kertoo, onko kentässä oikeaa sisältöä
+export function onTaytetty(content) {
+  if (!content) return false;
+  if (typeof content === 'string') return content.trim().length > 0;
+  const teksti = (n) => (n?.type === 'text' ? (n.text || '').trim() : (n?.children || []).map(teksti).join(''));
+  return teksti(content).length > 0 || JSON.stringify(content).includes('"type":"img"');
+}

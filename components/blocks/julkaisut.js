@@ -1,137 +1,89 @@
-import { Fragment, useState } from 'react';
-import RichText from '../RichText';
-import { styled, useTheme } from '@mui/material/styles';
-import useMediaQuery from '@mui/material/useMediaQuery';
+// Diskografia: ensimmäinen albumi isona vinyylinä, muut julkaisut vuosittain
+import RichText, { onTaytetty } from '../RichText';
+import { Kuva, Painike, Toisto } from '../lava/ui';
 
-import Image from '../Image';
-import PillLink from '../PillLink';
-
-import Box from '@mui/material/Box';
-import ButtonBase from '@mui/material/ButtonBase';
-import Collapse from '@mui/material/Collapse';
-import Container from '@mui/material/Container';
-import Typography from '@mui/material/Typography';
-
-import { FaSpotify, FaYoutube } from 'react-icons/fa';
-
-const JulkaisutBox = styled(Box)({
-  '& .image': {
-    maxWidth: '100%',
-    height: 'auto',
-  },
-  '& a:not(.linkki)': {
-    color: '#AAA',
-    textDecoration: 'underline',
-    transition: 'color .3s ease',
-  },
-  '& a:not(.linkki):hover': {
-    color: '#FFF',
-  },
-});
-
-function slug(text, i) {
-  return `julkaisu-${i}-${(text || '').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/[^a-z0-9]+/g, '-')}`;
+function tekstiksi(ast) {
+  const kerää = (n) => (n?.type === 'text' ? n.text : (n?.children || []).map(kerää).join(n?.type === 'p' ? '\n' : ''));
+  return (ast ? kerää(ast) : '').trim();
 }
 
-function Kansi({ j, i, avoinna, onToggle }) {
+export default function JulkaisutBlock({ block, id }) {
+  const lista = (block.julkaisut_lista || []).filter((j) => j?.title);
+  const albumi = lista.find((j) => (j.tyyppi || '').toLowerCase() === 'albumi');
+  const muut = lista.filter((j) => j !== albumi);
+  const vuodet = [];
+  muut.forEach((j) => {
+    const v = j.ajankohta || '';
+    let ryhma = vuodet.find((r) => r.v === v);
+    if (!ryhma) { ryhma = { v, julkaisut: [] }; vuodet.push(ryhma); }
+    ryhma.julkaisut.push(j);
+  });
+  const otsikkoId = `${id || 'diskografia'}-otsikko`;
   return (
-    <ButtonBase
-      onClick={onToggle}
-      aria-expanded={avoinna}
-      aria-controls={slug(j.title, i)}
-      focusRipple
-      sx={{
-        display: 'block',
-        width: '100%',
-        textAlign: 'left',
-        borderRadius: 1,
-        outline: avoinna ? '2px solid #ffd28a' : 'none',
-        outlineOffset: 4,
-        transition: 'opacity .3s ease',
-        '&:hover .kansi': { opacity: 0.85 },
-      }}
-    >
-      <Box className="kansi" sx={{ transition: 'opacity .3s ease' }}>
-        <Image src={j.kuva} orientation="julkaisu" alt={`${j.title} – kansikuva`} />
-      </Box>
-      <Typography component="h3" sx={{ mt: 1, fontSize: { xs: 15, lg: 17 }, fontWeight: 700, lineHeight: 1.3 }}>{j.title}</Typography>
-      <Typography component="span" sx={{ display: 'block', fontSize: { xs: 13, lg: 14 }, color: '#AAA' }}>
-        {[j.tyyppi, j.ajankohta].filter(Boolean).join(' · ')}
-        <Box component="span" sx={{ ml: 1 }} aria-hidden="true">{avoinna ? '▴' : '▾'}</Box>
-      </Typography>
-    </ButtonBase>
-  );
-}
-
-function Tiedot({ j, i, avoinna }) {
-  return (
-    <Collapse in={avoinna} id={slug(j.title, i)}>
-      <Box sx={{ backgroundColor: 'background.paper', borderRadius: 2, p: { xs: 3, md: 4 }, my: 1 }}>
-        <Box sx={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', justifyContent: 'space-between', gap: 2, mb: 2 }}>
-          <Box>
-            <Typography variant="h3" component="p" sx={{ fontSize: { xs: '2.4rem', lg: '3rem' }, lineHeight: 1.1 }}>{j.title}</Typography>
-            <Typography sx={{ color: '#AAA' }}>{[j.tyyppi, j.ajankohta].filter(Boolean).join(' · ')}</Typography>
-          </Box>
-          <Box sx={{ display: 'flex', gap: 1.5, flexWrap: 'wrap' }}>
-            {j.spotify && <PillLink className="linkki" href={j.spotify} filled aria-label={`${j.title} Spotifyssä`}><FaSpotify /> Spotify</PillLink>}
-            {j.youtube && <PillLink className="linkki" href={j.youtube} aria-label={`${j.title} YouTubessa`}><FaYoutube /> YouTube</PillLink>}
-          </Box>
-        </Box>
-        {j.kuvaus && <RichText content={j.kuvaus} />}
-        {j?.kappaleet?.length > 0 && (
-          <Box component="ol" sx={{ listStyle: 'none', p: 0, m: 0, columns: { xs: 1, md: 2 }, columnGap: 6 }}>
-            {j.kappaleet.map((k, ki) => (
-              <Box component="li" key={ki} sx={{ mb: 1.5, breakInside: 'avoid' }}>
-                <Typography component="span" sx={{ display: 'block' }}>{k.title}</Typography>
-                {k.meta && <Typography component="span" sx={{ display: 'block', fontSize: 14, color: '#AAA' }}>{k.meta}</Typography>}
-              </Box>
-            ))}
-          </Box>
+    <section className="sec band" id={id} aria-labelledby={otsikkoId}>
+      <div className="wrap">
+        <h2 className="scr h2" id={otsikkoId} style={{ marginBottom: 'clamp(40px, 5vw, 64px)' }}>{block.julkaisut_otsikko}</h2>
+        {onTaytetty(block.julkaisut_sisalto) && <div className="prose" style={{ marginBottom: 32 }}><RichText content={block.julkaisut_sisalto} /></div>}
+        {albumi && (
+          <article className="album-feature" aria-labelledby="albumi-otsikko">
+            <div className="vinyl-stage">
+              <div className="vinyl" aria-hidden="true"><div className="vinyl-disc"><Kuva src={albumi.kuva} leveys={480} korkeus={480} sizes="160px" /></div></div>
+              <div className="sleeve tilt"><Kuva src={albumi.kuva} alt={`${albumi.title} – kansikuva`} leveys={800} korkeus={800} sizes="(max-width: 960px) 80vw, 420px" /></div>
+            </div>
+            <div className="album-info">
+              <p className="lbl">{[albumi.tyyppi, albumi.ajankohta].filter(Boolean).join(' · ')}</p>
+              <h3 className="scr" id="albumi-otsikko">{albumi.title}</h3>
+              <div className="ctas">
+                {albumi.spotify && <Painike url={albumi.spotify} teksti="Spotify"><Toisto /></Painike>}
+                {albumi.youtube && <Painike url={albumi.youtube} teksti="YouTube" tyyli="haamu" />}
+              </div>
+              {onTaytetty(albumi.kuvaus) && <div className="prose"><RichText content={albumi.kuvaus} /></div>}
+              {albumi.kappaleet?.length > 0 && (
+                <ol className="tracklist">
+                  {albumi.kappaleet.map((k, i) => {
+                    const nimi = (k.title || '').replace(/^\d+\.\s*/, '');
+                    return <li key={i}><b>{String(i + 1).padStart(2, '0')}</b><span>{nimi}</span>{k.meta && <small>{k.meta}</small>}</li>;
+                  })}
+                </ol>
+              )}
+            </div>
+          </article>
         )}
-      </Box>
-    </Collapse>
-  );
-}
-
-export default function JulkaisutBlock({ block }) {
-  const theme = useTheme();
-  const md = useMediaQuery(theme.breakpoints.up('md'));
-  const sm = useMediaQuery(theme.breakpoints.up('sm'));
-  const sarakkeet = md ? 4 : sm ? 3 : 2;
-  const [avoin, setAvoin] = useState(null);
-  const lista = block?.julkaisut_lista || [];
-
-  // Kansikuvat ruudukossa; avatun julkaisun tiedot aukeavat sen rivin alle koko leveydelle.
-  // Kaikkien julkaisujen tiedot ovat DOM:ssa (piilossa), jotta tekijätiedot löytyvät myös hakukoneista.
-  const rivit = [];
-  for (let r = 0; r < lista.length; r += sarakkeet) rivit.push(lista.slice(r, r + sarakkeet).map((j, k) => ({ j, i: r + k })));
-
-  return (
-    <JulkaisutBox sx={{ my: { xs: 6, lg: '200px' } }}>
-      <Container maxWidth="lg">
-        <Typography variant="h2" sx={{ fontSize: { xs: '4rem', lg: '7rem' }, mt: { xs: 4, lg: 0 }, mb: { xs: 3, lg: 6 }, textAlign: 'center' }}>{block?.julkaisut_otsikko}</Typography>
-        {block.julkaisut_sisalto &&
-          <Box sx={{ mb: { xs: 6, lg: 8 }, textAlign: 'center' }}>
-            <RichText content={block?.julkaisut_sisalto} />
-          </Box>
-        }
-        <Box sx={{ display: 'grid', gridTemplateColumns: `repeat(${sarakkeet}, minmax(0, 1fr))`, columnGap: { xs: 2, md: 4 }, rowGap: 0 }}>
-          {rivit.map((rivi, ri) => (
-            <Fragment key={ri}>
-              {rivi.map(({ j, i }) => (
-                <Box key={i} sx={{ mb: { xs: 3, md: 4 } }}>
-                  <Kansi j={j} i={i} avoinna={avoin === i} onToggle={() => setAvoin(avoin === i ? null : i)} />
-                </Box>
-              ))}
-              <Box sx={{ gridColumn: '1 / -1' }}>
-                {rivi.map(({ j, i }) => (
-                  <Tiedot key={i} j={j} i={i} avoinna={avoin === i} />
-                ))}
-              </Box>
-            </Fragment>
+        <div className="dyears">
+          {vuodet.map((r) => (
+            <div className="dyear" key={r.v}>
+              <p className="dyear-num">{r.v}</p>
+              <div className="discs">
+                {r.julkaisut.map((j, i) => {
+                  const linkki = j.spotify || j.youtube;
+                  const krediitit = tekstiksi(j.kuvaus);
+                  return (
+                    <article className="disc" key={i}>
+                      <a className="disc-cover tilt" href={linkki || '#'} target="_blank" rel="noopener noreferrer" aria-label={`Kuuntele ${j.title}${j.spotify ? ' Spotifyssa' : ''}`}>
+                        <Kuva src={j.kuva} alt={`${j.title} – kansikuva`} leveys={480} korkeus={480} sizes="(max-width: 560px) 40vw, 168px" />
+                        <span className="vplay"><Toisto koko={20} /></span>
+                      </a>
+                      {j.tyyppi && <p className="lbl muted">{j.tyyppi}</p>}
+                      <h3>{j.title}</h3>
+                      {krediitit && <p className="credits">{krediitit}</p>}
+                      <div className="disc-links">
+                        {j.spotify && <a href={j.spotify} target="_blank" rel="noopener noreferrer">Spotify</a>}
+                        {j.youtube && <a href={j.youtube} target="_blank" rel="noopener noreferrer">YouTube</a>}
+                      </div>
+                      {j.kappaleet?.length > 0 && (
+                        <details className="tracks">
+                          <summary>Kappaleet ({j.kappaleet.length}) <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" aria-hidden="true"><path d="m6 9 6 6 6-6" /></svg></summary>
+                          <ol>{j.kappaleet.map((k, n) => <li key={n}>{k.title}{k.meta && <small>{k.meta}</small>}</li>)}</ol>
+                        </details>
+                      )}
+                    </article>
+                  );
+                })}
+              </div>
+            </div>
           ))}
-        </Box>
-      </Container>
-    </JulkaisutBox>
+        </div>
+      </div>
+    </section>
   );
 }

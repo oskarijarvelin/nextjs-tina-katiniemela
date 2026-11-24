@@ -1,69 +1,64 @@
-import { styled } from '@mui/material/styles';
-import Image from '../Image';
-import PillLink from '../PillLink';
-import Box from '@mui/material/Box';
-import Typography from '@mui/material/Typography';
+import { Ikoni, Kuva, Kuvaaja, Linkki, Painikkeet } from '../lava/ui';
 
-const HeroBox = styled(Box)({
-  display: 'flex',
-  flexWrap: 'wrap',
-  position: 'relative',
-  overflowX: 'hidden',
-  '& .image': {
-    height: '100%',
-  },
-  '& img': {
-    height: '100% !important',
-    objectFit: 'cover',
-    width: '100%',
-  },
-});
+// Musiikki-sivun äänialto: kiinteä näennäissatunnainen sarja, jotta palvelin ja selain piirtävät saman
+function rnd(n) { const x = Math.sin(n * 127.1 + 311.7) * 43758.5453; return x - Math.floor(x); }
+const AALTO = Array.from({ length: 84 }, (_, i) => ({
+  '--h': `${Math.round(18 + rnd(i) * 82)}%`, '--d': `-${(rnd(i + .5) * 1.6).toFixed(2)}s`, '--t': `${(0.97 + rnd(i + .9) * 0.8).toFixed(2)}s`,
+}));
 
-export default function HeroBlock({ block }) {
-  // Pitkä yksittäinen sana (esim. "Laulunopettaja") ei mahdu puolikkaaseen palstaan isolla fontilla,
-  // joten skaalataan fonttia pienemmäksi, kun otsikon pisin sana on pitkä.
-  const longestWord = Math.max(0, ...(block.otsikko || '').split(/\s+/).map((w) => w.length));
-  const longTitle = longestWord > 10;
+function Saatavuus({ teksti, style }) {
+  if (!teksti) return null;
+  return <p className="avail" style={style}><span className="avail-dot" aria-hidden="true" />{teksti}</p>;
+}
 
+const rivit = (teksti) => (teksti || '').split('\n').map((r, i, a) => <span key={i}>{r}{i < a.length - 1 && <br />}</span>);
+
+export default function HeroBlock({ block, id }) {
+  const linkit = (block.hero_linkit || []).filter((l) => l?.title);
+  const pillerit = linkit.filter((l) => l.tyyli === 'pilleri');
+  const napit = linkit.filter((l) => l.tyyli !== 'pilleri');
+  const kuva = (
+    <Kuva src={block.bgImg} alt={block.kuva_alt || ''} priority sizes="(max-width: 960px) 100vw, 60vw"
+      kohdistus={block.kuva_kohdistus} kohdistusD={block.kuva_kohdistus_desktop} kohdistusM={block.kuva_kohdistus_mobiili} />
+  );
+
+  if (block.hero_tyyli === 'etusivu') {
+    return (
+      <section className="hero" id={id} aria-label={block.otsikko}>
+        <div className="hero-media">{kuva}<Kuvaaja teksti={block.kuvateksti} /></div>
+        <div className="hero-inner gutter">
+          <div className="hero-text">
+            {block.pieni_otsikko && <p className="lbl">{block.pieni_otsikko}</p>}
+            <Saatavuus teksti={block.saatavuus} />
+            <h1 className="scr" tabIndex={-1}>{block.otsikko}</h1>
+            {block.sisalto && <p className="hero-lead">{block.sisalto}</p>}
+            <Painikkeet lista={napit} />
+          </div>
+        </div>
+        <span className="scroll-cue" aria-hidden="true"><i /></span>
+      </section>
+    );
+  }
+
+  const otsikkoId = `${id || 'sivu'}-h1`;
   return (
-    <HeroBox sx={{ minHeight: { xs: 'auto', lg: '100vh' }, height: { xs: 'auto', lg: '100%' }, overflow: 'hidden', mb: { xs: 6, lg: '200px' } }}>
-      <Box sx={{ flex: { xs: '0 0 100%', lg: '0 0 50%' }, minWidth: 0, height: 'auto', pt: { xs: '56px', lg: 0 } }}>
-        {block.bgImg && (
-          <Image src={block.bgImg} orientation="hero" alt={block.kuvateksti ? block.kuvateksti : ''} />
+    <section className={`page-hero${block.aalto ? ' mus-hero' : ''}`} id={id} aria-labelledby={otsikkoId}>
+      <div className="page-hero-text">
+        <nav className="crumbs" aria-label="Murupolku">
+          <Linkki href="/">Etusivu</Linkki><span aria-hidden="true">/</span><span aria-current="page">{block.murupolku || block.otsikko}</span>
+        </nav>
+        <h1 className="scr" id={otsikkoId} tabIndex={-1}>{block.otsikko}</h1>
+        {block.sisalto && <p className="lead">{rivit(block.sisalto)}</p>}
+        <Painikkeet lista={napit} />
+        {pillerit.length > 0 && (
+          <nav className="pills" aria-label={`${block.otsikko}: osiot`}>
+            {pillerit.map((l, i) => <Linkki key={i} className="pill" href={l.url}>{l.title}</Linkki>)}
+          </nav>
         )}
-      </Box>
-      <Box sx={{ flex: { xs: '0 0 100%', lg: '0 0 50%' }, minWidth: 0, display: 'flex', alignItems: 'center', mt: { xs: 0, lg: '64px' }, px: { xs: 4, lg: 14 }, textAlign: 'center', position: 'relative' }}>
-        {block.kuvateksti &&
-          <Box sx={{ position: 'absolute', left: 0, bottom: { xs: 'unset', lg: 0 }, top: { xs: 0, lg: 'unset' } }}>
-            <Typography sx={{ fontSize: { xs: 11, lg: 14 }, color: '#777', px: { xs: '2px', lg: 0 }, py: '3px', lineHeight: 1, writingMode: { xs: 'unset', lg: 'vertical-rl' } }}>{block.kuvateksti}</Typography>
-          </Box>
-        }
-        <Box sx={{ width: '100%' }}>
-          <Typography
-            variant="h1"
-            sx={{
-              fontSize: longTitle ? { xs: '3.6rem', sm: '5rem', lg: '5.5rem', xl: '7rem' } : { xs: '5rem', lg: '8rem' },
-              overflowWrap: 'break-word',
-              mt: { xs: 8, lg: 0 },
-              mb: { xs: 4, lg: 8 },
-            }}
-          >
-            {block.otsikko}
-          </Typography>
-          {block.sisalto && (
-            <Typography sx={{ mb: 4, fontSize: { sm: 22, lg: 25 }, whiteSpace: 'pre-line' }}>{block.sisalto}</Typography>
-          )}
-          {block.hero_linkit?.length > 0 && (
-            <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 2, justifyContent: 'center', mb: 4 }}>
-              {block.hero_linkit.map((linkki, i) => (
-                <PillLink key={i} href={linkki.url} filled={i === 0 && block.hero_linkit.length === 1}>
-                  {linkki.title}
-                </PillLink>
-              ))}
-            </Box>
-          )}
-        </Box>
-      </Box>
-    </HeroBox>
+        <Saatavuus teksti={block.saatavuus} />
+      </div>
+      <div className="page-hero-media">{kuva}<Kuvaaja teksti={block.kuvateksti} /></div>
+      {block.aalto && <div className="wave" aria-hidden="true">{AALTO.map((s, i) => <i key={i} style={s} />)}</div>}
+    </section>
   );
 }

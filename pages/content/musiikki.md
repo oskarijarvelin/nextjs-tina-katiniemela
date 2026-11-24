@@ -1,18 +1,40 @@
 ---
 title: Musiikki – Kaniffi ja Kati Niemelä
 blocks:
-  - otsikko: Musiikki
-    sisalto: Kuuntele, katso ja seuraa – julkaisut, musiikkivideot ja ajankohtaiset projektit.
+  - hero_tyyli: sivu
+    otsikko: Musiikki
+    sisalto: 'Kuuntele, katso ja seuraa – julkaisut, musiikkivideot ja ajankohtaiset projektit.'
     bgImg: /uploads/JMo-2023-139.jpg
     kuvateksti: 'Kuva: Jan-Kristian Moilanen'
+    kuva_alt: Kati laulaa bändin kanssa
+    kuva_kohdistus: 48% 50%
+    kuva_kohdistus_desktop: 0% 45%
+    aalto: true
     hero_linkit:
-      - url: '#ajankohtaista'
-        title: Ajankohtaista
-      - url: '#videot'
-        title: Musiikkivideot
-      - url: '#diskografia'
-        title: Diskografia
+      - title: Ajankohtaista
+        url: '#ajankohtaista'
+        tyyli: pilleri
+      - title: Musiikkivideot
+        url: '#videot'
+        tyyli: pilleri
+      - title: Diskografia
+        url: '#diskografia'
+        tyyli: pilleri
     _template: hero
+  - nauha_tekstit:
+      - Vaikeaa
+      - Jarruta
+      - Sä teit sen taas
+      - Ei jäädä eiliseen
+      - Tyttö liikennevalojen
+      - Epäonnen huhtikuu
+      - Onnellinen suudelma
+      - Tyhmä kylmä sydän
+      - Rannalla ruikuttaja
+      - Kohdillaan
+      - Vielä jää
+    nauha_tyyli: normaali
+    _template: nauha
   - ankkuri: ajankohtaista
     nosto_pieni_otsikko: Ajankohtaista
     nosto_otsikko: Saman katon alla
@@ -24,30 +46,38 @@ blocks:
     nosto_kuvateksti: 'Kuva: Tuomas Eronen'
     nosto_video: 'https://www.youtube.com/watch?v=AWcBRUA6GZU'
     _template: nosto
+    nosto_taajuus: true
+    nosto_reverse: true
+    nosto_alt: Kati katsoo syksyistä metsämaisemaa
+    nosto_kohdistus: 72% 50%
   - ankkuri: videot
     videot_nakyvissa: 4
     videot_otsikko: Musiikkivideot
     videot_sisalto: |
       Videoiden käsikirjoitus, ohjaus, organisointi ja visuaalisuus sekä Epäonnen huhtikuun editointi: Kati Niemelä
     videot_lista:
-      - title: Ronimus - Epäonnen huhtikuu
-        ajankohta: '2021'
-        url: 'https://www.youtube.com/watch?v=p-ZaMt6IPiI'
       - title: SweetHard - One of These Nights -cover
         ajankohta: '2021'
         url: 'https://www.youtube.com/watch?v=ERrsmQJMurk'
+      - title: Ronimus - Epäonnen huhtikuu
+        ajankohta: '2021'
+        url: 'https://www.youtube.com/watch?v=p-ZaMt6IPiI'
+        kuva: /uploads/ronimus-epaonnenhuhtikuu_a7vxso.jpg
       - title: Ronimus – Minne tiet kuljettaa
         ajankohta: '2019'
         url: 'https://www.youtube.com/watch?v=7XK8I47NdoQ'
+        kuva: /uploads/ronimus-minnetietkuljettaa_trskal.jpg
       - title: Ronimus - Lennän taas
         ajankohta: '2018'
         url: 'https://www.youtube.com/watch?v=DpGYH-tP7B8'
+        kuva: /uploads/ronimus-lennantaas_n2ku40.jpg
       - title: Ronimus - Bileet
         ajankohta: '2018'
         url: 'https://www.youtube.com/watch?v=bvKDC7BWXss'
+        kuva: /uploads/ronimus-bileet_gplqps.jpg
     _template: videot
   - ankkuri: diskografia
-    julkaisut_otsikko: Discografia
+    julkaisut_otsikko: Diskografia
     julkaisut_sisalto: ''
     julkaisut_lista:
       - kuva: /uploads/ronimus-alustaaloitetaan_kkkjpf.jpg

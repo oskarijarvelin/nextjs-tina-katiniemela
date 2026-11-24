@@ -1,38 +1,53 @@
 ---
 title: Keikat
+lomake_aihe: keikka
 blocks:
-  - otsikko: Keikat
+  - hero_tyyli: sivu
+    otsikko: Keikat
     sisalto: Tilaa minut tapahtumaasi niin räätälöidään sinulle sopiva paketti! Yhteystietoni löydät sivun alaosasta.
     bgImg: /uploads/DSC_2599.jpg
     kuvateksti: 'Kuva: Viola Tarvainen'
+    kuva_alt: Kati laulaa punaisessa valossa lavalla
+    kuva_kohdistus: 50% 40%
+    kuva_kohdistus_desktop: 50% 52%
     _template: hero
+  - nauha_tekstit:
+      - Sopiva kokonaisuus tapahtumaasi
+      - Trubaduuri
+      - Duo
+      - Trio
+      - Bändi
+      - Lauluyhtye
+      - Äänentoisto ja valot mukana
+    nauha_tyyli: normaali
+    _template: nauha
   - ankkuri: keikat
+    keikat_nakyma: keikkasivu
     keikat_otsikko: Tulevat keikat
-    keikat_tyhja: Uusia keikkoja on tulossa, seuraa Instagramia!
-    keikat_cta_teksti: Tilaa keikka
-    keikat_cta_url: '/muusikko#tilaa-keikka'
+    keikat_tyhja: 'Uusia keikkoja on tulossa, seuraa Instagramia!'
+    keikat_cta_teksti: Tilaa keikalle
     keikat_menneet_otsikko: Menneet keikat
     keikat_lista:
       - pvm: '2024-02-17T10:00:00.000Z'
         tapahtuma: 'Poppari, Jyväskylä'
-        lisatieto: 'Kaniffi debyyttikeikka'
+        lisatieto: Kaniffi debyyttikeikka
       - pvm: '2024-05-10T10:00:00.000Z'
         tapahtuma: 'RockNeck, Jyväskylä'
       - pvm: '2024-07-20T10:00:00.000Z'
         tapahtuma: 'Heinärieha, SF-Caravan Keski-Suomi, Uurainen'
       - pvm: '2024-08-10T10:00:00.000Z'
-        tapahtuma: 'Yksityistilaisuus'
+        tapahtuma: Yksityistilaisuus
       - pvm: '2024-08-31T10:00:00.000Z'
         tapahtuma: 'Cafe Amalia, Sumiainen'
       - pvm: '2024-10-05T10:00:00.000Z'
         tapahtuma: 'Laajasalon VPK, Helsinki'
-        lisatieto: 'Iist Side Singers'
+        lisatieto: Iist Side Singers
       - pvm: '2024-12-14T10:00:00.000Z'
         tapahtuma: 'Laajasalon opiston juhlasali, Helsinki'
-        lisatieto: 'Iist Side Singers'
+        lisatieto: Iist Side Singers
       - pvm: '2025-01-11T10:00:00.000Z'
-        tapahtuma: 'Yksityistilaisuus'
-        lisatieto: 'Iist Side Singers'
+        tapahtuma: Yksityistilaisuus
+        lisatieto: Iist Side Singers
       - pvm: '2025-01-18T10:00:00.000Z'
         tapahtuma: 'Poppari, Jyväskylä'
       - pvm: '2025-05-08T10:00:00.000Z'
@@ -44,26 +59,49 @@ blocks:
       - pvm: '2026-04-01T10:00:00.000Z'
         tapahtuma: 'Taidenäyttelyn avajaiset, Hoppa, Jyväskylä'
       - pvm: '2026-06-06T10:00:00.000Z'
-        tapahtuma: 'Yksityistilaisuus'
+        tapahtuma: Yksityistilaisuus
       - pvm: '2026-06-11T10:00:00.000Z'
         tapahtuma: 'Paiste-lava Villa Rana, Jyväskylä'
       - pvm: '2026-06-13T10:00:00.000Z'
         tapahtuma: 'A-kiltafestarit, Jyväskylä'
       - pvm: '2026-06-16T10:00:00.000Z'
         tapahtuma: 'Paiste-lava Villa Rana, Jyväskylä'
-        lisatieto: 'Duo Kati Niemelä ja Oona-Kaisa Siltanen'
+        lisatieto: Duo Kati Niemelä ja Oona-Kaisa Siltanen
       - pvm: '2026-07-04T10:00:00.000Z'
-        tapahtuma: 'Yksityistilaisuus'
+        tapahtuma: Yksityistilaisuus
         lisatieto: 'Bilebändi Buumi, tuuraus'
       - pvm: '2026-07-25T10:00:00.000Z'
-        tapahtuma: 'Yksityistilaisuus'
+        tapahtuma: Yksityistilaisuus
         lisatieto: 'Bilebändi Buumi, tuuraus'
       - pvm: '2026-08-02T10:00:00.000Z'
-        tapahtuma: 'Yksityistilaisuus'
+        tapahtuma: Yksityistilaisuus
       - pvm: '2027-01-09T10:00:00.000Z'
-        tapahtuma: 'Yksityistilaisuus'
+        tapahtuma: Yksityistilaisuus
       - pvm: '2027-08-28T10:00:00.000Z'
-        tapahtuma: 'Yksityistilaisuus'
+        tapahtuma: Yksityistilaisuus
+    _template: keikat
+  - ankkuri: tilaa-keikalle
+    cta_kuva: /uploads/JMo-2023-130.jpg
+    cta_kuvateksti: 'Kuva: Jan-Kristian Moilanen'
+    cta_alt: Kati laulaa lavalla mikrofoniin
+    cta_otsikko: Tilaa keikalle
+    cta_sisalto: |
+      Voit tilata minut keikalle haluamaasi tapahtumaan, haluamallasi kokoonpanolla. Mukanani tulee tarvittava äänentoistolaitteisto sekä valot ja taustakangas.
+
+      Kerro tapahtumastasi, niin räätälöidään sinulle sopiva kokonaisuus!
+    cta_varusteet:
+      - ikoni: aanentoisto
+        teksti: Äänentoisto
+      - ikoni: valot
+        teksti: Valot
+      - ikoni: taustakangas
+        teksti: Taustakangas
+    cta_painike_teksti: Tilaa keikalle
+    cta_painike_aihe: keikka
+    _template: cta
+  - ankkuri: menneet
+    keikat_nakyma: menneet
+    keikat_menneet_otsikko: Menneet keikat
     _template: keikat
   - yhteystiedot_otsikko: Ota yhteyttä
     _template: yhteystiedot
