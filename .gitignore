@@ -34,3 +34,7 @@ yarn-error.log*
 
 # vercel
 .vercel
+
+# toimitettavat tiedostot repon juuressa (videot, PDF:t) eivät kuulu versionhallintaan
+/*.mp4
+/*.pdf

@@ -86,7 +86,7 @@ Skeemamuutoksen jälkeen `tinacms dev` generoi `.tina/__generated__`-tiedostot, 
 ## Avoimet asiat ja jatkokehitys
 
 ### Kesken
-- **Tina 3 -päivitys** on erillisessä haarassa `claude/brave-kapitsa-8f119f` (`.tina` → `tina`, uusi client). Lava-ilme on jo yhdistetty siihen (merge d78bfc9). Ennen yhdistämistä mainiin: varmista, että haaran skeema vastaa mainin uusimpia lohkoja ja että Vercelin build menee läpi. Päivitys korjaa myös editorin lihavointibugin pysyvästi (`@tinacms/mdx` 2.x).
+- **Tina 3 -päivitys** tehtiin kokeiluna haaraan `claude/brave-kapitsa-8f119f` (PR #51), mutta haara poistettiin ja PR suljettiin 24.11.2026 yhdistämättä. Viimeinen commit d78bfc9 on palautettavissa GitHubista suljetun PR:n kautta. Päivitys korjaisi editorin lihavointibugin pysyvästi (`@tinacms/mdx` 2.x).
 - **Editorin lihavointibugi** (Tina 1.x): valitse lihavoitava teksti ilman reunavälilyöntejä. `RichText.js` korjaa näkyvän lopputuloksen.
 
 ### Ylläpito

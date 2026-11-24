@@ -1,8 +1,6 @@
-const withLess = require("next-with-less");
-
 const nextConfig = {
     images: {
-        domains: ['res.cloudinary.com', 'assets.tina.io', 'katiniemela.vercel.app', 'katiniemela.fi', 'kaniffi.fi'],
+        domains: ['assets.tina.io', 'kaniffi.fi'],
     },
     // Pääosoite on kaniffi.fi: vanha osoite ohjataan pysyvästi (308) samaan polkuun uudessa osoitteessa
     async redirects() {
@@ -46,16 +44,14 @@ const nextConfig = {
         locales: ['fi'],
         defaultLocale: 'fi',
     },
-};
-
-module.exports = withLess({
     async rewrites() {
         return [
-          {
-            source: '/admin',
-            destination: '/admin/index.html',
-          },
-        ]
+            {
+                source: '/admin',
+                destination: '/admin/index.html',
+            },
+        ];
     },
-    ...nextConfig
-});
+};
+
+module.exports = nextConfig;
