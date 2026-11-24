@@ -4,6 +4,15 @@ const nextConfig = {
     images: {
         domains: ['res.cloudinary.com', 'assets.tina.io', 'katiniemela.vercel.app', 'katiniemela.fi', 'kaniffi.fi'],
     },
+    // Pääosoite on kaniffi.fi: vanha osoite ohjataan pysyvästi (308) samaan polkuun uudessa osoitteessa
+    async redirects() {
+        return ['katiniemela.fi', 'www.katiniemela.fi'].map((host) => ({
+            source: '/:path*',
+            has: [{ type: 'host', value: host }],
+            destination: 'https://kaniffi.fi/:path*',
+            permanent: true,
+        }));
+    },
     async headers() {
         return [
             {

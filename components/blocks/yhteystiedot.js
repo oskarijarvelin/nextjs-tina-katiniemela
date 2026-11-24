@@ -5,6 +5,7 @@ import { useRouter } from 'next/router';
 
 import settings from '../../content/settings/index.json';
 import RichText, { onTaytetty } from '../RichText';
+import { SITE_URL } from '../../lib/sivusto';
 import { Ikoni, Kuva, Kuvaaja } from '../lava/ui';
 
 const AIHEET = [
@@ -78,7 +79,7 @@ export default function YhteystiedotBlock({ block, oletusAihe }) {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           tyyppi: aihe, nimi: arvot.nimi, email: arvot.sahkoposti, puhelin: arvot.puhelin,
-          viesti: arvot.viesti, kotisivu: arvot.kotisivu, sivu: `https://katiniemela.fi${router.asPath.split('#')[0]}`,
+          viesti: arvot.viesti, kotisivu: arvot.kotisivu, sivu: `${SITE_URL}${router.asPath.split('#')[0]}`,
         }),
       });
       const data = await vastaus.json().catch(() => ({}));
