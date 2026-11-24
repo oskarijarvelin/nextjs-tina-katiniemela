@@ -1,5 +1,5 @@
 import { useTina } from "tinacms/dist/react";
-import { client } from "../.tina/__generated__/client";
+import { client } from "../tina/__generated__/client";
 import { haeGlobaali } from "../lib/sivudata";
 
 import { sivunRakenne } from "../lib/seo";

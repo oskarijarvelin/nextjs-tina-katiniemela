@@ -1,83 +1,102 @@
-# Muistiinpanot: katiniemela.fi
+# Muistiinpanot: kaniffi.fi (ent. katiniemela.fi)
 
-_Kirjoitettu 12.11.2026 koodin, sisällön ja git-historian perusteella._
+_Päivitetty 24.11.2026 Lava-ilmeen julkaisun jälkeen. Edellinen versio (12.11.2026) kuvasi vanhaa MUI-pohjaista sivustoa, ja se löytyy git-historiasta._
 
 ## Asiakas ja sivuston tarkoitus
 
 - **Kati Niemelä / taiteilijanimi Kaniffi**, Jyväskylä (Savela). Artisti, laulaja-lauluntekijä ja pop/jazz-laulunopettaja. Yritys: Kaniffi Tmi (yrittäjänä 10/2025 alkaen, sitä ennen kevytyrittäjänä).
 - Sivuston tavoitteet: 1) uusia laulunoppilaita, 2) keikkatilauksia, 3) CV / portfolio.
-- Yhteydenotto: sähköposti `kaniffivirallinen@gmail.com`, Facebook @kaniffivirallinen, Instagram @kaniffi, LinkedIn. Lomaketta ei ole, pelkät linkit.
-- Live: https://katiniemela.fi (Vercel). Repo: github.com/oskarijarvelin/nextjs-tina-katiniemela.
+- **Pääosoite: https://kaniffi.fi** (24.11.2026 alkaen). `katiniemela.fi` ja `www.katiniemela.fi` ohjataan pysyvästi (308) samaan polkuun kaniffi.fi:ssä (`next.config.js` → `redirects`). Tinan editori: https://kaniffi.fi/admin (kaniffi.fi lisätty Tina Cloudin sallittuihin osoitteisiin).
+- Hosting: Vercel (projekti `katiniemela`, julkaisee `main`-haaran). Molemmat verkkotunnukset kulkevat Cloudflaren välityspalvelimen kautta, ks. Suorituskyky.
+- Repo: github.com/oskarijarvelin/nextjs-tina-katiniemela.
+
+## Ulkoasu: Lava (julkaistu 24.11.2026)
+
+- Kati valitsi tumman **Lava**-suunnan. Luonnos on HTML-artefaktina: https://claude.ai/artifact/66RiA3PsALhCH9DoNetY4J. Vanha Design-kanvaasi on vain palautekierroksen tallenne, eikä sitä enää päivitetä.
+- Tunnusmerkit: tumma tausta, MonteCarlo-käsialafontti otsikoissa, Jost leipätekstissä, kulta-aksentti (`--accent: #E2B866`), lavakuvat, kimallusvana hiiren perässä ja kultapöly heroissa, juokseva nauha, salmiakkierottimet.
+- Teaser-videot (9:16, 11 s, kaniffi.fi) tehtiin samalla ilmeellä: etusivun, Muusikko-, Keikat- ja Laulunopettaja-sivun kuvilla. Videot eivät ole repossa.
 
 ## Sivut
 
-| URL | Sisältötiedosto | Sisältö |
+| URL | Sisältötiedosto | Lohkot |
 |---|---|---|
-| `/` | `pages/content/home.md` | Hero, "Kuka minä olen?" ja linkit alasivuille, iso kuva, yhteystiedot |
-| `/keikat` | `keikat.md` | Tulevat ja menneet keikat vuosittain (yksi rich-text-palsta), yhteystiedot |
-| `/cv` | `cv.md` | Työkokemus, koulutus, muu kokemus (kokemus-lohkot) |
-| `/muusikko` | `muusikko.md` | Kokoonpanot (Kaniffi, Kaniffi Duo, Iist Side Singers, Ronimus), diskografia (Ronimus 2018–2022), musiikkivideot, yhteystiedot |
-| `/laulunopettaja` | `laulunopettaja.md` | Laulutunnit, **hinnasto** (60 €/h, ensimmäinen tunti 35 €, opiskelijat ja alle 20-v. −15 %), peruutus- ja laskutusehdot, oppilaiden palautteet, yhteystiedot |
+| `/` | `pages/content/home.md` | hero (etusivu), nauha, polut, nosto (tammikuu, 35 € -merkki), palsta (Kuka minä olen, luvut, allekirjoitus), kuva + lainaus, keikat (etusivu), musiikkinosto, palautteet (karuselli), yhteystiedot |
+| `/keikat` | `keikat.md` | hero, nauha (kokoonpanot), keikat (liput + **keikkalista**), cta (Tilaa keikalle), keikat (menneet), yhteystiedot |
+| `/musiikki` | `musiikki.md` | hero (äänialto), nauha (kappaleet), nosto (Saman katon alla + YouTube-livevideo), videot, julkaisut (diskografia), yhteystiedot |
+| `/cv` | `cv.md` | hero, faktat (Lyhyesti), kokemus ×3 (työ, koulutus, muu), yhteystiedot |
+| `/muusikko` | `muusikko.md` | hero, kokoonpanot (Kaniffi, Kaniffi Duo, Iist Side Singers, Ronimus), kuva, lomake (keikka) |
+| `/laulunopettaja` | `laulunopettaja.md` | hero, faktat, palsta (vahvuusalueet), lainaus, ominaisuudet, hinnasto (+ ehdot), palautteet (kortit), cta, yhteystiedot |
+| `/laulutunnit-jyvaskyla` | `laulutunnit-jyvaskyla.md` | Laskeutumissivu, ei valikossa: hero, nauha, palsta (edut, 35 €), vaiheet, hinnasto, palautteet, ukk, lomake (laulutunnit) |
 
-Päävalikko, sivuston nimi ja some-linkit: `content/settings/index.json`.
+Hinnat (11/2026): tutustumistunti 35 €, laulutunti 60 €/h, opiskelijat ja alle 20-v. −15 % (kaikki sis. alv.). Peruutus viimeistään vuorokautta ennen, laskutus kuukausittain.
 
 ## Tekniikka
 
-- **Next.js 13.1.6 (Pages Router)** + **TinaCMS 1.2.1** (Tina Cloud) + **MUI 5** (Emotion). React 18.2. Yarn.
-- Fontit: MonteCarlo (otsikot, käsialafontti) ja Tillana (leipäteksti), `@fontsource`. Musta tausta, valkoinen teksti (`src/theme.js`).
-- Reititys: `pages/index.js` (home.md) ja `pages/[slug].js` (SSG, `fallback: "blocking"`). Tinan `RouteMappingPlugin` yhdistää dokumentit URL-osoitteisiin.
-- Tina-schema: `.tina/config.js` (vanha `.tina/`-kansio, uudemmissa versioissa `tina/`). Kokoelmat:
-  - **Sivut** (`page`): `title`, `description` (= markdownin body, käytetään meta descriptionina), `blocks`.
-  - **Asetukset** (`settings`): sivuston nimi, Instagram, LinkedIn, päävalikko.
-- Sisältölohkot (`components/blocks/`), kenttien nimet suomeksi:
-  - `hero`: otsikko, teksti, taustakuva ja kuvateksti (kuvaaja). 50/50-jako desktopilla.
-  - `kuva`: täysleveä kuva ja kuvateksti.
-  - `palsta`: kuva (valinnainen, vasen/oikea), otsikko, rich text ja linkkilista.
-  - `kokemus`: aikajanalista (ajankohta, otsikko, kuvaus).
-  - `julkaisut`: diskografia (kansikuva, tyyppi, vuosi, Spotify/YouTube, kappalelista).
-  - `videot`: YouTube-lista. Kevyt upotus: thumbnail ensin, iframe vasta klikattaessa (`components/Video.js`).
-- Kuvat: paikallisesti `public/uploads/` (Tina media). Vaihdettu Cloudinarysta paikallisiin 1/2024. `components/Image.js` käyttää `next/image`:a. Siinä on vielä Cloudinaryn URL-muunnos (`processUrl`), joka ei tee paikallisille poluille mitään.
-- SEO (Copilot-PR:t #48–50, 12/2025): OG- ja Twitter-tagit, canonical, JSON-LD (Person + WebSite), skip-link, focus-tyylit, `robots.txt`, `manifest.json`. `sitemap.xml` generoidaan buildissa (`scripts/generate-sitemap.js`).
-- Turvaheaderit ja `i18n: fi` tiedostossa `next.config.js`. `/admin` ohjataan Tinan admin-käyttöliittymään.
-- CI: `.github/workflows/pr-open.yml` buildaa PR:t. Dependabot päivittää vain Tina-paketit.
+- **Next.js 15.5 (Pages Router)** + **TinaCMS 3.15** ja `@tinacms/cli` 4 (Tina Cloud). React 18.3. Node 24 (`engines`). Yarn 1. Päivitetty 24.11.2026 versioista Next 13.1 ja Tina 1.2.
+- **Tyylit:** `styles/lava.css` on luonnoksen CSS sellaisenaan, ja loppuun on lisätty toteutuksen omat säännöt (kuvan kohdistus, YouTube-upotus, lahjakorttirivi). Tuodaan `pages/_app.js`:ssä.
+- **Fontit:** omina tiedostoina `@fontsource/montecarlo` (400) ja `@fontsource/jost` v5 (400/500/600). Jostin v5-paketti tuodaan ilman `.css`-päätettä (`import '@fontsource/jost/400'`), koska Next 13.1:n webpack tulkitsi paketin exports-kartan väärin (toimii näin myös Next 15:ssä).
+- **Reititys:** `pages/index.js` (home.md) ja `pages/[slug].js` (SSG, `fallback: "blocking"`). Kumpikin hakee `lib/sivudata.js`:llä globaalin datan (keikkalista Keikat-sivulta, musiikki Musiikki-sivulta, palautteet omasta kokoelmastaan) ja `lib/seo.js`:llä sivun rakennedatan.
+- **Pohja:** `components/Layout.js` sisältää headin (SEO), yläpalkin, valikon ja alapalkin. Valikko, some-linkit ja yhteystiedot tulevat `content/settings/index.json`:sta.
+- **Rakennuspalat:** `components/lava/ui.js` sisältää ikonit (Tinan ikonivalinnat), `Kuva`-komponentin (next/image ja kohdistukset `--pos`/`--pos-d`/`--pos-m`), `Painike`/`Painikkeet` (aihe → `#yhteys` ja lomakkeen esivalinta), `Nauha`-komponentin ja päivämääräapurit.
+- **Selainefektit:** `lib/lava.js` (`initLava()`, käynnistyy Layoutissa sivukohtaisesti ja siivoaa jälkensä) hoitaa valikon, edistymispalkin, kimallusvanan, kultapölyn, palautekarusellin, kansien kallistuksen, osioiden nousuanimaation, sähköpostin kopioinnin, takaisin ylös -painikkeen ja `data-topic` → `lava-aihe`-tapahtuman. Kaikki liike kunnioittaa `prefers-reduced-motion`-asetusta.
+- **Rikasteksti:** `components/RichText.js` sisältää lihavointibugin korjauksen sekä apurit `onTaytetty()` (Tina palauttaa tyhjänkin kentän tyhjänä dokumenttina, jonka pitää tulkita tyhjäksi) ja `tekstiksi()`.
 
-## Työnkulku ja historia
+### Tina-skeema (`tina/config.js`)
 
-- Tehty 10/2022. Isompia päivityksiä 2/2023 (Tina-päivitys), 1/2024 (paikalliset kuvat) ja 12/2025 (SEO, saavutettavuus, kuvien optimointi).
-- **Asiakas päivittää sisältöä itse** Tina Cloudin kautta. Noin 176 commitia "TinaCMS content update", viimeisin 11.11.2026. Pullaa aina ennen omia muutoksia.
-- Env-muuttujat: `NEXT_PUBLIC_TINA_CLIENT_ID`, `TINA_TOKEN`, `NEXT_PUBLIC_TINA_BRANCH`.
+Kokoelmat:
+- **Sivut** (`page`): `title`, `description` (markdownin body = meta description), `lomake_aihe` (sivun lomakkeen oletusaihe), `blocks`.
+- **Oppilaiden palautteet** (`palautteet`, `content/palautteet/index.md`): nimi, lisätieto, lyhyt lainaus, `nostettu` ja koko palaute (rikasteksti). Yksi lähde etusivulle, Laulunopettaja-sivulle ja laskeutumissivulle.
+- **Asetukset** (`settings`, JSON): sivuston nimi, roolirivi, ylä- ja alapalkin painiketekstit, sähköposti, sijainti, yritys, somet (URL ja näkyvä nimi), Ota yhteyttä -kuva ja päävalikko.
 
-## Havaitut ongelmat ja jatkokehitysideat
+Lohkot (22), kentät suomeksi ja omilla etuliitteillään:
+`hero` (asettelu etusivu/sivu, saatavuusrivi, murupolku, kuvan kohdistukset, äänialto, painikkeet/pillerit), `nauha`, `polut`, `nosto` (kuva tai YouTube-video, pyöreä merkki, taajuuspalkit), `palsta` (listat ja sydän, edut, luvut, allekirjoitus), `kuva` (+ käsialalainaus), `keikat` (näkymät: liput / menneet / kaikki / etusivu), `musiikkinosto`, `palautteet` (karuselli / kortit), `faktat`, `kokemus`, `julkaisut` (ensimmäinen albumi vinyylinä, muut vuosittain), `videot` (ensimmäinen isona, ilman kuvaa käsialalla), `lainaus`, `ominaisuudet`, `hinnasto`, `cta`, `kokoonpanot`, `vaiheet`, `ukk`, `lomake`, `yhteystiedot`.
 
-### Korjattava nyt
-1. **Laulunopettaja-sivun hero hajoaa desktopilla.** Pitkä yksisanainen otsikko "Laulunopettaja" (8rem MonteCarlo, noin 595 px) ei mahdu 50 %:n palstaan. Flex-elementin `min-width: auto` pakottaa tekstipalstan rivittymään kuvan alle, joten oikea puolisko jää tyhjäksi mustaksi alueeksi (tarkistettu 1440 px leveydellä). Korjaus: `minWidth: 0` tekstipalstalle ja/tai otsikon fonttikoon skaalaus.
-   - _Korjaus aiempaan:_ kuva **ei ole rikki**. `/uploads/kati-rajattu.png` puuttuu reposta, mutta Tina Cloud tarjoilee median osoitteesta `assets.tina.io/<client-id>/…`. Alkuperäinen tiedosto on kuitenkin 22 Mt:n PNG.
-   - Tämä tarkoittaa myös, että **live-sivuston kuvat tulevat Tina Cloudin mediasta**, eivät repon `public/uploads`-kansiosta. Repon käyttämättömät kuvat ovat lähinnä siivottavaa, eivät suorituskykyongelma.
-2. **Vanhentuneet meta descriptionit.** `home.md` ja `laulunopettaja.md`: "Opiskelen (pop/jazz) laulunopettajaksi Jyväskylän AMK:ssa…", vaikka CV:n mukaan valmistunut 06/2025. Näkyy Googlessa ja jaoissa.
-3. **Meta description puuttuu** sivuilta `/cv`, `/keikat` ja `/muusikko` (body on tyhjä).
+`tina/__generated__` generoidaan buildissa eikä sitä commitoida. Skeemamuutoksen jälkeen commitoidaan `tina/config.js` ja `tina/tina-lock.json` (tinacms dev/build päivittää lukkotiedoston), ja Tina Cloud indeksoi skeeman lukkotiedostosta.
 
-4. **Editorin lihavointibugi (Katin raportti 23.11.2026), selvitetty.**
-   - **Juurisyy:** `@tinacms/mdx` 1.x laittaa lihavoinnin reunan välilyönnin `**`-merkkien sisään: `**28.8. **Yksityistilaisuus`. Se on virheellistä markdownia, joten seuraavalla latauksella tähdet näkyvät tekstinä, ja seuraava tallennus escapettaa ne (`\*\*`). Lihavointi katoaa pysyvästi. "Satunnaisuus" johtuu siitä, osuuko välilyönti valintaan (sanan tuplaklikkaus valitsee usein välilyönnin mukaan).
-   - **Toistettu:** paikallisesti versioilla 1.3.0 (projektissa) ja 1.8.3 (uusin 1.x), molemmissa sama bugi. **Versiossa `@tinacms/mdx` 2.4.2 korjattu** (välilyönti siirtyy merkkien ulkopuolelle). Sama kaava näkyy Katin tallennushistoriassa (keikat.md, laulunopettaja.md).
-   - **Välikorjaus (tammikuu-2027-haara):** `components/RichText.js` korjaa rikkoutuneet `**…**`-parit lihavoinneiksi sivulla, ja nykyisen sisällön ainoa rikkinäinen lihavointi on korjattu. Editorissa Kati voi yhä nähdä tähtiä.
-   - **Pysyvä korjaus:** TinaCMS:n päivitys 2.x/3.x-versioon (`.tina` → `tina`, uusi client, todennäköisesti myös Next-päivitys).
-   - **Ohje Katille siihen asti:** valitse lihavoitava teksti ilman reunavälilyöntejä.
+### Yhteydenottolomake
 
-### Laatu ja ylläpito
-- `Image.js` kaatuu, jos kuvaa ei ole asetettu (`processUrl(undefined)`). Tämä koskee heroa ilman taustakuvaa ja julkaisua ilman kansikuvaa. Pitäisi lisätä guard.
-- `videot.js`: jos YouTube-URL ei mene parserista läpi, `video` on `false` ja thumbnail rikki.
-- `styled()`-komponentit luodaan render-funktion sisällä (`Layout.js`: NaviBox, StyledMenu, SkipLink; `hero.js`: HeroBox). Ne pitäisi siirtää moduulitasolle, koska nyt ne luodaan uudelleen joka renderöinnillä.
-- Sitemapin sivut on kovakoodattu (`scripts/generate-sitemap.js`). Uusi Tina-sivu ei mene sitemapiin automaattisesti. `lastmod` on aina buildin aika.
-- Facebook-URL on kovakoodattu JSON-LD:hen. Kannattaisi lisätä se asetuksiin Instagramin ja LinkedInin rinnalle. Facebook-ikoni puuttuu myös headerista.
-- "Ota yhteyttä" -palsta on kopioitu käsin neljälle sivulle, ja muotoilu vaihtelee (keikat-sivulla ei lihavointeja). Yhteinen lohko tai asetus auttaisi.
-- Teeman `primary` ja `secondary` ovat MUI-starterin oletuksia (#556cd6 / #19857b). `manifest.json`:n `theme_color` (#1976d2) ei vastaa teemaa.
-- `public/uploads` on 159 Mt, ja kuvat ovat 5–10 Mt alkuperäisiä. **14 kuvaa on käyttämättä** (yhteensä noin 105 Mt), esimerkiksi DSC042xx–DSC043xx, JMo-2023-139 ja kati-flipattu.
-- Käyttämättömiä riippuvuuksia: `styled-components`, `next-tinacms-cloudinary`, `@headlessui/react`, `@tinacms/auth`. `package.json`:n nimi on edelleen `starter-basic`.
+- `components/blocks/yhteystiedot.js` (myös `lomake`-lohko): Ota yhteyttä -osio (`#yhteys`) ja React-lomake. Aiheet: laulutunnit, keikka, lahjakortti ja muu. Ohjeteksti ja kiitosviesti vaihtuvat aiheen mukaan, ja mukana on roskapostin piilokenttä. Vanhat ankkurit (`#varaa`, `#tilaa-keikka`) osuvat yhä osioon.
+- `pages/api/lomake.js` lähettää viestin **Resendillä**. `RESEND_API_KEY` on asetettu Vercelissä, ja tuotannon testiviesti tuli perille 24.11.2026. Kehityksessä ilman avainta viesti tulostuu konsoliin.
 
-### Päivitysvelka
-- Next 13.1.6, TinaCMS 1.2.1 ja MUI 5.11 ovat vuoden 2023 alun versioita. CI-matriisi käyttää Node 14/16/17:ää (EOL). Tina 1.x → 2.x vaatii `.tina` → `tina` -siirron ja uuden clientin.
+### SEO
 
-### Sisältöideat asiakkaalle
-- Keikat-sivulla "Tulevat keikat" on lähes tyhjä (2026: "--"). Lista on kasvanut pitkäksi, joten menneet keikat voisi siirtää omaan osioonsa tai tiivistää.
-- Diskografia on vain Ronimuksen. Kaniffin omat julkaisut puuttuvat, jos niitä on.
-- Laulutunneille voisi lisätä yhteydenottolomakkeen tai ajanvarauksen ja lahjakorttiostoksen. Nyt on vain sähköpostilinkki.
+- Pääosoite asetetaan yhdessä paikassa: `lib/sivusto.js` (`SITE_URL`). Sitä käyttävät canonical, OG ja Twitter, JSON-LD ja lomakkeen sivulinkki. `scripts/generate-sitemap.js` ja `public/robots.txt` käyttävät kaniffi.fi:tä.
+- Rakennedata: Person + WebSite kaikilla sivuilla, BreadcrumbList alasivuilla, FAQPage UKK-lohkosta ja LocalBusiness hinnastosivuilla (hintahaarukka luetaan hintakorteista).
+- Lyhyet otsikot (≤ 30 merkkiä ilman nimeä) saavat perään " | Kati Niemelä".
+- Vanhat ankkurit säilytetty, myös Musiikki-sivun `#julkaisu-N-nimi`.
+- Search Console: kaniffi.fi:n sivukartta lähetetty uudelleen (virheet poistuivat). Osoitteenmuutos katiniemela.fi → kaniffi.fi tehdään Search Consolessa (tarkista, onko tehty).
+
+### Suorituskyky (Lighthouse, mobiili, 24.11.2026)
+
+- Kaikilla seitsemällä sivulla suorituskyky 97–99 ja saavutettavuus, Best Practices ja SEO 100. LCP 1,6–2,4 s, CLS ≤ 0,044.
+- **Cloudflare:** Bot Fight Mode (Free-paketissa siihen kuuluu JavaScript Detections) ja Precursor lisäsivät jokaiselle sivulle skriptin `/cdn-cgi/challenge-platform/scripts/jsd/main.js`. Se pudotti suorituskyvyn 50–78:aan ja Best Practicesin 82:een. Kaikki kolme on kytketty pois kaniffi.fi:ltä. **Älä kytke niitä takaisin**, tai pisteet romahtavat. Vaihtoehtoisesti Cloudflaren voi vaihtaa tilaan DNS only, koska Vercel hoitaa CDN:n itse.
+
+## Työnkulku
+
+- **Kati päivittää sisältöä itse** Tina Cloudin kautta suoraan `main`-haaraan (commitit "TinaCMS content update"). Pullaa aina ennen omia muutoksia.
+- Julkaisu: push `main`-haaraan, ja Vercel buildaa (`generate-sitemap` → `tinacms build` → `next build`). Tina Cloud indeksoi skeemamuutokset pushin jälkeen.
+- Paikallinen kehitys: `yarn dev` (`tinacms dev`, paikallinen GraphQL). Tarkista, ettei koneella pyöri vanhaa orpoa `next dev` -prosessia, koska kaksi palvelinta samassa `.next`-kansiossa aiheuttaa satunnaisia 404- ja manifest-virheitä.
+- Env-muuttujat: `NEXT_PUBLIC_TINA_CLIENT_ID`, `TINA_TOKEN`, `NEXT_PUBLIC_TINA_BRANCH`, `RESEND_API_KEY`, valinnaisesti `LOMAKE_VASTAANOTTAJA` ja `LOMAKE_LAHETTAJA`.
+- Varmuuskopio: sisällöistä tehtiin PDF-varmuuskopio 24.11.2026 (ennen Lava-julkaisua, ei repossa).
+
+## Historia
+
+- Tehty 10/2022. Isompia päivityksiä 2/2023 (Tina-päivitys), 1/2024 (paikalliset kuvat), 12/2025 (SEO ja saavutettavuus), 1/2027-kampanja (Laulutunnit Jyväskylässä -sivu, lomakkeet, keikkalista) ja **24.11.2026 Lava-ilme** (koko ulkoasu ja kaikki lohkot uusiksi, pääosoite kaniffi.fi).
+
+## Avoimet asiat ja jatkokehitys
+
+### Kesken
+- **Tina 3 / Next 15.5 -päivitys** tehtiin haarassa `claude/brave-kapitsa-8f119f` (PR #51). Haaraan yhdistettiin 24.11.2026 Lava-ilme, kaniffi.fi ja siivous. Testit: `yarn test:mdx` (lihavoinnin sarjallistus) ja `yarn build:local` (build paikallisella sisällöllä ilman Tina Cloud -tunnuksia).
+- **Editorin lihavointibugi** korjaantuu Tina 3:ssa (`@tinacms/mdx` 2.x siirtää reunavälilyönnin tähtien ulkopuolelle). `RichText.js`:n korjaus jätettiin vanhan sisällön vuoksi.
+
+### Ylläpito
+- Käyttämättömät riippuvuudet (MUI, Emotion, styled-components, Headless UI, react-icons, next-with-less ym.) poistettiin 24.11.2026.
+- `public/uploads` on noin 159 Mt. Live-kuvat tulevat Tina Cloudin mediasta (`assets.tina.io`) next/imagen optimoimina, joten repon alkuperäiset 5–10 Mt:n kuvat eivät hidasta sivustoa. Käyttämättömiä kuvia on noin 12 (esim. DSC0425x–DSC0433x, kati-flipattu, kati-rajattu2).
+- **Tietoturva (yarn audit 24.11.2026):** ei kriittisiä. Jäljellä Nextin sisäänrakennettu PostCSS 8.4.31 (koskee hyökkääjän syöttämän CSS:n käsittelyä, ei tätä sivustoa) ja Tinan Zod 3 (korjaus vain Zod 4:ssä). Next 15.5.x saa tietoturvapäivityksiä: päivitä patch-versioon (`yarn upgrade next eslint-config-next`) säännöllisesti. Seuraava isompi askel olisi Next 16 ja React 19.
+- CI (`.github/workflows/pr-open.yml`) ajaa PR:issä Node 24:llä `test:mdx`- ja `build:local`-komennot.
+- Pienet Lighthouse-huomiot (eivät laske pisteitä): polkukorttien kuvat ovat mobiilissa hieman ylisuuria (noin 47 kt), Nextin omat polyfillit noin 12 kt.
+
+### Sisältöideat
+- Kaniffin omat julkaisut diskografiaan (nyt vain Ronimus ja SweetHard-cover). Saman katon alla on toistaiseksi vain YouTube-livetaltiointi.
+- Konserttikuvia on vähän (sininen mekko: 2 kuvaa, vihreä mekko: 4). Lisää lavakuvia elävöittäisi Keikat-sivua.
+- Ajanvaraus tai lahjakorttiostos verkossa (nyt lomakkeella).

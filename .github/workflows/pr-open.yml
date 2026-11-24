@@ -2,22 +2,18 @@ name: Build Pull request
 on:
   pull_request:
     types: [opened, synchronize, reopened]
-env:
-  NEXT_PUBLIC_TINA_CLIENT_ID: ${{ secrets.NEXT_PUBLIC_TINA_CLIENT_ID }}
-  TINA_TOKEN: ${{ secrets.TINA_TOKEN }}
-  NEXT_PUBLIC_TINA_BRANCH: ${{ github.head_ref }}
 jobs:
   build:
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        node: ["14", "16", "17"]
-    name: Node ${{ matrix.node }} sample
+    name: Build (Node 24 LTS)
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - name: Setup node
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
-          node-version: ${{ matrix.node }}
-      - run: yarn install
-      - run: yarn build
+          node-version: "24"
+          cache: yarn
+      - run: yarn install --frozen-lockfile
+      - run: yarn test:mdx
+      # Paikallinen sisältö: ei vaadi Tina Cloud -tunnuksia. Tina Cloud -build tarkistetaan Vercelin preview-deployssa.
+      - run: yarn build:local

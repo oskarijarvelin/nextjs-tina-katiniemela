@@ -1,4 +1,4 @@
-import { defineConfig, RouteMappingPlugin } from 'tinacms';
+import { defineConfig } from 'tinacms';
 
 // ---------- Kenttäapurit ----------
 const teksti = (name, label, extra = {}) => ({ type: 'string', name, label, ...extra });
@@ -393,6 +393,9 @@ const config = defineConfig({
         path: 'pages/content',
         format: 'md',
         ui: {
+          // Visuaalinen editori: mikä sivu avataan esikatseluun kunkin dokumentin kohdalla
+          router: ({ document }) =>
+            document._sys.filename === 'home' ? '/' : `/${document._sys.filename}`,
           filename: {
             readonly: true,
             slugify: (values) => `${(values?.title || '').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '')}`,
@@ -459,9 +462,12 @@ const config = defineConfig({
     ],
   },
   clientId: process.env.NEXT_PUBLIC_TINA_CLIENT_ID,
+  // Vercelin git-haara ensin: preview-deploy lukee oman haaransa skeeman ja sisällön Tina Cloudista
+  // (tuotannossa haara on main). NEXT_PUBLIC_TINA_BRANCH on varalla muille ympäristöille.
   branch:
-    process.env.NEXT_PUBLIC_TINA_BRANCH ||
     process.env.NEXT_PUBLIC_VERCEL_GIT_COMMIT_REF ||
+    process.env.VERCEL_GIT_COMMIT_REF ||
+    process.env.NEXT_PUBLIC_TINA_BRANCH ||
     process.env.HEAD,
   token: process.env.TINA_TOKEN,
   media: {
@@ -473,16 +479,6 @@ const config = defineConfig({
   build: {
     publicFolder: 'public',
     outputFolder: 'admin',
-  },
-  cmsCallback: (cms) => {
-    const RouteMapping = new RouteMappingPlugin((collection, document) => {
-      if (['page'].includes(collection.name)) {
-        return document._sys.filename === 'home' ? '/' : `/${document._sys.filename}`;
-      }
-      return undefined;
-    });
-    cms.plugins.add(RouteMapping);
-    return cms;
   },
 });
 
